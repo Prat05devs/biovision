@@ -18,7 +18,7 @@
    - <https://biovision.live/privacy> — Privacy Policy URL (required by App Store Connect)
    - <https://biovision.live/support> — Support URL (required)
    - <https://biovision.live/terms> — Terms of Use
-   Create the `support@biovision.live` mailbox referenced on the support page, and re-run
+   Support enquiries go to `admin@wtsolutions.cc` (shown on the support page), and re-run
    `npm run landing:build` after any change to the legal text in `src/i18n/en.json`.
 
 ## 1. Build the archive in Xcode

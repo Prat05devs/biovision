@@ -63,4 +63,4 @@ All analysis runs on the device. The app does not transmit health data, has no s
 
 The app provides general health information with clear notices that it is not a diagnosis and does not replace a doctor; emergency answers direct users to 112 and Tele-MANAS 14416. Methods and data sources are described in Settings → Medical information.
 
-**Contact for review:** _name, phone, email_
+**Contact for review:** _name_ · _phone_ · admin@wtsolutions.cc
