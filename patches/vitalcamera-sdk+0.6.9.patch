@@ -1,0 +1,16 @@
+diff --git a/node_modules/vitalcamera-sdk/src/adapter/browser.js b/node_modules/vitalcamera-sdk/src/adapter/browser.js
+index 5fe886b..a5d507c 100755
+--- a/node_modules/vitalcamera-sdk/src/adapter/browser.js
++++ b/node_modules/vitalcamera-sdk/src/adapter/browser.js
+@@ -708,7 +708,10 @@ export default class BrowserAdapter {
+      */
+     async _loadBlazeFace() {
+         const mediapipeBase = this._runtimeBaseUrls.mediapipe;
+-        const { FaceDetector, FilesetResolver } = await import(mediapipeBase + '+esm');
++        // Metro rejects computed dynamic imports while bundling for Expo Web.
++        // Keep the import in the browser, where the URL is resolved at runtime.
++        const browserImport = new Function('url', 'return import(url)');
++        const { FaceDetector, FilesetResolver } = await browserImport(mediapipeBase + '+esm');
+         const vision = await FilesetResolver.forVisionTasks(mediapipeBase + 'wasm');
+ 
+         // Allow callers to provide the model as a buffer; otherwise fetch by URL.

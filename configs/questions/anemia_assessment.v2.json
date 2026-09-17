@@ -1,0 +1,122 @@
+{
+  "version": "assessment-branching-draft-v2",
+  "status": "requires_clinician_review",
+  "warning": "This branch tree characterizes symptoms and care urgency. It must not be used to diagnose a disease.",
+  "limits": { "maximumAnswers": 12 },
+  "questions": [
+    {
+      "id": "urgent_symptoms",
+      "type": "yes_no",
+      "textKey": "questions.urgent_symptoms",
+      "sectionKey": "questions.sections.safety",
+      "redFlag": true
+    },
+    {
+      "id": "fatigue",
+      "type": "yes_no",
+      "textKey": "questions.fatigue",
+      "sectionKey": "questions.sections.fatigue"
+    },
+    {
+      "id": "fatigue_frequency",
+      "type": "single_choice",
+      "textKey": "questions.fatigue_frequency",
+      "sectionKey": "questions.sections.fatigueFollowUp",
+      "showIf": { "questionId": "fatigue", "equals": true },
+      "options": [
+        { "value": "some_days", "labelKey": "questions.options.some_days" },
+        { "value": "most_days", "labelKey": "questions.options.most_days" },
+        { "value": "every_day", "labelKey": "questions.options.every_day" }
+      ]
+    },
+    {
+      "id": "fatigue_duration",
+      "type": "single_choice",
+      "textKey": "questions.fatigue_duration",
+      "sectionKey": "questions.sections.fatigueFollowUp",
+      "showIf": { "questionId": "fatigue", "equals": true },
+      "options": [
+        { "value": "under_2_weeks", "labelKey": "questions.options.under_2_weeks" },
+        { "value": "two_to_six_weeks", "labelKey": "questions.options.two_to_six_weeks" },
+        { "value": "over_6_weeks", "labelKey": "questions.options.over_6_weeks" }
+      ]
+    },
+    {
+      "id": "fatigue_impact",
+      "type": "single_choice",
+      "textKey": "questions.fatigue_impact",
+      "sectionKey": "questions.sections.fatigueFollowUp",
+      "showIf": { "questionId": "fatigue", "equals": true },
+      "options": [
+        { "value": "noticeable_only", "labelKey": "questions.options.noticeable_only" },
+        { "value": "slows_activities", "labelKey": "questions.options.slows_activities" },
+        { "value": "limits_activities", "labelKey": "questions.options.limits_activities" }
+      ]
+    },
+    {
+      "id": "breathlessness",
+      "type": "yes_no",
+      "textKey": "questions.breathlessness",
+      "sectionKey": "questions.sections.breathlessness"
+    },
+    {
+      "id": "breathlessness_trigger",
+      "type": "single_choice",
+      "textKey": "questions.breathlessness_trigger",
+      "sectionKey": "questions.sections.breathlessnessFollowUp",
+      "showIf": { "questionId": "breathlessness", "equals": true },
+      "options": [
+        { "value": "heavy_activity", "labelKey": "questions.options.heavy_activity" },
+        { "value": "usual_activity", "labelKey": "questions.options.usual_activity" },
+        { "value": "minimal_activity", "labelKey": "questions.options.minimal_activity" }
+      ]
+    },
+    {
+      "id": "breathlessness_onset",
+      "type": "single_choice",
+      "textKey": "questions.breathlessness_onset",
+      "sectionKey": "questions.sections.breathlessnessFollowUp",
+      "showIf": { "questionId": "breathlessness", "equals": true },
+      "options": [
+        { "value": "gradual", "labelKey": "questions.options.gradual" },
+        { "value": "sudden", "labelKey": "questions.options.sudden" },
+        { "value": "not_sure", "labelKey": "questions.options.not_sure" }
+      ]
+    },
+    {
+      "id": "breathlessness_duration",
+      "type": "single_choice",
+      "textKey": "questions.breathlessness_duration",
+      "sectionKey": "questions.sections.breathlessnessFollowUp",
+      "showIf": { "questionId": "breathlessness", "equals": true },
+      "options": [
+        { "value": "under_2_weeks", "labelKey": "questions.options.under_2_weeks" },
+        { "value": "two_to_six_weeks", "labelKey": "questions.options.two_to_six_weeks" },
+        { "value": "over_6_weeks", "labelKey": "questions.options.over_6_weeks" }
+      ]
+    },
+    {
+      "id": "recent_cbc",
+      "type": "single_choice",
+      "textKey": "questions.recent_cbc",
+      "sectionKey": "questions.sections.healthContext",
+      "options": [
+        { "value": "never", "labelKey": "questions.options.never" },
+        { "value": "within_3_months", "labelKey": "questions.options.within_3_months" },
+        { "value": "more_than_3_months", "labelKey": "questions.options.more_than_3_months" }
+      ]
+    },
+    {
+      "id": "family_history",
+      "type": "yes_no",
+      "textKey": "questions.family_history",
+      "sectionKey": "questions.sections.healthContext"
+    }
+  ],
+  "redFlags": [
+    "chest pain",
+    "fainting",
+    "severe breathlessness at rest",
+    "active bleeding"
+  ]
+}

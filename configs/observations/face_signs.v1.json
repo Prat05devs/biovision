@@ -1,0 +1,257 @@
+{
+  "version": "face-observation-signs-v1",
+  "status": "requires_clinician_review",
+  "basis": "directional_not_diagnostic",
+  "warning": "These are visible signs, not findings. Each entry records what traditional systems associate with the sign and what modern clinical sources associate with it. The output is a direction to look in and a set of follow-up questions. It is never a diagnosis, and it must never be used to decide anything urgent.",
+  "sourceSystems": {
+    "ayurveda": {
+      "nameKey": "observations.systems.ayurveda",
+      "method": "Darshana Pariksha (inspection), part of Trividha and Ashtavidha Pariksha; the Drik (eyes) and Akriti (appearance) limbs are the facial ones.",
+      "reference": "Yogaratnakara, Ashtasthana Pariksha; Charaka Samhita, Vimana Sthana 4 (Trividha Pariksha)."
+    },
+    "modern_clinical": {
+      "nameKey": "observations.systems.clinical",
+      "method": "General physical examination of the face, eyes, and oral mucosa.",
+      "reference": "Standard clinical examination and dermatology literature, cited per sign."
+    }
+  },
+  "corroborationLevels": {
+    "corroborated": "Both a traditional system and modern clinical sources associate this sign with an overlapping area of health.",
+    "traditional_only": "Traditional systems associate this sign with an area of health; a matching modern clinical correlate is not recorded here."
+  },
+  "confidenceNote": "A phone photo is affected by lighting, camera quality, skin tone, and make-up. Signs are offered for the person to confirm or reject, because they can see themselves better than the camera can.",
+  "signs": [
+    {
+      "id": "conjunctival_pallor",
+      "region": "lower_eyelid",
+      "labelKey": "observations.signs.conjunctival_pallor.label",
+      "promptKey": "observations.signs.conjunctival_pallor.prompt",
+      "traditionalKey": "observations.signs.conjunctival_pallor.traditional",
+      "clinicalKey": "observations.signs.conjunctival_pallor.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Pandu (pallor); Pandu Roga is the classical description that maps most directly onto anemia.",
+      "clinicalCitation": "Conjunctival pallor is a long-established bedside sign of anemia and is the basis of the smartphone conjunctiva screening literature.",
+      "followUps": ["tiredness", "breathless_on_exertion", "diet_iron", "heavy_periods"]
+    },
+    {
+      "id": "scleral_yellowing",
+      "region": "sclera",
+      "labelKey": "observations.signs.scleral_yellowing.label",
+      "promptKey": "observations.signs.scleral_yellowing.prompt",
+      "traditionalKey": "observations.signs.scleral_yellowing.traditional",
+      "clinicalKey": "observations.signs.scleral_yellowing.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Kamala, described as a progression of Pandu with yellow discolouration of the eyes, skin, urine and stool.",
+      "clinicalCitation": "Scleral icterus is the classic visible sign of raised bilirubin and is checked in every routine physical examination.",
+      "followUps": ["urine_colour", "appetite_nausea", "abdominal_pain", "alcohol_intake"],
+      "priority": true
+    },
+    {
+      "id": "periorbital_darkening",
+      "region": "under_eye",
+      "labelKey": "observations.signs.periorbital_darkening.label",
+      "promptKey": "observations.signs.periorbital_darkening.prompt",
+      "traditionalKey": "observations.signs.periorbital_darkening.traditional",
+      "clinicalKey": "observations.signs.periorbital_darkening.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Associated with Vata aggravation, depleted reserves, poor sleep and irregular routine.",
+      "clinicalCitation": "Periorbital hyperpigmentation is described with iron-deficiency anemia, allergic rhinitis (allergic shiners), sleep deprivation, thyroid disorder, and a strong constitutional and familial component.",
+      "followUps": ["sleep_duration", "nasal_allergy", "screen_hours", "tiredness"]
+    },
+    {
+      "id": "lip_darkening",
+      "region": "lips",
+      "labelKey": "observations.signs.lip_darkening.label",
+      "promptKey": "observations.signs.lip_darkening.prompt",
+      "traditionalKey": "observations.signs.lip_darkening.traditional",
+      "clinicalKey": "observations.signs.lip_darkening.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Lip colour is read in Darshana as a reflection of digestion and of the state of the colon.",
+      "clinicalCitation": "Lip and oral hyperpigmentation is described with tobacco use (smoker's melanosis), vitamin B12 deficiency, adrenal insufficiency, certain drugs, dehydration, and constitutional pigmentation.",
+      "followUps": ["tobacco_use", "water_intake", "diet_b12", "tiredness"]
+    },
+    {
+      "id": "forehead_darkening",
+      "region": "forehead",
+      "labelKey": "observations.signs.forehead_darkening.label",
+      "promptKey": "observations.signs.forehead_darkening.prompt",
+      "traditionalKey": "observations.signs.forehead_darkening.traditional",
+      "clinicalKey": "observations.signs.forehead_darkening.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "The forehead is read as reflecting Agni, the digestive fire, and the regularity of routine.",
+      "clinicalCitation": "Patchy facial darkening over the forehead and cheeks is described with melasma, chronic sun exposure, hormonal change, and some medications.",
+      "followUps": ["sun_exposure", "skin_products", "hormonal_change"]
+    },
+    {
+      "id": "facial_acne",
+      "region": "face",
+      "labelKey": "observations.signs.facial_acne.label",
+      "promptKey": "observations.signs.facial_acne.prompt",
+      "traditionalKey": "observations.signs.facial_acne.traditional",
+      "clinicalKey": "observations.signs.facial_acne.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Read as Pitta and Kapha aggravation with impaired digestion; face mapping places forehead eruptions with digestion and jawline eruptions with hormonal cycles.",
+      "clinicalCitation": "Acne is driven by androgens and sebum; persistent adult jawline acne with irregular cycles is a recognised prompt to consider PCOS.",
+      "followUps": ["acne_duration", "cycle_regularity", "diet_sugar", "stress_level"]
+    },
+    {
+      "id": "eye_redness",
+      "region": "eyes",
+      "labelKey": "observations.signs.eye_redness.label",
+      "promptKey": "observations.signs.eye_redness.prompt",
+      "traditionalKey": "observations.signs.eye_redness.traditional",
+      "clinicalKey": "observations.signs.eye_redness.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Red eyes are read as Pitta excess, that is, accumulated heat, often with poor sleep.",
+      "clinicalCitation": "Red eyes are described with conjunctivitis, dry eye and prolonged screen use, allergy, and sleep deprivation.",
+      "followUps": ["eye_discomfort", "screen_hours", "sleep_duration", "nasal_allergy"]
+    },
+    {
+      "id": "facial_puffiness",
+      "region": "face",
+      "labelKey": "observations.signs.facial_puffiness.label",
+      "promptKey": "observations.signs.facial_puffiness.prompt",
+      "traditionalKey": "observations.signs.facial_puffiness.traditional",
+      "clinicalKey": "observations.signs.facial_puffiness.clinical",
+      "corroboration": "corroborated",
+      "traditionalSystems": ["ayurveda"],
+      "traditionalConcept": "Read as Kapha accumulation and Shotha, that is, retained fluid.",
+      "clinicalCitation": "Facial and periorbital puffiness, especially on waking, is described with kidney and thyroid disorders, allergy, and high salt intake.",
+      "followUps": ["swelling_elsewhere", "morning_puffiness", "salt_intake"]
+    }
+  ],
+  "followUpQuestions": [
+    {
+      "id": "tiredness",
+      "textKey": "observations.questions.tiredness",
+      "options": ["not_at_all", "several_days", "more_than_half", "nearly_every_day"]
+    },
+    {
+      "id": "breathless_on_exertion",
+      "textKey": "observations.questions.breathless_on_exertion",
+      "options": ["no", "heavy_activity", "usual_activity", "minimal_activity"]
+    },
+    {
+      "id": "diet_iron",
+      "textKey": "observations.questions.diet_iron",
+      "options": ["daily", "few_times_week", "rarely", "not_sure"]
+    },
+    {
+      "id": "heavy_periods",
+      "textKey": "observations.questions.heavy_periods",
+      "options": ["no", "yes", "not_applicable", "not_sure"]
+    },
+    {
+      "id": "urine_colour",
+      "textKey": "observations.questions.urine_colour",
+      "options": ["pale", "normal", "dark", "not_sure"]
+    },
+    {
+      "id": "appetite_nausea",
+      "textKey": "observations.questions.appetite_nausea",
+      "options": ["no", "mild", "marked", "not_sure"]
+    },
+    {
+      "id": "abdominal_pain",
+      "textKey": "observations.questions.abdominal_pain",
+      "options": ["no", "occasionally", "often", "not_sure"]
+    },
+    {
+      "id": "alcohol_intake",
+      "textKey": "observations.questions.alcohol_intake",
+      "options": ["never", "occasionally", "weekly", "daily"]
+    },
+    {
+      "id": "sleep_duration",
+      "textKey": "observations.questions.sleep_duration",
+      "options": ["under_5", "five_to_six", "seven_to_eight", "over_eight"]
+    },
+    {
+      "id": "nasal_allergy",
+      "textKey": "observations.questions.nasal_allergy",
+      "options": ["no", "sometimes", "often", "not_sure"]
+    },
+    {
+      "id": "screen_hours",
+      "textKey": "observations.questions.screen_hours",
+      "options": ["under_2", "two_to_five", "six_to_nine", "over_nine"]
+    },
+    {
+      "id": "tobacco_use",
+      "textKey": "observations.questions.tobacco_use",
+      "options": ["never", "former", "occasionally", "daily"]
+    },
+    {
+      "id": "water_intake",
+      "textKey": "observations.questions.water_intake",
+      "options": ["under_1l", "one_to_two_l", "over_two_l", "not_sure"]
+    },
+    {
+      "id": "diet_b12",
+      "textKey": "observations.questions.diet_b12",
+      "options": ["daily", "few_times_week", "rarely", "not_sure"]
+    },
+    {
+      "id": "sun_exposure",
+      "textKey": "observations.questions.sun_exposure",
+      "options": ["under_30_min", "thirty_to_ninety", "over_ninety", "not_sure"]
+    },
+    {
+      "id": "skin_products",
+      "textKey": "observations.questions.skin_products",
+      "options": ["no", "yes_recent", "yes_long_term", "not_sure"]
+    },
+    {
+      "id": "hormonal_change",
+      "textKey": "observations.questions.hormonal_change",
+      "options": ["no", "yes", "not_applicable", "not_sure"]
+    },
+    {
+      "id": "acne_duration",
+      "textKey": "observations.questions.acne_duration",
+      "options": ["under_3_months", "three_to_twelve_months", "over_a_year", "not_sure"]
+    },
+    {
+      "id": "cycle_regularity",
+      "textKey": "observations.questions.cycle_regularity",
+      "options": ["regular", "irregular", "not_applicable", "not_sure"]
+    },
+    {
+      "id": "diet_sugar",
+      "textKey": "observations.questions.diet_sugar",
+      "options": ["rarely", "few_times_week", "daily", "several_daily"]
+    },
+    {
+      "id": "stress_level",
+      "textKey": "observations.questions.stress_level",
+      "options": ["not_at_all", "several_days", "more_than_half", "nearly_every_day"]
+    },
+    {
+      "id": "eye_discomfort",
+      "textKey": "observations.questions.eye_discomfort",
+      "options": ["no", "mild", "marked", "with_discharge"]
+    },
+    {
+      "id": "swelling_elsewhere",
+      "textKey": "observations.questions.swelling_elsewhere",
+      "options": ["no", "ankles_feet", "hands", "not_sure"]
+    },
+    {
+      "id": "morning_puffiness",
+      "textKey": "observations.questions.morning_puffiness",
+      "options": ["no", "sometimes", "most_mornings", "not_sure"]
+    },
+    {
+      "id": "salt_intake",
+      "textKey": "observations.questions.salt_intake",
+      "options": ["low", "moderate", "high", "not_sure"]
+    }
+  ]
+}

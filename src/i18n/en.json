@@ -1,0 +1,1670 @@
+{
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "retry": "Try again",
+    "retake": "Retake",
+    "confirm": "Use this photo",
+    "next": "Next",
+    "done": "Done",
+    "yes": "Yes",
+    "no": "No",
+    "home": "Back to home",
+    "share": "Share summary",
+    "directions": "Directions",
+    "openSettings": "Open settings",
+    "notAvailable": "Not available",
+    "loading": "Please wait",
+    "close": "Close",
+    "selected": "Selected",
+    "learnMore": "Learn more"
+  },
+  "brand": {
+    "name": "BioVision",
+    "platform": "AI health scan & care navigation",
+    "eyebrow": "PRIVATE • GUIDED • CAMERA-FIRST"
+  },
+  "navigation": {
+    "language": "Language",
+    "scan": "Health scan",
+    "care": "Nearby care",
+    "wellbeing": "Wellbeing"
+  },
+  "notice": {
+    "title": "Important notice",
+    "medical": "BioVision gives health insights and guidance. It does not replace a doctor, laboratory tests or emergency care.",
+    "privacy": "Your scan is analysed on this phone. Video, photos and answers are not uploaded or saved to your photo library."
+  },
+  "home": {
+    "eyebrow": "A clearer next step for your health",
+    "title": "Understand your health. Know your next step.",
+    "description": "A 30-second face scan, two eye photos and a few questions give you a personal health report and a clear next step.",
+    "startScan": "Start health scan",
+    "time": "About 3 minutes · English & Hindi",
+    "checksTitle": "What BioVision measures",
+    "anemiaTitle": "Your everyday health",
+    "anemiaBody": "Explore energy, sleep, food, movement and your main concern.",
+    "vitalsTitle": "Video pulse estimates",
+    "vitalsBody": "A 30-second local face-video scan for experimental pulse and variability estimates, followed by face and eyelid photos.",
+    "questionsTitle": "Short health questions",
+    "questionsBody": "General questions about your concern, everyday habits and health context.",
+    "supportTitle": "Other support",
+    "wellbeing": "Mental wellbeing check",
+    "wellbeingBody": "A separate, private questionnaire with guidance.",
+    "care": "Find healthcare nearby",
+    "careBody": "Explore source-checked doctors and hospitals, with directions.",
+    "withoutCamera": "Answer questions without the camera",
+    "measures": {
+      "heart": {
+        "title": "Heart rate & HRV",
+        "body": "Pulse and heart-rate variability from tiny colour changes in your face."
+      },
+      "stress": {
+        "title": "Stress & recovery",
+        "body": "Stress index and recovery score from your beat-to-beat rhythm."
+      },
+      "breathing": {
+        "title": "Breathing rate",
+        "body": "Breaths per minute from the rhythm of your pulse wave."
+      },
+      "blood": {
+        "title": "Haemoglobin",
+        "body": "An anaemia check from the colour inside your lower eyelids."
+      },
+      "face": {
+        "title": "Face & skin signs",
+        "body": "Under-eye shading, eye redness, lip colour and skin tone checks."
+      },
+      "lifestyle": {
+        "title": "Lifestyle & BMI",
+        "body": "Sleep, activity, tobacco, alcohol and body-mass index against health guidelines."
+      }
+    }
+  },
+  "scanIntro": {
+    "step": "4 STEPS · ABOUT 3 MINUTES",
+    "title": "Your health scan",
+    "description": "Everything is analysed on this phone. Here is what happens next.",
+    "goodLight": "Soft, even light",
+    "goodLightBody": "Face a window or a bright room. Avoid strong light behind you.",
+    "steady": "Stay still",
+    "steadyBody": "Rest your phone at eye level and keep your head still during the scan.",
+    "eyeSafety": "Stay comfortable",
+    "eyeSafetyBody": "For the later eyelid photos, use clean hands, never touch the eye surface, and stop if uncomfortable.",
+    "privacy": "The vital scan processes live frames on this device and discards them. Photos are used only after you preview and confirm them.",
+    "begin": "Start",
+    "steps": {
+      "profile": {
+        "title": "About you",
+        "body": "Age and sex set the right reference ranges."
+      },
+      "face": {
+        "title": "30-second face scan",
+        "body": "Heart rate, HRV, stress, breathing and face signs."
+      },
+      "eyes": {
+        "title": "Two eye photos",
+        "body": "Gently pull down each lower eyelid for the haemoglobin check."
+      },
+      "questions": {
+        "title": "A few questions",
+        "body": "Symptoms and lifestyle for your report."
+      }
+    }
+  },
+  "permissions": {
+    "step": "CAMERA ACCESS",
+    "title": "Allow camera access",
+    "description": "The front camera is used for the face scan and the eye photos.",
+    "privateTitle": "Used only for this session",
+    "privateBody": "Everything is analysed on this phone. Nothing is recorded or uploaded.",
+    "allow": "Allow camera",
+    "deniedTitle": "Camera access is off",
+    "deniedBody": "Enable camera access in your device settings to continue the scan.",
+    "unavailableTitle": "Camera unavailable",
+    "unavailableBody": "The camera could not be opened. iOS Simulator cannot use the Mac camera; run the web build on this Mac or test on a physical phone.",
+    "researchTitle": "Help improve BioVision (optional)",
+    "researchBody": "Allow confirmed face/neck and eye photos, capture metadata, and versioned questionnaire responses to be securely retained for approved model research. This choice does not affect your screening and can be withdrawn.",
+    "researchSelected": "Research preference: opted in",
+    "researchNotSelected": "Research preference: not opted in",
+    "researchUnavailable": "You can record your preference here. Research collection is not enabled for this deployment, so selecting this does not upload or retain your photos. Camera access and this preference are separate."
+  },
+  "face": {
+    "title": "Face photo",
+    "subtitle": "Center your face and hold still while the live face map locks on.",
+    "guidance": {
+      "move_closer": "Move a little closer",
+      "move_back": "Move a little farther back",
+      "center_face": "Center your face in the oval",
+      "hold_still": "Hold still",
+      "improve_lighting": "Move to more even light",
+      "multiple_faces": "Only one face should be visible",
+      "face_not_found": "Bring your face into view",
+      "ready": "Perfect — tap to start"
+    },
+    "lighting": "Lighting",
+    "position": "Position",
+    "signal": "Alignment",
+    "good": "Good",
+    "searching": "Searching",
+    "unavailableTitle": "Face tracking unavailable",
+    "unavailableBody": "Automatic alignment is unavailable on this device. You can take a photo manually or continue without one.",
+    "continueWithout": "Continue without face photo",
+    "techLabel": "{{count}}-point face map · {{state}}",
+    "phase": {
+      "searching": "searching",
+      "locking": "face acquired",
+      "tracking": "tracking",
+      "complete": "complete",
+      "unavailable": "unavailable"
+    },
+    "noFaceTitle": "We can’t find a face",
+    "noFaceBody": "Make sure one face is visible inside the oval and the room is evenly lit.",
+    "devMock": "Development vision adapter",
+    "accessibilityCamera": "Front camera preview for face alignment",
+    "accessibilityCapture": "Capture aligned face photo",
+    "capture": "Take face photo",
+    "pulse": {
+      "label": "Pulse",
+      "unit": "BPM",
+      "simulated": "Simulated demo signal — not a measurement of you.",
+      "simulatedStatic": "Simulated demo signal — not a measurement of you.",
+      "accessibility": "Simulated demonstration pulse reading. This is not a measurement."
+    }
+  },
+  "facePreview": {
+    "step": "FACE PHOTO REVIEW",
+    "title": "Use this face photo?",
+    "description": "Make sure your full face, jawline, and upper neck are visible, centered, and evenly lit.",
+    "originalSaved": "Original frame preserved",
+    "retake": "Retake",
+    "continue": "Analyse this photo",
+    "missingTitle": "No face photo available",
+    "missingBody": "Return to the camera and take a face photo before continuing."
+  },
+  "vitals": {
+    "title": "Face scan",
+    "readyTitle": "One 30-second face scan",
+    "consent": "By tapping Start, you consent to local processing of the live camera feed for experimental pulse and variability estimates. Raw video is not saved or uploaded. One still frame is captured automatically at the end for appearance analysis.",
+    "aligned": "Face and lighting are ready.",
+    "align": "Center your face in even light and hold still.",
+    "start": "Start 30-second scan",
+    "viewResults": "View scan results",
+    "continueWithout": "Skip to eye photos",
+    "signal": "Signal",
+    "cameraError": "The camera could not start. Close the app and try again.",
+    "error": "The local signal engine could not start.",
+    "state": {
+      "initializing": "Starting…",
+      "warming_up": "Reading your pulse — keep still",
+      "measuring": "Measuring — keep still",
+      "complete": "Scan complete",
+      "poor_signal": "Weak signal — keep still and face the light",
+      "unavailable": "Heart scan is not available on this device",
+      "error": "The scan stopped. Try again."
+    },
+    "resultsTitle": "Camera estimates",
+    "resultsBody": "Each value states how it was produced. Camera and derived estimates can be affected by movement, lighting, skin appearance and device processing.",
+    "availableTitle": "Produced by this scan",
+    "needsOtherInputTitle": "Needs another measurement",
+    "needsOtherInputBody": "These values are not outputs of the installed camera model. They stay blank until a suitable validated sensor, model, or required input is connected.",
+    "localLabel": "PROCESSED ON THIS DEVICE · VIDEO DISCARDED",
+    "noResult": "No video result is available",
+    "noSignalTitle": "No reliable signal",
+    "noSignalBody": "The scan did not produce an acceptable pulse signal. This is an abstention, not a normal health result.",
+    "evidenceTitle": "How to read these values",
+    "evidenceBody": "Camera model means FacePhys analysed the video locally. Derived means a documented calculation used the captured waveform. Unavailable means the required sensor, validated model, or input is not connected. None of these values is a diagnosis.",
+    "evidence": {
+      "camera_model": "Camera model",
+      "derived": "Derived estimate",
+      "demo_only": "Demo only",
+      "unavailable": "Unavailable"
+    },
+    "metric": {
+      "heartRate": "Heart rate",
+      "heartRatePos": "Heart rate · POS baseline",
+      "hrvRmssd": "HRV (RMSSD)",
+      "hrvSdnn": "HRV (SDNN)",
+      "respiratoryRate": "Breathing rate",
+      "stressIndex": "Stress index",
+      "parasympatheticActivity": "Recovery score",
+      "cardiacWorkload": "Cardiac workload",
+      "bloodPressure": "Blood pressure",
+      "oxygenSaturation": "Oxygen saturation",
+      "glucose": "Glucose",
+      "hydration": "Hydration",
+      "bmi": "BMI",
+      "biologicalAge": "Biological age",
+      "diseaseRisk": "Disease risk"
+    },
+    "faceProfile": {
+      "title": "FACE GEOMETRY",
+      "body": "Measured from 478 face landmarks in your scan. Each index runs from 1 to 10.",
+      "loading": "Analysing your face and skin…",
+      "unavailableTitle": "Face geometry unavailable",
+      "unavailableBody": "The photo did not pass the single-face, pose, lighting, or resolution checks. Retake the scan in even light with your face straight toward the camera.",
+      "outOfTen": "out of 10",
+      "metric": {
+        "symmetry": "FACIAL SYMMETRY",
+        "jawline": "JAW TAPER",
+        "cheekbone": "CHEEK–JAW RATIO",
+        "eye": "EYE ASPECT",
+        "lip": "LIP HEIGHT RATIO",
+        "nose": "NOSE–EYE RATIO",
+        "proportion": "VISIBLE FACE THIRDS"
+      },
+      "value": {
+        "highly symmetric": "highly symmetric",
+        "balanced": "balanced",
+        "visible asymmetry": "visible asymmetry",
+        "broad": "broad",
+        "moderate": "moderate",
+        "tapered": "tapered",
+        "cheeks wider": "cheeks wider",
+        "moderate taper": "moderate taper",
+        "similar width": "similar width",
+        "elongated": "elongated",
+        "rounded": "rounded",
+        "fuller": "fuller",
+        "medium": "medium",
+        "slender": "slender",
+        "narrower": "narrower",
+        "wider": "wider",
+        "even": "even",
+        "moderately even": "moderately even",
+        "varied": "varied"
+      }
+    },
+    "hint": "Fit your face inside the mesh, then tap to start the 30-second scan.",
+    "weakSignal": "Keep still and face the light",
+    "weakSignalTitle": "We couldn’t read a clear pulse",
+    "weakSignalBody": "Face a window or bright light, rest your phone, keep still and tap the button to scan again."
+  },
+  "eyeIntro": {
+    "step": "STEP 3 OF 4",
+    "title": "Two eye photos",
+    "description": "The colour inside your lower eyelid shows how much haemoglobin your blood carries. We photograph the left and right eye separately.",
+    "instruction1": "With a clean finger, gently pull down your lower eyelid. Never touch the eye itself.",
+    "instruction2": "Face soft, even light. Avoid flash and glare.",
+    "instruction3": "Fill the oval with one eye and its inner eyelid, then tap.",
+    "dataTitle": "Private by design",
+    "dataBody": "The eye photos are analysed on this phone and are not uploaded.",
+    "continue": "Open camera"
+  },
+  "eyeCamera": {
+    "title": "Align your {{side}} eye",
+    "progress": "EYE {{current}} OF 2",
+    "side": {
+      "left": "left",
+      "right": "right"
+    },
+    "guidance": "Pull down your {{side}} lower eyelid and fill the oval",
+    "lighting": "Even light",
+    "sharpness": "Hold steady",
+    "capture": "Capture {{side}} eye",
+    "accessibilityCamera": "Front camera preview for lower-eyelid capture",
+    "accessibilityCapture": "Capture {{side}} lower-eyelid photo",
+    "cameraStarting": "Starting camera…"
+  },
+  "preview": {
+    "step": "EYE {{current}} OF 2 · PHOTO REVIEW",
+    "title": "Review your {{side}} eye photo",
+    "captureAlt": "The {{side}} eye photo you captured",
+    "description": "Check that the photo is sharp and the inner lower eyelid is clearly visible.",
+    "clear": "Only the requested eye and its full lower eyelid should fill the guide",
+    "sharp": "Fine details should look sharp, not blurry",
+    "light": "Lighting should be even, without glare",
+    "continueRight": "Continue to right eye",
+    "finish": "Use both eye photos",
+    "missingTitle": "No photo available",
+    "missingBody": "Return to the camera and capture a photo before continuing."
+  },
+  "processing": {
+    "step": "ANALYSING",
+    "title": "Analysing your eye photos",
+    "description": "This takes a few seconds.",
+    "prepare": "Reading photos",
+    "quality": "Checking light and focus",
+    "analyze": "Estimating haemoglobin",
+    "summary": "Preparing your questions",
+    "qualityErrorTitle": "A clearer image is needed",
+    "qualityErrorBody": "One photo was too dark, too bright, or the two eyes did not match. Retake both in soft, even light.",
+    "serviceErrorTitle": "We couldn’t complete the screening",
+    "serviceErrorBody": "Please try again.",
+    "retake": "Retake eye photos"
+  },
+  "questions": {
+    "step": "HEALTH QUESTIONS",
+    "progress": "Question {{current}} of {{total}}",
+    "adaptiveProgress": "Question {{current}} · the assessment will stop when it has enough context",
+    "description": "Choose the answer that fits best.",
+    "followUpDescription": "A little more detail helps us suggest the right doctor.",
+    "sections": {
+      "safety": "Safety check",
+      "fatigue": "Energy and fatigue",
+      "fatigueFollowUp": "About your fatigue",
+      "breathlessness": "Breathing",
+      "breathlessnessFollowUp": "About your breathlessness",
+      "healthContext": "Health background",
+      "concern": "Your main concern",
+      "tiredness": "Tiredness",
+      "breathing": "Breathing",
+      "heart": "Heart",
+      "skin": "Skin, hair & nails",
+      "mood": "Mood & sleep",
+      "head": "Head & nerves",
+      "metabolic": "Sugar, thyroid & weight",
+      "stomach": "Stomach & digestion",
+      "joints": "Joints & back",
+      "ent": "Ear, nose & throat",
+      "eyes": "Eyes",
+      "womens": "Women's health",
+      "concernDetails": "About this problem"
+    },
+    "required": "Choose an answer to continue.",
+    "urgent_symptoms": "Right now, do you have any emergency signs: chest pain or pressure, fainting, trouble breathing even while resting, sudden weakness or slurred speech, or heavy bleeding?",
+    "fatigue": "Do you frequently feel unusually tired?",
+    "fatigue_frequency": "How often have you been feeling unusually tired?",
+    "fatigue_duration": "How long has this unusual tiredness been present?",
+    "fatigue_impact": "How much does the tiredness affect your usual activities?",
+    "breathlessness": "Do you experience breathlessness during normal activity?",
+    "breathlessness_trigger": "What level of activity usually brings on the breathlessness?",
+    "breathlessness_onset": "Did the breathlessness begin gradually or suddenly?",
+    "breathlessness_duration": "How long has this breathlessness been present?",
+    "recent_cbc": "When did you last have a blood test (CBC)?",
+    "family_history": "Do you have a family history of a relevant blood condition?",
+    "options": {
+      "never": "Never / not sure",
+      "within_3_months": "Within 3 months",
+      "more_than_3_months": "More than 3 months ago",
+      "some_days": "On some days",
+      "most_days": "On most days",
+      "every_day": "Every day",
+      "under_2_weeks": "Less than 2 weeks",
+      "two_to_six_weeks": "2 to 6 weeks",
+      "over_6_weeks": "More than 6 weeks",
+      "noticeable_only": "I notice it, but my routine is the same",
+      "slows_activities": "It slows me down",
+      "limits_activities": "It stops me doing normal things",
+      "heavy_activity": "Only during heavy activity",
+      "usual_activity": "During usual daily activity",
+      "minimal_activity": "With very little activity",
+      "gradual": "Gradually",
+      "sudden": "Suddenly",
+      "not_sure": "Not sure",
+      "not_at_all": "Not at all",
+      "several_days": "Several days",
+      "more_than_half": "More than half the days",
+      "nearly_every_day": "Nearly every day",
+      "not_difficult": "Not difficult at all",
+      "somewhat_difficult": "Somewhat difficult",
+      "very_difficult": "Very difficult",
+      "extremely_difficult": "Extremely difficult",
+      "none": "Nothing in particular — just a health check",
+      "tiredness": "Tiredness or low energy",
+      "breathing": "Breathlessness or cough",
+      "heart": "Palpitations, chest discomfort or swelling",
+      "skin": "Skin, hair or nails",
+      "mood": "Mood, anxiety, stress or sleep",
+      "head": "Headache, dizziness or numbness",
+      "metabolic": "Thirst, weight change or thyroid",
+      "stomach": "Stomach, acidity or bowels",
+      "joints": "Joint, back or neck pain",
+      "ent": "Ear, nose or throat",
+      "eyes": "Eyes or vision",
+      "womens": "Periods, pregnancy or menopause",
+      "no_other_signs": "None of these",
+      "weight_change": "Unplanned weight change",
+      "thirst_urination": "Very thirsty or urinating often",
+      "cold_hair_loss": "Feeling cold, dry skin or hair loss",
+      "heavy_periods": "Heavy periods",
+      "snoring_sleep": "Loud snoring or waking unrefreshed",
+      "no_cough": "No",
+      "dry_cough": "Dry cough",
+      "cough_phlegm": "Cough with phlegm",
+      "wheeze": "Wheezing or tight chest",
+      "cough_blood": "Coughing up blood",
+      "palpitations": "Racing, pounding or irregular heartbeat",
+      "chest_on_exertion": "Chest discomfort when walking or climbing stairs",
+      "ankle_swelling": "Swollen ankles or feet",
+      "dizziness_standing": "Dizzy when standing up",
+      "rash_itch": "Rash or itching",
+      "acne": "Acne or pimples",
+      "pigmentation": "Dark patches or uneven skin tone",
+      "hair_nails": "Hair fall or nail changes",
+      "mole_change": "A mole or spot that is new or changing",
+      "low_mood": "Low mood or loss of interest",
+      "anxiety": "Worry, nervousness or panic",
+      "poor_sleep": "Trouble sleeping",
+      "stress_burnout": "Stress or burnout",
+      "headache": "Headache",
+      "dizziness": "Dizziness or spinning",
+      "numbness_tingling": "Numbness or tingling",
+      "memory_concentration": "Memory or concentration problems",
+      "occasional": "Now and then",
+      "frequent": "Often, or getting worse",
+      "sudden_severe": "Came on suddenly and is the worst ever",
+      "weight_gain": "Weight gain",
+      "weight_loss": "Weight loss without trying",
+      "thyroid_signs": "Neck swelling, or feeling too hot or cold",
+      "none_known": "No",
+      "diabetes": "Diabetes",
+      "thyroid": "Thyroid problem",
+      "both_conditions": "Both",
+      "acidity": "Acidity or heartburn",
+      "abdominal_pain": "Stomach pain",
+      "bowel_change": "Constipation or loose motions",
+      "nausea_vomiting": "Nausea or vomiting",
+      "no_alarm": "None of these",
+      "unplanned_weight_loss": "Weight loss without trying",
+      "trouble_swallowing": "Difficulty swallowing",
+      "black_or_bloody_stool": "Black stools or blood in stool or vomit",
+      "knee_hip": "Knee or hip",
+      "back_neck": "Back or neck",
+      "hands_fingers": "Hands, wrists or fingers",
+      "after_injury": "After a fall or injury",
+      "ear_pain_discharge": "Ear pain or discharge",
+      "hearing_loss": "Hearing loss or ringing",
+      "nose_sinus": "Blocked nose or sinus",
+      "throat": "Sore throat or voice change",
+      "red_itchy": "Red, itchy or watery eyes",
+      "blurred_vision": "Blurred vision",
+      "eye_pain": "Eye pain",
+      "sudden_vision_loss": "Sudden loss of vision",
+      "irregular_periods": "Irregular or missed periods",
+      "heavy_periods_w": "Heavy or painful periods",
+      "pregnancy_care": "Pregnancy or planning pregnancy",
+      "menopause": "Menopause symptoms",
+      "pelvic_pain_discharge": "Pelvic pain or unusual discharge",
+      "no_condition": "No",
+      "diabetes_c": "Diabetes",
+      "high_bp": "High blood pressure",
+      "thyroid_c": "Thyroid problem",
+      "heart_disease": "Heart disease",
+      "asthma_copd": "Asthma or COPD",
+      "other_condition": "Something else"
+    },
+    "navTitle": "Health questions",
+    "progressCount": "Question {{current}}",
+    "main_concern": "What is bothering you the most at the moment?",
+    "tired_signs": "Along with tiredness, have you noticed any of these?",
+    "breath_trigger": "When does the breathlessness come on?",
+    "breath_cough": "Do you also have a cough or wheeze?",
+    "heart_symptom": "Which describes it best?",
+    "heart_near_faint": "Have you nearly fainted or blacked out with it?",
+    "skin_type": "What kind of skin, hair or nail problem is it?",
+    "skin_spreading": "Is it spreading or getting worse?",
+    "mood_type": "Which fits best?",
+    "mood_frequency": "Over the last 2 weeks, how often has this bothered you?",
+    "mood_self_harm": "In the last 2 weeks, have you had thoughts that you would be better off dead, or of hurting yourself?",
+    "head_type": "What are you experiencing?",
+    "head_pattern": "How does it happen?",
+    "metabolic_type": "What have you noticed?",
+    "known_condition": "Have you been told you have diabetes or a thyroid problem?",
+    "stomach_type": "What is the main problem?",
+    "stomach_alarm": "Have you noticed any of these?",
+    "joint_site": "Where is the pain?",
+    "joint_swelling": "Is the joint swollen, warm or stiff in the morning?",
+    "ent_type": "What is the problem?",
+    "eye_type": "What is happening with your eyes?",
+    "womens_type": "What would you like help with?",
+    "concern_duration": "How long has this been going on?",
+    "concern_impact": "How much does it affect your daily life?",
+    "existing_condition": "Do you have a long-term health condition?"
+  },
+  "result": {
+    "experimentalAnemia": "Experimental conjunctiva model estimate",
+    "anemiaProbability": "Model anemia probability: {{value}}%",
+    "anemiaModelLimit": "Compared with laboratory haemoglobin, this model reported a 1.52 g/dL mean absolute error in a small paediatric validation split. Confirm with a CBC test.",
+    "eyebrow": "SCAN COMPLETE",
+    "title": "Your health report",
+    "screeningResult": "Screening result",
+    "questionnaireTitle": "Question-based guidance",
+    "questionnaireSummary": {
+      "noSpecificConcern": "Nothing in your answers or scan needs a doctor's visit right now. A yearly check-up is still a good idea.",
+      "followUp": "Book an appointment with the doctor below in the next few weeks.",
+      "prompt": "Please see the doctor below within the next few days. Go to emergency care if it gets worse suddenly."
+    },
+    "questionnaireEvidence": {
+      "fatigue": "Unusual tiredness was reported",
+      "breathlessness": "Breathlessness was reported"
+    },
+    "signal": {
+      "low": "Haemoglobin normal",
+      "moderate": "Haemoglobin borderline",
+      "elevated": "Haemoglobin low",
+      "unavailable": "Haemoglobin not measured"
+    },
+    "lowSummary": "The visual screening did not highlight a strong signal in this image.",
+    "moderateSummary": "The visual screening found features that may deserve further checking.",
+    "elevatedSummary": "Further medical investigation may be useful based on this screening signal.",
+    "unavailableSummary": "A reliable screening signal could not be produced.",
+    "whatObserved": "What was observed",
+    "observed": "Haemoglobin was estimated from the colour of your inner lower eyelids.",
+    "observedUnavailable": "Haemoglobin could not be estimated from these photos.",
+    "whyMatter": "Why it may matter",
+    "why": "Some conjunctival colour patterns can be associated with lower hemoglobin, but a camera screening cannot confirm anemia.",
+    "whyQuestionnaireOnly": "The guidance shown here comes from the symptoms you reported. It does not identify a disease or replace a clinical assessment.",
+    "confirmTitle": "What can confirm it",
+    "test": "CBC / Hemoglobin Test",
+    "whoHelp": "Who may help",
+    "physician": "General Physician",
+    "careCaption": "Verified hospitals and doctors in your area, with directions.",
+    "nearby": "View nearby healthcare",
+    "fullReport": "View full report",
+    "hemoglobinReference": "Healthy for your age and sex: {{value}} g/dL or above (WHO).",
+    "anemiaAdultCaveat": "This model was trained only on photos of children under 5. For older children and adults its estimate is less reliable — use it as a prompt to get a CBC test, not as a result.",
+    "sections": {
+      "heart": "Heart, stress & breathing",
+      "blood": "Haemoglobin",
+      "face": "Face & skin",
+      "lifestyle": "Lifestyle",
+      "next": "Next steps"
+    },
+    "heartMissing": "No clear pulse was captured in the face scan.",
+    "scanAgain": "Scan again",
+    "hemoglobin": "Estimated haemoglobin",
+    "hemoglobinStatus": {
+      "normal": "Normal",
+      "borderline": "Borderline",
+      "low": "Low"
+    },
+    "hemoglobinAdvice": {
+      "normal": "Your eyelid colour points to a healthy haemoglobin level.",
+      "borderline": "Close to the lower limit. A CBC blood test will give you an exact value.",
+      "low": "This suggests anaemia. Get a CBC blood test and see a doctor."
+    },
+    "bloodMissing": "The inner eyelid was not clear enough in the photos to estimate haemoglobin.",
+    "faceStatus": {
+      "noticed": "Noticed",
+      "not_flagged": "Normal",
+      "not_assessable": "Not clear"
+    },
+    "range": {
+      "normal": "Normal",
+      "low": "Below range",
+      "high": "Above range"
+    },
+    "typicalRange": "Typical: {{range}}",
+    "metricInfo": {
+      "heartRate": "How many times your heart beats in a minute while resting.",
+      "hrvRmssd": "Heart-rate variability: how much the gap between beats changes. Higher usually means a relaxed, well-recovered body.",
+      "hrvSdnn": "Overall variation in your heartbeat rhythm. Higher values usually mean a healthier, more adaptable heart.",
+      "stressIndex": "How hard your nervous system is working. Lower is calmer; above 150 suggests stress or fatigue.",
+      "parasympatheticActivity": "Your body's rest-and-recover activity, scored out of 100. Higher means better recovery.",
+      "respiratoryRate": "Breaths per minute, read from the rhythm of your pulse."
+    },
+    "healthApps": {
+      "title": "Open your health or fitness app",
+      "body": "Compare with readings from Apple Health or your fitness band.",
+      "pickerTitle": "Open a health app",
+      "pickerBody": "Opens the app if it is installed, otherwise the App Store."
+    },
+    "care": {
+      "recommended": "RECOMMENDED DOCTOR",
+      "why": "WHY",
+      "tests": "TESTS TO ASK ABOUT",
+      "find": "Find {{specialty}} near you",
+      "also": "Also consider: {{specialty}}",
+      "alsoLabel": "Also consider",
+      "timing": {
+        "routine": "For a routine check-up",
+        "follow_up": "Book within the next few weeks",
+        "prompt": "See a doctor within a few days"
+      }
+    }
+  },
+  "report": {
+    "eyebrow": "SCREENING REPORT",
+    "title": "Health screening report",
+    "status": "Scan status",
+    "completed": "Completed",
+    "heartRate": "Heart rate",
+    "heartRateValue": "{{value}} bpm",
+    "heartRateUnavailable": "Not measured reliably",
+    "anemia": "Haemoglobin",
+    "answers": "Questions answered",
+    "answersCount": "{{count}} answers",
+    "nextStep": "Recommended next step",
+    "privacy": "This temporary report is not saved by default.",
+    "disclaimer": "Health scan summary",
+    "share": "Create shareable summary"
+  },
+  "share": {
+    "eyebrow": "SHARE",
+    "title": "Your health report",
+    "description": "Share a PDF with your doctor or family, or send a quick text summary. Photos are never included.",
+    "checked": "Health signals checked",
+    "checkedValue": "Visual anemia screening and guided health questions",
+    "attention": "Signal worth checking",
+    "action": "Recommended action",
+    "care": "Suggested care category",
+    "footer": "Created with BioVision",
+    "shareButton": "Share this summary",
+    "shareMessage": "BioVision health report\n\nHaemoglobin: {{signal}}\nRecommended action: {{action}}\nSuggested care: {{care}}",
+    "pdfButton": "Share PDF report",
+    "textButton": "Share as text",
+    "pdfFailed": "The PDF could not be created. Try again, or share as text.",
+    "pdfFooter": "Generated by BioVision from a camera scan and your answers. These are health insights, not a medical diagnosis — confirm important results with a doctor or laboratory test.",
+    "age": "Age {{age}}",
+    "pregnant": "Pregnant"
+  },
+  "care": {
+    "eyebrow": "CARE NAVIGATION",
+    "title": "Care in {{city}}",
+    "description": "Find real doctors and hospitals by specialty. Start with general medicine if you are unsure.",
+    "locationTitle": "Use your location for distance",
+    "locationBody": "Location is requested only when you choose this option.",
+    "useLocation": "Use my location",
+    "locationReady": "Location enabled",
+    "locationDenied": "Location access is off. You can still browse the area list without distance sorting.",
+    "locationUnavailable": "Your location could not be found. Showing the area list instead.",
+    "mockNotice": "Demonstration data—not a verified healthcare directory.",
+    "filters": {
+      "all": "All",
+      "hospital": "Hospitals",
+      "clinic": "Clinics",
+      "diagnostic_lab": "Labs",
+      "government_health_centre": "Health centres",
+      "mental_health_service": "Mental health"
+    },
+    "types": {
+      "hospital": "Hospital",
+      "clinic": "Doctor",
+      "diagnostic_lab": "Diagnostic lab",
+      "government_health_centre": "Government health centre",
+      "mental_health_service": "Mental health service"
+    },
+    "government": "Government",
+    "unverified": "Demo listing",
+    "distance": "{{distance}} km away",
+    "details": "View details",
+    "empty": "No demonstration listings match this filter.",
+    "map": "Map view",
+    "mapUnavailableTitle": "Map view is not configured yet",
+    "mapUnavailableBody": "The list and directions links are ready. A native map provider can be added without changing facility data.",
+    "list": "Return to list",
+    "detailTitle": "Facility details",
+    "specialties": "Relevant services",
+    "verification": "Verification status",
+    "notVerified": "This demonstration listing must be replaced with verified facility data before production use.",
+    "missing": "Facility not found",
+    "mockNames": {
+      "hospital": "Demonstration District Hospital",
+      "clinic": "Demonstration Community Clinic",
+      "lab": "Demonstration Diagnostic Centre",
+      "centre": "Demonstration Government Health Centre",
+      "mental": "Demonstration Wellbeing Centre"
+    },
+    "mockAddresses": {
+      "central": "Central Dehradun area • demonstration location",
+      "north": "North Dehradun area • demonstration location",
+      "east": "East Dehradun area • demonstration location",
+      "south": "South Dehradun area • demonstration location",
+      "west": "West Dehradun area • demonstration location"
+    },
+    "directoryNote": "{{count}} doctors and hospitals in {{city}}, taken from each hospital's official website. Call the hospital to confirm OPD timings before visiting.",
+    "search": "Search doctor, specialty or hospital",
+    "source": "View official source",
+    "checked": "Source checked {{date}}",
+    "googleMaps": "Open Google Maps",
+    "mapBody": "Explore hospitals in {{city}} on Google Maps, or select a provider in the list for directions.",
+    "count": "{{count}} matching listings",
+    "allSpecialties": "All specialties",
+    "providerNote": "Doctor listed at this hospital. Directions lead to the hospital, not a separate private clinic. Confirm the appointment with the hospital.",
+    "call": "Call hospital · {{phone}}",
+    "reasons": {
+      "concern": {
+        "tiredness": "You reported tiredness or low energy.",
+        "breathing": "You reported breathlessness or cough.",
+        "heart": "You reported a heart-related symptom.",
+        "skin": "You reported a skin, hair or nail problem.",
+        "mood": "You reported problems with mood, anxiety, stress or sleep.",
+        "head": "You reported headache, dizziness or numbness.",
+        "metabolic": "You reported thirst, weight change or thyroid symptoms.",
+        "stomach": "You reported a stomach or digestion problem.",
+        "joints": "You reported joint, back or neck pain.",
+        "ent": "You reported an ear, nose or throat problem.",
+        "eyes": "You reported an eye or vision problem.",
+        "womens": "You asked about periods, pregnancy or menopause."
+      },
+      "duration": "It has lasted 2 weeks or more.",
+      "limitsActivities": "It stops you doing normal things.",
+      "tiredSigns": {
+        "thirst_urination": "Thirst and frequent urination can point to high blood sugar.",
+        "weight_change": "Unplanned weight change with tiredness can be thyroid or sugar related.",
+        "cold_hair_loss": "Feeling cold and hair loss can point to an underactive thyroid.",
+        "heavy_periods": "Heavy periods are a common cause of low iron.",
+        "snoring_sleep": "Loud snoring with tiredness can be sleep apnoea."
+      },
+      "breathMinimal": "Breathlessness with very little activity needs an early check.",
+      "wheeze": "Wheezing can be asthma.",
+      "chestOnExertion": "Chest discomfort on exertion needs a heart check soon.",
+      "nearFaint": "Nearly fainting needs an early heart check.",
+      "moleChange": "A new or changing mole should be seen soon.",
+      "skinSpreading": "It is spreading or getting worse.",
+      "moodDaily": "Symptoms nearly every day for 2 weeks deserve prompt support.",
+      "moodFrequent": "Symptoms on most days for 2 weeks deserve support.",
+      "numbness": "New numbness or tingling should be checked soon.",
+      "headFrequent": "Frequent or worsening headaches should be checked.",
+      "weightLoss": "Weight loss without trying should be checked soon.",
+      "thirst": "Thirst and frequent urination can be a sign of diabetes.",
+      "stomachAlarm": {
+        "unplanned_weight_loss": "Stomach symptoms with weight loss should be checked soon.",
+        "trouble_swallowing": "Difficulty swallowing should be checked soon."
+      },
+      "jointSwelling": "Swollen or stiff joints can be arthritis.",
+      "eye": {
+        "eye_pain": "Eye pain should be seen soon.",
+        "blurred_vision": "New blurred vision should be checked soon."
+      },
+      "heartRateHigh": "Your resting heart rate was high ({{value}} BPM).",
+      "heartRateLow": "Your resting heart rate was low ({{value}} BPM).",
+      "breathingFast": "Your breathing rate was fast ({{value}} per minute).",
+      "stressHigh": "Your stress index was high ({{value}}).",
+      "hbLow": "Your estimated haemoglobin was low ({{value}} g/dL).",
+      "hbBorderline": "Your estimated haemoglobin was borderline ({{value}} g/dL).",
+      "bmiHigh": "Your BMI of {{value}} raises the risk of diabetes and heart disease.",
+      "child": "Children are best seen by a paediatrician.",
+      "pregnant": "During pregnancy your obstetrician should review this.",
+      "routineCheck": "A general physician can do a routine health check."
+    },
+    "tests": {
+      "cbc": "CBC (blood count)",
+      "ironStudies": "Iron studies",
+      "thyroid": "Thyroid (TSH)",
+      "bloodSugar": "Blood sugar (HbA1c)",
+      "vitaminB12D": "Vitamin B12 & D",
+      "lipidProfile": "Cholesterol (lipid profile)",
+      "ecg": "ECG",
+      "chestXray": "Chest X-ray",
+      "spirometry": "Lung function test",
+      "bloodPressure": "Blood pressure",
+      "eyeExam": "Eye examination",
+      "hearingTest": "Hearing test",
+      "liverKidney": "Liver & kidney tests"
+    }
+  },
+  "wellbeing": {
+    "eyebrow": "MENTAL WELLBEING",
+    "title": "A short, private check-in",
+    "description": "A brief, stepped check-in about how you have been feeling. It starts with four questions and only asks more if your answers suggest it would help. Your face is never used to infer mental health.",
+    "notDiagnosis": "This check-in screens for symptoms and suggests a next step. It is not a diagnosis. Only a qualified clinician can diagnose a mental-health condition.",
+    "start": "Start wellbeing check",
+    "howTitle": "How it works",
+    "howBody": "{{count}} questions to begin, about the last {{days}} days. More are asked only if your answers suggest a closer look would help.",
+    "instrumentsTitle": "Questions from published screeners",
+    "instrumentsBody": "Uses the PHQ and GAD questionnaires, which are in the public domain and widely used in clinics.",
+    "privacyBody": "Answers stay on your device for this check-in and are not saved when you leave.",
+    "screenVersion": "Screen version {{version}}",
+    "questionCount": "Question {{count}}",
+    "recallPeriod": "Thinking about the last {{days}} days",
+    "sections": {
+      "mood": "MOOD",
+      "moodDetail": "MOOD — A FEW MORE",
+      "safety": "YOUR SAFETY",
+      "anxiety": "ANXIETY",
+      "anxietyDetail": "ANXIETY — A FEW MORE",
+      "impact": "DAY-TO-DAY IMPACT"
+    },
+    "items": {
+      "interest": "Over the last 2 weeks, how often have you had little interest or pleasure in doing things?",
+      "mood": "Over the last 2 weeks, how often have you felt down, depressed, or hopeless?",
+      "sleep": "Over the last 2 weeks, how often have you had trouble falling asleep, staying asleep, or slept too much?",
+      "energy": "Over the last 2 weeks, how often have you felt tired or had little energy?",
+      "appetite": "Over the last 2 weeks, how often have you had a poor appetite or been overeating?",
+      "selfWorth": "Over the last 2 weeks, how often have you felt bad about yourself, or that you are a failure or have let yourself or your family down?",
+      "concentration": "Over the last 2 weeks, how often have you had trouble concentrating on things such as reading or watching television?",
+      "psychomotor": "Over the last 2 weeks, how often have you been moving or speaking so slowly that others could notice — or been so restless that you were moving around more than usual?",
+      "selfHarm": "Over the last 2 weeks, how often have you had thoughts that you would be better off dead, or of hurting yourself in some way?",
+      "nervous": "Over the last 2 weeks, how often have you felt nervous, anxious, or on edge?",
+      "worryControl": "Over the last 2 weeks, how often have you been unable to stop or control worrying?",
+      "worryExcess": "Over the last 2 weeks, how often have you worried too much about different things?",
+      "relax": "Over the last 2 weeks, how often have you had trouble relaxing?",
+      "restless": "Over the last 2 weeks, how often have you been so restless that it is hard to sit still?",
+      "irritable": "Over the last 2 weeks, how often have you become easily annoyed or irritable?",
+      "dread": "Over the last 2 weeks, how often have you felt afraid, as if something awful might happen?",
+      "difficulty": "How difficult have these problems made it to do your work, take care of things at home, or get along with other people?"
+    },
+    "scales": {
+      "phq2": "Mood (PHQ-2)",
+      "phq9": "Mood (PHQ-9)",
+      "gad2": "Anxiety (GAD-2)",
+      "gad7": "Anxiety (GAD-7)"
+    },
+    "bands": {
+      "phq2": {
+        "negative": "Below the threshold that suggests a closer look",
+        "positive": "At or above the threshold for a closer look at mood"
+      },
+      "phq9": {
+        "minimal": "Minimal depressive symptoms",
+        "mild": "Mild depressive symptoms",
+        "moderate": "Moderate depressive symptoms",
+        "moderatelySevere": "Moderately severe depressive symptoms",
+        "severe": "Severe depressive symptoms"
+      },
+      "gad2": {
+        "negative": "Below the threshold that suggests a closer look",
+        "positive": "At or above the threshold for a closer look at anxiety"
+      },
+      "gad7": {
+        "minimal": "Minimal anxiety symptoms",
+        "mild": "Mild anxiety symptoms",
+        "moderate": "Moderate anxiety symptoms",
+        "severe": "Severe anxiety symptoms"
+      }
+    },
+    "monitor": "Your answers do not point to a specific concern right now. Keep an eye on how you feel, and make time for rest, routine, and people you trust.",
+    "support": "Your answers suggest it would help to speak with a qualified counsellor or mental-health professional.",
+    "promptReview": "Your answers point to a level of distress that deserves prompt attention. Please arrange to speak with a mental-health professional soon.",
+    "urgent": "You mentioned thoughts of being better off dead or of hurting yourself. Please talk to someone now — you do not have to handle this alone.",
+    "resultEyebrow": "WELLBEING GUIDANCE",
+    "resultTitle": "Your next step",
+    "suggestedCare": "Suggested care: {{care}}",
+    "scoresTitle": "What your answers scored",
+    "scoresBody": "These are symptom-severity totals from published screening questionnaires. They describe how you answered — they are not a diagnosis.",
+    "scoreOf": "{{score}} of {{maximum}}",
+    "resources": {
+      "telemanas": {
+        "name": "Tele-MANAS",
+        "description": "India's national 24x7 mental-health helpline. Free, confidential, and available in 20 languages."
+      },
+      "kiran": {
+        "name": "KIRAN",
+        "description": "A 24x7 toll-free mental-health rehabilitation helpline available in 13 languages."
+      }
+    },
+    "supportTitle": "Talk to someone now",
+    "supportEyebrow": "SUPPORT",
+    "supportDescription": "These helplines are run by official bodies and are free to call. You do not need a diagnosis or a referral to use them.",
+    "verifiedOn": "Details verified {{date}}",
+    "noVerifiedContact": "No verified helpline is configured for your region",
+    "nearby": "Find nearby mental-health services",
+    "regions": {
+      "IN": "India"
+    },
+    "crisis": {
+      "link": "Need to talk to someone now?",
+      "linkAccessibility": "Open crisis support and helpline numbers",
+      "eyebrow": "IMMEDIATE SUPPORT",
+      "itemNotice": "If you are thinking about harming yourself, please reach out now. Support is one tap away on this screen, whatever you answer here.",
+      "emergencyTitle": "In immediate danger",
+      "emergencyBody": "If you or someone else is at immediate risk of harm, contact emergency services right away.",
+      "callNumber": "Call {{number}}",
+      "noDirectory": "This build has no verified helpline for your region. Please contact your local emergency service or a nearby health facility."
+    },
+    "talkToSomeone": "Talk to someone"
+  },
+  "emergency": {
+    "eyebrow": "URGENT GUIDANCE",
+    "title": "Immediate medical attention recommended",
+    "description": "The assessment service flagged that urgent support may be appropriate. BioVision does not diagnose or manage emergencies.",
+    "instruction": "Contact local emergency services or go to the nearest emergency-care facility now. Do not rely on this app for emergency care.",
+    "call": "Call configured emergency contact",
+    "nearby": "Find emergency care",
+    "noPhone": "No verified emergency number is configured. Contact your local emergency service.",
+    "noNumber": "No verified emergency number is configured in this build. Use your local official emergency service.",
+    "mentalHealthMessage": "You don't have to face this alone. Talk to someone now."
+  },
+  "settings": {
+    "eyebrow": "PREFERENCES",
+    "title": "Choose language",
+    "description": "Only this language preference is saved on your device.",
+    "english": "English",
+    "hindi": "हिन्दी",
+    "saved": "Language updated",
+    "screenTitle": "Settings",
+    "general": "GENERAL",
+    "about": "ABOUT",
+    "howItWorks": "How BioVision works",
+    "medical": "Medical information",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "acknowledgements": "Acknowledgements",
+    "version": "Version {{version}} ({{build}})"
+  },
+  "specialties": {
+    "generalPhysician": "General Physician",
+    "internalMedicine": "Internal Medicine",
+    "diagnosticServices": "CBC / blood tests",
+    "emergencyCare": "Emergency Care",
+    "counsellor": "Counsellor",
+    "mentalHealthProfessional": "Mental-health professional",
+    "cardiology": "Cardiology",
+    "pulmonology": "Respiratory medicine",
+    "dermatology": "Dermatology",
+    "psychiatry": "Psychiatry",
+    "ophthalmology": "Eye care",
+    "paediatrics": "Paediatrics",
+    "gynaecology": "Gynaecology",
+    "orthopaedics": "Orthopaedics",
+    "neurology": "Neurology",
+    "ent": "ENT",
+    "endocrinology": "Endocrinology (diabetes & thyroid)",
+    "nephrology": "Kidney care",
+    "gastroenterology": "Gastroenterology",
+    "generalSurgery": "General Surgery"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "body": "BioVision could not display this screen. No medical result was created.",
+    "imageQuality": "The image quality was too low to assess.",
+    "network": "Check your internet connection and try again.",
+    "server": "The screening service is unavailable. Try again later.",
+    "invalid": "The service returned an invalid response.",
+    "model": "The screening model is currently unavailable."
+  },
+  "lifestyle": {
+    "navTitle": "Lifestyle",
+    "step": "STEP 4 OF 4",
+    "description": "Your answers shape the lifestyle part of your report.",
+    "progress": "Question {{current}} of {{total}}",
+    "range": "Enter a value between {{min}} and {{max}}.",
+    "skip": "Skip this question",
+    "finish": "See my results",
+    "sectionTitle": "Lifestyle profile",
+    "answeredOf": "{{answered}} of {{total}} answered",
+    "summaryAllOk": "Your answers are within the published reference ranges shown below.",
+    "summaryAttention_one": "1 area is outside the published reference range.",
+    "summaryAttention_other": "{{count}} areas are outside the published reference ranges.",
+    "empty": "No lifestyle answers were provided, so this section is empty.",
+    "disclaimer": "General health information based on what you reported, compared with published population guidelines. Not a diagnosis.",
+    "q": {
+      "sleepHours": "On a typical night, how many hours do you sleep?",
+      "sleepQuality": "Do you usually wake up feeling rested?",
+      "activity": "How many minutes of moderate physical activity do you get in a week?",
+      "height": "What is your height?",
+      "weight": "What is your weight?",
+      "tobacco": "Do you use tobacco in any form?",
+      "alcohol": "How often do you drink alcohol?"
+    },
+    "opt": {
+      "sleepUnder5": "Less than 5 hours",
+      "sleep5to6": "5 to 6 hours",
+      "sleep7to9": "7 to 9 hours",
+      "sleepOver9": "More than 9 hours",
+      "restedUsually": "Usually rested",
+      "restedSometimes": "Sometimes rested",
+      "restedRarely": "Rarely rested",
+      "activityUnder30": "Less than 30 minutes",
+      "activity30to149": "30 to 149 minutes",
+      "activity150plus": "150 minutes or more",
+      "never": "Never",
+      "occasionally": "Occasionally",
+      "daily": "Daily",
+      "regularly": "Regularly"
+    },
+    "unit": {
+      "cm": "cm",
+      "kg": "kg"
+    },
+    "finding": {
+      "bmiTitle": "Body mass index",
+      "bmiBand": {
+        "underweight": "Below the healthy range for Asian Indians",
+        "healthy": "Within the healthy range for Asian Indians",
+        "overweight": "In the overweight range for Asian Indians",
+        "high": "In the obese range for Asian Indians"
+      },
+      "sleepTitle": "Sleep",
+      "sleepBand": {
+        "good": "Meets the recommended 7 or more hours",
+        "short": "Below the recommended 7 hours",
+        "long": "Above the typical adult range",
+        "unrefreshing": "Enough hours, but not feeling rested"
+      },
+      "activityTitle": "Physical activity",
+      "activityBand": {
+        "meets": "Meets the WHO weekly guideline",
+        "partial": "Below the WHO weekly guideline",
+        "low": "Well below the WHO weekly guideline"
+      },
+      "tobaccoTitle": "Tobacco",
+      "tobaccoBand": {
+        "none": "No reported use",
+        "occasional": "Occasional use reported",
+        "frequent": "Daily use reported"
+      },
+      "alcoholTitle": "Alcohol",
+      "alcoholBand": {
+        "none": "No reported use",
+        "occasional": "Occasional use reported",
+        "frequent": "Regular use reported"
+      }
+    },
+    "guidance": {
+      "bmi": {
+        "underweight": "A BMI below 18.5 may mean you are underweight. A doctor can check whether this needs attention.",
+        "healthy": "Keep up your current balance of activity and eating.",
+        "overweight": "For Asian Indians, health risk rises from a BMI of 23. Regular activity and diet changes help most.",
+        "high": "For Asian Indians, a BMI of 25 or above is the obesity range. A doctor can help you plan safe changes."
+      },
+      "sleep": {
+        "good": "Keeping a consistent sleep and wake time helps maintain this.",
+        "short": "Adults generally need 7 or more hours. A consistent bedtime and less screen use before bed are the usual first steps.",
+        "long": "Regularly sleeping more than 9 hours and still feeling tired is worth mentioning to a doctor.",
+        "unrefreshing": "Sleeping enough hours but not feeling rested is worth mentioning to a doctor."
+      },
+      "activity": {
+        "meets": "You are meeting the weekly activity guideline. Keep it up.",
+        "partial": "Building up towards 150 minutes a week — brisk walking counts — brings most of the benefit.",
+        "low": "Even short daily walks count. Building towards 150 minutes a week is the target."
+      },
+      "tobacco": {
+        "none": "Not using tobacco is one of the strongest things you can do for long-term health.",
+        "occasional": "There is no safe level of tobacco use. Stopping entirely gives the largest benefit.",
+        "frequent": "Stopping tobacco gives the largest single health benefit. Ask a doctor about cessation support."
+      },
+      "alcohol": {
+        "none": "No action needed here.",
+        "occasional": "Less alcohol is better for health at every level of drinking.",
+        "frequent": "Regular drinking raises long-term health risk. A doctor can advise on cutting down."
+      }
+    },
+    "source": {
+      "bmi": "Reference: revised BMI cut-offs for Asian Indians (overweight 23, obesity 25).",
+      "sleep": "Reference: AASM / Sleep Research Society adult sleep duration consensus.",
+      "activity": "Reference: WHO guidelines on physical activity (150–300 min/week moderate).",
+      "tobacco": "Reference: WHO tobacco guidance.",
+      "alcohol": "Reference: WHO alcohol guidance."
+    },
+    "section": "Daily habits"
+  },
+  "observations": {
+    "title": "First look",
+    "eyebrow": "WHAT THE SCAN COULD SEE",
+    "heading": "The first half of your picture",
+    "description": "People have read the face for signs of health for a very long time. Below are the signs worth checking on your capture. Tick the ones you can actually see — you can see yourself better than the camera can.",
+    "captureAlt": "The face photo you captured",
+    "limitsTitle": "Why you confirm these, not the camera",
+    "limitsBody": "Lighting, camera quality, skin tone and make-up all change what a photo shows. A sign you confirm yourself is far more reliable than one a phone guesses at. Nothing here is a diagnosis, and none of it should be used to decide anything urgent.",
+    "checklistTitle": "Signs to check",
+    "checklistBody": "Tick anything you can see. Tap a ticked sign to read what traditional and clinical sources associate it with.",
+    "traditionalLabel": "TRADITIONAL VIEW (AYURVEDA)",
+    "clinicalLabel": "MODERN CLINICAL VIEW",
+    "halfTitle": "This is only half the picture",
+    "halfBody": "What a photo shows is the weaker half. Answering the questions below is what makes the report worth reading — they are what turn a visible sign into a useful direction.",
+    "completeTitle": "Both halves are in",
+    "completeBody": "You have confirmed what is visible and answered what it opened up. Your report can now use both.",
+    "noSignsBody": "You have not ticked any signs. That is a perfectly good result — you can go on to the full questionnaire, which does not depend on the camera at all.",
+    "answeredOf": "{{answered}} of {{total}} follow-up questions answered",
+    "followUpTitle": "Questions your signs opened up",
+    "followUpBody": "These are asked because of what you ticked above. They are the half a camera cannot see.",
+    "seeFullReport": "Continue to my full report",
+    "finishToSee": "Answer the questions above to continue",
+    "backHome": "Back to home",
+    "signsVersion": "Signs version {{version}}",
+    "systems": {
+      "ayurveda": "Ayurveda",
+      "clinical": "Modern clinical examination"
+    },
+    "signs": {
+      "conjunctival_pallor": {
+        "label": "Pale inner eyelid",
+        "prompt": "Gently pull down your lower eyelid. Is the inner rim pale or whitish rather than a healthy pink?",
+        "traditional": "In Ayurveda, pallor of the eyes and skin is described as Pandu, and Pandu Roga is the classical condition that maps most closely onto what we now call anemia.",
+        "clinical": "Pale conjunctiva is a long-standing bedside sign of low haemoglobin, and it is the sign that smartphone anemia-screening research is built on."
+      },
+      "scleral_yellowing": {
+        "label": "Yellow tint in the whites of the eyes",
+        "prompt": "Look at the white part of your eyes in daylight. Is there a yellow tinge?",
+        "traditional": "Ayurveda describes Kamala as a progression of Pandu, with yellow discolouration of the eyes, skin, urine and stool.",
+        "clinical": "Yellowing of the sclera is the classic visible sign of raised bilirubin and is checked in every routine physical examination. This one is worth acting on promptly."
+      },
+      "periorbital_darkening": {
+        "label": "Dark circles under the eyes",
+        "prompt": "Is the skin under your eyes noticeably darker than the rest of your face?",
+        "traditional": "Read in Darshana Pariksha as aggravated Vata with depleted reserves, usually alongside poor sleep and an irregular daily routine.",
+        "clinical": "Darkening under the eyes is described with iron-deficiency anemia, allergic rhinitis (the so-called allergic shiners), sleep deprivation, and thyroid problems. It also runs strongly in families, so on its own it often means nothing."
+      },
+      "lip_darkening": {
+        "label": "Darkening of the lips",
+        "prompt": "Have your lips become darker or duller than they used to be?",
+        "traditional": "Lip colour is read in Darshana as a reflection of digestion and of the state of the colon.",
+        "clinical": "Darkened lips are described with tobacco use (smoker's melanosis), vitamin B12 deficiency, adrenal insufficiency, some medicines, and dehydration. Many people also have naturally darker lips."
+      },
+      "forehead_darkening": {
+        "label": "Darker patches on the forehead",
+        "prompt": "Is your forehead noticeably darker than your cheeks or the skin behind your ear?",
+        "traditional": "The forehead is read as reflecting Agni, the digestive fire, and the regularity of daily routine.",
+        "clinical": "Patchy darkening across the forehead and cheeks is described with melasma, long sun exposure, hormonal change, and some medicines."
+      },
+      "facial_acne": {
+        "label": "Pimples or breakouts",
+        "prompt": "Do you currently have pimples, and are they mostly on your forehead or along your jawline?",
+        "traditional": "Read as aggravated Pitta and Kapha with impaired digestion. Face mapping places forehead eruptions with digestion and jawline eruptions with the hormonal cycle.",
+        "clinical": "Acne is driven by androgens and sebum. Persistent adult acne along the jawline, together with irregular cycles, is a recognised reason to consider PCOS."
+      },
+      "eye_redness": {
+        "label": "Red eyes",
+        "prompt": "Are the whites of your eyes red or bloodshot?",
+        "traditional": "Red eyes are read as excess Pitta, that is accumulated heat, often together with poor sleep.",
+        "clinical": "Red eyes are described with conjunctivitis, dry eye and long screen use, allergy, and simple lack of sleep."
+      },
+      "facial_puffiness": {
+        "label": "Puffy face or eyelids",
+        "prompt": "Does your face or do your eyelids look swollen, especially in the morning?",
+        "traditional": "Read as accumulated Kapha and Shotha, that is retained fluid.",
+        "clinical": "Facial and eyelid puffiness, especially on waking, is described with kidney and thyroid disorders, allergy, and a high-salt diet."
+      }
+    },
+    "questions": {
+      "tiredness": "Over the last 2 weeks, how often have you felt unusually tired?",
+      "breathless_on_exertion": "Do you get short of breath more easily than you used to?",
+      "diet_iron": "How often do you eat iron-rich foods such as green leafy vegetables, dals, jaggery, eggs, or meat?",
+      "heavy_periods": "Do you have heavy or prolonged menstrual bleeding?",
+      "urine_colour": "What colour has your urine been recently?",
+      "appetite_nausea": "Have you had loss of appetite or nausea recently?",
+      "abdominal_pain": "Have you had pain or discomfort in the upper-right side of your abdomen?",
+      "alcohol_intake": "How often do you drink alcohol?",
+      "sleep_duration": "On a usual night, how many hours do you sleep?",
+      "nasal_allergy": "Do you get a blocked or runny nose, sneezing, or itchy eyes?",
+      "screen_hours": "On a usual day, how many hours do you spend looking at screens?",
+      "tobacco_use": "Do you use tobacco in any form, including cigarettes, gutkha, or paan masala?",
+      "water_intake": "About how much water do you drink in a day?",
+      "diet_b12": "How often do you eat milk, curd, eggs, fish, or meat?",
+      "sun_exposure": "On a usual day, how long are you out in direct sunlight?",
+      "skin_products": "Are you using any skin-lightening creams, steroid creams, or new cosmetics on your face?",
+      "hormonal_change": "Have you had a recent hormonal change such as pregnancy, or started or stopped hormonal contraception?",
+      "acne_duration": "How long have you had these breakouts?",
+      "cycle_regularity": "Are your menstrual cycles regular?",
+      "diet_sugar": "How often do you have sugary food or drinks?",
+      "stress_level": "Over the last 2 weeks, how often have you felt under a lot of stress?",
+      "eye_discomfort": "Do your eyes feel itchy, gritty, or painful?",
+      "swelling_elsewhere": "Have you noticed swelling anywhere else on your body?",
+      "morning_puffiness": "Is the puffiness worst when you wake up?",
+      "salt_intake": "How salty would you say your usual food is?"
+    },
+    "options": {
+      "not_at_all": "Not at all",
+      "several_days": "Several days",
+      "more_than_half": "More than half the days",
+      "nearly_every_day": "Nearly every day",
+      "no": "No",
+      "yes": "Yes",
+      "not_sure": "Not sure",
+      "not_applicable": "Does not apply to me",
+      "heavy_activity": "Only during heavy activity",
+      "usual_activity": "During usual daily activity",
+      "minimal_activity": "With very little activity",
+      "daily": "Daily",
+      "few_times_week": "A few times a week",
+      "rarely": "Rarely",
+      "pale": "Pale or almost clear",
+      "normal": "Normal yellow",
+      "dark": "Dark yellow or brown",
+      "mild": "Mild",
+      "marked": "Marked",
+      "occasionally": "Occasionally",
+      "often": "Often",
+      "never": "Never",
+      "weekly": "Weekly",
+      "under_5": "Less than 5 hours",
+      "five_to_six": "5 to 6 hours",
+      "seven_to_eight": "7 to 8 hours",
+      "over_eight": "More than 8 hours",
+      "sometimes": "Sometimes",
+      "under_2": "Less than 2 hours",
+      "two_to_five": "2 to 5 hours",
+      "six_to_nine": "6 to 9 hours",
+      "over_nine": "More than 9 hours",
+      "former": "I used to, but not now",
+      "under_1l": "Less than 1 litre",
+      "one_to_two_l": "1 to 2 litres",
+      "over_two_l": "More than 2 litres",
+      "under_30_min": "Less than 30 minutes",
+      "thirty_to_ninety": "30 to 90 minutes",
+      "over_ninety": "More than 90 minutes",
+      "yes_recent": "Yes, started recently",
+      "yes_long_term": "Yes, for a long time",
+      "under_3_months": "Less than 3 months",
+      "three_to_twelve_months": "3 to 12 months",
+      "over_a_year": "More than a year",
+      "regular": "Regular",
+      "irregular": "Irregular",
+      "several_daily": "Several times a day",
+      "with_discharge": "Yes, with discharge or watering",
+      "ankles_feet": "Yes, ankles or feet",
+      "hands": "Yes, hands",
+      "most_mornings": "Most mornings",
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High"
+    },
+    "eyeCheck": "Add the eye check for anemia (optional)"
+  },
+  "health": {
+    "title": "Your health check",
+    "eyebrow": "A clearer picture, together",
+    "progress": "Question {{current}} of {{total}} · adapts to your answers",
+    "finish": "Build my action plan",
+    "private": "Your answers stay in this session on your device. No account needed. Choose “Not sure / prefer not to say” where available.",
+    "urgentLink": "Need urgent help?",
+    "summaryTitle": "Your next steps, made clear",
+    "summaryIntro": "A practical plan from what you told us. This is health information, not a diagnosis or a medical clearance.",
+    "sourceTitle": "What this plan is based on",
+    "scanTitle": "Photo capture",
+    "scanCaptured": "Face photo analysed for visible skin and eye signs.",
+    "scanSkipped": "Not included. Your answers can still support useful next steps.",
+    "answersTitle": "Your answers",
+    "answerCount": "{{answered}} of {{total}} questions answered",
+    "today": "Small steps to start with",
+    "prepare": "Make your visit more useful",
+    "prepareBody": "Note when symptoms started, what changes them, and how they affect your day. Bring your medicines, allergies and previous reports. A clinician can decide whether an examination or tests are needed.",
+    "safetyTitle": "If things change",
+    "safetyBody": "For severe trouble breathing, chest pressure, sudden confusion, collapse, or immediate danger to yourself, seek emergency help now. Call {{phone}}. Do not wait for another scan or questionnaire.",
+    "call": "Call {{phone}}",
+    "care": "Explore care in {{city}}",
+    "review": "Review or change my answers",
+    "share": "Share this summary",
+    "shareHint": "Sharing opens your device’s share sheet. The summary contains your answers and plan, but no face photo. Choose a recipient yourself.",
+    "error": "Could not open this action. Please try again.",
+    "sources": "Read the guidance",
+    "sourcesBody": "Based on public NHS and WHO information, adapted for general guidance in India. This questionnaire is not a validated clinical screening instrument. Sources checked 9 September 2026.",
+    "date": "Completed {{date}}",
+    "incomplete": "Finish your check to build a plan. Unanswered questions are not treated as reassuring answers.",
+    "level": {
+      "urgent": "Get emergency help now",
+      "prompt": "Seek medical advice today",
+      "appointment": "Arrange a medical appointment",
+      "routine": "Start with everyday wellbeing",
+      "incomplete": "Your check is unfinished"
+    },
+    "reason": {
+      "urgent": "You reported an immediate warning sign. Stop the check and get help; this app cannot assess an emergency.",
+      "prompt": "You reported breathing concerns or symptoms that are getting worse. Seek advice today; use emergency help for severe symptoms.",
+      "appointment": "Your concern, health history or preference makes a conversation with a clinician a useful next step. Persistent symptoms deserve attention even if a photo looks normal. For a child, involve a parent or trusted adult and a paediatric clinician.",
+      "routine": "You did not report a current concern requiring an appointment in this check. This does not rule out illness. Seek advice if symptoms develop, persist, or worry you."
+    },
+    "action": {
+      "sleep": "Try a consistent sleep and wake time. If unrefreshing sleep or tiredness persists or affects daily life, discuss it with a clinician.",
+      "movement": "Choose gentle movement you can comfortably manage. Build gradually, within your abilities. Do not push through pain, breathlessness or worsening fatigue; ask for an adapted plan if activity is limited.",
+      "food": "Aim for regular, varied meals using accessible local foods: vegetables, fruit, pulses and whole grains. If food access is difficult, mention it at a government health facility.",
+      "stress": "Make time to talk with someone you trust. If stress or low mood is hard to manage, use the wellbeing check or contact a mental health professional.",
+      "exposure": "Reduce smoke exposure where possible. For outdoor or forest work, plan rest breaks, safe drinking water and shade; discuss protective measures suited to your work with a health professional.",
+      "medicines": "Keep a list of your conditions, medicines and supplements. Discuss new symptoms or side effects with your clinician; do not stop prescribed treatment based on this check.",
+      "maintain": "Keep the routines that support you: regular sleep, varied meals, comfortable activity and social connection. Notice changes in how you feel over time."
+    },
+    "q": {
+      "safety": "First, are any of these happening right now?",
+      "age": "Who is this check for?",
+      "concern": "What would you most like help with?",
+      "duration": "How long has this been going on?",
+      "impact": "How is it affecting your day?",
+      "sleep": "How do you usually feel after sleeping?",
+      "movement": "How does movement fit into your week?",
+      "food": "How are your meals these days?",
+      "stress": "How manageable has stress felt recently?",
+      "exposure": "What is your usual environment like?",
+      "history": "Is there any ongoing health context?",
+      "priority": "What would make this check useful for you?"
+    },
+    "hint": {
+      "safety": "Severe difficulty breathing, chest pressure, sudden confusion or collapse, or immediate danger of harming yourself.",
+      "age": "Children need age-appropriate advice; this app does not diagnose any age group.",
+      "concern": "Choose your main concern. Tell a clinician about any other symptoms too. A photo cannot determine the cause.",
+      "duration": "Think about when you first noticed the change.",
+      "impact": "If more than one fits, choose the more serious option.",
+      "sleep": "Think about the last two weeks.",
+      "movement": "Walking, work, household tasks and adapted movement all count.",
+      "food": "Consider regularity, variety and access, not a perfect diet.",
+      "stress": "This is a general check-in, not a mental health score.",
+      "exposure": "Choose what most affects you, including work or home.",
+      "history": "No medicine names or private details are needed here.",
+      "priority": "Your preference helps you choose the next step."
+    },
+    "options": {
+      "safety": {
+        "none": "No, none of these",
+        "urgent": "Yes / I may need immediate help"
+      },
+      "age": {
+        "adult": "An adult, 18 or older",
+        "child": "Someone under 18"
+      },
+      "concern": {
+        "routine": "General wellbeing, no current concern",
+        "energy": "Energy or tiredness",
+        "breathing": "Breathing or a cough",
+        "skin": "Changes in my skin or appearance",
+        "pain": "Pain or physical discomfort",
+        "mood": "Mood, worry or stress",
+        "other": "Something else"
+      },
+      "duration": {
+        "days": "A few days or less",
+        "weeks": "One to several weeks",
+        "months": "Months or longer"
+      },
+      "impact": {
+        "manageable": "Manageable; I can do usual activities",
+        "disrupting": "Interfering with work, sleep or daily tasks",
+        "worsening": "Getting worse or making usual tasks very difficult"
+      },
+      "sleep": {
+        "rested": "Usually rested",
+        "unrested": "Often tired or unrefreshed",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "movement": {
+        "regular": "I move regularly",
+        "little": "Mostly sitting, little movement",
+        "limited": "Pain, illness or disability limits me",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "food": {
+        "varied": "Mostly regular and varied",
+        "irregular": "Often missed or limited in variety",
+        "access": "Getting enough food is difficult",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "stress": {
+        "manageable": "Mostly manageable",
+        "difficult": "Often hard to manage",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "exposure": {
+        "none": "No particular exposure concern",
+        "smoke": "Tobacco, cooking smoke, dust or fumes",
+        "outdoor": "Long hours outdoors, in heat or forest areas",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "history": {
+        "none": "No known condition or regular medicines",
+        "condition": "An ongoing health condition",
+        "medicines": "Regular medicines or supplements",
+        "both": "Both",
+        "unknown": "Not sure / prefer not to say"
+      },
+      "priority": {
+        "habits": "Practical everyday health steps",
+        "doctor": "Finding a doctor",
+        "support": "Help with emotional wellbeing",
+        "unknown": "I am not sure yet"
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Choose an existing photo",
+    "title": "Use a photo from your gallery",
+    "description": "Choose one clear, recent photo showing a single face. You will preview it before analysis.",
+    "choose": "Choose from gallery",
+    "goodPhoto": "For a useful comparison",
+    "goodPhotoBody": "Use the original image in soft, even front light. Face the camera directly; avoid filters, screenshots, sunglasses, heavy make-up, deep shadows, and group photos.",
+    "privacy": "Opening the system picker does not give BioVision access to your entire library. Only the photo you choose enters this temporary session.",
+    "selectedSource": "Selected from gallery · original preserved",
+    "error": {
+      "format": "Choose a JPEG, PNG, WebP, HEIC, or HEIF image.",
+      "size": "This image is larger than 15 MB. Choose a smaller original.",
+      "resolution": "This image is too small to inspect. Each side must be at least 320 pixels.",
+      "missing": "The image could not be opened. Try choosing it again."
+    }
+  },
+  "appearance": {
+    "title": "What the photo shows",
+    "eyebrow": "Automatic appearance observations",
+    "description": "We inspect your confirmed photo automatically. You do not need to label or tick visible signs. Next, we ask about health context that a photo cannot show.",
+    "processing": "Inspecting visible regions on your device…",
+    "continue": "Continue to general health questions",
+    "finding": {
+      "under_eye_contrast": "Possible under-eye shading",
+      "no_clear_contrast": "No clear under-eye contrast flagged",
+      "not_assessed": "Appearance could not be assessed"
+    },
+    "interpretation": "Compares the skin below your eyes with nearby cheek skin. Even, soft front lighting gives the clearest result.",
+    "unavailable": "No appearance finding was produced. Try a clear, evenly lit photo, or continue to get a plan from your general health answers.",
+    "limitsTitle": "What is—and is not—being measured",
+    "limits": "MediaPipe locates facial landmarks. Small experimental pixel-analysis modules then compare under-eye shading, forehead tone, local reddish spots, eye-white colour, and lip-to-skin contrast. These rules are not trained medical classifiers and have no measured accuracy yet. Lighting, make-up and camera processing can change the results. No image is uploaded by this analysis.",
+    "reason": {
+      "no_face": "A face could not be located. Face the camera directly.",
+      "multiple_faces": "More than one face is visible. Take a photo of one person.",
+      "lighting": "Exposure or uneven light makes this comparison unreliable. Try soft light from the front.",
+      "pose": "Face the camera directly without tilting your head.",
+      "resolution": "The eye regions are too small to compare. Move closer and retake."
+    },
+    "modules": {
+      "underEyes": "Under-eye shading",
+      "forehead": "Forehead tone variation",
+      "spots": "Localized reddish spots",
+      "eyeRedness": "Visible eye redness",
+      "lipTone": "Lip-to-skin tone contrast"
+    },
+    "status": {
+      "noticed": "Possible visual difference",
+      "not_flagged": "No clear signal in sampled areas",
+      "not_assessable": "Not enough reliable detail"
+    },
+    "detail": {
+      "contrast": "The sampled skin below both eyes looks darker than nearby cheek skin.",
+      "tone_variation": "The sampled forehead patches differ in brightness. Shadows, shine or natural skin variation may explain this.",
+      "local_spots": "One or more small sampled areas are redder than their immediate surroundings. This does not identify pimples or acne.",
+      "redness": "The sampled eye-white areas show a stronger red component. Camera colour balance can affect this comparison.",
+      "lip_contrast": "The sampled outer-lip areas look substantially darker than nearby facial reference patches.",
+      "no_clear_signal": "No clear difference was found in this area.",
+      "resolution": "This feature occupies too few pixels. A sharper original photo taken closer to the camera may help.",
+      "lighting": "Shadows, very dark pixels or highlights make the comparison unreliable. Retake in even, soft front lighting.",
+      "coverage": "Too little usable skin or eye-white area was found. This feature is not assessed; it is not marked absent."
+    },
+    "scope": {
+      "underEyes": "Shading alone cannot establish dark circles, tiredness or their cause.",
+      "forehead": "Only several forehead patches are compared. This is not a pigmentation diagnosis or a comparison against a preferred skin tone.",
+      "spots": "Only sampled forehead and cheek regions are inspected. Not an acne count; small or non-red spots may be missed.",
+      "eyeRedness": "Not an eye examination. Pain, light sensitivity or a change in vision needs medical advice regardless of this photo.",
+      "lipTone": "This cannot identify smoking or its intensity. Natural pigmentation, sun, irritation, medicines, cosmetics and image lighting can also affect lip colour."
+    },
+    "showRegions": "Explore the sampled areas",
+    "original": "Original photo",
+    "regionLegend": "Outlines show where pixels were sampled—not the borders of a condition or a diagnosis.",
+    "nativeUnavailable": "Automatic photo analysis is not available on this device yet. You can still continue to general health questions and get an action plan."
+  },
+  "profile": {
+    "title": "About you",
+    "description": "Healthy ranges depend on age, sex and pregnancy, so your results are compared with the right ones.",
+    "age": "Age",
+    "years": "years",
+    "ageInvalid": "Enter your age in whole years, from 1 to 120.",
+    "sex": "Sex",
+    "female": "Female",
+    "male": "Male",
+    "pregnant": "Are you pregnant?",
+    "whyTitle": "Why we ask",
+    "whyBody": "These details choose the WHO reference ranges used in your report. They stay on this phone.",
+    "body": "Height and weight",
+    "bodyInvalid": "Enter height between 100 and 220 cm and weight between 25 and 200 kg."
+  },
+  "welcome": {
+    "eyebrow": "WELCOME",
+    "title": "Your health, at a glance",
+    "description": "A 30-second face scan, two eye photos and a few questions give you a personal health report and the right doctor to see.",
+    "points": {
+      "measure": {
+        "title": "What it measures",
+        "body": "Heart rate, heart-rate variability, stress, breathing, haemoglobin, face and skin signs, and lifestyle."
+      },
+      "private": {
+        "title": "Private by design",
+        "body": "Everything is analysed on this iPhone. Video, photos and answers are not uploaded or stored."
+      },
+      "doctor": {
+        "title": "Not a diagnosis",
+        "body": "BioVision gives health insights and points you to the right doctor. It does not replace a doctor or a laboratory test."
+      },
+      "emergency": {
+        "title": "In an emergency",
+        "body": "Call 112 immediately. Do not use this app for emergencies."
+      }
+    },
+    "agree": "I understand BioVision is not a medical diagnosis, and I agree to the Terms of Use and Privacy Policy.",
+    "continue": "Get started"
+  },
+  "legal": {
+    "updated": "Last updated 17 September 2026",
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "BioVision analyses your scan on your iPhone. We do not have accounts, servers that receive your health data, advertising or tracking."
+        },
+        {
+          "heading": "Camera",
+          "body": "The front camera is used only during a scan. Video frames are analysed in memory to measure your pulse and are never recorded or uploaded. One face photo and two eye photos are taken to analyse skin signs and estimate haemoglobin. They stay in the app's temporary storage and are removed by the system."
+        },
+        {
+          "heading": "Your answers and profile",
+          "body": "Age, sex, pregnancy, height, weight and your answers are used only to calculate your report. They stay in memory and are cleared when you start a new scan or close the app."
+        },
+        {
+          "heading": "Location",
+          "body": "If you choose to find nearby healthcare, your location is used on your iPhone to sort the list. It is not stored or sent anywhere."
+        },
+        {
+          "heading": "Stored on your iPhone",
+          "body": "Only your language choice and that you accepted these terms are saved on your device."
+        },
+        {
+          "heading": "Sharing",
+          "body": "Your report leaves the app only when you tap Share and choose where to send it. Photos are never included."
+        },
+        {
+          "heading": "Third parties",
+          "body": "BioVision contains no analytics, advertising or tracking software, and does not sell or share personal data."
+        },
+        {
+          "heading": "Children",
+          "body": "BioVision is designed for adults. Children under 18 should use it with a parent or guardian."
+        },
+        {
+          "heading": "Changes",
+          "body": "If this policy changes, the app will ask you to review it again before you continue."
+        },
+        {
+          "heading": "Contact",
+          "body": "For questions, use the support link on BioVision's App Store page."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "sections": [
+        {
+          "heading": "About BioVision",
+          "body": "BioVision is a health-information prototype. It estimates health indicators from your camera and your answers and suggests which kind of doctor may help."
+        },
+        {
+          "heading": "Not medical advice",
+          "body": "BioVision is not a medical device and does not diagnose, treat or prevent any disease. Its estimates can be wrong. Always confirm results with a qualified doctor or laboratory test, and never delay or ignore medical advice because of the app."
+        },
+        {
+          "heading": "Emergencies",
+          "body": "If you have chest pain, trouble breathing, fainting, severe bleeding, or thoughts of harming yourself, call 112 or Tele-MANAS 14416 immediately."
+        },
+        {
+          "heading": "Accuracy",
+          "body": "Lighting, movement, make-up, skin tone and camera quality affect the results. Haemoglobin is an estimate from eyelid colour, not a blood test. Heart-rate readings are not suitable for diagnosing heart conditions."
+        },
+        {
+          "heading": "Doctor directory",
+          "body": "Doctor and hospital details come from the hospitals' public websites and may change. Confirm timings and availability with the hospital."
+        },
+        {
+          "heading": "Your responsibility",
+          "body": "Use BioVision only for yourself or with the consent of the person being scanned, and follow the on-screen instructions for eye photos."
+        },
+        {
+          "heading": "Liability",
+          "body": "BioVision is provided as is, without warranties. To the extent permitted by law, the makers are not liable for decisions made using the app."
+        }
+      ]
+    },
+    "medical": {
+      "title": "Medical information",
+      "sections": [
+        {
+          "heading": "Heart rate and HRV",
+          "body": "Measured from tiny colour changes in your face using the FacePhys remote photoplethysmography model. HRV (RMSSD, SDNN), the stress index (Baevsky) and the recovery score are calculated from the beat-to-beat intervals."
+        },
+        {
+          "heading": "Breathing rate",
+          "body": "Estimated from the slow rhythm in your pulse wave during the 30-second scan."
+        },
+        {
+          "heading": "Haemoglobin",
+          "body": "Estimated from the colour of the inner lower eyelid (conjunctiva). The model was trained and tested on 217 adults with laboratory haemoglobin results, including 95 from India, where it identified 71% of people with anaemia. It is compared with WHO haemoglobin cut-offs for your age, sex and pregnancy status. A CBC blood test gives the exact value."
+        },
+        {
+          "heading": "Face and skin signs",
+          "body": "Google MediaPipe locates 478 points on your face. Colour and brightness in specific areas are compared to note under-eye shading, eye redness, lip colour, forehead tone and small red spots. Face geometry is measured from the same points."
+        },
+        {
+          "heading": "Lifestyle",
+          "body": "Sleep, activity, tobacco, alcohol and BMI are compared with WHO and Indian guidelines, using WHO BMI cut-offs for Asian populations."
+        },
+        {
+          "heading": "Doctor suggestions",
+          "body": "Your main concern, its duration and impact, danger signs and your scan results are combined using common primary-care referral guidance (NHS, NICE, WHO) to suggest a doctor, how soon to see them and tests to ask about."
+        },
+        {
+          "heading": "When results may be unreliable",
+          "body": "Poor or uneven light, movement, glasses, heavy make-up, a very dark or bright room, or eye photos that do not show the inner eyelid clearly."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How BioVision works",
+      "sections": [
+        {
+          "heading": "1. About you",
+          "body": "Age, sex, height and weight choose the right reference ranges."
+        },
+        {
+          "heading": "2. 30-second face scan",
+          "body": "Keep still in soft light. The app reads your pulse, heart-rate variability, stress and breathing, and takes one photo for face and skin signs."
+        },
+        {
+          "heading": "3. Two eye photos",
+          "body": "Gently pull down each lower eyelid so the inner pink area is visible. The colour is used to estimate haemoglobin."
+        },
+        {
+          "heading": "4. A few questions",
+          "body": "Tell us what is bothering you. Danger signs send you straight to emergency help."
+        },
+        {
+          "heading": "5. Your report",
+          "body": "See every result with its normal range, the doctor to see and tests to ask about. Find doctors nearby or share a PDF report."
+        }
+      ]
+    },
+    "acknowledgements": {
+      "title": "Acknowledgements",
+      "sections": [
+        {
+          "heading": "Google MediaPipe",
+          "body": "Face detection and Face Landmarker models. Apache License 2.0."
+        },
+        {
+          "heading": "FacePhys (Vital Camera SDK)",
+          "body": "Remote heart-rate models by Kegang Wang. MIT License with a privacy addendum requiring local processing, which BioVision follows."
+        },
+        {
+          "heading": "Eyes-Defy-Anemia dataset",
+          "body": "Dimauro G. et al. Conjunctiva images with laboratory haemoglobin used to build the haemoglobin model. CC BY-SA 4.0."
+        },
+        {
+          "heading": "Reference guidelines",
+          "body": "WHO haemoglobin thresholds (2024), WHO physical activity and BMI guidance, AHA resting heart-rate range, NHS and NICE symptom and referral guidance."
+        },
+        {
+          "heading": "Healthcare directory",
+          "body": "Doctor and hospital listings from the public websites of Shri Mahant Indiresh Hospital, Himalayan Hospital (HIMS), Synergy Institute of Medical Sciences, Government Doon Medical College Hospital, Coronation Hospital and Max Super Speciality Hospital, Dehradun."
+        },
+        {
+          "heading": "Open-source software",
+          "body": "Built with React Native, Expo, VisionCamera, TensorFlow Lite and other open-source libraries under their respective licenses."
+        }
+      ]
+    }
+  }
+}

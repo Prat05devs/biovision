@@ -1,0 +1,16 @@
+{
+  "model_name": "anemia-detector",
+  "backbone": "efficientnet_b0",
+  "task": "binary_classification + hb_regression",
+  "num_classes": 2,
+  "class_names": ["Non-Anemic", "Anemic"],
+  "img_size": 224,
+  "hb_mean": 10.359,
+  "hb_std": 2.259,
+  "best_val_acc": 0.84,
+  "auc_roc": 0.902,
+  "hb_mae": 1.515,
+  "dataset": "CP-AnemiC (Ghana, 710 samples)",
+  "normalize_mean": [0.485, 0.456, 0.406],
+  "normalize_std": [0.229, 0.224, 0.225]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "biovision",
+  "brandName": "BioVision",
+  "defaultRegion": "in-uk-dehradun",
+  "regions": {
+    "in-uk-dehradun": {
+      "name": { "en": "Dehradun", "hi": "देहरादून" },
+      "countryCode": "IN",
+      "emergencyPhone": "112",
+      "mapsQuery": "hospitals in Dehradun, Uttarakhand, India",
+      "directoryId": "dehradun-v1"
+    }
+  },
+  "careProvider": "bundled",
+  "researchCollectionAvailable": false,
+  "appearance": {
+    "enabled": true,
+    "provider": "mediapipe-local-appearance-v1"
+  }
+}

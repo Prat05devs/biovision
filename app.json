@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "BioVision",
+    "slug": "biovision",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "biovision",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "buildNumber": "1",
+      "bundleIdentifier": "com.teambiovision.biovision",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BioVision uses the front camera during your health scan to measure your pulse and photograph your face and lower eyelids. Video is analysed on your iPhone and never recorded or uploaded.",
+        "NSLocationWhenInUseUsageDescription": "BioVision uses your location only when you ask it to find doctors and hospitals near you.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.teambiovision.biovision",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F4F8F7",
+          "resizeMode": "contain"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow BioVision to use your camera for health pre-screening captures.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow BioVision to use your location when finding nearby healthcare.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "motionUsagePermission": false
+        }
+      ],
+      "expo-localization",
+      "expo-sharing"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

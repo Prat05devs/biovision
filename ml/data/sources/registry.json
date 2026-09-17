@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "datasets": [
+    {
+      "id": "imagehb",
+      "url": "https://bdtd.github.io/ImageHB/",
+      "population": "paediatric",
+      "region": "Chandigarh, India",
+      "subjectCount": 4430,
+      "imageCount": 27259,
+      "modalities": ["conjunctiva", "palm", "tongue", "nailbed"],
+      "labels": ["hemoglobin", "cbc_indices", "age", "sex", "height", "weight"],
+      "participantKeyAvailable": true,
+      "license": "not_stated",
+      "access": "full_dataset_by_request_samples_public",
+      "commercialUse": "blocked_pending_written_permission",
+      "approvedUses": [],
+      "notes": "Site reports 324 conjunctiva masks. Do not ingest beyond public samples until licence, consent scope, and DUA are received."
+    },
+    {
+      "id": "eyes_defy_anemia_kaggle_mirror",
+      "url": "https://www.kaggle.com/datasets/harshwardhanfartale/eyes-defy-anemia",
+      "population": "adult",
+      "region": "India and Italy",
+      "subjectCount": null,
+      "imageCount": 218,
+      "modalities": ["conjunctiva", "segmentation_masks"],
+      "labels": ["hemoglobin", "age", "sex"],
+      "participantKeyAvailable": true,
+      "license": "cc-by-sa-4.0_claimed_by_kaggle_mirror",
+      "access": "public_kaggle_download",
+      "commercialUse": "blocked_pending_provenance_review",
+      "approvedUses": [],
+      "notes": "Controlled Samsung S6 capture is useful for segmentation and baselines but creates device/protocol domain shift. Verify original-owner licence and mirror authority."
+    },
+    {
+      "id": "sewa_rural_anemia_survey",
+      "url": "https://huggingface.co/datasets/sewa-rural-care/anemia-survey-data",
+      "population": "gated_metadata_does_not_state_exact_cohort",
+      "region": "Gujarat, India",
+      "subjectCount": null,
+      "imageCount": null,
+      "modalities": ["conjunctiva", "tongue", "fingernail", "ppg", "tabular"],
+      "labels": ["cbc_linked_clinical_data"],
+      "participantKeyAvailable": true,
+      "license": "cc-by-nc-4.0",
+      "access": "manual_approval_and_data_use_agreement",
+      "commercialUse": "blocked_without_explicit_written_permission",
+      "approvedUses": [],
+      "notes": "UUID directories support patient-level splits. DUA prohibits re-identification and redistribution and requires compliant secure storage."
+    }
+  ]
+}
+

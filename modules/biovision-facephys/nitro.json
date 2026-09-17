@@ -1,0 +1,34 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": [
+    "biovision",
+    "facephys"
+  ],
+  "ios": {
+    "iosModuleName": "BioVisionFacePhys"
+  },
+  "android": {
+    "androidNamespace": [
+      "biovision",
+      "facephys"
+    ],
+    "androidCxxLibName": "BioVisionFacePhys"
+  },
+  "autolinking": {
+    "FacePhysFactory": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridFacePhysFactory"
+      }
+    },
+    "EyeScreener": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridEyeScreener"
+      }
+    }
+  },
+  "ignorePaths": [
+    "**/node_modules"
+  ]
+}

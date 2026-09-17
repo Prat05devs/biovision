@@ -1,0 +1,4161 @@
+{
+ "version": "dehradun-v1",
+ "facilities": [
+  {
+   "id": "coronation",
+   "name": "Coronation Hospital, Dehradun",
+   "facilityType": "hospital",
+   "specialties": [
+    "specialties.generalPhysician"
+   ],
+   "address": "Coronation Hospital, Dalanwala, Dehradun, Uttarakhand",
+   "isGovernment": true,
+   "isVerified": true,
+   "sourceUrl": "https://dehradun.nic.in/public-utility/coronation-hospital-dehradun/",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Coronation%20Hospital%2C%20Dehradun%2C%20Coronation%20Hospital%2C%20Dalanwala%2C%20Dehradun%2C%20Uttarakhand"
+  },
+  {
+   "id": "max-dehradun",
+   "name": "Max Super Speciality Hospital, Dehradun",
+   "facilityType": "hospital",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.cardiology",
+    "specialties.pulmonology",
+    "specialties.dermatology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "prem-vaish",
+   "name": "Dr. Prem Narayan Vaish",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "preeti-sharma",
+   "name": "Dr. Preeti Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "vivek-verma",
+   "name": "Dr. Vivek Kumar Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "richa-chopra",
+   "name": "Dr. Richa Chopra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "shobit-garg",
+   "name": "Dr. Shobit Garg",
+   "facilityType": "mental_health_service",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "sonal-bangwal",
+   "name": "Dr. Sonal Bangwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "astha-agrawal",
+   "name": "Dr. Astha Agrawal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "jyoti-raina",
+   "name": "Dr. Jyoti Raina",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "vineet-tyagi",
+   "name": "Dr. Vineet Tyagi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Mussoorie Diversion Road, Dehradun, Uttarakhand 248001",
+   "affiliation": "Max Super Speciality Hospital, Dehradun",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "website": "https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-dehradun",
+   "verifiedAt": "2026-09-09",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Max%20Super%20Speciality%20Hospital%2C%20Dehradun%2C%20Mussoorie%20Diversion%20Road%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "smih-dehradun",
+   "name": "Shri Mahant Indiresh Hospital",
+   "facilityType": "hospital",
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "phone": "0135-6672600",
+   "isGovernment": false,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine",
+    "specialties.emergencyCare",
+    "specialties.cardiology",
+    "specialties.pulmonology",
+    "specialties.dermatology",
+    "specialties.psychiatry",
+    "specialties.ophthalmology",
+    "specialties.paediatrics",
+    "specialties.gynaecology",
+    "specialties.orthopaedics",
+    "specialties.neurology",
+    "specialties.ent",
+    "specialties.nephrology",
+    "specialties.gastroenterology",
+    "specialties.endocrinology",
+    "specialties.generalSurgery",
+    "specialties.diagnosticServices"
+   ],
+   "isVerified": true,
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001"
+  },
+  {
+   "id": "himalayan-hospital",
+   "name": "Himalayan Hospital (HIMS), Jolly Grant",
+   "facilityType": "hospital",
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "phone": "0135-2471200",
+   "isGovernment": false,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine",
+    "specialties.emergencyCare",
+    "specialties.cardiology",
+    "specialties.pulmonology",
+    "specialties.dermatology",
+    "specialties.psychiatry",
+    "specialties.ophthalmology",
+    "specialties.paediatrics",
+    "specialties.gynaecology",
+    "specialties.orthopaedics",
+    "specialties.neurology",
+    "specialties.ent",
+    "specialties.nephrology",
+    "specialties.gastroenterology",
+    "specialties.generalSurgery",
+    "specialties.diagnosticServices",
+    "specialties.mentalHealthProfessional"
+   ],
+   "isVerified": true,
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016"
+  },
+  {
+   "id": "synergy-dehradun",
+   "name": "Synergy Institute of Medical Sciences",
+   "facilityType": "hospital",
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "phone": "0135-2226000",
+   "isGovernment": false,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.emergencyCare",
+    "specialties.cardiology",
+    "specialties.pulmonology",
+    "specialties.dermatology",
+    "specialties.psychiatry",
+    "specialties.ophthalmology",
+    "specialties.paediatrics",
+    "specialties.gynaecology",
+    "specialties.neurology",
+    "specialties.ent",
+    "specialties.gastroenterology",
+    "specialties.endocrinology",
+    "specialties.diagnosticServices"
+   ],
+   "isVerified": true,
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand"
+  },
+  {
+   "id": "doon-medical-college-hospital",
+   "name": "Government Doon Medical College Hospital",
+   "facilityType": "hospital",
+   "address": "Dehradun, Uttarakhand",
+   "isGovernment": true,
+   "sourceUrl": "https://gdmcuk.com/",
+   "website": "https://gdmcuk.com/",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.generalSurgery",
+    "specialties.gynaecology",
+    "specialties.paediatrics",
+    "specialties.orthopaedics",
+    "specialties.dermatology",
+    "specialties.psychiatry",
+    "specialties.ent",
+    "specialties.ophthalmology",
+    "specialties.diagnosticServices"
+   ],
+   "isVerified": true,
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Government%20Doon%20Medical%20College%20Hospital%2C%20Dehradun%2C%20Uttarakhand"
+  },
+  {
+   "id": "smih-dehradun-dr-yashpal-singh",
+   "name": "Dr. Yashpal Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Neurology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-rohitash-sharma",
+   "name": "Dr. Rohitash Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Neurology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-tanuj-bhatia",
+   "name": "Dr. Tanuj Bhatia",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Cardiology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-vineeta-gupta",
+   "name": "Dr. Vineeta Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-rajiv-acharya",
+   "name": "Dr. Rajiv Acharya",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-amit-soni",
+   "name": "Dr. Amit Soni",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gastroenterology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gastroenterology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-arti-rawat",
+   "name": "Dr. Arti Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Neurology",
+   "qualifications": "MBBS, MD, DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-alok-kumar",
+   "name": "Dr. Alok Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.nephrology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Nephrology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "smih-dehradun-dr-arti-sharma",
+   "name": "Dr. Arti Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-anurag-bijalwan",
+   "name": "Dr. Anurag Bijalwan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-neeti-kumari",
+   "name": "Dr. Neeti Kumari",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Dermatology (Skin Specialist)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-tripti-m-mamgain",
+   "name": "Dr. Tripti M Mamgain",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "ENT (Ear Nose and Throat)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-ram-kumar-verma",
+   "name": "Dr. Ram Kumar Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-ashutosh-singh",
+   "name": "Dr. Ashutosh Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Emergency Medicine",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-j-p-sharma",
+   "name": "Dr. J P Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MS"
+  },
+  {
+   "id": "smih-dehradun-dr-apoorva-kumar-pandey",
+   "name": "Dr. Apoorva Kumar Pandey",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "ENT (Ear Nose and Throat)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-bindu-agarwal",
+   "name": "Dr. Bindu Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-alok-vardhan-mathur",
+   "name": "Dr. Alok Vardhan Mathur",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-lt-gen-nardeep-naithani-retd",
+   "name": "Dr. Lt Gen Nardeep Naithani (Retd)",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-satya-prakash-singh",
+   "name": "Dr. Satya Prakash Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-madhuri-kaintura",
+   "name": "Dr. Madhuri Kaintura",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "ENT (Ear Nose and Throat)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-utkarsh-sharma",
+   "name": "Dr. Utkarsh Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-dorchhom-khrime",
+   "name": "Dr. Dorchhom Khrime",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-rajesh-kumar",
+   "name": "Dr. Rajesh Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-sahil-mahajan",
+   "name": "Dr. Sahil Mahajan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Cardiology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-saurabh-agarwal",
+   "name": "Dr. Saurabh Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-amar-nath-pandey",
+   "name": "Dr. Amar Nath Pandey",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-sukhwinder-singh",
+   "name": "Dr. Sukhwinder Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-madhukar-maletha",
+   "name": "Dr. Madhukar Maletha",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS MCh"
+  },
+  {
+   "id": "smih-dehradun-dr-pradeep-singhal",
+   "name": "Dr. Pradeep Singhal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-ajay-kumar",
+   "name": "Dr. Ajay Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-ragini-singh",
+   "name": "Dr. Ragini Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-puneet-gupta",
+   "name": "Dr. Puneet Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-avneesh-kumar",
+   "name": "Dr. Avneesh Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-navneet-badoni",
+   "name": "Dr. Navneet Badoni",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-neenu-kaul",
+   "name": "Dr. Neenu Kaul",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Dermatology (Skin Specialist)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-jagdish-kumar-rawat",
+   "name": "Dr. Jagdish Kumar Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-vishal-kaushik",
+   "name": "Dr. Vishal Kaushik",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-mohan-dhyani",
+   "name": "Dr. Mohan Dhyani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Psychiatry",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-shobit-garg",
+   "name": "Dr. Shobit Garg",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Psychiatry",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-kunal-vij",
+   "name": "Dr. Kunal Vij",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-pawan-kumar-rawat",
+   "name": "Dr. Pawan Kumar Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-nidhi-mimani-gupta",
+   "name": "Dr. Nidhi Mimani Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Dermatology (Skin Specialist)",
+   "qualifications": "MBBS DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-bharat-bhushan",
+   "name": "Dr. Bharat Bhushan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-vivek-ruhela",
+   "name": "Dr. Vivek Ruhela",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.nephrology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Nephrology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-yogesh-ahuja",
+   "name": "Dr. Yogesh Ahuja",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-pranav-kothiyal",
+   "name": "Dr. Pranav Kothiyal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-aashish-sethi",
+   "name": "Dr. Aashish Sethi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-sumit-khattri",
+   "name": "Dr. Sumit Khattri",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Psychiatry",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-monika-ramola",
+   "name": "Dr. Monika Ramola",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-rajesh-kumar-sahu",
+   "name": "Dr. Rajesh Kumar Sahu",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-namrata-saxena",
+   "name": "Dr. Namrata Saxena",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-yash-mohan-lal",
+   "name": "Dr. Yash Mohan Lal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS,MS"
+  },
+  {
+   "id": "smih-dehradun-dr-mohd-shifa-hasan",
+   "name": "Dr. Mohd. Shifa Hasan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-monika-kashyap",
+   "name": "Dr. Monika Kashyap",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, DCH, DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-anoop-singh-negi",
+   "name": "Dr. Anoop Singh Negi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Emergency Medicine",
+   "qualifications": "MBBS DA DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-premila-devi-waikhom",
+   "name": "Dr. Premila Devi Waikhom",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS DCH DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-chidambara-joshi",
+   "name": "Dr. Chidambara Joshi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Dermatology (Skin Specialist)",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-gaurav-shekhar-sharma",
+   "name": "Dr. Gaurav Shekhar Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.nephrology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Nephrology",
+   "qualifications": "MBBS, DNB, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-sharad-harnot",
+   "name": "Dr. Sharad Harnot",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "ENT (Ear Nose and Throat)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-mohd-bilal-kaleem",
+   "name": "Dr. Mohd. Bilal Kaleem",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-tarnnum-shakeel",
+   "name": "Dr. Tarnnum Shakeel",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-shruti-kumar",
+   "name": "Dr. Shruti Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS, DCH, DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-nihit-kharkwal",
+   "name": "Dr. Nihit Kharkwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.endocrinology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Endocrinology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "smih-dehradun-dr-sanjeev-kumar",
+   "name": "Dr. Sanjeev Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-manisha-gupta",
+   "name": "Dr. Manisha Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-vatsala-vats",
+   "name": "Dr. Vatsala Vats",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-sukhdeep-singh",
+   "name": "Dr. Sukhdeep Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Dermatology (Skin Specialist)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-deepti-chaudhary",
+   "name": "Dr. Deepti Chaudhary",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-priyanka-gupta",
+   "name": "Dr. Priyanka Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-vicky-bakshi",
+   "name": "Dr. Vicky Bakshi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-monika-jain",
+   "name": "Dr. Monika Jain",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-shreyanshi",
+   "name": "Dr. Shreyanshi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Ophthalmology (Eye)",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-shikha-agarwal",
+   "name": "Dr. Shikha Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-richa-sharma",
+   "name": "Dr. Richa Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Cardiology",
+   "qualifications": "MBBS, MD, DM"
+  },
+  {
+   "id": "smih-dehradun-dr-ajay-arya",
+   "name": "Dr. Ajay Arya",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-sanjibani-panigrahi",
+   "name": "Dr. Sanjibani Panigrahi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Psychiatry",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-tanvi-khanna",
+   "name": "Dr. Tanvi Khanna",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Pediatric",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-ashutosh-bhatt",
+   "name": "Dr. Ashutosh Bhatt",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-jaskaran-bazad",
+   "name": "Dr. Jaskaran Bazad",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-neelima-mishra",
+   "name": "Dr. Neelima Mishra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Internal Medicine/Physicians",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-kanchi-suseela-sravani",
+   "name": "Dr. Kanchi Suseela Sravani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-vinay-sheel-singh-bisen",
+   "name": "Dr. Vinay Sheel Singh Bisen",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-sanjay-gupta",
+   "name": "Dr. Sanjay Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gastroenterology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gastroenterology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "smih-dehradun-dr-mayank-agarwal",
+   "name": "Dr. Mayank Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Cardiology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "smih-dehradun-dr-anamika-gupta",
+   "name": "Dr. Anamika Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Cardiology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "smih-dehradun-dr-surabhi-singh",
+   "name": "Dr. Surabhi Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gynaecology & Obstretics",
+   "qualifications": "MBBS DGO DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-manas-misra",
+   "name": "Dr. Manas Misra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Emergency Medicine",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-mohd-rashid",
+   "name": "Dr. Mohd. Rashid",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Emergency Medicine",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-ruhi-jariwala",
+   "name": "Dr. Ruhi Jariwala",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-arpit-vishnoi",
+   "name": "Dr. Arpit Vishnoi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Orthopedics",
+   "qualifications": "MBBS, MS, DNB"
+  },
+  {
+   "id": "smih-dehradun-dr-upamanyu-joshi",
+   "name": "Dr. Upamanyu Joshi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-charu-bansal",
+   "name": "Dr. Charu Bansal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "General Surgery",
+   "qualifications": "MBBS, MS"
+  },
+  {
+   "id": "smih-dehradun-dr-taniya-garg",
+   "name": "Dr. Taniya Garg",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Psychiatry",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-aabid-shafi-wani",
+   "name": "Dr. Aabid Shafi Wani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS, MD"
+  },
+  {
+   "id": "smih-dehradun-dr-rishabh-dogra",
+   "name": "Dr. Rishabh Dogra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "ENT (Ear Nose and Throat)",
+   "qualifications": "MBBS MS"
+  },
+  {
+   "id": "smih-dehradun-dr-sidhant-kumar",
+   "name": "Dr. Sidhant Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Respiratory Medicine (TB & Chest)",
+   "qualifications": "MBBS MD"
+  },
+  {
+   "id": "smih-dehradun-dr-akhil-jindal",
+   "name": "Dr. Akhil Jindal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gastroenterology"
+   ],
+   "address": "Patel Nagar, Dehradun, Uttarakhand 248001",
+   "affiliation": "Shri Mahant Indiresh Hospital",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.smihospital.com/our-doctors.aspx",
+   "website": "https://www.smihospital.com/",
+   "phone": "0135-6672600",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Shri%20Mahant%20Indiresh%20Hospital%2C%20Patel%20Nagar%2C%20Dehradun%2C%20Uttarakhand%20248001",
+   "department": "Gastroenterology",
+   "qualifications": "MBBS MD DM"
+  },
+  {
+   "id": "himalayan-hospital-dr-anurag-rawat",
+   "name": "Dr. Anurag Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Cardiology",
+   "qualifications": "Associate Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-kunal-gururani",
+   "name": "Dr. Kunal Gururani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Cardiology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-chandra-mohan-belwal",
+   "name": "Dr. Chandra Mohan Belwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Cardiology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-malini-srivastava",
+   "name": "Dr. Malini Srivastava",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.mentalHealthProfessional",
+    "specialties.counsellor"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Clinical Psychology",
+   "qualifications": "Associate Professor and Head of the Department"
+  },
+  {
+   "id": "himalayan-hospital-dr-rashmi-jindal",
+   "name": "Dr. Rashmi Jindal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Dermatology, Venereology & Leprosy",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-brig-yashwant-singh-bisht",
+   "name": "Dr. (Brig) Yashwant Singh Bisht",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Dermatology, Venereology & Leprosy",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-samarjit-roy",
+   "name": "Dr. Samarjit Roy",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Dermatology, Venereology & Leprosy",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-maj-ruchi-hemdani",
+   "name": "Dr. (Maj.) Ruchi Hemdani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Dermatology, Venereology & Leprosy",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-reshma-kaushik",
+   "name": "Dr. Reshma Kaushik",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Emergency Medicine",
+   "qualifications": "Prof & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-mukta-singh",
+   "name": "Dr. Mukta Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Emergency Medicine",
+   "qualifications": "Associate Professor & Incharge Academics"
+  },
+  {
+   "id": "himalayan-hospital-dr-komal-thakur",
+   "name": "Dr. Komal Thakur",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Emergency Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-himanshi-baid",
+   "name": "Dr. Himanshi Baid",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.emergencyCare"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Emergency Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sampan-singh-bist",
+   "name": "Dr. Sampan Singh Bist",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "ENT",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-lovneesh-kumar",
+   "name": "Dr. Lovneesh kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "ENT",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-vinish-kumar-agarwal",
+   "name": "Dr. Vinish Kumar Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "ENT",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-mahima-luthra",
+   "name": "Dr. Mahima Luthra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "ENT",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-saurabh-singh",
+   "name": "Dr. Saurabh Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gastroenterology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Gastroentrology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sohaib-ahmad",
+   "name": "Dr. Sohaib Ahmad",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-sanjiv-kumar-verma",
+   "name": "Dr. Sanjiv Kumar Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-rajeev-mohan-kaushik",
+   "name": "Dr. Rajeev Mohan Kaushik",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-shahbaj-ahmad",
+   "name": "Dr. Shahbaj Ahmad",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-mohamad-akram",
+   "name": "Dr. Mohamad Akram",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-naveen-kumar-rajput",
+   "name": "Dr. Naveen Kumar Rajput",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-shubhanshu-chawla",
+   "name": "Dr. Shubhanshu Chawla",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-vikas-chandel",
+   "name": "Dr. Vikas Chandel",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-avriti-baveja",
+   "name": "Dr. Avriti Baveja",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-mitali-verma",
+   "name": "Dr. Mitali Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-amit-singh-bisht",
+   "name": "Dr. Amit Singh Bisht",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-akash-rawat",
+   "name": "Dr. Akash Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "General Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-ashok-kumar-deorari",
+   "name": "Dr. Ashok Kumar Deorari",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neonatology",
+   "qualifications": "Pro-Vice Chancellor & Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-saikat-patra",
+   "name": "Dr. Saikat Patra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neonatology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-chinmay-chetan",
+   "name": "Dr. Chinmay Chetan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neonatology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-vikash-chandel",
+   "name": "Dr. Vikash Chandel",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.nephrology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Nephrology",
+   "qualifications": ""
+  },
+  {
+   "id": "himalayan-hospital-dr-deepak-goel",
+   "name": "Dr. Deepak Goel",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neurology",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-manish-mittal",
+   "name": "Dr. Manish Mittal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neurology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-ashwani-bhat",
+   "name": "Dr. Ashwani Bhat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Neurology",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-ruchira-nautiyal",
+   "name": "Dr. Ruchira Nautiyal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-nidhi-chauhan",
+   "name": "Dr. Nidhi Chauhan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-purnima-upreti",
+   "name": "Dr. Purnima Upreti",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-rashmi-rajput",
+   "name": "Dr. Rashmi Rajput",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-anchal-agarwal",
+   "name": "Dr. Anchal Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sonal-gupta",
+   "name": "Dr. Sonal Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-alka",
+   "name": "Dr. Alka",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-renu-dhasmana",
+   "name": "Dr. Renu Dhasmana",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-harsh-bahadur",
+   "name": "Dr. Harsh Bahadur",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-prof-amit-maitreya",
+   "name": "Dr. (Prof.) Amit Maitreya",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-ashneet-sandhu",
+   "name": "Dr. Ashneet Sandhu",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Senior Resident"
+  },
+  {
+   "id": "himalayan-hospital-dr-mehak-raheja",
+   "name": "Dr. Mehak Raheja",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Senior Resident"
+  },
+  {
+   "id": "himalayan-hospital-dr-neelam-verma",
+   "name": "Dr. Neelam Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-shreya-angrish",
+   "name": "Dr. Shreya Angrish",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Senior Resident"
+  },
+  {
+   "id": "himalayan-hospital-dr-sukhdeep-bains",
+   "name": "Dr. Sukhdeep Bains",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Ophthalmology",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-atul-agarwal",
+   "name": "Dr. Atul Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-rajesh-kumar-maheshwari",
+   "name": "Dr. Rajesh Kumar Maheshwari",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-vijendra-devisingh-chauhan",
+   "name": "Dr. Vijendra Devisingh Chauhan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-anil-kumar-juyal",
+   "name": "Dr. Anil Kumar Juyal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-chetan-peshin",
+   "name": "Dr. Chetan Peshin",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-digvijay-agarwal",
+   "name": "Dr. Digvijay Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sanad-kumar",
+   "name": "Dr. Sanad Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-faiz-akbar-siddiqui",
+   "name": "Dr. Faiz Akbar Siddiqui",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-harsh-priyadarshi",
+   "name": "Dr. Harsh Priyadarshi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sirazul-haque-malik",
+   "name": "Dr. Sirazul Haque Malik",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.orthopaedics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Orthopaedics",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-anil-kumar-rawat",
+   "name": "Dr. Anil Kumar Rawat",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-b-p-kalra",
+   "name": "Dr. B. P. Kalra",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-alpa-gupta",
+   "name": "Dr. Alpa Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-kunal",
+   "name": "Dr. Kunal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-neerul-pandita",
+   "name": "Dr. Neerul Pandita",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-nitika-agarwal",
+   "name": "Dr. Nitika Agarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sanober-wasim",
+   "name": "Dr. Sanober Wasim",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-rakesh-kumar",
+   "name": "Dr. Rakesh Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-deepshkha-jain",
+   "name": "Dr. Deepshkha Jain",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sonam-agrawal",
+   "name": "Dr. Sonam Agrawal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pediatrics",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-rahul-kumar-gupta",
+   "name": "Dr. Rahul Kumar Gupta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pulmonary Medicine",
+   "qualifications": ""
+  },
+  {
+   "id": "himalayan-hospital-dr-rakhee-khanduri",
+   "name": "Dr. Rakhee Khanduri",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pulmonary Medicine",
+   "qualifications": ""
+  },
+  {
+   "id": "himalayan-hospital-dr-sushant-khanduri",
+   "name": "Dr. Sushant Khanduri",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pulmonary Medicine",
+   "qualifications": ""
+  },
+  {
+   "id": "himalayan-hospital-dr-varuna-jethani",
+   "name": "Dr. Varuna Jethani",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Pulmonary Medicine",
+   "qualifications": ""
+  },
+  {
+   "id": "himalayan-hospital-dr-priya-ranjan-avinash",
+   "name": "Dr. Priya Ranjan Avinash",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Psychiatry",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-robin-victor",
+   "name": "Dr. Robin Victor",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Psychiatry",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-praveen-rikhari",
+   "name": "Dr. Praveen Rikhari",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Psychiatry",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-manoj-kumar",
+   "name": "Dr. Manoj Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Respiratory Medicine",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-hemant-kumar-nautiyal",
+   "name": "Dr. Hemant Kumar Nautiyal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Professor & Head"
+  },
+  {
+   "id": "himalayan-hospital-dr-sanjay-dvivedi",
+   "name": "Dr. Sanjay Dvivedi",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-santosh-kumar-singh",
+   "name": "Dr. Santosh Kumar Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-jitendra-prasad-ray",
+   "name": "Dr. Jitendra Prasad Ray",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-bhawna-singh",
+   "name": "Dr. Bhawna Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-chetna-choudhary",
+   "name": "Dr. Chetna Choudhary",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-akshay-chauhan",
+   "name": "Dr. Akshay Chauhan",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-divyanshu-ghildiyal",
+   "name": "Dr. Divyanshu Ghildiyal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-munish-aggarwal",
+   "name": "Dr. Munish Aggarwal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-praveen-kumar",
+   "name": "Dr. Praveen Kumar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Associate Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-bhaskar-bisht",
+   "name": "Dr. Bhaskar Bisht",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "himalayan-hospital-dr-sahil-verma",
+   "name": "Dr. Sahil Verma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalSurgery"
+   ],
+   "address": "Swami Ram Nagar, Jolly Grant, Dehradun, Uttarakhand 248016",
+   "affiliation": "Himalayan Hospital (HIMS), Jolly Grant",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://himalayanhospital.org/specialistdoctor",
+   "website": "https://himalayanhospital.org/",
+   "phone": "0135-2471200",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Himalayan%20Hospital%20%28HIMS%29%2C%20Jolly%20Grant%2C%20Swami%20Ram%20Nagar%2C%20Jolly%20Grant%2C%20Dehradun%2C%20Uttarakhand%20248016",
+   "department": "Surgery",
+   "qualifications": "Assistant Professor"
+  },
+  {
+   "id": "synergy-dehradun-dr-susheel-kumar-sharma",
+   "name": "Dr. Susheel Kumar Sharma",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.generalPhysician",
+    "specialties.internalMedicine"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Medicine & Diabetology",
+   "qualifications": "MD"
+  },
+  {
+   "id": "synergy-dehradun-dr-tarun-mittal",
+   "name": "Dr. Tarun Mittal",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.dermatology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Dermatology",
+   "qualifications": "DVD, MISD"
+  },
+  {
+   "id": "synergy-dehradun-dr-sumit-mehta",
+   "name": "Dr. Sumit Mehta",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.psychiatry"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Psychiatry",
+   "qualifications": "MD"
+  },
+  {
+   "id": "synergy-dehradun-dr-manu-bharadwaj",
+   "name": "Dr. Manu Bharadwaj",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ophthalmology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Ophthalmology",
+   "qualifications": "MS"
+  },
+  {
+   "id": "synergy-dehradun-dr-anubhav-thukral",
+   "name": "Dr. Anubhav Thukral",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.endocrinology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Endocrinology",
+   "qualifications": "MD, DM"
+  },
+  {
+   "id": "synergy-dehradun-dr-shalini-varshney",
+   "name": "Dr. Shalini Varshney",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "ENT",
+   "qualifications": "MS"
+  },
+  {
+   "id": "synergy-dehradun-dr-sharad-harnot",
+   "name": "Dr. Sharad Harnot",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.ent"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "ENT",
+   "qualifications": "MS"
+  },
+  {
+   "id": "synergy-dehradun-dr-amarpal-s-gulati",
+   "name": "Dr. Amarpal S Gulati",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.cardiology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Cardiology",
+   "qualifications": "MD, DNB, DM (Cardiology)"
+  },
+  {
+   "id": "synergy-dehradun-dr-lav-kush",
+   "name": "Dr. Lav Kush",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.pulmonology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Pulmonary Medicine",
+   "qualifications": "MD"
+  },
+  {
+   "id": "synergy-dehradun-dr-krishan-avtar",
+   "name": "Dr. Krishan Avtar",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.neurology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Neurology",
+   "qualifications": "MD, DM (Neurology)"
+  },
+  {
+   "id": "synergy-dehradun-dr-arvind-k-singh",
+   "name": "Dr. Arvind K Singh",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gastroenterology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Gastroenterology",
+   "qualifications": "MD, DM (Gastroenterology)"
+  },
+  {
+   "id": "synergy-dehradun-dr-pritosh-srivastava",
+   "name": "Dr. Pritosh Srivastava",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.paediatrics"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Neonatology",
+   "qualifications": "MD, Fellowship Neonatology"
+  },
+  {
+   "id": "synergy-dehradun-dr-sarita-chourasia",
+   "name": "Dr. Sarita Chourasia",
+   "facilityType": "clinic",
+   "specialties": [
+    "specialties.gynaecology"
+   ],
+   "address": "Ballupur Canal Road, Dehradun, Uttarakhand",
+   "affiliation": "Synergy Institute of Medical Sciences",
+   "isGovernment": false,
+   "isVerified": true,
+   "sourceUrl": "https://www.synergyhealthcare.in/Institutes-and-Departments.html",
+   "website": "https://www.synergyhealthcare.in/",
+   "phone": "0135-2226000",
+   "verifiedAt": "2026-09-16",
+   "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Synergy%20Institute%20of%20Medical%20Sciences%2C%20Ballupur%20Canal%20Road%2C%20Dehradun%2C%20Uttarakhand",
+   "department": "Obstetrics & Gynaecology",
+   "qualifications": "MS"
+  }
+ ]
+}

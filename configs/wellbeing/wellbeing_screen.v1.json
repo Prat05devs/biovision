@@ -1,0 +1,271 @@
+{
+  "version": "wellbeing-stepped-screen-v1",
+  "status": "requires_clinician_review",
+  "warning": "This is a stepped symptom screen. A score is not a diagnosis and must never be presented as one. Only a qualified clinician can diagnose a mental-health condition.",
+  "recallPeriodDays": 14,
+  "instruments": [
+    {
+      "id": "phq",
+      "name": "Patient Health Questionnaire (PHQ-2 / PHQ-9)",
+      "measures": "depressive symptoms",
+      "license": "public_domain",
+      "licenseNote": "Released by Pfizer Inc. on 2010-07-21 with no copyright restriction and at no charge. No permission is required to reproduce, translate, display, or distribute.",
+      "source": "https://www.phqscreeners.com/",
+      "citation": "Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-613."
+    },
+    {
+      "id": "gad",
+      "name": "Generalized Anxiety Disorder scale (GAD-2 / GAD-7)",
+      "measures": "anxiety symptoms",
+      "license": "public_domain",
+      "licenseNote": "Released by Pfizer Inc. on 2010-07-21 with no copyright restriction and at no charge.",
+      "source": "https://www.phqscreeners.com/",
+      "citation": "Spitzer RL, Kroenke K, Williams JBW, Lowe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097."
+    }
+  ],
+  "limits": { "maximumAnswers": 18 },
+  "optionSets": {
+    "frequency4": [
+      { "value": "not_at_all", "labelKey": "questions.options.not_at_all", "score": 0 },
+      { "value": "several_days", "labelKey": "questions.options.several_days", "score": 1 },
+      { "value": "more_than_half", "labelKey": "questions.options.more_than_half", "score": 2 },
+      { "value": "nearly_every_day", "labelKey": "questions.options.nearly_every_day", "score": 3 }
+    ],
+    "difficulty4": [
+      { "value": "not_difficult", "labelKey": "questions.options.not_difficult", "score": 0 },
+      { "value": "somewhat_difficult", "labelKey": "questions.options.somewhat_difficult", "score": 1 },
+      { "value": "very_difficult", "labelKey": "questions.options.very_difficult", "score": 2 },
+      { "value": "extremely_difficult", "labelKey": "questions.options.extremely_difficult", "score": 3 }
+    ]
+  },
+  "scales": {
+    "phq2": {
+      "labelKey": "wellbeing.scales.phq2",
+      "items": ["wellbeing_interest", "wellbeing_mood"],
+      "maximumScore": 6,
+      "positiveAtOrAbove": 3,
+      "positiveNote": "Kroenke 2003 reports sensitivity 83% / specificity 92% for major depression at a cut point of 3.",
+      "bands": [
+        { "minimum": 0, "level": "monitor", "labelKey": "wellbeing.bands.phq2.negative" },
+        { "minimum": 3, "level": "support_recommended", "labelKey": "wellbeing.bands.phq2.positive" }
+      ]
+    },
+    "phq9": {
+      "labelKey": "wellbeing.scales.phq9",
+      "items": [
+        "wellbeing_interest",
+        "wellbeing_mood",
+        "wellbeing_sleep",
+        "wellbeing_energy",
+        "wellbeing_appetite",
+        "wellbeing_self_worth",
+        "wellbeing_concentration",
+        "wellbeing_psychomotor",
+        "wellbeing_self_harm"
+      ],
+      "maximumScore": 27,
+      "positiveAtOrAbove": 10,
+      "positiveNote": "A PHQ-9 total of 10 or more is the conventional positive screen for major depression (about 88% sensitivity and specificity).",
+      "bands": [
+        { "minimum": 0, "level": "monitor", "labelKey": "wellbeing.bands.phq9.minimal" },
+        { "minimum": 5, "level": "monitor", "labelKey": "wellbeing.bands.phq9.mild" },
+        { "minimum": 10, "level": "support_recommended", "labelKey": "wellbeing.bands.phq9.moderate" },
+        { "minimum": 15, "level": "support_recommended", "labelKey": "wellbeing.bands.phq9.moderatelySevere" },
+        { "minimum": 20, "level": "prompt_review", "labelKey": "wellbeing.bands.phq9.severe" }
+      ]
+    },
+    "gad2": {
+      "labelKey": "wellbeing.scales.gad2",
+      "items": ["wellbeing_nervous", "wellbeing_worry_control"],
+      "maximumScore": 6,
+      "positiveAtOrAbove": 3,
+      "positiveNote": "A GAD-2 of 3 or more is the conventional threshold for stepping up to the full GAD-7.",
+      "bands": [
+        { "minimum": 0, "level": "monitor", "labelKey": "wellbeing.bands.gad2.negative" },
+        { "minimum": 3, "level": "support_recommended", "labelKey": "wellbeing.bands.gad2.positive" }
+      ]
+    },
+    "gad7": {
+      "labelKey": "wellbeing.scales.gad7",
+      "items": [
+        "wellbeing_nervous",
+        "wellbeing_worry_control",
+        "wellbeing_worry_excess",
+        "wellbeing_relax",
+        "wellbeing_restless",
+        "wellbeing_irritable",
+        "wellbeing_dread"
+      ],
+      "maximumScore": 21,
+      "positiveAtOrAbove": 10,
+      "positiveNote": "A GAD-7 total of 10 or more is the conventional positive screen for generalized anxiety disorder (89% sensitivity, 82% specificity).",
+      "bands": [
+        { "minimum": 0, "level": "monitor", "labelKey": "wellbeing.bands.gad7.minimal" },
+        { "minimum": 5, "level": "monitor", "labelKey": "wellbeing.bands.gad7.mild" },
+        { "minimum": 10, "level": "support_recommended", "labelKey": "wellbeing.bands.gad7.moderate" },
+        { "minimum": 15, "level": "prompt_review", "labelKey": "wellbeing.bands.gad7.severe" }
+      ]
+    }
+  },
+  "riskItem": {
+    "questionId": "wellbeing_self_harm",
+    "endorsedWhenScoreAtOrAbove": 1,
+    "stopsQuestionnaire": true,
+    "note": "PHQ-9 item 9. Any endorsement stops the screen and routes to crisis support. This item detects risk; it does not measure it. It is not a substitute for a validated suicide-risk assessment such as the C-SSRS."
+  },
+  "questions": [
+    {
+      "id": "wellbeing_interest",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.interest",
+      "sectionKey": "wellbeing.sections.mood",
+      "instrument": "phq",
+      "optionSet": "frequency4"
+    },
+    {
+      "id": "wellbeing_mood",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.mood",
+      "sectionKey": "wellbeing.sections.mood",
+      "instrument": "phq",
+      "optionSet": "frequency4"
+    },
+    {
+      "id": "wellbeing_sleep",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.sleep",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_energy",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.energy",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_appetite",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.appetite",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_self_worth",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.selfWorth",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_concentration",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.concentration",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_psychomotor",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.psychomotor",
+      "sectionKey": "wellbeing.sections.moodDetail",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_self_harm",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.selfHarm",
+      "sectionKey": "wellbeing.sections.safety",
+      "instrument": "phq",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "phq2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_nervous",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.nervous",
+      "sectionKey": "wellbeing.sections.anxiety",
+      "instrument": "gad",
+      "optionSet": "frequency4"
+    },
+    {
+      "id": "wellbeing_worry_control",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.worryControl",
+      "sectionKey": "wellbeing.sections.anxiety",
+      "instrument": "gad",
+      "optionSet": "frequency4"
+    },
+    {
+      "id": "wellbeing_worry_excess",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.worryExcess",
+      "sectionKey": "wellbeing.sections.anxietyDetail",
+      "instrument": "gad",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "gad2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_relax",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.relax",
+      "sectionKey": "wellbeing.sections.anxietyDetail",
+      "instrument": "gad",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "gad2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_restless",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.restless",
+      "sectionKey": "wellbeing.sections.anxietyDetail",
+      "instrument": "gad",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "gad2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_irritable",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.irritable",
+      "sectionKey": "wellbeing.sections.anxietyDetail",
+      "instrument": "gad",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "gad2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_dread",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.dread",
+      "sectionKey": "wellbeing.sections.anxietyDetail",
+      "instrument": "gad",
+      "optionSet": "frequency4",
+      "showIfScore": { "scale": "gad2", "atOrAbove": 3 }
+    },
+    {
+      "id": "wellbeing_difficulty",
+      "type": "single_choice",
+      "textKey": "wellbeing.items.difficulty",
+      "sectionKey": "wellbeing.sections.impact",
+      "instrument": "phq",
+      "optionSet": "difficulty4",
+      "excludedFromScales": true,
+      "showIfAnyScore": [
+        { "scale": "phq2", "atOrAbove": 3 },
+        { "scale": "gad2", "atOrAbove": 3 }
+      ]
+    }
+  ]
+}

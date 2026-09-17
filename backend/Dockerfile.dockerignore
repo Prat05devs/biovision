@@ -1,0 +1,8 @@
+*
+!backend/pyproject.toml
+!backend/README.md
+!backend/app
+!configs
+!ml/models/anemia-palor-detection/model.pt
+!ml/models/anemia-palor-detection/config.json
+**/__pycache__

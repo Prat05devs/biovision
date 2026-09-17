@@ -1,0 +1,17 @@
+{
+  "name": "biovision-facephys",
+  "version": "1.0.0",
+  "private": true,
+  "description": "On-device FacePhys rPPG heart-rate camera output for VisionCamera (iOS).",
+  "main": "src/index.ts",
+  "react-native": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "specs": "nitrogen --logLevel=\"debug\""
+  },
+  "peerDependencies": {
+    "react-native": "*",
+    "react-native-nitro-modules": "*",
+    "react-native-vision-camera": "*"
+  }
+}

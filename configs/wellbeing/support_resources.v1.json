@@ -1,0 +1,46 @@
+{
+  "version": "wellbeing-support-directory-v1",
+  "status": "verified_official_sources",
+  "policy": "Only helplines published by a government or equivalent official body are listed. An unverified number is worse than no number, so a region with no verified entry returns an empty list and the app says so.",
+  "regions": {
+    "IN": {
+      "displayNameKey": "wellbeing.regions.IN",
+      "emergencyNumber": "112",
+      "emergencyNumberSourceUrl": "https://112.gov.in/",
+      "resources": [
+        {
+          "id": "telemanas",
+          "nameKey": "wellbeing.resources.telemanas.name",
+          "descriptionKey": "wellbeing.resources.telemanas.description",
+          "phone": "14416",
+          "alternatePhone": "1800-891-4416",
+          "website": "https://telemanas.mohfw.gov.in/",
+          "operator": "Ministry of Health and Family Welfare, Government of India",
+          "availability": "24x7",
+          "languages": 20,
+          "cost": "toll_free",
+          "kind": "mental_health_helpline",
+          "verified": true,
+          "verifiedOn": "2026-09-08",
+          "sourceUrl": "https://telemanas.mohfw.gov.in/home"
+        },
+        {
+          "id": "kiran",
+          "nameKey": "wellbeing.resources.kiran.name",
+          "descriptionKey": "wellbeing.resources.kiran.description",
+          "phone": "1800-599-0019",
+          "website": "https://depwd.gov.in/",
+          "operator": "Department of Empowerment of Persons with Disabilities, Ministry of Social Justice and Empowerment",
+          "availability": "24x7",
+          "languages": 13,
+          "cost": "toll_free",
+          "kind": "mental_health_helpline",
+          "verified": true,
+          "verifiedOn": "2026-09-08",
+          "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1652240",
+          "note": "Launched 2020 by PIB press release; now routed alongside Tele-MANAS. Tele-MANAS is listed first as the current national service."
+        }
+      ]
+    }
+  }
+}
