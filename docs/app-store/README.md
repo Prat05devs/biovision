@@ -12,9 +12,14 @@
 4. In App Store Connect (<https://appstoreconnect.apple.com>) → Apps → **+ New App**:
    Platform iOS · Name "BioVision" (use "BioVision Health" if the name is taken) ·
    Primary language English (India) or English (U.S.) · Bundle ID as above · SKU `biovision-ios-1`.
-5. Host `privacy-policy.html` and `terms-of-use.html` at public HTTPS URLs
-   (GitHub Pages, Netlify Drop or Google Sites all work), and create a simple support page or
-   a support email address. App Store Connect requires a Privacy Policy URL and a Support URL.
+5. Deploy the `landing/` folder to **biovision.live** (it ships a `vercel.json`; Vercel or
+   Netlify both work). `cleanUrls` is on, so the live pages are:
+   - <https://biovision.live> — marketing page
+   - <https://biovision.live/privacy> — Privacy Policy URL (required by App Store Connect)
+   - <https://biovision.live/support> — Support URL (required)
+   - <https://biovision.live/terms> — Terms of Use
+   Create the `support@biovision.live` mailbox referenced on the support page, and re-run
+   `npm run landing:build` after any change to the legal text in `src/i18n/en.json`.
 
 ## 1. Build the archive in Xcode
 

@@ -44,9 +44,10 @@ BioVision provides health information and is not a medical device. It does not d
 health check,heart rate,HRV,stress,hemoglobin,anemia,face scan,doctor,Dehradun,wellness,vitals,Hindi
 
 ## URLs
-- Support URL: _your hosted support page_
-- Marketing URL (optional): _your site_
-- Privacy Policy URL: _hosted docs/app-store/privacy-policy.html_
+- Support URL: https://biovision.live/support
+- Marketing URL (optional): https://biovision.live
+- Privacy Policy URL: https://biovision.live/privacy
+- Terms of Use (EULA) URL: https://biovision.live/terms
 
 ## App Review notes
 No login is required.

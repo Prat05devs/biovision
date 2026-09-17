@@ -4,15 +4,17 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
+// Canonical and Open Graph tags need absolute URLs; relative ones break link previews.
+const SITE = 'https://biovision.live';
 const en = JSON.parse(fs.readFileSync(path.join(root, 'src/i18n/en.json'), 'utf8'));
 const index = fs.readFileSync(path.join(root, 'landing/index.html'), 'utf8');
 const header = index.slice(index.indexOf('<body>'), index.indexOf('<main>'));
 const footer = index.slice(index.indexOf('<footer>'));
 const escape = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-for (const [doc, file, description] of [
-  ['privacy', 'privacy.html', 'How BioVision handles your data: everything is analysed on your iPhone, with no accounts, uploads, ads or tracking.'],
-  ['terms', 'terms.html', 'Terms of Use for the BioVision health-information app.'],
+for (const [doc, file, description, url] of [
+  ['privacy', 'privacy.html', 'How BioVision handles your data: everything is analysed on your iPhone, with no accounts, uploads, ads or tracking.', `${SITE}/privacy`],
+  ['terms', 'terms.html', 'Terms of Use for the BioVision health-information app.', `${SITE}/terms`],
 ]) {
   const { title, sections } = en.legal[doc];
   const body = sections.map(({ heading, body: text }) => `  <h2>${escape(heading)}</h2>\n  <p>${escape(text)}</p>`).join('\n');
@@ -23,6 +25,11 @@ for (const [doc, file, description] of [
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BioVision — ${escape(title)}</title>
 <meta name="description" content="${escape(description)}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:title" content="BioVision — ${escape(title)}" />
+<meta property="og:description" content="${escape(description)}" />
+<meta property="og:url" content="${url}" />
+<meta property="og:image" content="${SITE}/assets/app-icon.png" />
 <link rel="icon" href="/assets/app-icon.png" />
 <link rel="stylesheet" href="/styles.css" />
 </head>
