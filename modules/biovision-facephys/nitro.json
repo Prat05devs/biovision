@@ -19,11 +19,19 @@
       "ios": {
         "language": "swift",
         "implementationClassName": "HybridFacePhysFactory"
+      },
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridFacePhysFactory"
       }
     },
     "EyeScreener": {
       "ios": {
         "language": "swift",
+        "implementationClassName": "HybridEyeScreener"
+      },
+      "android": {
+        "language": "kotlin",
         "implementationClassName": "HybridEyeScreener"
       }
     }

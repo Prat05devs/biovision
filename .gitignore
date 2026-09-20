@@ -41,8 +41,14 @@ modules/biovision-facephys/tools/portrait.jpg
 # Landing site build output
 landing/.vercel/
 
-# Android is not maintained yet (iPhone-only release); regenerate with `npx expo prebuild -p android`
-android/
+# Android build outputs. The project itself is tracked, like ios/: it carries the release
+# signing config, the local module wiring and the splash/theme fixes, none of which
+# `expo prebuild` would regenerate.
+android/local.properties
+android/app/.cxx/
+android/.kotlin/
+modules/*/android/build/
+modules/*/android/.cxx/
 
 # Large model weights are downloaded, not committed (see ml/models/*/download.sh)
 *.pt
@@ -58,3 +64,8 @@ docs/VITAL_METRIC_AUDIT_2026_09.md
 # Xcode per-user state
 xcuserdata/
 *.xcuserstate
+
+# Android release signing. The upload key and its passwords must never leave this machine:
+# anyone holding them can publish an update as us. Credentials live in ~/.gradle/gradle.properties.
+*.jks
+*.keystore
