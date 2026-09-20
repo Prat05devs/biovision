@@ -52,7 +52,7 @@ export interface AssessmentService {
   nextQuestion(input: {
     sessionId: string;
     anemiaSignal: ScreeningSignal;
-    answers: Record<string, string | boolean | number>;
+    answers: Record<string, string | boolean | number | string[]>;
   }): Promise<{
     question?: HealthQuestion;
     done: boolean;

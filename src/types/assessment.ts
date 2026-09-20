@@ -39,17 +39,19 @@ export type QuestionOption = {
 
 export type HealthQuestion = {
   id: string;
-  type: 'yes_no' | 'single_choice';
+  type: 'yes_no' | 'single_choice' | 'multi_choice';
   textKey: string;
   required: boolean;
   options?: QuestionOption[];
   sectionKey?: string;
   followUpOf?: string;
+  /** Multi-select only: choosing this clears every other option (for example "None of these"). */
+  exclusiveValue?: string;
 };
 
 export type AnswerEvent = {
   questionId: string;
-  value: string | boolean | number;
+  value: string | boolean | number | string[];
   answeredAt: string;
   questionBankVersion: string;
 };
@@ -90,10 +92,15 @@ export type HealthAssessmentReport = {
 };
 
 /** Entered by the person before the scan; never inferred from images. */
+/** Pregnancy trimester, when the questionnaire has reached the point of asking. */
+export type PregnancyTrimester = 'first' | 'second' | 'third';
+
 export type ScreeningProfile = {
   ageYears: number;
   sex: 'female' | 'male';
   pregnant: boolean;
+  /** Absent when not pregnant, or before the pregnancy questions are answered. */
+  trimester?: PregnancyTrimester;
 };
 
 export type AssessmentSession = {
@@ -124,7 +131,7 @@ export type AssessmentSession = {
   questionnaire: {
     version: string;
     questions: HealthQuestion[];
-    answers: Record<string, string | boolean | number>;
+    answers: Record<string, string | boolean | number | string[]>;
     answerEvents: AnswerEvent[];
   };
   /** Self-reported Phase 0 lifestyle answers. General guidance only, no clinical scoring. */

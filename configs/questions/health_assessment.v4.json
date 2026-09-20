@@ -1,0 +1,981 @@
+{
+  "version": "health-assessment-v4",
+  "questions": [
+    {
+      "id": "urgent_symptoms",
+      "type": "yes_no",
+      "textKey": "questions.urgent_symptoms",
+      "sectionKey": "questions.sections.safety",
+      "redFlag": true,
+      "urgentIfYes": "medical"
+    },
+    {
+      "id": "main_concern",
+      "type": "single_choice",
+      "textKey": "questions.main_concern",
+      "sectionKey": "questions.sections.concern",
+      "options": [
+        {
+          "value": "none",
+          "labelKey": "questions.options.none"
+        },
+        {
+          "value": "tiredness",
+          "labelKey": "questions.options.tiredness"
+        },
+        {
+          "value": "breathing",
+          "labelKey": "questions.options.breathing"
+        },
+        {
+          "value": "heart",
+          "labelKey": "questions.options.heart"
+        },
+        {
+          "value": "skin",
+          "labelKey": "questions.options.skin"
+        },
+        {
+          "value": "mood",
+          "labelKey": "questions.options.mood"
+        },
+        {
+          "value": "head",
+          "labelKey": "questions.options.head"
+        },
+        {
+          "value": "metabolic",
+          "labelKey": "questions.options.metabolic"
+        },
+        {
+          "value": "stomach",
+          "labelKey": "questions.options.stomach"
+        },
+        {
+          "value": "joints",
+          "labelKey": "questions.options.joints"
+        },
+        {
+          "value": "ent",
+          "labelKey": "questions.options.ent"
+        },
+        {
+          "value": "eyes",
+          "labelKey": "questions.options.eyes"
+        },
+        {
+          "value": "womens",
+          "labelKey": "questions.options.womens"
+        }
+      ]
+    },
+    {
+      "id": "tired_signs",
+      "type": "single_choice",
+      "textKey": "questions.tired_signs",
+      "sectionKey": "questions.sections.tiredness",
+      "options": [
+        {
+          "value": "no_other_signs",
+          "labelKey": "questions.options.no_other_signs"
+        },
+        {
+          "value": "weight_change",
+          "labelKey": "questions.options.weight_change"
+        },
+        {
+          "value": "thirst_urination",
+          "labelKey": "questions.options.thirst_urination"
+        },
+        {
+          "value": "cold_hair_loss",
+          "labelKey": "questions.options.cold_hair_loss"
+        },
+        {
+          "value": "heavy_periods",
+          "labelKey": "questions.options.heavy_periods"
+        },
+        {
+          "value": "snoring_sleep",
+          "labelKey": "questions.options.snoring_sleep"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "tiredness"
+      }
+    },
+    {
+      "id": "breath_trigger",
+      "type": "single_choice",
+      "textKey": "questions.breath_trigger",
+      "sectionKey": "questions.sections.breathing",
+      "options": [
+        {
+          "value": "heavy_activity",
+          "labelKey": "questions.options.heavy_activity"
+        },
+        {
+          "value": "usual_activity",
+          "labelKey": "questions.options.usual_activity"
+        },
+        {
+          "value": "minimal_activity",
+          "labelKey": "questions.options.minimal_activity"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "breathing"
+      }
+    },
+    {
+      "id": "breath_cough",
+      "type": "single_choice",
+      "textKey": "questions.breath_cough",
+      "sectionKey": "questions.sections.breathing",
+      "options": [
+        {
+          "value": "no_cough",
+          "labelKey": "questions.options.no_cough"
+        },
+        {
+          "value": "dry_cough",
+          "labelKey": "questions.options.dry_cough"
+        },
+        {
+          "value": "cough_phlegm",
+          "labelKey": "questions.options.cough_phlegm"
+        },
+        {
+          "value": "wheeze",
+          "labelKey": "questions.options.wheeze"
+        },
+        {
+          "value": "cough_blood",
+          "labelKey": "questions.options.cough_blood",
+          "urgent": "medical"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "breathing"
+      }
+    },
+    {
+      "id": "heart_symptom",
+      "type": "single_choice",
+      "textKey": "questions.heart_symptom",
+      "sectionKey": "questions.sections.heart",
+      "options": [
+        {
+          "value": "palpitations",
+          "labelKey": "questions.options.palpitations"
+        },
+        {
+          "value": "chest_on_exertion",
+          "labelKey": "questions.options.chest_on_exertion"
+        },
+        {
+          "value": "ankle_swelling",
+          "labelKey": "questions.options.ankle_swelling"
+        },
+        {
+          "value": "dizziness_standing",
+          "labelKey": "questions.options.dizziness_standing"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "heart"
+      }
+    },
+    {
+      "id": "heart_near_faint",
+      "type": "yes_no",
+      "textKey": "questions.heart_near_faint",
+      "sectionKey": "questions.sections.heart",
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "heart"
+      }
+    },
+    {
+      "id": "skin_type",
+      "type": "single_choice",
+      "textKey": "questions.skin_type",
+      "sectionKey": "questions.sections.skin",
+      "options": [
+        {
+          "value": "rash_itch",
+          "labelKey": "questions.options.rash_itch"
+        },
+        {
+          "value": "acne",
+          "labelKey": "questions.options.acne"
+        },
+        {
+          "value": "pigmentation",
+          "labelKey": "questions.options.pigmentation"
+        },
+        {
+          "value": "hair_nails",
+          "labelKey": "questions.options.hair_nails"
+        },
+        {
+          "value": "mole_change",
+          "labelKey": "questions.options.mole_change"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "skin"
+      }
+    },
+    {
+      "id": "skin_spreading",
+      "type": "yes_no",
+      "textKey": "questions.skin_spreading",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "rash_itch"
+      }
+    },
+    {
+      "id": "acne_severity",
+      "type": "single_choice",
+      "textKey": "questions.acne_severity",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "acne"
+      },
+      "options": [
+        {
+          "value": "acne_comedones",
+          "labelKey": "questions.options.acne_comedones"
+        },
+        {
+          "value": "acne_inflamed_few",
+          "labelKey": "questions.options.acne_inflamed_few"
+        },
+        {
+          "value": "acne_inflamed_many",
+          "labelKey": "questions.options.acne_inflamed_many"
+        },
+        {
+          "value": "acne_nodules",
+          "labelKey": "questions.options.acne_nodules"
+        }
+      ]
+    },
+    {
+      "id": "acne_scarring",
+      "type": "single_choice",
+      "textKey": "questions.acne_scarring",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "acne"
+      },
+      "options": [
+        {
+          "value": "acne_no_marks",
+          "labelKey": "questions.options.acne_no_marks"
+        },
+        {
+          "value": "acne_dark_marks",
+          "labelKey": "questions.options.acne_dark_marks"
+        },
+        {
+          "value": "acne_scars",
+          "labelKey": "questions.options.acne_scars"
+        }
+      ]
+    },
+    {
+      "id": "acne_treatment",
+      "type": "single_choice",
+      "textKey": "questions.acne_treatment",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "acne"
+      },
+      "options": [
+        {
+          "value": "acne_untreated",
+          "labelKey": "questions.options.acne_untreated"
+        },
+        {
+          "value": "acne_otc",
+          "labelKey": "questions.options.acne_otc"
+        },
+        {
+          "value": "acne_one_course",
+          "labelKey": "questions.options.acne_one_course"
+        },
+        {
+          "value": "acne_many_courses",
+          "labelKey": "questions.options.acne_many_courses"
+        }
+      ]
+    },
+    {
+      "id": "acne_hormonal",
+      "type": "single_choice",
+      "textKey": "questions.acne_hormonal",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "acne"
+      },
+      "options": [
+        {
+          "value": "acne_hormonal_no",
+          "labelKey": "questions.options.acne_hormonal_no"
+        },
+        {
+          "value": "acne_hormonal_periods",
+          "labelKey": "questions.options.acne_hormonal_periods"
+        },
+        {
+          "value": "acne_hormonal_hair",
+          "labelKey": "questions.options.acne_hormonal_hair"
+        },
+        {
+          "value": "acne_hormonal_both",
+          "labelKey": "questions.options.acne_hormonal_both"
+        }
+      ]
+    },
+    {
+      "id": "mole_features",
+      "type": "multi_choice",
+      "textKey": "questions.mole_features",
+      "sectionKey": "questions.sections.skin",
+      "showIf": {
+        "questionId": "skin_type",
+        "equals": "mole_change"
+      },
+      "options": [
+        {
+          "value": "mole_size",
+          "labelKey": "questions.options.mole_size"
+        },
+        {
+          "value": "mole_colour",
+          "labelKey": "questions.options.mole_colour"
+        },
+        {
+          "value": "mole_border",
+          "labelKey": "questions.options.mole_border"
+        },
+        {
+          "value": "mole_bleeding",
+          "labelKey": "questions.options.mole_bleeding"
+        },
+        {
+          "value": "mole_itching",
+          "labelKey": "questions.options.mole_itching"
+        }
+      ]
+    },
+    {
+      "id": "mood_type",
+      "type": "single_choice",
+      "textKey": "questions.mood_type",
+      "sectionKey": "questions.sections.mood",
+      "options": [
+        {
+          "value": "low_mood",
+          "labelKey": "questions.options.low_mood"
+        },
+        {
+          "value": "anxiety",
+          "labelKey": "questions.options.anxiety"
+        },
+        {
+          "value": "poor_sleep",
+          "labelKey": "questions.options.poor_sleep"
+        },
+        {
+          "value": "stress_burnout",
+          "labelKey": "questions.options.stress_burnout"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "mood"
+      }
+    },
+    {
+      "id": "mood_frequency",
+      "type": "single_choice",
+      "textKey": "questions.mood_frequency",
+      "sectionKey": "questions.sections.mood",
+      "options": [
+        {
+          "value": "several_days",
+          "labelKey": "questions.options.several_days"
+        },
+        {
+          "value": "more_than_half",
+          "labelKey": "questions.options.more_than_half"
+        },
+        {
+          "value": "nearly_every_day",
+          "labelKey": "questions.options.nearly_every_day"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "mood"
+      }
+    },
+    {
+      "id": "mood_self_harm",
+      "type": "yes_no",
+      "textKey": "questions.mood_self_harm",
+      "sectionKey": "questions.sections.mood",
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "mood"
+      },
+      "urgentIfYes": "mental_health"
+    },
+    {
+      "id": "head_type",
+      "type": "single_choice",
+      "textKey": "questions.head_type",
+      "sectionKey": "questions.sections.head",
+      "options": [
+        {
+          "value": "headache",
+          "labelKey": "questions.options.headache"
+        },
+        {
+          "value": "dizziness",
+          "labelKey": "questions.options.dizziness"
+        },
+        {
+          "value": "numbness_tingling",
+          "labelKey": "questions.options.numbness_tingling"
+        },
+        {
+          "value": "memory_concentration",
+          "labelKey": "questions.options.memory_concentration"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "head"
+      }
+    },
+    {
+      "id": "head_pattern",
+      "type": "single_choice",
+      "textKey": "questions.head_pattern",
+      "sectionKey": "questions.sections.head",
+      "options": [
+        {
+          "value": "occasional",
+          "labelKey": "questions.options.occasional"
+        },
+        {
+          "value": "frequent",
+          "labelKey": "questions.options.frequent"
+        },
+        {
+          "value": "sudden_severe",
+          "labelKey": "questions.options.sudden_severe",
+          "urgent": "medical"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "head"
+      }
+    },
+    {
+      "id": "metabolic_type",
+      "type": "single_choice",
+      "textKey": "questions.metabolic_type",
+      "sectionKey": "questions.sections.metabolic",
+      "options": [
+        {
+          "value": "thirst_urination",
+          "labelKey": "questions.options.thirst_urination"
+        },
+        {
+          "value": "weight_gain",
+          "labelKey": "questions.options.weight_gain"
+        },
+        {
+          "value": "weight_loss",
+          "labelKey": "questions.options.weight_loss"
+        },
+        {
+          "value": "thyroid_signs",
+          "labelKey": "questions.options.thyroid_signs"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "metabolic"
+      }
+    },
+    {
+      "id": "known_condition",
+      "type": "single_choice",
+      "textKey": "questions.known_condition",
+      "sectionKey": "questions.sections.metabolic",
+      "options": [
+        {
+          "value": "none_known",
+          "labelKey": "questions.options.none_known"
+        },
+        {
+          "value": "diabetes",
+          "labelKey": "questions.options.diabetes"
+        },
+        {
+          "value": "thyroid",
+          "labelKey": "questions.options.thyroid"
+        },
+        {
+          "value": "both_conditions",
+          "labelKey": "questions.options.both_conditions"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "metabolic"
+      }
+    },
+    {
+      "id": "stomach_type",
+      "type": "single_choice",
+      "textKey": "questions.stomach_type",
+      "sectionKey": "questions.sections.stomach",
+      "options": [
+        {
+          "value": "acidity",
+          "labelKey": "questions.options.acidity"
+        },
+        {
+          "value": "abdominal_pain",
+          "labelKey": "questions.options.abdominal_pain"
+        },
+        {
+          "value": "bowel_change",
+          "labelKey": "questions.options.bowel_change"
+        },
+        {
+          "value": "nausea_vomiting",
+          "labelKey": "questions.options.nausea_vomiting"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "stomach"
+      }
+    },
+    {
+      "id": "stomach_alarm",
+      "type": "single_choice",
+      "textKey": "questions.stomach_alarm",
+      "sectionKey": "questions.sections.stomach",
+      "options": [
+        {
+          "value": "no_alarm",
+          "labelKey": "questions.options.no_alarm"
+        },
+        {
+          "value": "unplanned_weight_loss",
+          "labelKey": "questions.options.unplanned_weight_loss"
+        },
+        {
+          "value": "trouble_swallowing",
+          "labelKey": "questions.options.trouble_swallowing"
+        },
+        {
+          "value": "black_or_bloody_stool",
+          "labelKey": "questions.options.black_or_bloody_stool",
+          "urgent": "medical"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "stomach"
+      }
+    },
+    {
+      "id": "joint_site",
+      "type": "single_choice",
+      "textKey": "questions.joint_site",
+      "sectionKey": "questions.sections.joints",
+      "options": [
+        {
+          "value": "knee_hip",
+          "labelKey": "questions.options.knee_hip"
+        },
+        {
+          "value": "back_neck",
+          "labelKey": "questions.options.back_neck"
+        },
+        {
+          "value": "hands_fingers",
+          "labelKey": "questions.options.hands_fingers"
+        },
+        {
+          "value": "after_injury",
+          "labelKey": "questions.options.after_injury"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "joints"
+      }
+    },
+    {
+      "id": "joint_swelling",
+      "type": "yes_no",
+      "textKey": "questions.joint_swelling",
+      "sectionKey": "questions.sections.joints",
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "joints"
+      }
+    },
+    {
+      "id": "ent_type",
+      "type": "single_choice",
+      "textKey": "questions.ent_type",
+      "sectionKey": "questions.sections.ent",
+      "options": [
+        {
+          "value": "ear_pain_discharge",
+          "labelKey": "questions.options.ear_pain_discharge"
+        },
+        {
+          "value": "hearing_loss",
+          "labelKey": "questions.options.hearing_loss"
+        },
+        {
+          "value": "nose_sinus",
+          "labelKey": "questions.options.nose_sinus"
+        },
+        {
+          "value": "throat",
+          "labelKey": "questions.options.throat"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "ent"
+      }
+    },
+    {
+      "id": "eye_type",
+      "type": "single_choice",
+      "textKey": "questions.eye_type",
+      "sectionKey": "questions.sections.eyes",
+      "options": [
+        {
+          "value": "red_itchy",
+          "labelKey": "questions.options.red_itchy"
+        },
+        {
+          "value": "blurred_vision",
+          "labelKey": "questions.options.blurred_vision"
+        },
+        {
+          "value": "eye_pain",
+          "labelKey": "questions.options.eye_pain"
+        },
+        {
+          "value": "sudden_vision_loss",
+          "labelKey": "questions.options.sudden_vision_loss",
+          "urgent": "medical"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "eyes"
+      }
+    },
+    {
+      "id": "womens_type",
+      "type": "single_choice",
+      "textKey": "questions.womens_type",
+      "sectionKey": "questions.sections.womens",
+      "options": [
+        {
+          "value": "irregular_periods",
+          "labelKey": "questions.options.irregular_periods"
+        },
+        {
+          "value": "heavy_periods_w",
+          "labelKey": "questions.options.heavy_periods_w"
+        },
+        {
+          "value": "pregnancy_care",
+          "labelKey": "questions.options.pregnancy_care"
+        },
+        {
+          "value": "menopause",
+          "labelKey": "questions.options.menopause"
+        },
+        {
+          "value": "pelvic_pain_discharge",
+          "labelKey": "questions.options.pelvic_pain_discharge"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "equals": "womens"
+      }
+    },
+    {
+      "id": "pregnancy_stage",
+      "type": "single_choice",
+      "textKey": "questions.pregnancy_stage",
+      "sectionKey": "questions.sections.pregnancy",
+      "showIf": {
+        "questionId": "womens_type",
+        "equals": "pregnancy_care"
+      },
+      "options": [
+        {
+          "value": "pregnancy_planning",
+          "labelKey": "questions.options.pregnancy_planning"
+        },
+        {
+          "value": "pregnancy_first",
+          "labelKey": "questions.options.pregnancy_first"
+        },
+        {
+          "value": "pregnancy_second",
+          "labelKey": "questions.options.pregnancy_second"
+        },
+        {
+          "value": "pregnancy_third",
+          "labelKey": "questions.options.pregnancy_third"
+        },
+        {
+          "value": "pregnancy_unsure",
+          "labelKey": "questions.options.pregnancy_unsure"
+        }
+      ]
+    },
+    {
+      "id": "pregnancy_danger",
+      "type": "multi_choice",
+      "textKey": "questions.pregnancy_danger",
+      "sectionKey": "questions.sections.pregnancy",
+      "showIf": {
+        "questionId": "pregnancy_stage",
+        "notEquals": "pregnancy_planning"
+      },
+      "redFlag": true,
+      "exclusiveValue": "pregnancy_danger_none",
+      "options": [
+        {
+          "value": "pregnancy_danger_none",
+          "labelKey": "questions.options.pregnancy_danger_none"
+        },
+        {
+          "value": "pregnancy_bleeding",
+          "labelKey": "questions.options.pregnancy_bleeding",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_fits",
+          "labelKey": "questions.options.pregnancy_fits",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_headache_vision",
+          "labelKey": "questions.options.pregnancy_headache_vision",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_abdominal_pain",
+          "labelKey": "questions.options.pregnancy_abdominal_pain",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_breathing",
+          "labelKey": "questions.options.pregnancy_breathing",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_reduced_movement",
+          "labelKey": "questions.options.pregnancy_reduced_movement",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_fever",
+          "labelKey": "questions.options.pregnancy_fever",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_swelling",
+          "labelKey": "questions.options.pregnancy_swelling",
+          "urgent": "medical"
+        }
+      ]
+    },
+    {
+      "id": "pregnancy_antenatal",
+      "type": "single_choice",
+      "textKey": "questions.pregnancy_antenatal",
+      "sectionKey": "questions.sections.pregnancy",
+      "showIf": {
+        "questionId": "pregnancy_stage",
+        "notEquals": "pregnancy_planning"
+      },
+      "options": [
+        {
+          "value": "antenatal_started",
+          "labelKey": "questions.options.antenatal_started"
+        },
+        {
+          "value": "antenatal_not_started",
+          "labelKey": "questions.options.antenatal_not_started"
+        },
+        {
+          "value": "antenatal_unsure",
+          "labelKey": "questions.options.antenatal_unsure"
+        }
+      ]
+    },
+    {
+      "id": "concern_duration",
+      "type": "single_choice",
+      "textKey": "questions.concern_duration",
+      "sectionKey": "questions.sections.concernDetails",
+      "options": [
+        {
+          "value": "under_2_weeks",
+          "labelKey": "questions.options.under_2_weeks"
+        },
+        {
+          "value": "two_to_six_weeks",
+          "labelKey": "questions.options.two_to_six_weeks"
+        },
+        {
+          "value": "over_6_weeks",
+          "labelKey": "questions.options.over_6_weeks"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "notEquals": "none"
+      },
+      "hideIfAny": [
+        {
+          "questionId": "womens_type",
+          "equals": "pregnancy_care"
+        },
+        {
+          "questionId": "skin_type",
+          "equals": "mole_change"
+        }
+      ]
+    },
+    {
+      "id": "concern_impact",
+      "type": "single_choice",
+      "textKey": "questions.concern_impact",
+      "sectionKey": "questions.sections.concernDetails",
+      "options": [
+        {
+          "value": "noticeable_only",
+          "labelKey": "questions.options.noticeable_only"
+        },
+        {
+          "value": "slows_activities",
+          "labelKey": "questions.options.slows_activities"
+        },
+        {
+          "value": "limits_activities",
+          "labelKey": "questions.options.limits_activities"
+        }
+      ],
+      "showIf": {
+        "questionId": "main_concern",
+        "notEquals": "none"
+      },
+      "hideIfAny": [
+        {
+          "questionId": "womens_type",
+          "equals": "pregnancy_care"
+        },
+        {
+          "questionId": "skin_type",
+          "equals": "mole_change"
+        }
+      ]
+    },
+    {
+      "id": "existing_condition",
+      "type": "multi_choice",
+      "textKey": "questions.existing_condition",
+      "sectionKey": "questions.sections.healthContext",
+      "options": [
+        {
+          "value": "no_condition",
+          "labelKey": "questions.options.no_condition"
+        },
+        {
+          "value": "diabetes_c",
+          "labelKey": "questions.options.diabetes_c"
+        },
+        {
+          "value": "high_bp",
+          "labelKey": "questions.options.high_bp"
+        },
+        {
+          "value": "thyroid_c",
+          "labelKey": "questions.options.thyroid_c"
+        },
+        {
+          "value": "heart_disease",
+          "labelKey": "questions.options.heart_disease"
+        },
+        {
+          "value": "asthma_copd",
+          "labelKey": "questions.options.asthma_copd"
+        },
+        {
+          "value": "other_condition",
+          "labelKey": "questions.options.other_condition"
+        }
+      ],
+      "exclusiveValue": "no_condition"
+    },
+    {
+      "id": "recent_cbc",
+      "type": "single_choice",
+      "textKey": "questions.recent_cbc",
+      "sectionKey": "questions.sections.healthContext",
+      "options": [
+        {
+          "value": "never",
+          "labelKey": "questions.options.never"
+        },
+        {
+          "value": "within_3_months",
+          "labelKey": "questions.options.within_3_months"
+        },
+        {
+          "value": "more_than_3_months",
+          "labelKey": "questions.options.more_than_3_months"
+        }
+      ]
+    }
+  ]
+}

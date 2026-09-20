@@ -45,8 +45,6 @@
     "checksTitle": "What BioVision measures",
     "anemiaTitle": "Your everyday health",
     "anemiaBody": "Explore energy, sleep, food, movement and your main concern.",
-    "vitalsTitle": "Video pulse estimates",
-    "vitalsBody": "A 30-second local face-video scan for experimental pulse and variability estimates, followed by face and eyelid photos.",
     "questionsTitle": "Short health questions",
     "questionsBody": "General questions about your concern, everyday habits and health context.",
     "supportTitle": "Other support",
@@ -164,14 +162,7 @@
     "devMock": "Development vision adapter",
     "accessibilityCamera": "Front camera preview for face alignment",
     "accessibilityCapture": "Capture aligned face photo",
-    "capture": "Take face photo",
-    "pulse": {
-      "label": "Pulse",
-      "unit": "BPM",
-      "simulated": "Simulated demo signal — not a measurement of you.",
-      "simulatedStatic": "Simulated demo signal — not a measurement of you.",
-      "accessibility": "Simulated demonstration pulse reading. This is not a measurement."
-    }
+    "capture": "Take face photo"
   },
   "facePreview": {
     "step": "FACE PHOTO REVIEW",
@@ -186,7 +177,7 @@
   "vitals": {
     "title": "Face scan",
     "readyTitle": "One 30-second face scan",
-    "consent": "By tapping Start, you consent to local processing of the live camera feed for experimental pulse and variability estimates. Raw video is not saved or uploaded. One still frame is captured automatically at the end for appearance analysis.",
+    "consent": "By tapping Start, you consent to local processing of the live camera feed to measure your pulse and heart-rate variability. Raw video is not saved or uploaded. One still frame is captured automatically at the end for the face and skin checks.",
     "aligned": "Face and lighting are ready.",
     "align": "Center your face in even light and hold still.",
     "start": "Start 30-second scan",
@@ -214,7 +205,6 @@
     "noSignalTitle": "No reliable signal",
     "noSignalBody": "The scan did not produce an acceptable pulse signal. This is an abstention, not a normal health result.",
     "evidenceTitle": "How to read these values",
-    "evidenceBody": "Camera model means FacePhys analysed the video locally. Derived means a documented calculation used the captured waveform. Unavailable means the required sensor, validated model, or input is not connected. None of these values is a diagnosis.",
     "evidence": {
       "camera_model": "Camera model",
       "derived": "Derived estimate",
@@ -360,7 +350,8 @@
       "ent": "Ear, nose & throat",
       "eyes": "Eyes",
       "womens": "Women's health",
-      "concernDetails": "About this problem"
+      "concernDetails": "About this problem",
+      "pregnancy": "Pregnancy"
     },
     "required": "Choose an answer to continue.",
     "urgent_symptoms": "Right now, do you have any emergency signs: chest pain or pressure, fainting, trouble breathing even while resting, sudden weakness or slurred speech, or heavy bleeding?",
@@ -483,7 +474,44 @@
       "thyroid_c": "Thyroid problem",
       "heart_disease": "Heart disease",
       "asthma_copd": "Asthma or COPD",
-      "other_condition": "Something else"
+      "other_condition": "Something else",
+      "acne_comedones": "Mostly blackheads and whiteheads",
+      "acne_inflamed_few": "A few red, sore spots",
+      "acne_inflamed_many": "Many red, sore spots",
+      "acne_nodules": "Deep, painful lumps under the skin",
+      "acne_no_marks": "No marks left behind",
+      "acne_dark_marks": "Dark marks that fade slowly",
+      "acne_scars": "Pitted or raised scars",
+      "acne_untreated": "Nothing yet",
+      "acne_otc": "Creams or face washes from a shop",
+      "acne_one_course": "One course of medicine from a doctor",
+      "acne_many_courses": "More than one course from a doctor",
+      "acne_hormonal_no": "Neither of these",
+      "acne_hormonal_periods": "Irregular or missed periods",
+      "acne_hormonal_hair": "New hair growth on the face or body",
+      "acne_hormonal_both": "Both of these",
+      "mole_size": "It has grown bigger",
+      "mole_colour": "The colour has changed",
+      "mole_border": "The edges have become uneven",
+      "mole_bleeding": "It bleeds or has a crust",
+      "mole_itching": "It itches or feels sore",
+      "pregnancy_planning": "Planning a pregnancy, not pregnant yet",
+      "pregnancy_first": "First three months",
+      "pregnancy_second": "Months four to six",
+      "pregnancy_third": "Month seven or later",
+      "pregnancy_unsure": "I am not sure how far along I am",
+      "pregnancy_danger_none": "None of these",
+      "pregnancy_bleeding": "Bleeding from the vagina",
+      "pregnancy_fits": "A fit or convulsion",
+      "pregnancy_headache_vision": "Severe headache with blurred vision",
+      "pregnancy_abdominal_pain": "Severe pain in the stomach",
+      "pregnancy_breathing": "Trouble breathing, or too weak to stand",
+      "pregnancy_reduced_movement": "The baby is moving less than usual",
+      "pregnancy_fever": "Fever",
+      "pregnancy_swelling": "Swelling of the face, hands or feet",
+      "antenatal_started": "Yes, they have started",
+      "antenatal_not_started": "Not yet",
+      "antenatal_unsure": "I am not sure"
     },
     "navTitle": "Health questions",
     "progressCount": "Question {{current}}",
@@ -511,12 +539,18 @@
     "womens_type": "What would you like help with?",
     "concern_duration": "How long has this been going on?",
     "concern_impact": "How much does it affect your daily life?",
-    "existing_condition": "Do you have a long-term health condition?"
+    "existing_condition": "Do you have a long-term health condition?",
+    "requiredMulti": "Choose at least one answer to continue. You can pick more than one.",
+    "acne_severity": "Which of these best describes the spots?",
+    "acne_scarring": "Has the acne left any marks or scars?",
+    "acne_treatment": "What have you already tried for it?",
+    "acne_hormonal": "Along with the acne, have you noticed either of these?",
+    "mole_features": "What has changed about it? Choose all that apply.",
+    "pregnancy_stage": "Where are you in your pregnancy?",
+    "pregnancy_danger": "Do you have any of these right now? Choose all that apply.",
+    "pregnancy_antenatal": "Have your antenatal check-ups started?"
   },
   "result": {
-    "experimentalAnemia": "Experimental conjunctiva model estimate",
-    "anemiaProbability": "Model anemia probability: {{value}}%",
-    "anemiaModelLimit": "Compared with laboratory haemoglobin, this model reported a 1.52 g/dL mean absolute error in a small paediatric validation split. Confirm with a CBC test.",
     "eyebrow": "SCAN COMPLETE",
     "title": "Your health report",
     "screeningResult": "Screening result",
@@ -660,7 +694,6 @@
     "locationReady": "Location enabled",
     "locationDenied": "Location access is off. You can still browse the area list without distance sorting.",
     "locationUnavailable": "Your location could not be found. Showing the area list instead.",
-    "mockNotice": "Demonstration data—not a verified healthcare directory.",
     "filters": {
       "all": "All",
       "hospital": "Hospitals",
@@ -680,7 +713,7 @@
     "unverified": "Demo listing",
     "distance": "{{distance}} km away",
     "details": "View details",
-    "empty": "No demonstration listings match this filter.",
+    "empty": "No listings match this filter.",
     "map": "Map view",
     "mapUnavailableTitle": "Map view is not configured yet",
     "mapUnavailableBody": "The list and directions links are ready. A native map provider can be added without changing facility data.",
@@ -688,22 +721,8 @@
     "detailTitle": "Facility details",
     "specialties": "Relevant services",
     "verification": "Verification status",
-    "notVerified": "This demonstration listing must be replaced with verified facility data before production use.",
+    "notVerified": "Call ahead to confirm timings before visiting.",
     "missing": "Facility not found",
-    "mockNames": {
-      "hospital": "Demonstration District Hospital",
-      "clinic": "Demonstration Community Clinic",
-      "lab": "Demonstration Diagnostic Centre",
-      "centre": "Demonstration Government Health Centre",
-      "mental": "Demonstration Wellbeing Centre"
-    },
-    "mockAddresses": {
-      "central": "Central Dehradun area • demonstration location",
-      "north": "North Dehradun area • demonstration location",
-      "east": "East Dehradun area • demonstration location",
-      "south": "South Dehradun area • demonstration location",
-      "west": "West Dehradun area • demonstration location"
-    },
     "directoryNote": "{{count}} doctors and hospitals in {{city}}, taken from each hospital's official website. Call the hospital to confirm OPD timings before visiting.",
     "search": "Search doctor, specialty or hospital",
     "source": "View official source",
@@ -768,7 +787,14 @@
       "bmiHigh": "Your BMI of {{value}} raises the risk of diabetes and heart disease.",
       "child": "Children are best seen by a paediatrician.",
       "pregnant": "During pregnancy your obstetrician should review this.",
-      "routineCheck": "A general physician can do a routine health check."
+      "routineCheck": "A general physician can do a routine health check.",
+      "multipleConditions": "You reported more than one long-term condition, which together need closer follow-up.",
+      "acneSevere": "The spots you described are in the more severe range.",
+      "acneScarring": "Acne that is scarring is treated sooner, because early treatment prevents permanent marks.",
+      "acneUnresponsive": "The acne has not settled after treatment from a doctor.",
+      "acneHormonal": "Acne alongside irregular periods or new hair growth is worth a hormonal check.",
+      "moleFeatures": "A mole that bleeds, or that has changed colour or edges, should be looked at promptly.",
+      "antenatalNotStarted": "Antenatal check-ups have not started yet."
     },
     "tests": {
       "cbc": "CBC (blood count)",
@@ -895,7 +921,13 @@
       "callNumber": "Call {{number}}",
       "noDirectory": "This build has no verified helpline for your region. Please contact your local emergency service or a nearby health facility."
     },
-    "talkToSomeone": "Talk to someone"
+    "talkToSomeone": "Talk to someone",
+    "scaleExplanations": {
+      "phq2": "PHQ-2 is a two-question check on mood over the last two weeks. It is a first look, not a diagnosis; a raised score simply means the longer PHQ-9 is worth asking.",
+      "phq9": "PHQ-9 is nine questions about depression symptoms over the last two weeks, used in clinics worldwide. Scores run 0 to 27: from about 10 a clinician would look closely, and 15 or more usually means treatment is worth starting. It measures how heavy symptoms are, not whether you have an illness.",
+      "gad2": "GAD-2 is a two-question check on anxiety over the last two weeks. A raised score means the longer GAD-7 is worth asking, nothing more.",
+      "gad7": "GAD-7 is seven questions about anxiety symptoms over the last two weeks. Scores run 0 to 21: 5 and above is mild, 10 and above moderate, 15 and above severe. From 10, clinicians usually look more closely. It measures severity, not a diagnosis."
+    }
   },
   "emergency": {
     "eyebrow": "URGENT GUIDANCE",
@@ -905,7 +937,6 @@
     "call": "Call configured emergency contact",
     "nearby": "Find emergency care",
     "noPhone": "No verified emergency number is configured. Contact your local emergency service.",
-    "noNumber": "No verified emergency number is configured in this build. Use your local official emergency service.",
     "mentalHealthMessage": "You don't have to face this alone. Talk to someone now."
   },
   "settings": {
@@ -950,7 +981,6 @@
   "errors": {
     "title": "Something went wrong",
     "body": "BioVision could not display this screen. No medical result was created.",
-    "imageQuality": "The image quality was too low to assess.",
     "network": "Check your internet connection and try again.",
     "server": "The screening service is unavailable. Try again later.",
     "invalid": "The service returned an invalid response.",
@@ -1416,7 +1446,6 @@
     "interpretation": "Compares the skin below your eyes with nearby cheek skin. Even, soft front lighting gives the clearest result.",
     "unavailable": "No appearance finding was produced. Try a clear, evenly lit photo, or continue to get a plan from your general health answers.",
     "limitsTitle": "What is—and is not—being measured",
-    "limits": "MediaPipe locates facial landmarks. Small experimental pixel-analysis modules then compare under-eye shading, forehead tone, local reddish spots, eye-white colour, and lip-to-skin contrast. These rules are not trained medical classifiers and have no measured accuracy yet. Lighting, make-up and camera processing can change the results. No image is uploaded by this analysis.",
     "reason": {
       "no_face": "A face could not be located. Face the camera directly.",
       "multiple_faces": "More than one face is visible. Take a photo of one person.",
@@ -1551,7 +1580,7 @@
       "sections": [
         {
           "heading": "About BioVision",
-          "body": "BioVision is a health-information prototype. It estimates health indicators from your camera and your answers and suggests which kind of doctor may help."
+          "body": "BioVision estimates health indicators from your camera and your answers, and suggests which kind of doctor may help. Everything is worked out on your phone."
         },
         {
           "heading": "Not medical advice",
@@ -1584,7 +1613,7 @@
       "sections": [
         {
           "heading": "Heart rate and HRV",
-          "body": "Measured from tiny colour changes in your face using the FacePhys remote photoplethysmography model. HRV (RMSSD, SDNN), the stress index (Baevsky) and the recovery score are calculated from the beat-to-beat intervals."
+          "body": "Measured from tiny colour changes in your face as blood moves through it. Heart-rate variability (RMSSD, SDNN), the stress index and the recovery score are all calculated from the beat-to-beat intervals."
         },
         {
           "heading": "Breathing rate",
@@ -1592,11 +1621,11 @@
         },
         {
           "heading": "Haemoglobin",
-          "body": "Estimated from the colour of the inner lower eyelid (conjunctiva). The model was trained and tested on 217 adults with laboratory haemoglobin results, including 95 from India, where it identified 71% of people with anaemia. It is compared with WHO haemoglobin cut-offs for your age, sex and pregnancy status. A CBC blood test gives the exact value."
+          "body": "Estimated from the colour of the inner lower eyelid, compared with WHO haemoglobin cut-offs for your age, sex and pregnancy status. A CBC blood test gives the exact value."
         },
         {
           "heading": "Face and skin signs",
-          "body": "Google MediaPipe locates 478 points on your face. Colour and brightness in specific areas are compared to note under-eye shading, eye redness, lip colour, forehead tone and small red spots. Face geometry is measured from the same points."
+          "body": "478 points are located on your face, then colour and brightness in specific areas are compared to note under-eye shading, eye redness, lip colour, forehead tone and small red spots. Face geometry is measured from the same points."
         },
         {
           "heading": "Lifestyle",

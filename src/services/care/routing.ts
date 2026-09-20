@@ -33,7 +33,11 @@ export type CareRouting = {
   tests: CareTest[];
 };
 
-type Answers = Record<string, string | boolean | number>;
+type Answers = Record<string, string | boolean | number | string[]>;
+
+/** Multi-select answers arrive as arrays; everything else reads as a single value. */
+const chosen = (answer: Answers[string] | undefined): string[] =>
+  Array.isArray(answer) ? answer : typeof answer === 'string' ? [answer] : [];
 
 const LEVEL_ORDER: CareLevel[] = ['routine', 'follow_up', 'prompt'];
 
@@ -100,11 +104,39 @@ export function buildCareRouting(session: AssessmentSession, appearance?: Appear
       if (answers.heart_symptom === 'ankle_swelling') { raise('follow_up'); tests.add('liverKidney'); }
       if (answers.heart_near_faint === true) { raise('prompt'); reasons.push({ key: 'nearFaint' }); }
       break;
-    case 'skin':
+    case 'skin': {
       if (answers.skin_type === 'mole_change') { raise('prompt'); reasons.push({ key: 'moleChange' }); }
       if (answers.skin_spreading === true) { raise('follow_up'); reasons.push({ key: 'skinSpreading' }); }
       if (answers.skin_type === 'hair_nails') { tests.add('cbc'); tests.add('thyroid'); }
+      // NICE NG198 grades acne by lesion type: nodules or many inflamed lesions are
+      // moderate-to-severe and belong with a dermatologist, and scarring makes it time-critical
+      // because treating early is what prevents permanent marks.
+      if (answers.skin_type === 'acne') {
+        const severe = answers.acne_severity === 'acne_nodules' || answers.acne_severity === 'acne_inflamed_many';
+        const scarring = answers.acne_scarring === 'acne_scars';
+        const treatedAlready = answers.acne_treatment === 'acne_one_course' || answers.acne_treatment === 'acne_many_courses';
+        if (severe || scarring) {
+          primary = 'dermatology';
+          raise('follow_up');
+          reasons.push({ key: scarring ? 'acneScarring' : 'acneSevere' });
+        }
+        if (severe && treatedAlready) { raise('prompt'); reasons.push({ key: 'acneUnresponsive' }); }
+        // Acne with irregular periods or new hair growth is the usual presentation of PCOS.
+        if (answers.acne_hormonal === 'acne_hormonal_periods' || answers.acne_hormonal === 'acne_hormonal_hair' || answers.acne_hormonal === 'acne_hormonal_both') {
+          others.push('gynaecology');
+          tests.add('thyroid'); tests.add('bloodSugar');
+          reasons.push({ key: 'acneHormonal' });
+        }
+      }
+      // A mole that bleeds or has changed border or colour is what referral guidance looks for.
+      const moleFeatures = chosen(answers.mole_features);
+      if (moleFeatures.includes('mole_bleeding') || moleFeatures.includes('mole_border') || moleFeatures.includes('mole_colour')) {
+        primary = 'dermatology';
+        raise('prompt');
+        reasons.push({ key: 'moleFeatures' });
+      }
       break;
+    }
     case 'mood': {
       const frequent = answers.mood_frequency === 'more_than_half' || answers.mood_frequency === 'nearly_every_day';
       // Occasional stress or poor sleep starts with a counsellor; persistent symptoms with a psychiatrist.
@@ -148,6 +180,16 @@ export function buildCareRouting(session: AssessmentSession, appearance?: Appear
     case 'womens':
       if (answers.womens_type === 'heavy_periods_w') { tests.add('cbc'); tests.add('ironStudies'); }
       if (answers.womens_type === 'irregular_periods') { tests.add('thyroid'); tests.add('bloodSugar'); }
+      // Pregnancy: anaemia screening matters more, and antenatal care is the next step when
+      // it has not started. The WHO danger signs are handled as red flags before this point.
+      if (answers.womens_type === 'pregnancy_care') {
+        tests.add('cbc');
+        if (answers.pregnancy_antenatal === 'antenatal_not_started') {
+          raise('follow_up');
+          reasons.push({ key: 'antenatalNotStarted' });
+        }
+        if (answers.pregnancy_stage === 'pregnancy_third') { tests.add('bloodPressure'); }
+      }
       if (answers.womens_type === 'pelvic_pain_discharge') raise('follow_up');
       if (answers.womens_type === 'pregnancy_care') { raise('follow_up'); tests.add('cbc'); }
       break;
@@ -196,11 +238,20 @@ export function buildCareRouting(session: AssessmentSession, appearance?: Appear
     others.push('ophthalmology');
   }
 
-  // Existing conditions.
-  const condition = answers.existing_condition;
-  if (condition === 'diabetes_c' || condition === 'thyroid_c') { tests.add(condition === 'diabetes_c' ? 'bloodSugar' : 'thyroid'); if (primary !== 'endocrinology') others.push('endocrinology'); }
-  if (condition === 'high_bp' || condition === 'heart_disease') { tests.add('bloodPressure'); if (primary !== 'cardiology') others.push('cardiology'); }
-  if (condition === 'asthma_copd' && primary !== 'pulmonology') others.push('pulmonology');
+  // Existing conditions. People commonly live with more than one, so every selected condition
+  // contributes its tests and its specialty rather than the first one winning.
+  const conditions = chosen(answers.existing_condition);
+  if (conditions.includes('diabetes_c')) { tests.add('bloodSugar'); if (primary !== 'endocrinology') others.push('endocrinology'); }
+  if (conditions.includes('thyroid_c')) { tests.add('thyroid'); if (primary !== 'endocrinology') others.push('endocrinology'); }
+  if (conditions.includes('high_bp') || conditions.includes('heart_disease')) { tests.add('bloodPressure'); if (primary !== 'cardiology') others.push('cardiology'); }
+  if (conditions.includes('asthma_copd') && primary !== 'pulmonology') others.push('pulmonology');
+  // Diabetes and high blood pressure together compound cardiovascular risk, so the report
+  // should not leave the person with a single test.
+  if (conditions.includes('diabetes_c') && conditions.includes('high_bp')) {
+    tests.add('lipidProfile');
+    reasons.push({ key: 'multipleConditions' });
+    raise('follow_up');
+  }
 
   // Population overrides: children see a paediatrician; pregnancy is managed by the obstetric team.
   if (profile && profile.ageYears < 15) {

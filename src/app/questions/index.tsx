@@ -37,6 +37,27 @@ export default function QuestionsScreen() {
   }
 
   const answer = session.questionnaire.answers[question.id];
+  const multiSelect = question.type === 'multi_choice';
+  const selected = Array.isArray(answer) ? answer : [];
+  const hasAnswer = multiSelect ? selected.length > 0 : answer !== undefined;
+
+  /**
+   * Multi-select toggles instead of advancing, so the person can report every condition they
+   * live with. An exclusive option ("None of these") clears the rest, and choosing anything
+   * else clears it.
+   */
+  const toggleOption = (value: string) => {
+    const exclusive = question.exclusiveValue;
+    if (exclusive && value === exclusive) {
+      answerQuestion(question.id, selected.includes(exclusive) ? [] : [exclusive]);
+      return;
+    }
+    const withoutExclusive = selected.filter((item) => item !== exclusive);
+    const updated = withoutExclusive.includes(value)
+      ? withoutExclusive.filter((item) => item !== value)
+      : [...withoutExclusive, value];
+    answerQuestion(question.id, updated);
+  };
   // Branching makes the exact count unknown; estimate with the base symptom questions plus habits.
   const estimatedRemaining = Math.max(2, 8 - index) + lifestyleQuestions.filter((item) => item.type !== 'number').length;
   const options = question.type === 'yes_no'
@@ -47,7 +68,7 @@ export default function QuestionsScreen() {
     : (question.options ?? []).map((option) => ({ value: option.value, label: t(option.labelKey) }));
 
   const next = async () => {
-    if (answer === undefined) return;
+    if (!hasAnswer) return;
     setSubmitting(true);
     setError(false);
     try {
@@ -88,7 +109,7 @@ export default function QuestionsScreen() {
         <Button
           label={t('common.next')}
           onPress={() => void next()}
-          disabled={answer === undefined}
+          disabled={!hasAnswer}
           loading={submitting}
           icon="arrowForward"
           iconPosition="right"
@@ -110,17 +131,17 @@ export default function QuestionsScreen() {
       <AppText color={colors.inkMuted} style={styles.description}>
         {t(question.followUpOf ? 'questions.followUpDescription' : 'questions.description')}
       </AppText>
-      <View accessibilityRole="radiogroup" style={styles.options}>
+      <View accessibilityRole={multiSelect ? 'list' : 'radiogroup'} style={styles.options}>
         {options.map((option) => (
           <OptionButton
             key={String(option.value)}
             label={option.label}
-            selected={answer === option.value}
-            onPress={() => answerQuestion(question.id, option.value)}
+            selected={multiSelect ? selected.includes(String(option.value)) : answer === option.value}
+            onPress={() => (multiSelect ? toggleOption(String(option.value)) : answerQuestion(question.id, option.value))}
           />
         ))}
       </View>
-      {answer === undefined ? <AppText variant="caption" color={colors.caution} style={styles.required}>{t('questions.required')}</AppText> : null}
+      {!hasAnswer ? <AppText variant="caption" color={colors.caution} style={styles.required}>{t(multiSelect ? 'questions.requiredMulti' : 'questions.required')}</AppText> : null}
       {error ? <AppText variant="small" color={colors.elevated} style={styles.required}>{t('processing.serviceErrorBody')}</AppText> : null}
     </Screen>
   );

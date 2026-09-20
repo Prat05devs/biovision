@@ -57,6 +57,13 @@ const scenarios = [
   ['blurred vision', { answers: { main_concern: 'eyes', eye_type: 'blurred_vision', ...lasting } }, 'ophthalmology', 'prompt'],
   ['irregular periods', { answers: { main_concern: 'womens', womens_type: 'irregular_periods', ...lasting }, profile: { ageYears: 27, sex: 'female', pregnant: false } }, 'gynaecology', 'follow_up'],
   ['child with cough', { answers: { main_concern: 'breathing', breath_trigger: 'heavy_activity', breath_cough: 'dry_cough', ...lasting }, profile: { ageYears: 8, sex: 'female', pregnant: false } }, 'paediatrics', 'follow_up', 'pulmonology'],
+  ['acne with scarring goes to a dermatologist', { answers: { main_concern: 'skin', skin_type: 'acne', acne_severity: 'acne_inflamed_few', acne_scarring: 'acne_scars', acne_treatment: 'acne_untreated', acne_hormonal: 'acne_hormonal_no', ...lasting } }, 'dermatology', 'follow_up'],
+  ['severe acne already treated is prompted', { answers: { main_concern: 'skin', skin_type: 'acne', acne_severity: 'acne_nodules', acne_scarring: 'acne_dark_marks', acne_treatment: 'acne_many_courses', acne_hormonal: 'acne_hormonal_no', ...lasting } }, 'dermatology', 'prompt'],
+  ['mild acne stays with general medicine', { answers: { main_concern: 'skin', skin_type: 'acne', acne_severity: 'acne_comedones', acne_scarring: 'acne_no_marks', acne_treatment: 'acne_untreated', acne_hormonal: 'acne_hormonal_no', ...mild } }, 'generalPhysician', 'routine'],
+  ['acne with irregular periods also sees gynaecology', { answers: { main_concern: 'skin', skin_type: 'acne', acne_severity: 'acne_inflamed_many', acne_scarring: 'acne_no_marks', acne_treatment: 'acne_untreated', acne_hormonal: 'acne_hormonal_both', ...lasting }, profile: { ageYears: 24, sex: 'female', pregnant: false } }, 'dermatology', 'follow_up', 'gynaecology'],
+  ['bleeding mole is prompt', { answers: { main_concern: 'skin', skin_type: 'mole_change', mole_features: ['mole_bleeding'] } }, 'dermatology', 'prompt'],
+  ['pregnancy without antenatal care', { answers: { main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_second', pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_not_started' }, profile: { ageYears: 25, sex: 'female', pregnant: true } }, 'gynaecology', 'follow_up'],
+  ['diabetes and high blood pressure together', { answers: { main_concern: 'none', existing_condition: ['diabetes_c', 'high_bp'] } }, 'generalPhysician', 'follow_up', 'endocrinology'],
   ['pregnant with low haemoglobin', { anemia: { signal: 'elevated', estimatedHemoglobinGdl: 9.6 }, profile: { ageYears: 26, sex: 'female', pregnant: true } }, 'gynaecology', 'follow_up'],
   ['high BMI', { lifestyle: { height_cm: '165', weight_kg: '92' } }, 'generalPhysician', 'follow_up', 'endocrinology'],
 ];
@@ -85,6 +92,97 @@ for (const [name, input, primary, level, also] of scenarios) {
     [{ main_concern: 'stomach', stomach_type: 'abdominal_pain', stomach_alarm: 'black_or_bloody_stool' }, 'medical'],
     [{ main_concern: 'eyes', eye_type: 'sudden_vision_loss' }, 'medical'],
   ]) assert.equal((await next({ urgent_symptoms: false, ...answers })).urgentKind, kind);
+  // Every WHO danger sign in pregnancy stops the questionnaire and routes to emergency care.
+  for (const sign of ['pregnancy_bleeding', 'pregnancy_fits', 'pregnancy_headache_vision', 'pregnancy_abdominal_pain', 'pregnancy_breathing', 'pregnancy_reduced_movement', 'pregnancy_fever', 'pregnancy_swelling']) {
+    const result = await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: [sign] });
+    assert.equal(result.urgentKind, 'medical', `${sign} must escalate`);
+    assert.equal(result.done, true, `${sign} must stop the questionnaire`);
+  }
+  // "None of these" is not a danger sign.
+  assert.equal((await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_danger_none'] })).urgentActionRequired, false);
+
+  // An empty multi-select is unanswered: the screen must keep asking the same question.
+  const emptyMulti = await next({ urgent_symptoms: false, main_concern: 'none', existing_condition: [] });
+  assert.equal(emptyMulti.question.id, 'existing_condition');
+
+  // Pregnancy asks its own follow-ups and never the generic duration/impact pair.
+  const pregnancyAsked = [];
+  let pregnancyAnswers = { urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care' };
+  for (let guard = 0; guard < 20; guard += 1) {
+    const result = await next(pregnancyAnswers);
+    if (result.done) break;
+    pregnancyAsked.push(result.question.id);
+    // Someone planning a pregnancy is not pregnant yet, so pick a trimester: the danger-sign
+    // question deliberately does not apply to the planning branch.
+    const value = result.question.id === 'pregnancy_stage' ? 'pregnancy_second'
+      : result.question.type === 'yes_no' ? false
+      : result.question.type === 'multi_choice' ? [result.question.options[0].value]
+      : result.question.options[0].value;
+    pregnancyAnswers = { ...pregnancyAnswers, [result.question.id]: value };
+  }
+  assert.ok(pregnancyAsked.includes('pregnancy_stage'), 'pregnancy must ask the trimester');
+  assert.ok(pregnancyAsked.includes('pregnancy_danger'), 'pregnancy must ask the danger signs');
+  assert.ok(!pregnancyAsked.includes('concern_duration'), 'pregnancy must not ask how long it has been going on');
+  assert.ok(!pregnancyAsked.includes('concern_impact'), 'pregnancy must not ask about daily impact');
+
+  // Acne asks acne follow-ups, not the rash question.
+  const acneAsked = [];
+  let acneAnswers = { urgent_symptoms: false, main_concern: 'skin', skin_type: 'acne' };
+  for (let guard = 0; guard < 20; guard += 1) {
+    const result = await next(acneAnswers);
+    if (result.done) break;
+    acneAsked.push(result.question.id);
+    const value = result.question.type === 'yes_no' ? false
+      : result.question.type === 'multi_choice' ? [result.question.options[0].value]
+      : result.question.options[0].value;
+    acneAnswers = { ...acneAnswers, [result.question.id]: value };
+  }
+  assert.ok(acneAsked.includes('acne_severity') && acneAsked.includes('acne_scarring'), 'acne must ask severity and scarring');
+  assert.ok(!acneAsked.includes('skin_spreading'), 'acne must not be asked whether it is spreading');
+
+  // The eye photos are analysed before the questionnaire, so the haemoglobin cut-off used there
+  // cannot know the trimester. The report re-interprets the same estimate once it does: WHO uses
+  // 10.5 g/dL in the second trimester against 11.0 in the first and third, and without this a
+  // healthy second-trimester woman is told her result is low.
+  const pregnantSession = (stage, estimate) => {
+    const base = session({
+      answers: { urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: stage, pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_started' },
+      profile: { ageYears: 27, sex: 'female', pregnant: true },
+    });
+    base.anemia = { signal: 'moderate', estimatedHemoglobinGdl: estimate };
+    return base;
+  };
+  // 11.2 g/dL clears the second-trimester cut-off of 10.5 but not the 11.0 used elsewhere.
+  // ('low' is this codebase's name for a normal haemoglobin signal.)
+  assert.equal(
+    (await localAssessmentService.complete(pregnantSession('pregnancy_second', 11.2))).screeningResult.signal,
+    'low', 'second trimester: 11.2 g/dL is normal');
+  assert.equal(
+    (await localAssessmentService.complete(pregnantSession('pregnancy_first', 11.2))).screeningResult.signal,
+    'moderate', 'first trimester: 11.2 g/dL is borderline');
+  // 10.2 g/dL is borderline against 10.5 but a positive flag against 11.0.
+  assert.equal(
+    (await localAssessmentService.complete(pregnantSession('pregnancy_second', 10.2))).screeningResult.signal,
+    'moderate', 'second trimester: 10.2 g/dL is borderline');
+  assert.equal(
+    (await localAssessmentService.complete(pregnantSession('pregnancy_first', 10.2))).screeningResult.signal,
+    'elevated', 'first trimester: 10.2 g/dL flags low haemoglobin');
+  // Without a trimester the safer 11.0 cut-off still applies.
+  assert.equal(
+    (await localAssessmentService.complete(pregnantSession('pregnancy_unsure', 11.2))).screeningResult.signal,
+    'moderate', 'unknown trimester keeps the safer cut-off');
+
+  // The borderline band is the rule the shipped model was scored with (ml/conjunctiva_colour:
+  // India n=95, sensitivity 0.71). If it changes, the published performance no longer describes
+  // the app, so this is pinned deliberately rather than left to drift.
+  const { HB_BORDERLINE_MARGIN_GDL, whoHemoglobinThreshold, interpretHemoglobin } = load(path.join(root, 'src/services/local/hemoglobin'));
+  assert.equal(HB_BORDERLINE_MARGIN_GDL, 0.5, 'the evaluated decision rule is 0.5 g/dL');
+  const woman = { ageYears: 30, sex: 'female', pregnant: false };
+  assert.equal(whoHemoglobinThreshold(woman), 12.0);
+  assert.equal(interpretHemoglobin(11.4, woman), 'elevated', 'clearly below the cut-off flags low haemoglobin');
+  assert.equal(interpretHemoglobin(11.8, woman), 'moderate', 'within the band is borderline');
+  assert.equal(interpretHemoglobin(12.6, woman), 'low', 'clearly above the cut-off is normal');
+
   // A branch only asks its own follow-ups, then the shared ones, then finishes.
   const asked = [];
   let answers = { urgent_symptoms: false, main_concern: 'joints' };
@@ -95,5 +193,5 @@ for (const [name, input, primary, level, also] of scenarios) {
     answers = { ...answers, [result.question.id]: result.question.type === 'yes_no' ? false : result.question.options[0].value };
   }
   assert.deepEqual(asked, ['joint_site', 'joint_swelling', 'concern_duration', 'concern_impact', 'existing_condition', 'recent_cbc']);
-  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits and branch order passed.`);
+  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits, 8 pregnancy danger signs, acne grading, multi-select conditions, trimester and borderline haemoglobin rules, and branch order passed.`);
 })().catch((error) => { console.error(error); process.exit(1); });
