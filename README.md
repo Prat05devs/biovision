@@ -72,28 +72,15 @@ Then set `EXPO_PUBLIC_USE_MOCKS=false` and point `EXPO_PUBLIC_API_BASE_URL` at p
 Run `npm run backend:test` and `npm run backend:check` for the backend verification
 suite.
 
-## Consent-controlled capture storage
+## Backend scope
 
-Confirmed camera images can be retained for approved model research through
-`POST /v1/captures`. With the same explicit consent, the completed questionnaire's
-versioned, timestamped answer-event history can be retained through
-`POST /v1/research/questionnaire`. Both endpoints are closed by default. After the required
-clinical, ethics, privacy, and security approvals are recorded, configure the
-backend with:
+The backend serves one client path: eye-photo anaemia screening for the **web** build
+(`POST /v1/screenings/anemia`), plus `GET /v1/health`. iOS and Android run every
+assessment on the device, so they call no endpoint at all.
 
-```bash
-BIOVISION_RESEARCH_COLLECTION_ENABLED=true
-BIOVISION_CAPTURE_STORAGE_ROOT=./backend/.data/captures
-BIOVISION_CAPTURE_DB_PATH=./backend/.data/biovision.db
-```
-
-The local adapter preserves original JPEG bytes in object-like storage and keeps
-checksums, consent, protocol, resolution, anatomical side, quality, and lineage metadata in SQLite.
-The server replays questionnaire events against the recorded question-bank version and
-rejects impossible, inapplicable, out-of-order, or incomplete histories.
-See `docs/CAPTURE_DATA_FOUNDATION.md` before enabling collection. Replace the
-local adapter with encrypted object storage and a managed relational database for
-multi-node production deployment.
+Research capture retention, the questionnaire/wellbeing/observation engines and the
+API-backed care directory were removed once the app moved on-device; recover them from
+git history if governance approves a research programme.
 
 ## Automatic appearance observations
 
@@ -115,9 +102,9 @@ Safety behaviour:
 
 - The **self-harm item (PHQ-9 item 9) stops the screen** and routes straight to support.
   The engine reports `urgentActionRequired` and level `urgent` on any endorsement.
-- **Crisis contacts do not depend on a score.** `GET /v1/wellbeing/screen` serves them
-  before the first question, and a persistent "Need to talk to someone now?" link appears
-  on every wellbeing screen.
+- **Crisis contacts do not depend on a score.** The device reads them from
+  `configs/wellbeing/support_resources.v1.json` before the first question, and a persistent
+  "Need to talk to someone now?" link appears on every wellbeing screen.
 - Verified helplines only. `configs/wellbeing/support_resources.v1.json` carries
   Tele-MANAS (14416) and KIRAN with operator, availability, verification date and source
   URL. A region with no verified entry returns an empty list and the app says so, because

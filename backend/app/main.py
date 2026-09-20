@@ -9,7 +9,7 @@ from app.config import settings
 app = FastAPI(
     title="BioVision API",
     version="0.1.0",
-    description="Pre-screening and care-navigation API. Not a diagnostic service.",
+    description="Eye-photo anaemia pre-screening for the web client. Not a diagnostic service.",
 )
 app.add_middleware(
     CORSMiddleware,

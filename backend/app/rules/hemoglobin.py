@@ -6,8 +6,14 @@ from typing import Literal
 from app.schemas import Signal
 
 Sex = Literal["female", "male"]
+Trimester = Literal["first", "second", "third"]
 
-# Mean absolute error of the pinned checkpoint's haemoglobin head (model card).
+# Mean absolute error of the pinned checkpoint's haemoglobin head (model card). An estimate
+# within one MAE of the cut-off cannot be separated from it, so it is reported as borderline.
+#
+# The on-device path uses 0.5 g/dL instead (src/services/local/hemoglobin.ts). That is not a
+# drift between two copies of one rule: this bands the EfficientNet checkpoint, while the device
+# ships the conjunctiva ridge model and uses the rule its own cross-validation was scored with.
 MODEL_HB_MAE_GDL = 1.515
 # NiADA re-captures when the two eyes disagree by more than this.
 MAX_INTER_EYE_HB_DIFFERENCE_GDL = 2.5
@@ -22,6 +28,8 @@ class ScreeningProfile:
     age_years: int
     sex: Sex
     pregnant: bool
+    #: Absent when not pregnant, or when the caller did not collect it.
+    trimester: Trimester | None = None
 
 
 @dataclass(frozen=True)
@@ -40,10 +48,14 @@ class HemoglobinInterpretation:
 def who_reference(profile: ScreeningProfile) -> HemoglobinReference:
     """WHO 2024 haemoglobin cut-offs for anaemia at sea level (g/dL).
 
-    Pregnancy uses 11.0, the first- and third-trimester cut-off, because the
-    trimester is not collected; the second-trimester cut-off is 10.5.
+    Pregnancy is not a single number: WHO sets 10.5 for the second trimester, when plasma
+    volume expansion dilutes haemoglobin, and 11.0 for the first and third. Callers that know
+    the trimester should pass it; without it 11.0 is the safer default, because it flags a
+    borderline result rather than missing one.
     """
     if profile.pregnant:
+        if profile.trimester == "second":
+            return HemoglobinReference("pregnant_second_trimester", 10.5)
         return HemoglobinReference("pregnant", 11.0)
     if profile.age_years < 2:
         return HemoglobinReference("child_6_23_months", 10.5)
