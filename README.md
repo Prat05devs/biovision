@@ -72,6 +72,15 @@ Then set `EXPO_PUBLIC_USE_MOCKS=false` and point `EXPO_PUBLIC_API_BASE_URL` at p
 Run `npm run backend:test` and `npm run backend:check` for the backend verification
 suite.
 
+## Android signing
+
+`biovision-upload-key.jks` signs every Android release and is never committed. Losing it means
+losing the ability to update the app, so back it up before the first Play upload and enrol in
+Play App Signing. See [docs/ANDROID_SIGNING.md](docs/ANDROID_SIGNING.md).
+
+Clones should run `git config core.hooksPath .githooks` once, which turns on the guard that stops
+keys and credentials being committed.
+
 ## Backend scope
 
 The backend serves one client path: eye-photo anaemia screening for the **web** build
