@@ -4,6 +4,7 @@ import { AccessibilityInfo, Animated, Easing, StyleSheet, Text, View, type Layou
 import Svg, { Circle, Defs, G, LinearGradient as SvgLinearGradient, Path, Stop } from 'react-native-svg';
 
 import type { FaceFrameState } from '@/types/vision';
+import { fontFamily } from '@/theme/fonts';
 
 const DEFAULT_WIDTH = 300;
 const DEFAULT_HEIGHT = 390;
@@ -191,6 +192,6 @@ const styles = StyleSheet.create({
   scanCore: { position: 'absolute', left: 0, right: 0, top: 20, height: 0.75, backgroundColor: '#D9FFFF', shadowColor: '#9FFFE8', shadowOpacity: 0.68, shadowRadius: 5, elevation: 3 },
   progressRing: { position: 'absolute', right: '9%', top: 58, width: 52, height: 52, alignItems: 'center', justifyContent: 'center', shadowColor: '#55D6A0', shadowOpacity: 0.22, shadowRadius: 7, elevation: 4 },
   progressSvg: { position: 'absolute', transform: [{ rotate: '-90deg' }] },
-  progressText: { color: '#DFFFFF', fontSize: 10, fontWeight: '700', fontVariant: ['tabular-nums'], letterSpacing: -0.25 },
+  progressText: { color: '#DFFFFF', fontSize: 10, fontFamily: fontFamily(700), fontVariant: ['tabular-nums'], letterSpacing: -0.25 },
   progressTextComplete: { color: '#D9FFF1' },
 });

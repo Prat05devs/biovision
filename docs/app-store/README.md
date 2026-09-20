@@ -8,18 +8,22 @@
 2. After enrolment, in Xcode → Settings → Accounts, sign in and select the new paid team.
 3. In `ios/BioVision.xcworkspace` → target **BioVision** → Signing & Capabilities:
    choose the paid team, keep "Automatically manage signing" on.
-   Bundle identifier: `com.teambiovision.biovision` (change it here and in `app.json` if taken).
+   Bundle identifier: `live.biovision.app` (change it here and in `app.json` if taken).
 4. In App Store Connect (<https://appstoreconnect.apple.com>) → Apps → **+ New App**:
-   Platform iOS · Name "BioVision" (use "BioVision Health" if the name is taken) ·
+   Platform iOS · Name "BioVision.live" ("BioVision" alone is reserved by another developer;
+   the home-screen name stays "BioVision" via CFBundleDisplayName) ·
    Primary language English (India) or English (U.S.) · Bundle ID as above · SKU `biovision-ios-1`.
-5. Deploy the `landing/` folder to **biovision.live** (it ships a `vercel.json`; Vercel or
-   Netlify both work). `cleanUrls` is on, so the live pages are:
+5. Deploy the `landing/` folder to **biovision.live**. It is a React (Vite) app: run
+   `npm install` then `npm run build` inside `landing/`, which outputs `landing/dist`. On Vercel,
+   set the project's Root Directory to `landing`; the bundled `vercel.json` supplies the build
+   command, the `dist` output directory and the single-page rewrite. The live pages are:
    - <https://biovision.live> — marketing page
    - <https://biovision.live/privacy> — Privacy Policy URL (required by App Store Connect)
    - <https://biovision.live/support> — Support URL (required)
    - <https://biovision.live/terms> — Terms of Use
-   Support enquiries go to `admin@wtsolutions.cc` (shown on the support page), and re-run
-   `npm run landing:build` after any change to the legal text in `src/i18n/en.json`.
+   Support enquiries go to `admin@wtsolutions.cc` (shown on the support page). Legal copy lives in
+   `landing/src/pages/Privacy.jsx` and `Terms.jsx`; keep it in step with `src/i18n/en.json`.
+   The previous static HTML site is kept at `landing/legacy/` and is not deployed.
 
 ## 1. Build the archive in Xcode
 

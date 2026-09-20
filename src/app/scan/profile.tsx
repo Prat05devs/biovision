@@ -12,6 +12,7 @@ import { OptionButton } from '@/components/ui/OptionButton';
 import { Screen } from '@/components/ui/Screen';
 import { useAssessmentStore } from '@/store/assessment.store';
 import { colors, radius, spacing, typography } from '@/theme/tokens';
+import { fontFamily } from '@/theme/fonts';
 import type { ScreeningProfile } from '@/types/assessment';
 
 const MIN_AGE = 1;
@@ -131,6 +132,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     color: colors.ink,
     fontSize: typography.h2,
+    fontFamily: fontFamily(600),
+    fontVariant: ['tabular-nums'],
   },
   hint: { marginTop: spacing.xs },
   options: { gap: spacing.xs },

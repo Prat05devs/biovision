@@ -1,6 +1,6 @@
 # App Store Connect listing — BioVision
 
-**Name (30):** BioVision
+**Name (30):** BioVision.live
 **Subtitle (30):** Face scan health check
 **Category:** Primary **Health & Fitness** · Secondary **Medical**
 **Age rating:** 12+ (Infrequent/Mild Medical/Treatment Information)

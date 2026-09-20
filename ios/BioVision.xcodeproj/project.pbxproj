@@ -22,7 +22,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BioVision/Info.plist; sourceTree = "<group>"; };
 		1D529736C95B18962B9571D1 /* Pods-BioVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BioVision.debug.xcconfig"; path = "Target Support Files/Pods-BioVision/Pods-BioVision.debug.xcconfig"; sourceTree = "<group>"; };
 		34C282A34937342C3F3E6416 /* Pods-BioVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BioVision.release.xcconfig"; path = "Target Support Files/Pods-BioVision/Pods-BioVision.release.xcconfig"; sourceTree = "<group>"; };
-		35C2A0BEA6A50D215161A20E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = BioVision/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		35C2A0BEA6A50D215161A20E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = BioVision/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6220A0786A330A2754447DA8 /* libPods-BioVision.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BioVision.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = BioVision/SplashScreen.storyboard; sourceTree = "<group>"; };
 		B3DBB21F7848E026364CCC6A /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-BioVision/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 				1D529736C95B18962B9571D1 /* Pods-BioVision.debug.xcconfig */,
 				34C282A34937342C3F3E6416 /* Pods-BioVision.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -166,7 +165,6 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = M5JR8YYY73;
 						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
@@ -375,13 +373,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M5JR8YYY73;
+				DEVELOPMENT_TEAM = 9Q56J23Z23;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = BioVision/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BioVision.live;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,7 +395,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.teambiovision.biovision;
+				PRODUCT_BUNDLE_IDENTIFIER = live.biovision.app;
 				PRODUCT_NAME = BioVision;
 				SWIFT_OBJC_BRIDGING_HEADER = "BioVision/BioVision-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -415,8 +415,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M5JR8YYY73;
+				DEVELOPMENT_TEAM = 9Q56J23Z23;
 				INFOPLIST_FILE = BioVision/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BioVision.live;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,7 +432,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.teambiovision.biovision;
+				PRODUCT_BUNDLE_IDENTIFIER = live.biovision.app;
 				PRODUCT_NAME = BioVision;
 				SWIFT_OBJC_BRIDGING_HEADER = "BioVision/BioVision-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

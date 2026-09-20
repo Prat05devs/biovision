@@ -43,6 +43,11 @@ export function ScaleResultCard({ scale }: { scale: WellbeingScaleResult }) {
       <AppText variant="small" color={accent} style={styles.band}>
         {t(scale.bandLabelKey)}
       </AppText>
+      {/* PHQ and GAD are clinical shorthand: say what was asked and what the number means,
+          so the score is not the first time a person meets the name of the instrument. */}
+      <AppText variant="small" color={colors.inkMuted}>
+        {t(`wellbeing.scaleExplanations.${scale.id}`, { defaultValue: '' })}
+      </AppText>
     </Card>
   );
 }

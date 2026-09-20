@@ -28,12 +28,12 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>biovision</string>
-				<string>com.teambiovision.biovision</string>
+				<string>live.biovision.app</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>4</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSMinimumSystemVersion</key>
@@ -51,6 +51,8 @@
 	<string>BioVision uses the front camera during your health scan to measure your pulse and photograph your face and lower eyelids. Video is analysed on your iPhone and never recorded or uploaded.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>BioVision uses your location only when you ask it to find doctors and hospitals near you.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>BioVision's camera uses the motion sensor to keep the picture the right way up while you scan. Motion data stays on your iPhone and is never recorded or uploaded.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

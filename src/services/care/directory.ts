@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import dehradun from '../../../configs/care/dehradun.v1.json';
-import { requestJson } from '@/api/client';
-import { deployment, region, regionId } from '@/config/deployment';
+import { region } from '@/config/deployment';
 import type { HealthcareService } from '../contracts';
 const facilitySchema = z.object({
   id: z.string(), name: z.string(), facilityType: z.enum(['hospital','clinic','government_health_centre','diagnostic_lab','mental_health_service']),
@@ -15,9 +14,7 @@ const directories: Record<string, unknown> = { 'dehradun-v1': dehradun };
 const schema = z.object({ facilities: z.array(facilitySchema) });
 export const directoryService: HealthcareService = {
   async listFacilities() {
-    const raw = deployment.careProvider === 'api'
-      ? await requestJson(`/v1/healthcare/facilities?region=${encodeURIComponent(regionId)}`, { method: 'GET' })
-      : directories[region.directoryId];
+    const raw = directories[region.directoryId];
     // Unknown regions/providers never silently return a different city's directory.
     return schema.parse(raw).facilities;
   },

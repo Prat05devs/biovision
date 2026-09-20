@@ -13,6 +13,7 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { Screen } from '@/components/ui/Screen';
 import { healthcareService } from '@/services';
 import { colors, radius, spacing } from '@/theme/tokens';
+import { fontFamily } from '@/theme/fonts';
 
 export default function CareListScreen() {
   const { t, i18n } = useTranslation();
@@ -44,7 +45,7 @@ export default function CareListScreen() {
 }
 const styles = StyleSheet.create({
   top: { marginTop: spacing.xl }, space: { marginTop: spacing.sm },
-  search: { minHeight: 54, borderWidth: 1, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, backgroundColor: colors.surface, color: colors.ink, fontSize: 16, marginTop: spacing.xl },
+  search: { minHeight: 54, borderWidth: 1, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, backgroundColor: colors.surface, color: colors.ink, fontSize: 16, fontFamily: fontFamily(400), marginTop: spacing.xl },
   filters: { gap: spacing.xs, paddingVertical: spacing.md }, filter: { minHeight: 48, justifyContent: 'center', borderRadius: radius.pill, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, alignSelf: 'flex-start' },
   active: { backgroundColor: colors.primary, borderColor: colors.primary }, toolbar: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.sm }, list: { gap: spacing.md },
 });

@@ -8,16 +8,17 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "1",
-      "bundleIdentifier": "com.teambiovision.biovision",
+      "buildNumber": "4",
+      "bundleIdentifier": "live.biovision.app",
       "infoPlist": {
         "NSCameraUsageDescription": "BioVision uses the front camera during your health scan to measure your pulse and photograph your face and lower eyelids. Video is analysed on your iPhone and never recorded or uploaded.",
         "NSLocationWhenInUseUsageDescription": "BioVision uses your location only when you ask it to find doctors and hospitals near you.",
+        "NSMotionUsageDescription": "BioVision's camera uses the motion sensor to keep the picture the right way up while you scan. Motion data stays on your iPhone and is never recorded or uploaded.",
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "package": "com.teambiovision.biovision",
+      "package": "live.biovision.app",
       "permissions": [
         "CAMERA",
         "ACCESS_COARSE_LOCATION",
