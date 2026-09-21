@@ -114,6 +114,17 @@ final class FacePhysEngine {
       box = raw
     }
 
+    // `Int(someDouble)` traps in Swift when the value is NaN or infinite, and writeCrop converts
+    // these coordinates without a second chance: the trap is a hard crash that no `catch` can
+    // reach. The box comes from a model output through a filter, so a single bad inference — which
+    // the same build can produce on one device and not another — takes the app down mid-scan.
+    // Drop the frame and restart the filter instead.
+    guard box.x.isFinite, box.y.isFinite, box.width.isFinite, box.height.isFinite,
+          box.width > 0, box.height > 0 else {
+      boxX = nil; boxY = nil; boxW = nil; boxH = nil
+      return result
+    }
+
     writeCrop(pixels: pixels, width: width, height: height, bytesPerRow: bytesPerRow, box: box)
     dtInput[0] = Float32(smoothedDt)
     try rppg.invoke()

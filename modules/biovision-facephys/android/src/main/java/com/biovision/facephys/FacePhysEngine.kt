@@ -141,6 +141,16 @@ class FacePhysEngine(context: Context) {
       box = raw
     }
 
+    // Kotlin's toInt() yields 0 for NaN rather than trapping as Swift does, so this cannot crash
+    // here — but a non-finite box would still feed the model a meaningless crop and quietly
+    // corrupt the signal. Drop the frame and restart the filter, as the iOS port does.
+    if (!box.x.isFinite() || !box.y.isFinite() || !box.width.isFinite() || !box.height.isFinite() ||
+      box.width <= 0f || box.height <= 0f
+    ) {
+      boxX = null; boxY = null; boxW = null; boxH = null
+      return result
+    }
+
     writeCrop(pixels, width, height, rowStride, box)
     dtInput.put(0, smoothedDt.toFloat())
     rppg.invoke()

@@ -40,6 +40,13 @@ final class FaceLandmarker {
       trackedRegion = FaceLandmarker.region(from: face)
     }
     guard let region = trackedRegion else { return nil }
+    // Same trap as in FacePhysEngine: writeCrop converts these to Int, and a non-finite region
+    // derived from a bad landmark pass would crash the app rather than lose a frame.
+    guard region.centerX.isFinite, region.centerY.isFinite, region.size.isFinite,
+          region.angle.isFinite, region.size > 0 else {
+      trackedRegion = nil
+      return nil
+    }
 
     writeCrop(pixels: pixels, width: width, height: height, bytesPerRow: bytesPerRow, region: region)
     try interpreter.invoke()
