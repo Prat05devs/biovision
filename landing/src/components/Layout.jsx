@@ -46,7 +46,7 @@ function Footer() {
   return (
     <footer className="site">
       <div className="wrap">
-        <div>© {new Date().getFullYear()} BioVision</div>
+        <div>© {new Date().getFullYear()} NavTaksh Wellness</div>
         <div className="footer-links">
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/terms">Terms of Use</Link>

@@ -5,7 +5,7 @@
 **Category:** Primary **Health & Fitness** · Secondary **Medical**
 **Age rating:** 12+ (Infrequent/Mild Medical/Treatment Information)
 **Price:** Free · **Availability:** India (add more countries later)
-**Copyright:** 2026 BioVision
+**Copyright:** 2026 NavTaksh Wellness
 
 ## Promotional text (170)
 A 30-second face scan, two eye photos and a few questions — get a clear health report and the right doctor to see near you.

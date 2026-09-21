@@ -41,7 +41,7 @@
       },
       {
         "heading": "Contact",
-        "body": "For questions, use the support link on BioVision's App Store page."
+        "body": "BioVision is provided by NavTaksh Wellness. For questions about this policy or your data, use the support link on BioVision's App Store page."
       }
     ]
   },
@@ -50,7 +50,7 @@
     "sections": [
       {
         "heading": "About BioVision",
-        "body": "BioVision is a health-information prototype. It estimates health indicators from your camera and your answers and suggests which kind of doctor may help."
+        "body": "BioVision is made by NavTaksh Wellness. It estimates health indicators from your camera and your answers, and suggests which kind of doctor may help. Everything is worked out on your phone."
       },
       {
         "heading": "Not medical advice",
@@ -74,7 +74,7 @@
       },
       {
         "heading": "Liability",
-        "body": "BioVision is provided as is, without warranties. To the extent permitted by law, the makers are not liable for decisions made using the app."
+        "body": "BioVision is provided as is, without warranties. To the extent permitted by law, NavTaksh Wellness is not liable for decisions made using its results. Always confirm results with a doctor."
       }
     ]
   }
