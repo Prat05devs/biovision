@@ -372,7 +372,7 @@
 				CODE_SIGN_ENTITLEMENTS = BioVision/BioVision.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 9Q56J23Z23;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -414,7 +414,7 @@
 				CODE_SIGN_ENTITLEMENTS = BioVision/BioVision.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 9Q56J23Z23;
 				INFOPLIST_FILE = BioVision/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BioVision.live;
