@@ -4,6 +4,7 @@ import android.content.Context
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CaptureRequest
+import android.os.SystemClock
 import android.util.Log
 import android.util.Size as AndroidSize
 import androidx.annotation.OptIn
@@ -47,7 +48,6 @@ class HybridFacePhysOutput(
   private companion object {
     const val TAG = "BioVisionFacePhys"
     const val WORKING_WIDTH = 480
-    const val FRAME_INTERVAL_MS = 1000.0 / 30.0
     const val UPDATE_INTERVAL_MS = 66.0
   }
 
@@ -68,7 +68,7 @@ class HybridFacePhysOutput(
   private var engine: FacePhysEngine? = null
   private var failed = false
 
-  private var lastFrameMs = 0.0
+  private val frameCadence = FrameCadence()
   private var lastUpdateMs = 0.0
   private var frameIndex = 0
   private val frameTimes = ArrayList<Double>()
@@ -89,6 +89,13 @@ class HybridFacePhysOutput(
   /** Rolling diagnostics, logged so a release build on a real phone can be diagnosed. */
   private var diagnosticsAtMs = 0.0
   private var framesSinceDiagnostics = 0
+  private var receivedSinceDiagnostics = 0
+  private var skippedSinceDiagnostics = 0
+  private var samplesSinceDiagnostics = 0
+  private var processingTotalMs = 0.0
+  private var processingMaxMs = 0.0
+  private var diagnosticQuality: Double? = null
+  private var sourceResolution = "unknown"
 
   @OptIn(ExperimentalCamera2Interop::class)
   override fun createUseCase(
@@ -102,7 +109,9 @@ class HybridFacePhysOutput(
     val resolutionSelector = ResolutionSelector.Builder()
       .setResolutionStrategy(
         ResolutionStrategy(
-          AndroidSize(WORKING_WIDTH, WORKING_WIDTH * 4 / 3),
+          // ResolutionStrategy sizes are in sensor coordinates, before output rotation.
+          // 640x480 becomes the desired 480x640 upright buffer on portrait phones.
+          AndroidSize(WORKING_WIDTH * 4 / 3, WORKING_WIDTH),
           ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER,
         ),
       )
@@ -200,9 +209,11 @@ class HybridFacePhysOutput(
     try {
       if (failed) return
       val captureMs = image.imageInfo.timestamp / 1_000_000.0
-      // 30 fps, like the web frame loop; tolerate a millisecond of camera jitter.
-      if (lastFrameMs > 0 && captureMs - lastFrameMs < FRAME_INTERVAL_MS - 1) return
-      lastFrameMs = captureMs
+      receivedSinceDiagnostics += 1
+      if (!frameCadence.accept(captureMs)) {
+        skippedSinceDiagnostics += 1
+        return
+      }
 
       if (detector == null) {
         detector = BlazeFaceDetector(context)
@@ -210,8 +221,14 @@ class HybridFacePhysOutput(
         if (options.measureVitals) engine = FacePhysEngine(context)
       }
 
+      val processingStart = SystemClock.elapsedRealtimeNanos()
+      sourceResolution = "${image.width}x${image.height}"
       downscale(image)
       process(captureMs)
+      val processingMs = (SystemClock.elapsedRealtimeNanos() - processingStart) / 1_000_000.0
+      processingTotalMs += processingMs
+      processingMaxMs = max(processingMaxMs, processingMs)
+      logDiagnostics(captureMs)
     } catch (error: Throwable) {
       failed = true
       options.onError.invoke(error as? Exception ?: RuntimeException(error))
@@ -325,9 +342,15 @@ class HybridFacePhysOutput(
     if (engine != null) {
       val face = detect()?.rect
       val result = engine.process(working, width, height, rowStride, captureMs, face)
-      result.sample?.let { pending.add(FacePhysSample(it.value.toDouble(), it.timestampMs)) }
+      result.sample?.let {
+        pending.add(FacePhysSample(it.value.toDouble(), it.timestampMs))
+        samplesSinceDiagnostics += 1
+      }
       result.heartRate?.let { latestHeartRate = it.toDouble() }
-      result.signalQuality?.let { latestQuality = it.toDouble() }
+      result.signalQuality?.let {
+        latestQuality = it.toDouble()
+        diagnosticQuality = it.toDouble()
+      }
       latestFace = face?.let {
         FacePhysFaceBox(
           it.x.toDouble() / width,
@@ -339,24 +362,6 @@ class HybridFacePhysOutput(
     }
 
     framesSinceDiagnostics += 1
-    // One line every 3 s, in release too: without a device attached this is the only way to see
-    // whether the pipeline is keeping frame rate and what the signal-quality model reports.
-    if (captureMs - diagnosticsAtMs >= 3000) {
-      val seconds = if (diagnosticsAtMs > 0) (captureMs - diagnosticsAtMs) / 1000.0 else 3.0
-      Log.i(
-        TAG,
-        "${width}x${height} @ ${"%.1f".format(framesSinceDiagnostics / seconds)} fps" +
-          ", face=${if (latestFace != null) "yes" else "no"}" +
-          ", mesh=${if (latestLandmarks != null) "yes" else "no"}" +
-          ", dt=${engine?.let { "%.1fms".format(it.modelFrameIntervalMs) } ?: "-"}" +
-          ", green=${engine?.let { "%.4f".format(it.lastCropGreen) } ?: "-"}" +
-          ", sqi=${latestQuality?.let { "%.2f".format(it) } ?: "-"}" +
-          ", hr=${latestHeartRate?.let { "%.1f".format(it) } ?: "-"}",
-      )
-      diagnosticsAtMs = captureMs
-      framesSinceDiagnostics = 0
-    }
-
     if (captureMs - lastUpdateMs < UPDATE_INTERVAL_MS) return
     lastUpdateMs = captureMs
     val update = FacePhysUpdate(
@@ -374,6 +379,46 @@ class HybridFacePhysOutput(
     latestHeartRate = null
     latestQuality = null
     options.onUpdate.invoke(update)
+  }
+
+  private fun logDiagnostics(captureMs: Double) {
+    if (diagnosticsAtMs == 0.0) {
+      diagnosticsAtMs = captureMs
+      framesSinceDiagnostics = 0
+      receivedSinceDiagnostics = 0
+      skippedSinceDiagnostics = 0
+      samplesSinceDiagnostics = 0
+      processingTotalMs = 0.0
+      processingMaxMs = 0.0
+      return
+    }
+    // One line every 3 s, in release too: without a device attached this is the only way to see
+    // whether the pipeline is keeping frame rate and what the signal-quality model reports.
+    if (captureMs - diagnosticsAtMs >= 3000) {
+      val seconds = (captureMs - diagnosticsAtMs) / 1000.0
+      Log.i(
+        TAG,
+        "source=$sourceResolution, working=${workingWidth}x${workingHeight}" +
+          ", received=${"%.1f".format(receivedSinceDiagnostics / seconds)} fps" +
+          ", processed=${"%.1f".format(framesSinceDiagnostics / seconds)} fps" +
+          ", samples=${"%.1f".format(samplesSinceDiagnostics / seconds)}/s" +
+          ", skipped=$skippedSinceDiagnostics" +
+          ", processing=${"%.1f".format(processingTotalMs / max(1, framesSinceDiagnostics))}ms" +
+          ", maxProcessing=${"%.1f".format(processingMaxMs)}ms" +
+          ", face=${if (latestFace != null) "yes" else "no"}" +
+          ", mesh=${if (latestLandmarks != null) "yes" else "no"}" +
+          ", dt=${engine?.let { "%.1fms".format(it.modelFrameIntervalMs) } ?: "-"}" +
+          ", green=${engine?.let { "%.4f".format(it.lastCropGreen) } ?: "-"}" +
+          ", sqi=${diagnosticQuality?.let { "%.2f".format(it) } ?: "-"}",
+      )
+      diagnosticsAtMs = captureMs
+      framesSinceDiagnostics = 0
+      receivedSinceDiagnostics = 0
+      skippedSinceDiagnostics = 0
+      samplesSinceDiagnostics = 0
+      processingTotalMs = 0.0
+      processingMaxMs = 0.0
+    }
   }
 
   override fun dispose() {
