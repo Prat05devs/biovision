@@ -27,7 +27,7 @@ function Header() {
     <header className="nav">
       <div className="wrap">
         <Link className="brand" to="/">
-          <img src="/assets/logo-mark.svg" alt="" />
+          <img src="/img/logo-mark.svg" alt="" />
           BioVision
         </Link>
         <nav className="nav-links">

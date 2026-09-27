@@ -194,7 +194,7 @@ export default function Home() {
           </div>
           <Reveal delay={200} className="hero-art">
             <div className="phone tilt-right">
-              <img src="/assets/screens/home.png" alt="The BioVision home screen, offering to start a health scan." width="461" height="1000" />
+              <img src="/img/screens/home.png" alt="The BioVision home screen, offering to start a health scan." width="461" height="1000" />
             </div>
             <div className="float-card float-hr">
               <div className="float-icon"><HeartPulseIcon width="18" height="18" /></div>
@@ -248,7 +248,7 @@ export default function Home() {
           <div className="measure-body">
             <Reveal className="hero-art">
               <div className="phone tilt-left">
-                <img src="/assets/screens/measures.png" alt="A list of the health signals BioVision measures." width="461" height="1000" loading="lazy" />
+                <img src="/img/screens/measures.png" alt="A list of the health signals BioVision measures." width="461" height="1000" loading="lazy" />
               </div>
             </Reveal>
             <div className="measure-grid three">
@@ -323,7 +323,7 @@ export default function Home() {
           </div>
           <Reveal delay={100} className="split-art">
             <div className="phone tilt-right">
-              <img src="/assets/screens/face-scan.png" alt="The face scan screen with a live mesh tracking a face." width="461" height="1000" loading="lazy" />
+              <img src="/img/screens/face-scan.png" alt="The face scan screen with a live mesh tracking a face." width="461" height="1000" loading="lazy" />
             </div>
           </Reveal>
         </div>
@@ -398,7 +398,7 @@ export default function Home() {
             </div>
             <div className="band-art">
               <div className="phone">
-                <img src="/assets/screens/nearby-care.png" alt="The nearby care screen listing doctors and hospitals in Dehradun." width="461" height="1000" loading="lazy" />
+                <img src="/img/screens/nearby-care.png" alt="The nearby care screen listing doctors and hospitals in Dehradun." width="461" height="1000" loading="lazy" />
               </div>
             </div>
           </Reveal>
@@ -429,7 +429,7 @@ export default function Home() {
           </div>
           <Reveal delay={100} className="split-art">
             <div className="phone tilt-left">
-              <img src="/assets/screens/wellbeing.png" alt="The wellbeing screen explaining a short, private mental-health check-in." width="461" height="1000" loading="lazy" />
+              <img src="/img/screens/wellbeing.png" alt="The wellbeing screen explaining a short, private mental-health check-in." width="461" height="1000" loading="lazy" />
             </div>
           </Reveal>
         </div>
@@ -489,7 +489,7 @@ export default function Home() {
           <div className="measure-body">
             <Reveal delay={120} className="hero-art">
               <div className="phone tilt-left">
-                <img src="/assets/screens/language.png" alt="The language screen, noting that only the language preference is saved on the device." width="461" height="1000" loading="lazy" />
+                <img src="/img/screens/language.png" alt="The language screen, noting that only the language preference is saved on the device." width="461" height="1000" loading="lazy" />
               </div>
             </Reveal>
             <div>
