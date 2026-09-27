@@ -41,7 +41,7 @@ export default function HealthSummaryScreen() {
     <AppText color={colors.inkMuted} style={styles.space}>{t('health.summaryIntro')}</AppText>
     {date ? <AppText variant="caption" color={colors.inkMuted} style={styles.space}>{t('health.date', { date })}</AppText> : null}
     <Card tone={plan.urgent ? 'urgent' : plan.level === 'prompt' ? 'caution' : 'soft'} style={styles.card}>
-      <AppIcon name={plan.urgent ? 'alertTriangle' : 'navigation'} size={28} color={plan.urgent ? colors.urgent : colors.primary} />
+      <AppIcon name={plan.urgent ? 'alertTriangle' : 'navigation'} size={24} color={plan.urgent ? colors.urgent : colors.primary} />
       <AppText variant="h2">{t(`health.level.${plan.level}`)}</AppText>
       <AppText>{t(`health.reason.${plan.level}`)}</AppText>
       {plan.urgent ? <Button label={t('health.call', { phone: region.emergencyPhone })} variant="urgent" icon="phone" onPress={() => void open(`tel:${region.emergencyPhone}`)} /> : <Button label={t('health.care', { city: regionName(i18n.language) })} icon="mapPin" onPress={() => router.push({ pathname: '/care', params: { specialty: plan.specialty } })} />}

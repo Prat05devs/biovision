@@ -19,7 +19,7 @@ export function ErrorState({
   return (
     <View style={styles.container}>
       <View style={styles.icon}>
-        <AppIcon name="alertCircle" size={34} color={colors.elevated} />
+        <AppIcon name="alertCircle" size={28} color={colors.elevated} />
       </View>
       <AppText variant="h2" style={styles.center}>
         {title}
@@ -35,8 +35,8 @@ export function ErrorState({
 const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xl },
   icon: {
-    width: 68,
-    height: 68,
+    width: 56,
+    height: 56,
     borderRadius: radius.xl,
     backgroundColor: colors.elevatedSoft,
     alignItems: 'center',

@@ -115,7 +115,7 @@ export default function HomeScreen() {
       </AppText>
       <View style={styles.supportGrid}>
         <Card tone="soft" style={styles.supportCard}>
-          <AppIcon name="heart" size={27} color={colors.primary} />
+          <AppIcon name="heart" size={22} color={colors.primary} />
           <AppText variant="h3" style={styles.supportTitle}>
             {t('home.wellbeing')}
           </AppText>
@@ -132,7 +132,7 @@ export default function HomeScreen() {
           />
         </Card>
         <Card style={styles.supportCard}>
-          <AppIcon name="mapPin" size={27} color={colors.primary} />
+          <AppIcon name="mapPin" size={22} color={colors.primary} />
           <AppText variant="h3" style={styles.supportTitle}>
             {t('home.care')}
           </AppText>
@@ -161,10 +161,9 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   loading: { flex: 1, backgroundColor: colors.background },
   hero: {
-    minHeight: 410,
     borderRadius: radius.xl,
     padding: spacing.xl,
-    paddingTop: spacing.xxxl,
+    paddingTop: spacing.xxl,
     overflow: 'hidden',
     marginTop: spacing.sm,
   },
@@ -191,18 +190,18 @@ const styles = StyleSheet.create({
   liveMark: { position: 'absolute', right: spacing.xl, top: spacing.xl, width: 48, height: 48, alignItems: 'center', justifyContent: 'center' },
   radarRing: { position: 'absolute', width: 42, height: 42, borderRadius: 21, borderWidth: 1.5, borderColor: 'rgba(213,255,248,0.72)' },
   radarCore: { width: 36, height: 36, borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.12)', alignItems: 'center', justifyContent: 'center' },
-  heroTitle: { marginTop: spacing.md, maxWidth: 320 },
-  heroBody: { marginTop: spacing.md, maxWidth: 330 },
-  heroButton: { marginTop: spacing.xl, backgroundColor: colors.white },
+  heroTitle: { marginTop: spacing.sm, maxWidth: 300 },
+  heroBody: { marginTop: spacing.sm, maxWidth: 320 },
+  heroButton: { marginTop: spacing.lg, backgroundColor: colors.white },
   measureBlock: { gap: spacing.lg },
   timeRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs, marginTop: spacing.md },
-  sectionTitle: { marginTop: spacing.xxxl, marginBottom: spacing.md },
+  sectionTitle: { marginTop: spacing.xxl, marginBottom: spacing.sm },
   stackCard: { gap: spacing.lg },
   divider: { height: StyleSheet.hairlineWidth, backgroundColor: colors.border },
   supportGrid: { gap: spacing.md },
-  supportCard: { minHeight: 210 },
-  supportTitle: { marginTop: spacing.md },
+  supportCard: {},
+  supportTitle: { marginTop: spacing.sm },
   supportBody: { marginTop: spacing.xs },
-  cardButton: { alignSelf: 'flex-start', paddingHorizontal: 0, marginTop: 'auto' },
+  cardButton: { alignSelf: 'flex-start', paddingHorizontal: 0, minHeight: 40, marginTop: spacing.xs },
   platform: { textAlign: 'center', marginTop: spacing.xxl },
 });

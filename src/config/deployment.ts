@@ -6,7 +6,7 @@ const schema = z.object({
     name: z.object({ en: z.string(), hi: z.string() }), countryCode: z.string(),
     emergencyPhone: z.string().regex(/^\+?\d{3,15}$/), mapsQuery: z.string(), directoryId: z.string(),
   })),
-  careProvider: z.enum(['bundled', 'api']), researchCollectionAvailable: z.boolean(),
+  careProvider: z.literal('bundled'), researchCollectionAvailable: z.boolean(),
   appearance: z.object({ enabled: z.boolean(), provider: z.string() }),
 });
 // Register new deployment manifests here; screens never select cities or tenant details.

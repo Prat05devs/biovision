@@ -47,7 +47,7 @@ export default function FacilityDetailScreen() {
   return (
     <Screen>
       <AppHeader back title={t('care.detailTitle')} />
-      <View style={styles.heroIcon}><AppIcon name="medicalBag" size={34} color={colors.primary} /></View>
+      <View style={styles.heroIcon}><AppIcon name="medicalBag" size={26} color={colors.primary} /></View>
       <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>{t(`care.types.${facility.facilityType}`)}</AppText>
       <AppText variant="h1">{localize(facility.name)}</AppText>
       {facility.affiliation ? <AppText style={styles.address}>{facility.affiliation}</AppText> : null}
@@ -83,7 +83,7 @@ export default function FacilityDetailScreen() {
 
 const styles = StyleSheet.create({
   loading: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  heroIcon: { width: 72, height: 72, borderRadius: radius.xl, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
+  heroIcon: { width: 56, height: 56, borderRadius: radius.lg, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
   eyebrow: { marginTop: spacing.lg, marginBottom: spacing.xs },
   address: { marginTop: spacing.sm },
   card: { marginTop: spacing.xl, marginBottom: spacing.md, gap: spacing.md },

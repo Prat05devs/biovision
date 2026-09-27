@@ -1,0 +1,103 @@
+buildscript {
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath "com.android.tools.build:gradle:9.2.1"
+  }
+}
+
+def reactNativeArchitectures() {
+  def value = rootProject.getProperties().get("reactNativeArchitectures")
+  return value ? value.split(",") : ["armeabi-v7a", "arm64-v8a"]
+}
+
+def getExtOrDefault(name, fallback) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : fallback
+}
+
+apply plugin: "com.android.library"
+apply plugin: "org.jetbrains.kotlin.android"
+apply from: '../nitrogen/generated/android/BioVisionFacePhys+autolinking.gradle'
+
+android {
+  namespace "com.biovision.facephys"
+
+  ndkVersion getExtOrDefault("ndkVersion", "27.1.12297006")
+  compileSdk getExtOrDefault("compileSdkVersion", 35) as int
+
+  defaultConfig {
+    minSdk getExtOrDefault("minSdkVersion", 24) as int
+
+    externalNativeBuild {
+      cmake {
+        cppFlags "-frtti -fexceptions -Wall -fstack-protector-all"
+        arguments "-DANDROID_STL=c++_shared"
+        abiFilters(*reactNativeArchitectures())
+      }
+    }
+  }
+
+  externalNativeBuild {
+    cmake {
+      path "CMakeLists.txt"
+    }
+  }
+
+  buildFeatures {
+    prefab true
+    buildConfig true
+  }
+
+  sourceSets {
+    main {
+      // The models are shared with the iOS podspec; keep one copy in the repo.
+      assets.srcDirs += ['../assets']
+    }
+  }
+
+  packagingOptions {
+    // The .tflite files must stay uncompressed so the interpreter can mmap them.
+    androidResources {
+      noCompress += ['tflite', 'bin']
+    }
+    excludes += [
+      "META-INF/**",
+      "**/libc++_shared.so",
+      "**/libfbjni.so",
+      "**/libjsi.so",
+      "**/libreactnative.so",
+    ]
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = "17"
+  }
+}
+
+repositories {
+  google()
+  mavenCentral()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-android"
+  implementation project(":react-native-nitro-modules")
+  implementation project(":react-native-vision-camera")
+
+  // CameraX: the ImageAnalysis use case that feeds frames to the pipeline.
+  implementation "androidx.camera:camera-core:1.4.1"
+  implementation "androidx.camera:camera-camera2:1.4.1"
+
+  // EXIF orientation, so eyelid photos are analysed the right way up (PIL exif_transpose).
+  implementation "androidx.exifinterface:exifinterface:1.3.7"
+
+  // TFLite runs BlazeFace, the Face Landmarker and the three FacePhys models.
+  implementation "org.tensorflow:tensorflow-lite:2.16.1"
+}

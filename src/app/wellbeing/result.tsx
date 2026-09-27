@@ -43,7 +43,7 @@ export default function WellbeingResultScreen() {
     <Screen>
       <AppHeader back language title={t('navigation.wellbeing')} />
       <View style={styles.icon}>
-        <AppIcon name="heart" size={34} color={colors.primary} />
+        <AppIcon name="heart" size={26} color={colors.primary} />
       </View>
       <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>
         {t('wellbeing.resultEyebrow')}
@@ -99,7 +99,7 @@ export default function WellbeingResultScreen() {
 }
 
 const styles = StyleSheet.create({
-  icon: { width: 72, height: 72, borderRadius: radius.xl, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
+  icon: { width: 56, height: 56, borderRadius: radius.lg, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
   eyebrow: { marginTop: spacing.lg, marginBottom: spacing.xs },
   resultCard: { marginTop: spacing.xl, marginBottom: spacing.md, gap: spacing.sm },
   sectionTitle: { marginTop: spacing.xl },

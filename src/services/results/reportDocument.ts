@@ -216,7 +216,7 @@ export function reportToText(document: HealthReportDocument, brandName: string):
   for (const section of document.sections) {
     lines.push('', section.title.toUpperCase());
     for (const row of section.rows) {
-      lines.push(`• ${row.label}: ${[row.value, row.status].filter(Boolean).join(' — ')}`);
+      lines.push(`• ${row.label}: ${[row.value, row.status].filter(Boolean).join(', ')}`);
     }
   }
   lines.push('', ...document.nextSteps.map((step) => `${step.label}: ${step.value}`));

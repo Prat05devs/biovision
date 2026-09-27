@@ -21,9 +21,14 @@
     "test:vitals": "node scripts/test-vitals.cjs",
     "test:facephys-hrv": "node scripts/test-facephys-hrv.cjs",
     "test:routing": "node scripts/test-routing.cjs",
-    "landing:build": "node scripts/build-landing.cjs"
+    "test:wellbeing": "node scripts/test-wellbeing.cjs",
+    "landing:build": "node scripts/build-landing.cjs",
+    "android:apk": "node scripts/build-android.cjs apk",
+    "android:aab": "node scripts/build-android.cjs aab"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.4.2",
+    "@expo-google-fonts/noto-sans-devanagari": "^0.4.1",
     "@mediapipe/tasks-vision": "^1.0.1",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@tanstack/react-query": "^5.102.8",

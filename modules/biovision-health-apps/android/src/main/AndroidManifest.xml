@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--
+    Android 11+ hides other apps unless they are declared here. Instead of QUERY_ALL_PACKAGES,
+    which Play restricts, this asks only about health apps: anything that connects to Health
+    Connect (both the Android 13 and the Android 14+ declarations), plus well-known fitness apps
+    that may not.
+  -->
+  <queries>
+    <intent>
+      <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+      <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+    </intent>
+    <package android:name="com.google.android.apps.healthdata" />
+    <package android:name="com.google.android.apps.fitness" />
+    <package android:name="com.sec.android.app.shealth" />
+    <package android:name="com.fitbit.FitbitMobile" />
+    <package android:name="com.garmin.android.apps.connectmobile" />
+    <package android:name="com.strava" />
+    <package android:name="com.huawei.health" />
+    <package android:name="com.xiaomi.wearable" />
+    <package android:name="com.xiaomi.hm.health" />
+    <package android:name="com.huami.watch.hmwatchmanager" />
+    <package android:name="com.noisefit" />
+    <package android:name="com.myfitnesspal.android" />
+    <package android:name="com.healthifyme.basic" />
+    <package android:name="com.nike.plusgps" />
+  </queries>
+</manifest>

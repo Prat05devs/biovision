@@ -3,29 +3,11 @@ import { z } from 'zod';
 
 import { requestJson } from '@/api/client';
 import { appendCaptureImage } from '@/api/imageFormData';
-import type {
-  AssessmentService,
-  HealthcareService,
-  ObservationService,
-  ScreeningService,
-  WellbeingService,
-} from '@/services/contracts';
+import type { ScreeningService } from '@/services/contracts';
 import { AppServiceError } from '@/services/errors';
 import type { AssessmentSession, CaptureAsset, SignalQuality } from '@/types/assessment';
 
 const screeningSignalSchema = z.enum(['low', 'moderate', 'elevated', 'unavailable']);
-
-const questionSchema = z.object({
-  id: z.string(),
-  type: z.enum(['yes_no', 'single_choice']),
-  textKey: z.string(),
-  required: z.boolean(),
-  options: z
-    .array(z.object({ value: z.string(), labelKey: z.string() }))
-    .optional(),
-  sectionKey: z.string().optional(),
-  followUpOf: z.string().optional(),
-});
 
 const qualityToAppQuality = (value: string | undefined): SignalQuality => {
   if (value === 'good') return 'good';
@@ -57,30 +39,6 @@ const screeningResponseSchema = z.object({
     regionDetected: z.boolean(),
   }),
   modelVersion: z.string().nullish(),
-});
-
-const reportSchema = z.object({
-  assessmentId: z.string(),
-  urgentActionRequired: z.boolean(),
-  screeningResult: z.object({
-    signal: screeningSignalSchema,
-    labelKey: z.string().optional(),
-    label: z.string().optional(),
-  }),
-  questionnaireAssessment: z.object({
-    level: z.enum(['no_specific_concern', 'follow_up_recommended', 'prompt_medical_review']),
-    summaryKey: z.string(),
-    evidenceKeys: z.array(z.string()),
-  }),
-  explanation: z.object({
-    whatWasObservedKey: z.string().optional(),
-    whatWasObserved: z.string().optional(),
-    whyItMayMatterKey: z.string().optional(),
-    whyItMayMatter: z.string().optional(),
-  }),
-  recommendedTest: z.object({ nameKey: z.string().optional(), name: z.string().optional() }).optional(),
-  recommendedCare: z.object({ categoryKey: z.string().optional(), category: z.string().optional() }).optional(),
-  urgent: z.object({ messageKey: z.string().optional(), message: z.string().optional(), phone: z.string().optional() }).nullish(),
 });
 
 export const apiScreeningService: ScreeningService = {
@@ -132,6 +90,15 @@ const captureReceiptSchema = z.object({
   retentionPurpose: z.literal('model_research'),
 });
 
+/**
+ * Research retention. Both helpers are inert in every shipped deployment: they refuse unless
+ * `researchCollectionAvailable` is set, and no manifest sets it.
+ *
+ * The endpoints they post to (`/v1/captures`, `/v1/research/questionnaire`) were removed from the
+ * backend when the app moved on-device, together with the capture store that received them.
+ * Restoring collection therefore means restoring the server side from git history — and the
+ * clinical, ethics, privacy and security approvals that governed it — not only flipping the flag.
+ */
 export async function retainResearchCapture(capture: CaptureAsset, session: AssessmentSession) {
   if (
     !deployment.researchCollectionAvailable ||
@@ -165,41 +132,6 @@ export async function retainResearchCapture(capture: CaptureAsset, session: Asse
   if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid capture receipt.');
   return parsed.data;
 }
-
-export const apiAssessmentService: AssessmentService = {
-  async nextQuestion(input) {
-    const raw = await requestJson('/v1/assessment/next-question', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(input),
-    });
-    const parsed = z
-      .object({
-        question: questionSchema.optional(),
-        done: z.boolean(),
-        urgentActionRequired: z.boolean().default(false),
-        configVersion: z.string(),
-      })
-      .refine((value) => value.done || value.question !== undefined)
-      .safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid question response.');
-    return parsed.data;
-  },
-  async complete(session) {
-    const raw = await requestJson('/v1/assessment/complete', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        sessionId: session.id,
-        screening: { anemiaSignal: session.anemia.signal },
-        answers: session.questionnaire.answers,
-      }),
-    });
-    const parsed = reportSchema.safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid assessment response.');
-    return { ...parsed.data, urgent: parsed.data.urgent ?? undefined };
-  },
-};
 
 const questionnaireReceiptSchema = z.object({
   questionnaireResponseId: z.string(),
@@ -235,201 +167,3 @@ export async function retainResearchQuestionnaire(session: AssessmentSession) {
   if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid questionnaire receipt.');
   return parsed.data;
 }
-
-const facilitySchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  facilityType: z.enum([
-    'hospital',
-    'clinic',
-    'government_health_centre',
-    'diagnostic_lab',
-    'mental_health_service',
-  ]),
-  specialties: z.array(z.string()),
-  address: z.string(),
-  latitude: z.number().optional(),
-  longitude: z.number().optional(),
-  distanceKm: z.number().optional(),
-  phone: z.string().optional(),
-  website: z.string().optional(),
-  directionsUrl: z.string().optional(),
-  isGovernment: z.boolean(),
-  isVerified: z.boolean().default(true),
-});
-
-export const apiHealthcareService: HealthcareService = {
-  async listFacilities(input) {
-    const params = new URLSearchParams();
-    if (input?.latitude !== undefined) params.set('lat', String(input.latitude));
-    if (input?.longitude !== undefined) params.set('lng', String(input.longitude));
-    const suffix = params.size ? `?${params.toString()}` : '';
-    const raw = await requestJson(`/v1/healthcare/facilities${suffix}`, { method: 'GET' });
-    const parsed = z.object({ facilities: z.array(facilitySchema) }).safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid facility response.');
-    return parsed.data.facilities;
-  },
-};
-
-const supportResourceSchema = z.object({
-  id: z.string(),
-  nameKey: z.string(),
-  descriptionKey: z.string(),
-  phone: z.string().nullable().optional(),
-  alternatePhone: z.string().nullable().optional(),
-  website: z.string().nullable().optional(),
-  operator: z.string(),
-  availability: z.string(),
-  cost: z.string(),
-  kind: z.string(),
-  verified: z.boolean(),
-  verifiedOn: z.string(),
-  sourceUrl: z.string(),
-});
-
-const nullableToUndefined = <T,>(value: T | null | undefined): T | undefined => value ?? undefined;
-
-const toSupportResource = (resource: z.infer<typeof supportResourceSchema>) => ({
-  ...resource,
-  phone: nullableToUndefined(resource.phone),
-  alternatePhone: nullableToUndefined(resource.alternatePhone),
-  website: nullableToUndefined(resource.website),
-});
-
-const wellbeingScreenSchema = z.object({
-  screenVersion: z.string(),
-  recallPeriodDays: z.number().int().positive(),
-  baselineQuestionCount: z.number().int().positive(),
-  maximumQuestionCount: z.number().int().positive(),
-  riskQuestionId: z.string(),
-  region: z.string(),
-  emergencyNumber: z.string().nullable().optional(),
-  // A build with no verified directory must render an honest empty state, not fail.
-  supportResources: z.array(supportResourceSchema).default([]),
-});
-
-const wellbeingNextQuestionSchema = z.object({
-  question: questionSchema.nullable().optional(),
-  done: z.boolean(),
-  urgentActionRequired: z.boolean(),
-  answeredCount: z.number().int().nonnegative(),
-  unlockedCount: z.number().int().nonnegative(),
-  screenVersion: z.string(),
-});
-
-const wellbeingResultSchema = z.object({
-  urgentActionRequired: z.boolean(),
-  riskItemEndorsed: z.boolean(),
-  level: z.enum(['monitor', 'support_recommended', 'prompt_review', 'urgent']),
-  messageKey: z.string().optional(),
-  message: z.string().optional(),
-  recommendedCareCategoryKey: z.string().nullable().optional(),
-  recommendedCareCategory: z.string().nullable().optional(),
-  scales: z
-    .array(
-      z.object({
-        id: z.string(),
-        labelKey: z.string(),
-        score: z.number().int().nonnegative(),
-        maximumScore: z.number().int().positive(),
-        bandLabelKey: z.string(),
-        level: z.enum(['monitor', 'support_recommended', 'prompt_review', 'urgent']),
-        positive: z.boolean(),
-      }),
-    )
-    .default([]),
-  screenVersion: z.string(),
-  emergencyNumber: z.string().nullable().optional(),
-  supportResources: z.array(supportResourceSchema).default([]),
-});
-
-export const apiWellbeingService: WellbeingService = {
-  async getScreen() {
-    const raw = await requestJson('/v1/wellbeing/screen', { method: 'GET' });
-    const parsed = wellbeingScreenSchema.safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid wellbeing screen.');
-    return {
-      ...parsed.data,
-      emergencyNumber: nullableToUndefined(parsed.data.emergencyNumber),
-      supportResources: parsed.data.supportResources.map(toSupportResource),
-    };
-  },
-  async nextQuestion(answers) {
-    const raw = await requestJson('/v1/wellbeing/next-question', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ answers }),
-    });
-    const parsed = wellbeingNextQuestionSchema.safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid wellbeing step.');
-    return { ...parsed.data, question: nullableToUndefined(parsed.data.question) };
-  },
-  async assess(answers) {
-    const raw = await requestJson('/v1/wellbeing/assessment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ answers }),
-    });
-    const parsed = wellbeingResultSchema.safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid wellbeing response.');
-    return {
-      ...parsed.data,
-      recommendedCareCategoryKey: nullableToUndefined(parsed.data.recommendedCareCategoryKey),
-      recommendedCareCategory: nullableToUndefined(parsed.data.recommendedCareCategory),
-      emergencyNumber: nullableToUndefined(parsed.data.emergencyNumber),
-      supportResources: parsed.data.supportResources.map(toSupportResource),
-    };
-  },
-};
-
-const faceSignSchema = z.object({
-  id: z.string(),
-  region: z.string(),
-  labelKey: z.string(),
-  promptKey: z.string(),
-  traditionalKey: z.string(),
-  clinicalKey: z.string(),
-  corroboration: z.enum(['corroborated', 'traditional_only']),
-  traditionalSystems: z.array(z.string()),
-  traditionalConcept: z.string(),
-  clinicalCitation: z.string(),
-  priority: z.boolean(),
-});
-
-export const apiObservationService: ObservationService = {
-  async getSigns() {
-    const raw = await requestJson('/v1/observations/signs', { method: 'GET' });
-    const parsed = z
-      .object({
-        signsVersion: z.string(),
-        basis: z.string(),
-        clinicallyValidated: z.boolean(),
-        signs: z.array(faceSignSchema),
-      })
-      .safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid sign catalogue.');
-    return parsed.data;
-  },
-  async getProfile({ confirmedSigns, answers }) {
-    const raw = await requestJson('/v1/observations/profile', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ confirmedSigns, answers }),
-    });
-    const parsed = z
-      .object({
-        signsVersion: z.string(),
-        basis: z.string(),
-        clinicallyValidated: z.boolean(),
-        observedSigns: z.array(faceSignSchema),
-        followUpQuestions: z.array(questionSchema),
-        answeredCount: z.number().int().nonnegative(),
-        questionCount: z.number().int().nonnegative(),
-        complete: z.boolean(),
-        stage: z.enum(['observation_only', 'complete']),
-      })
-      .safeParse(raw);
-    if (!parsed.success) throw new AppServiceError('INVALID_RESPONSE', 'Invalid observation profile.');
-    return parsed.data;
-  },
-};

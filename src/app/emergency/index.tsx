@@ -24,7 +24,7 @@ export default function EmergencyScreen() {
   return (
     <Screen backgroundColor="#FFF8F7">
       <AppHeader />
-      <View style={styles.warningIcon}><AppIcon name="alertTriangle" size={40} color={colors.urgent} /></View>
+      <View style={styles.warningIcon}><AppIcon name="alertTriangle" size={28} color={colors.urgent} /></View>
       <AppText variant="eyebrow" color={colors.urgent} style={styles.eyebrow}>{t('emergency.eyebrow')}</AppText>
       <AppText variant="h1">{t('emergency.title')}</AppText>
       <AppText color={colors.inkMuted} style={styles.description}>{customMessage ?? t('emergency.description')}</AppText>
@@ -44,7 +44,7 @@ export default function EmergencyScreen() {
 }
 
 const styles = StyleSheet.create({
-  warningIcon: { width: 78, height: 78, borderRadius: radius.xl, backgroundColor: colors.urgentSoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
+  warningIcon: { width: 60, height: 60, borderRadius: radius.lg, backgroundColor: colors.urgentSoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
   eyebrow: { marginTop: spacing.lg, marginBottom: spacing.xs },
   description: { marginTop: spacing.sm },
   urgentCard: { marginTop: spacing.xl, flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md },

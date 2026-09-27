@@ -12,7 +12,8 @@ import { Card } from '@/components/ui/Card';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { Screen } from '@/components/ui/Screen';
 import { healthcareService } from '@/services';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, MAX_FONT_SCALE, radius, spacing } from '@/theme/tokens';
+import { fontFamily } from '@/theme/fonts';
 
 export default function CareListScreen() {
   const { t, i18n } = useTranslation();
@@ -31,7 +32,7 @@ export default function CareListScreen() {
     <AppText variant="h1">{t('care.title', { city: regionName(i18n.language) })}</AppText>
     <AppText color={colors.inkMuted} style={styles.space}>{t('care.description')}</AppText>
     <Card tone="soft" style={styles.top}><AppText variant="small" color={colors.inkMuted}>{t('care.directoryNote', { city: regionName(i18n.language), count: query.data?.length ?? 0 })}</AppText></Card>
-    <TextInput value={search} onChangeText={setSearch} placeholder={t('care.search')} accessibilityLabel={t('care.search')} placeholderTextColor={colors.inkMuted} style={styles.search} returnKeyType="search" autoCorrect={false} clearButtonMode="while-editing" />
+    <TextInput maxFontSizeMultiplier={MAX_FONT_SCALE} value={search} onChangeText={setSearch} placeholder={t('care.search')} accessibilityLabel={t('care.search')} placeholderTextColor={colors.inkMuted} style={styles.search} returnKeyType="search" autoCorrect={false} clearButtonMode="while-editing" />
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filters}>
       {['all', ...specialties].map(item => <Pressable key={item} accessibilityRole="button" accessibilityState={{ selected: item === specialty }} style={[styles.filter, specialty === item && styles.active]} onPress={() => setSpecialty(item)}>
         <AppText variant="small" color={specialty === item ? colors.white : colors.ink}>{item === 'all' ? t('care.allSpecialties') : t(item)}</AppText>
@@ -44,7 +45,7 @@ export default function CareListScreen() {
 }
 const styles = StyleSheet.create({
   top: { marginTop: spacing.xl }, space: { marginTop: spacing.sm },
-  search: { minHeight: 54, borderWidth: 1, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, backgroundColor: colors.surface, color: colors.ink, fontSize: 16, marginTop: spacing.xl },
+  search: { minHeight: 48, borderWidth: 1, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, backgroundColor: colors.surface, color: colors.ink, fontSize: 16, fontFamily: fontFamily(400), marginTop: spacing.xl },
   filters: { gap: spacing.xs, paddingVertical: spacing.md }, filter: { minHeight: 48, justifyContent: 'center', borderRadius: radius.pill, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, alignSelf: 'flex-start' },
   active: { backgroundColor: colors.primary, borderColor: colors.primary }, toolbar: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.sm }, list: { gap: spacing.md },
 });

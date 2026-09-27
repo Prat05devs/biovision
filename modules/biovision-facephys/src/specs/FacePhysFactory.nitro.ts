@@ -39,6 +39,6 @@ export interface FacePhysOutputOptions {
   onError: (error: Error) => void;
 }
 
-export interface FacePhysFactory extends HybridObject<{ ios: 'swift' }> {
+export interface FacePhysFactory extends HybridObject<{ ios: 'swift'; android: 'kotlin' }> {
   createFacePhysOutput(options: FacePhysOutputOptions): CameraOutput;
 }

@@ -8,7 +8,7 @@ export function ResultSection({ icon, title, body }: { icon: AppIconName; title:
   return (
     <View style={styles.section}>
       <View style={styles.icon}>
-        <AppIcon name={icon} size={20} color={colors.primary} />
+        <AppIcon name={icon} size={18} color={colors.primary} />
       </View>
       <View style={styles.copy}>
         <AppText variant="small" style={styles.title}>
@@ -25,14 +25,14 @@ export function ResultSection({ icon, title, body }: { icon: AppIconName; title:
 const styles = StyleSheet.create({
   section: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md },
   icon: {
-    width: 38,
-    height: 38,
+    width: 34,
+    height: 34,
     borderRadius: radius.sm,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primarySoft,
   },
   copy: { flex: 1 },
-  title: { fontWeight: '800' },
+  title: { fontWeight: '600' },
   body: { marginTop: spacing.xxs },
 });

@@ -14,7 +14,8 @@ import { lifestyleQuestions } from '@/data/lifestyleQuestions';
 import type { LifestyleQuestion } from '@/types/lifestyle';
 import { assessmentService } from '@/services';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing, typography } from '@/theme/tokens';
+import { colors, MAX_FONT_SCALE, radius, spacing, typography } from '@/theme/tokens';
+import { fontFamily } from '@/theme/fonts';
 
 // Height and weight are collected on the About you screen before the scan.
 const habitQuestions: LifestyleQuestion[] = lifestyleQuestions.filter((question) => question.type !== 'number');
@@ -149,6 +150,7 @@ export default function LifestyleScreen() {
             placeholderTextColor={colors.inkMuted}
             accessibilityLabel={t(numberQuestion.textKey)}
             maxLength={5}
+            maxFontSizeMultiplier={MAX_FONT_SCALE}
           />
           <AppText variant="body" color={colors.inkMuted}>
             {t(numberQuestion.unitKey)}
@@ -190,6 +192,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     color: colors.ink,
     fontSize: typography.h2,
+    fontFamily: fontFamily(600),
+    fontVariant: ['tabular-nums'],
   },
   hint: { marginTop: spacing.md },
   footer: { gap: spacing.xs },

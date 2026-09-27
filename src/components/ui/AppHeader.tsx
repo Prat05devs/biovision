@@ -36,7 +36,7 @@ export function AppHeader({ back = false, language = false, settings = false, da
             hitSlop={10}
             style={styles.iconButton}
           >
-            <AppIcon name="arrowBack" size={23} color={color} />
+            <AppIcon name="arrowBack" size={22} color={color} />
           </Pressable>
         ) : (
           <View style={styles.brandRow}>
@@ -63,7 +63,7 @@ export function AppHeader({ back = false, language = false, settings = false, da
             hitSlop={10}
             style={styles.iconButton}
           >
-            <AppIcon name="settings" size={23} color={color} />
+            <AppIcon name="settings" size={22} color={color} />
           </Pressable>
         ) : language ? (
           <Pressable
@@ -73,7 +73,7 @@ export function AppHeader({ back = false, language = false, settings = false, da
             hitSlop={10}
             style={styles.iconButton}
           >
-            <AppIcon name="language" size={23} color={color} />
+            <AppIcon name="language" size={22} color={color} />
           </Pressable>
         ) : null}
       </View>
@@ -83,14 +83,14 @@ export function AppHeader({ back = false, language = false, settings = false, da
 
 const styles = StyleSheet.create({
   row: {
-    minHeight: 56,
+    minHeight: 52,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   side: { minWidth: 60, flexDirection: 'row', alignItems: 'center' },
   right: { justifyContent: 'flex-end' },
-  title: { flex: 1, textAlign: 'center', fontWeight: '700' },
+  title: { flex: 1, textAlign: 'center', fontWeight: '600' },
   iconButton: {
     width: 44,
     height: 44,
@@ -100,17 +100,17 @@ const styles = StyleSheet.create({
   },
   brandRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
   logoSmall: {
-    width: 28,
-    height: 28,
-    borderRadius: 10,
+    width: 24,
+    height: 24,
+    borderRadius: 8,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
     transform: [{ rotate: '45deg' }],
   },
   logoDot: {
-    width: 10,
-    height: 10,
+    width: 8,
+    height: 8,
     borderRadius: radius.pill,
     backgroundColor: colors.white,
   },

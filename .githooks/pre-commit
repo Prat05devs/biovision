@@ -1,0 +1,48 @@
+#!/bin/sh
+# Blocks signing material and local secrets from entering a commit.
+#
+# .gitignore already excludes these, but ignore rules are advisory: `git add -f`, a rename, or a
+# new path that no rule covers will sail past them. Losing the upload key means losing the ability
+# to update the app; publishing it means someone else can ship as us. Neither is recoverable, so
+# this check is not advisory.
+#
+# Enabled by `git config core.hooksPath .githooks` (see docs/ANDROID_SIGNING.md).
+
+staged=$(git diff --cached --name-only --diff-filter=AM)
+[ -z "$staged" ] && exit 0
+
+blocked=""
+
+# 1. Files that are signing material or local machine configuration by name.
+for file in $staged; do
+  case "$file" in
+    *.jks|*.keystore|*.p12|*.pfx|*.pem|*.key|.env|.env.*|*/local.properties|local.properties)
+      blocked="$blocked  $file (signing material or local configuration)\n" ;;
+  esac
+done
+
+# 2. Files whose contents look like a private key or a pasted credential, wherever they live.
+for file in $staged; do
+  [ -f "$file" ] || continue
+  if git show ":$file" 2>/dev/null | head -c 4096 | grep -qE "BEGIN (RSA |EC |OPENSSH |PGP )?PRIVATE KEY"; then
+    blocked="$blocked  $file (contains a private key block)\n"
+  fi
+  # A real value, not a placeholder: documentation and templates legitimately show
+  # `PASSWORD=...`, `PASSWORD=<your password>` or `PASSWORD=`, and blocking those trains
+  # everyone to pass --no-verify, which is worse than not checking at all.
+  if git show ":$file" 2>/dev/null \
+    | grep -E "(STORE_PASSWORD|KEY_PASSWORD|storePassword|keyPassword)[[:space:]]*=" \
+    | grep -qvE "=[[:space:]]*($|\.\.\.|<|\*|['\"]?(xxx|changeme|your|placeholder|example)|\\\$|findProperty)"; then
+    blocked="$blocked  $file (looks like a hard-coded signing password)\n"
+  fi
+done
+
+if [ -n "$blocked" ]; then
+  printf '\nCommit blocked. These files must not enter the repository:\n\n'
+  printf "$blocked"
+  printf '\nSigning credentials belong in ~/.gradle/gradle.properties, which lives outside the\n'
+  printf 'repository. See docs/ANDROID_SIGNING.md.\n\n'
+  printf 'If you are certain this is a false positive: git commit --no-verify\n\n'
+  exit 1
+fi
+exit 0

@@ -25,7 +25,9 @@ check('iOS bundle identifier', Boolean(app.ios?.bundleIdentifier), app.ios?.bund
 check('iOS build number', /^\d+$/.test(app.ios?.buildNumber ?? ''), app.ios?.buildNumber ?? 'missing');
 check('1024 px App Store icon', exists('ios/BioVision/Images.xcassets/AppIcon.appiconset/App-Icon-1024x1024@1x.png'), 'checked-in app icon');
 check('Privacy manifest', privacyManifest.includes('NSPrivacyTracking') && privacyManifest.includes('<false/>'), 'tracking disabled');
-check('Only used iOS permission purposes', !/NSLocationAlways|NSMotionUsageDescription/.test(infoPlist), 'camera, selected photos, and when-in-use location only');
+// NSMotionUsageDescription is required by App Store validation (ITMS-90683) because ExpoCamera and
+// ExpoLocation link CoreMotion, even though no BioVision code reads motion. Background location stays banned.
+check('Only used iOS permission purposes', !/NSLocationAlways/.test(infoPlist), 'camera, selected photos, when-in-use location, and the SDK-required motion string');
 
 for (const model of facePhysModels) {
   check(`FacePhys native asset: ${model}`, exists(`modules/biovision-facephys/assets/${model}`), 'bundled by BioVisionFacePhys.podspec');

@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
@@ -8,10 +8,12 @@ export function OptionButton({
   label,
   selected,
   onPress,
+  style,
 }: {
   label: string;
   selected: boolean;
   onPress: () => void;
+  style?: StyleProp<ViewStyle>;
 }) {
   return (
     <Pressable
@@ -23,10 +25,11 @@ export function OptionButton({
         styles.option,
         selected && styles.selected,
         pressed && styles.pressed,
+        style,
       ]}
     >
       <View style={[styles.radio, selected && styles.radioSelected]}>
-        <AppIcon name={selected ? 'checkCircle' : 'circle'} size={22} color={selected ? colors.white : colors.inkMuted} strokeWidth={selected ? 2.5 : 1.8} />
+        <AppIcon name={selected ? 'checkCircle' : 'circle'} size={20} color={selected ? colors.white : colors.inkMuted} strokeWidth={selected ? 2.5 : 1.8} />
       </View>
       <AppText variant="body" style={styles.label}>
         {label}
@@ -37,10 +40,10 @@ export function OptionButton({
 
 const styles = StyleSheet.create({
   option: {
-    minHeight: 58,
+    minHeight: 52,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: spacing.md,
+    gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     borderRadius: radius.md,
@@ -51,12 +54,12 @@ const styles = StyleSheet.create({
   selected: { borderColor: colors.primary, backgroundColor: colors.primarySoft },
   pressed: { opacity: 0.78 },
   radio: {
-    width: 24,
-    height: 24,
+    width: 22,
+    height: 22,
     borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
   },
   radioSelected: { backgroundColor: colors.primary },
-  label: { flex: 1, fontWeight: '600' },
+  label: { flex: 1, fontWeight: '500' },
 });

@@ -49,3 +49,25 @@ def test_large_inter_eye_difference_requires_recapture() -> None:
     assert eyes_disagree(9.0, 12.0) is True
     assert eyes_disagree(9.0, 11.0) is False
     assert eyes_disagree(9.0, None) is False
+
+
+def test_second_trimester_uses_the_lower_who_cut_off() -> None:
+    """Plasma volume expansion dilutes haemoglobin, so WHO sets 10.5 rather than 11.0."""
+    second = ScreeningProfile(age_years=27, sex="female", pregnant=True, trimester="second")
+    assert who_reference(second).threshold_gdl == 10.5
+    for trimester in ("first", "third"):
+        other = ScreeningProfile(age_years=27, sex="female", pregnant=True, trimester=trimester)
+        assert who_reference(other).threshold_gdl == 11.0
+
+    # The bands move with the cut-off. Both estimates sit between the two thresholds once the
+    # model's error is allowed for, so each is called differently depending on the trimester.
+    first = ScreeningProfile(age_years=27, sex="female", pregnant=True, trimester="first")
+    assert interpret_hemoglobin(9.2, second).signal == "moderate"
+    assert interpret_hemoglobin(9.2, first).signal == "elevated"
+    assert interpret_hemoglobin(12.2, second).signal == "low"
+    assert interpret_hemoglobin(12.2, first).signal == "moderate"
+
+
+def test_pregnancy_without_a_trimester_keeps_the_safer_cut_off() -> None:
+    unknown = ScreeningProfile(age_years=27, sex="female", pregnant=True)
+    assert who_reference(unknown).threshold_gdl == 11.0

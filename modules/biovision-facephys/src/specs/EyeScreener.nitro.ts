@@ -18,7 +18,7 @@ export interface FaceImageResult {
   landmarks: number[];
 }
 
-export interface EyeScreener extends HybridObject<{ ios: 'swift' }> {
+export interface EyeScreener extends HybridObject<{ ios: 'swift'; android: 'kotlin' }> {
   /** Estimates haemoglobin from a local lower-eyelid JPEG, off the JS thread. */
   analyze(path: string, female: boolean): Promise<EyeImageResult>;
   /** Runs MediaPipe Face Landmarker on a local photo (the same model as the web app). */
