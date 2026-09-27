@@ -9,7 +9,7 @@ export default function LegalDoc({ doc, description }) {
   const { title, sections } = legal[doc];
 
   usePageMeta({
-    title: `BioVision — ${title}`,
+    title: `BioVision | ${title}`,
     description,
     path: `/${doc}`,
   });

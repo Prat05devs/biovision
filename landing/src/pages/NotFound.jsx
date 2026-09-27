@@ -3,7 +3,7 @@ import { usePageMeta } from '../usePageMeta';
 
 export default function NotFound() {
   usePageMeta({
-    title: 'BioVision — Page not found',
+    title: 'BioVision | Page not found',
     description: 'That page does not exist on biovision.live.',
     path: '/404',
   });

@@ -88,7 +88,7 @@ const technology = [
   {
     icon: ScanIcon,
     title: 'MediaPipe Face Landmarker',
-    body: 'Google\'s face detector and 478-point mesh locate the regions each measurement reads — cheeks for pulse, eyelids for colour, under-eye for shading.',
+    body: 'Google\'s face detector and 478-point mesh locate the regions each measurement reads: cheeks for pulse, eyelids for colour, under-eye for shading.',
     tag: 'Apache 2.0',
   },
   {
@@ -100,7 +100,7 @@ const technology = [
   {
     icon: FlaskIcon,
     title: 'Conjunctiva colour model',
-    body: 'A ridge regression over HSV-masked eyelid pixels, compiled straight into the app — no model file to load, no server to call.',
+    body: 'A ridge regression over HSV-masked eyelid pixels, compiled straight into the app, with no model file to load and no server to call.',
     tag: 'Built in-house',
   },
   {
@@ -153,12 +153,12 @@ const reportContents = [
   'Which kind of doctor to see, and how soon',
   'Tests worth asking that doctor about',
   'Matching doctors and hospitals near you',
-  'A PDF you can share — photos never included',
+  'A PDF you can share, with photos never included',
 ];
 
 export default function Home() {
   usePageMeta({
-    title: 'BioVision — Face scan health check',
+    title: 'BioVision | Face scan health check',
     description:
       'A 30-second face scan, two eye photos and a few questions give you a personal health report and the right doctor to see. Private, on-device, in English and Hindi.',
     path: '/',
@@ -178,7 +178,7 @@ export default function Home() {
             <Reveal delay={160}>
               <p className="lead">
                 A 30-second face scan, two eye photos and a few questions give you a clear health
-                report — every reading against its normal range, the right doctor to see, and the
+                report: every reading against its normal range, the right doctor to see, and the
                 tests worth asking about.
               </p>
             </Reveal>
@@ -215,15 +215,10 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-        <PulseWave className="hero-pulse" />
-      </div>
-
-      {/* Stat band ------------------------------------------------------- */}
-      <section className="section stat-section">
-        <div className="wrap">
+        <div className="wrap hero-stats">
           <div className="stat-grid">
             {stats.map(({ value, suffix, label, detail }, index) => (
-              <Reveal className="stat" key={label} delay={index * 70}>
+              <Reveal className="stat" key={label} delay={400 + index * 70}>
                 <div className="stat-value"><Counter value={value} suffix={suffix ?? ''} /></div>
                 <div className="stat-label">{label}</div>
                 <div className="stat-detail">{detail}</div>
@@ -231,31 +226,35 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+        <PulseWave className="hero-pulse" />
+      </div>
 
       {/* Measures -------------------------------------------------------- */}
-      <section className="section" id="measures">
-        <div className="wrap measure-split">
-          <Reveal className="hero-art sticky-art">
-            <div className="phone tilt-left">
-              <img src="/assets/screens/measures.png" alt="A list of the health signals BioVision measures." width="461" height="1000" loading="lazy" />
+      <section className="section tint" id="measures">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <Reveal><p className="eyebrow">What BioVision measures</p></Reveal>
+              <Reveal delay={60}><h2>Six groups of signals from one short scan</h2></Reveal>
             </div>
-          </Reveal>
-          <div>
-            <Reveal><p className="eyebrow">What BioVision measures</p></Reveal>
-            <Reveal delay={60}><h2>Six groups of signals from one short scan</h2></Reveal>
             <Reveal delay={120}>
               <p className="section-lead">
-                Your camera picks up colour changes your eyes cannot see — the flush of blood through
+                Your camera picks up colour changes your eyes cannot see: the flush of blood through
                 your face with every heartbeat, and the shade of the tissue inside your lower eyelid.
                 BioVision turns both into readings you can act on.
               </p>
             </Reveal>
-            <div className="measure-grid">
+          </div>
+          <div className="measure-body">
+            <Reveal className="hero-art">
+              <div className="phone tilt-left">
+                <img src="/assets/screens/measures.png" alt="A list of the health signals BioVision measures." width="461" height="1000" loading="lazy" />
+              </div>
+            </Reveal>
+            <div className="measure-grid three">
               {measures.map(({ icon: Icon, title, body, detail }, index) => (
                 <Reveal className="card hover-lift" key={title} delay={index * 60}>
-                  <div className="card-icon"><Icon /></div>
-                  <h3>{title}</h3>
+                  <div className="card-title"><div className="card-icon"><Icon /></div><h3>{title}</h3></div>
                   <p>{body}</p>
                   <p className="card-detail">{detail}</p>
                 </Reveal>
@@ -291,7 +290,7 @@ export default function Home() {
       </section>
 
       {/* Face scan ------------------------------------------------------- */}
-      <section className="section" id="scan">
+      <section className="section tint" id="scan">
         <div className="wrap split">
           <div>
             <Reveal><p className="eyebrow">The face scan</p></Reveal>
@@ -317,8 +316,8 @@ export default function Home() {
             </div>
             <Reveal delay={200}>
               <ul className="tick-list">
-                <li><CheckIcon /><span><b>It abstains rather than guess</b> — a weak signal returns no reading instead of a wrong one.</span></li>
-                <li><CheckIcon /><span><b>Nothing is recorded</b> — frames are measured in memory and discarded.</span></li>
+                <li><CheckIcon /><span><b>It abstains rather than guess.</b> A weak signal returns no reading instead of a wrong one.</span></li>
+                <li><CheckIcon /><span><b>Nothing is recorded.</b> Frames are measured in memory and discarded.</span></li>
               </ul>
             </Reveal>
           </div>
@@ -408,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* Wellbeing ------------------------------------------------------- */}
-      <section className="section" id="wellbeing">
+      <section className="section tint" id="wellbeing">
         <div className="wrap split reverse">
           <div>
             <Reveal><p className="eyebrow">Mental wellbeing</p></Reveal>
@@ -422,9 +421,9 @@ export default function Home() {
             </Reveal>
             <Reveal delay={180}>
               <ul className="tick-list">
-                <li><CheckIcon /><span><b>Stepped, not exhausting</b> — most people answer four questions and are done.</span></li>
-                <li><CheckIcon /><span><b>Safety first</b> — Tele-MANAS on 14416 is surfaced the moment an answer calls for it.</span></li>
-                <li><CheckIcon /><span><b>Not a diagnosis</b> — it screens for symptoms and suggests a next step. Only a clinician can diagnose.</span></li>
+                <li><CheckIcon /><span><b>Stepped, not exhausting.</b> Most people answer four questions and are done.</span></li>
+                <li><CheckIcon /><span><b>Safety first.</b> Tele-MANAS on 14416 is surfaced the moment an answer calls for it.</span></li>
+                <li><CheckIcon /><span><b>Not a diagnosis.</b> It screens for symptoms and suggests a next step. Only a clinician can diagnose.</span></li>
               </ul>
             </Reveal>
           </div>
@@ -437,7 +436,7 @@ export default function Home() {
       </section>
 
       {/* Report ---------------------------------------------------------- */}
-      <section className="section">
+      <section className="section half">
         <div className="wrap split">
           <Reveal className="split-art">
             <div className="report-card">
@@ -461,7 +460,7 @@ export default function Home() {
             <Reveal delay={120}>
               <p className="section-lead">
                 Numbers without context are noise. Every reading arrives with the range it is judged
-                against, what it suggests, and what to do next — in a form a clinician can read in
+                against, what it suggests, and what to do next, in a form a clinician can read in
                 seconds.
               </p>
             </Reveal>
@@ -473,22 +472,31 @@ export default function Home() {
       </section>
 
       {/* Privacy --------------------------------------------------------- */}
-      <section className="section" id="privacy">
-        <div className="wrap measure-split">
-          <div>
-            <Reveal><p className="eyebrow">Private by design</p></Reveal>
-            <Reveal delay={60}><h2>Nothing leaves your phone</h2></Reveal>
+      <section className="section tint" id="privacy">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <Reveal><p className="eyebrow">Private by design</p></Reveal>
+              <Reveal delay={60}><h2>Nothing leaves your phone</h2></Reveal>
+            </div>
             <Reveal delay={120}>
               <p className="section-lead">
                 Health data is the most sensitive data there is, so BioVision was built to never hold
                 any. Only your language choice and that you accepted the terms are saved on the device.
               </p>
             </Reveal>
+          </div>
+          <div className="measure-body">
+            <Reveal delay={120} className="hero-art">
+              <div className="phone tilt-left">
+                <img src="/assets/screens/language.png" alt="The language screen, noting that only the language preference is saved on the device." width="461" height="1000" loading="lazy" />
+              </div>
+            </Reveal>
+            <div>
             <div className="measure-grid">
               {privacy.map(({ icon: Icon, title, body }, index) => (
                 <Reveal className="card hover-lift" key={title} delay={index * 70}>
-                  <div className="card-icon"><Icon /></div>
-                  <h3>{title}</h3>
+                  <div className="card-title"><div className="card-icon"><Icon /></div><h3>{title}</h3></div>
                   <p>{body}</p>
                 </Reveal>
               ))}
@@ -496,17 +504,13 @@ export default function Home() {
             <Reveal delay={260} className="hero-cta">
               <Link className="button secondary" to="/privacy">Read the Privacy Policy</Link>
             </Reveal>
-          </div>
-          <Reveal delay={120} className="hero-art">
-            <div className="phone tilt-right">
-              <img src="/assets/screens/language.png" alt="The language screen, noting that only the language preference is saved on the device." width="461" height="1000" loading="lazy" />
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* Languages ------------------------------------------------------- */}
-      <section className="section">
+      <section className="section half">
         <div className="wrap">
           <Reveal className="lang-band">
             <div className="lang-copy">
@@ -514,7 +518,7 @@ export default function Home() {
               <h2>Every screen, in English and हिन्दी</h2>
               <p>
                 Not machine-translated at request time. Every question, result and explanation was
-                written and reviewed in both languages, offline, before shipping — including the
+                written and reviewed in both languages, offline, before shipping, including the
                 clinical wording that decides what you are told to do next.
               </p>
             </div>
@@ -527,7 +531,7 @@ export default function Home() {
       </section>
 
       {/* CTA ------------------------------------------------------------- */}
-      <section className="section">
+      <section className="section tint half">
         <div className="wrap">
           <Reveal className="cta-panel">
             <p className="eyebrow">Now in beta</p>
@@ -542,12 +546,7 @@ export default function Home() {
             </div>
             <PulseWave className="cta-pulse" />
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <p className="notice">
+          <p className="notice cta-notice">
             BioVision provides health information and is not a medical device. It does not diagnose,
             treat or prevent any disease. Always confirm results with a doctor. In an emergency,
             call 112. For mental-health support, call Tele-MANAS on 14416.

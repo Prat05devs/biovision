@@ -44,7 +44,7 @@ const faqs = [
 
 export default function Support() {
   usePageMeta({
-    title: 'BioVision — Support',
+    title: 'BioVision | Support',
     description: 'Answers to common questions about the BioVision health pre-screening app, and how to reach the team.',
     path: '/support',
   });
@@ -80,7 +80,7 @@ export default function Support() {
         <h2>Still need a hand?</h2>
         <p>
           Write to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Tell us your iPhone
-          model and iOS version, and what happened just before the problem — it helps us answer in
+          model and iOS version, and what happened just before the problem. It helps us answer in
           one reply.
         </p>
       </div>
