@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth, borderColor: scanColors.hairline,
   },
   liveHeader: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
-  bpm: { fontSize: 40, lineHeight: 48, fontWeight: '700', fontVariant: ['tabular-nums'], letterSpacing: -1 },
+  bpm: { fontSize: 34, lineHeight: 40, fontWeight: '700', fontVariant: ['tabular-nums'], letterSpacing: -1 },
   liveStats: { marginLeft: 'auto', flexDirection: 'row', gap: spacing.md },
   stat: { alignItems: 'flex-end' },
   statValue: { fontVariant: ['tabular-nums'], fontWeight: '600' },

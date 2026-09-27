@@ -6,7 +6,7 @@
  */
 import signConfig from '@configs/observations/face_signs.v1.json';
 
-import type { HealthQuestion } from '@/types/assessment';
+import type { HealthQuestion, ScreeningProfile } from '@/types/assessment';
 import type { FaceSign, ObservationProfile } from '@/types/observations';
 
 type RawSign = {
@@ -24,7 +24,9 @@ type RawSign = {
   priority?: boolean;
 };
 
-type RawQuestion = { id: string; textKey: string; options: string[] };
+type Sex = ScreeningProfile['sex'];
+/** `forSex` keeps questions about periods or contraception away from men. */
+type RawQuestion = { id: string; textKey: string; options: string[]; forSex?: string };
 
 const RAW_SIGNS = signConfig.signs as RawSign[];
 const RAW_QUESTIONS = signConfig.followUpQuestions as RawQuestion[];
@@ -57,7 +59,7 @@ const toQuestion = (raw: RawQuestion): HealthQuestion => ({
 });
 
 /** Questions unlocked by the confirmed signs, priority signs first, each asked once. */
-export const followUpsFor = (confirmed: string[]): HealthQuestion[] => {
+export const followUpsFor = (confirmed: string[], sex?: Sex): HealthQuestion[] => {
   const ordered = RAW_SIGNS.map((sign, index) => ({ sign, index }))
     .filter(({ sign }) => confirmed.includes(sign.id))
     .sort(
@@ -71,7 +73,7 @@ export const followUpsFor = (confirmed: string[]): HealthQuestion[] => {
     for (const questionId of sign.followUps) {
       if (seen.has(questionId)) continue;
       const raw = RAW_QUESTIONS.find(({ id }) => id === questionId);
-      if (!raw) continue;
+      if (!raw || (raw.forSex && sex && raw.forSex !== sex)) continue;
       seen.add(questionId);
       questions.push(toQuestion(raw));
     }
@@ -89,8 +91,9 @@ export const catalogue = () => ({
 export const profile = (
   confirmed: string[],
   answers: Record<string, string>,
+  sex?: Sex,
 ): ObservationProfile => {
-  const questions = followUpsFor(confirmed);
+  const questions = followUpsFor(confirmed, sex);
   const answered = questions.filter((question) => answers[question.id] !== undefined).length;
   const complete = confirmed.length > 0 && answered === questions.length;
   return {

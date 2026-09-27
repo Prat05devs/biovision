@@ -49,7 +49,7 @@ export default function WellbeingIntroScreen() {
       <AppHeader back language title={t('navigation.wellbeing')} />
       <View style={styles.visual}>
         <View style={styles.pulseRing} />
-        <AppIcon name="heart" size={55} color={colors.primary} strokeWidth={1.8} />
+        <AppIcon name="heart" size={44} color={colors.primary} strokeWidth={1.8} />
       </View>
       <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>
         {t('wellbeing.eyebrow')}

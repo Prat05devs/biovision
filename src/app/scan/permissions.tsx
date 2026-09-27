@@ -54,7 +54,7 @@ export default function CameraPermissionScreen() {
     >
       <AppHeader back title={t('navigation.scan')} />
       <View style={styles.iconWrap}>
-        <AppIcon name="camera" size={42} color={colors.primary} />
+        <AppIcon name="camera" size={32} color={colors.primary} />
       </View>
       <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>
         {t('permissions.step')}
@@ -92,13 +92,13 @@ export default function CameraPermissionScreen() {
 
 const styles = StyleSheet.create({
   iconWrap: {
-    width: 82,
-    height: 82,
-    borderRadius: radius.xl,
+    width: 64,
+    height: 64,
+    borderRadius: radius.lg,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primarySoft,
-    marginTop: spacing.huge,
+    marginTop: spacing.xxl,
   },
   eyebrow: { marginTop: spacing.xl, marginBottom: spacing.xs },
   description: { marginTop: spacing.sm },

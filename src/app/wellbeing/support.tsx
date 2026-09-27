@@ -40,7 +40,7 @@ export default function WellbeingSupportScreen() {
     <Screen backgroundColor="#FFF8F7">
       <AppHeader back language title={t('wellbeing.supportTitle')} />
       <View style={styles.icon}>
-        <AppIcon name="heartPulse" size={36} color={colors.urgent} />
+        <AppIcon name="heartPulse" size={26} color={colors.urgent} />
       </View>
       <AppText variant="eyebrow" color={colors.urgent} style={styles.eyebrow}>
         {t('wellbeing.supportEyebrow')}
@@ -152,7 +152,7 @@ function ResourceCard({
 }
 
 const styles = StyleSheet.create({
-  icon: { width: 72, height: 72, borderRadius: radius.xl, backgroundColor: colors.urgentSoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.lg },
+  icon: { width: 56, height: 56, borderRadius: radius.lg, backgroundColor: colors.urgentSoft, alignItems: 'center', justifyContent: 'center', marginTop: spacing.lg },
   eyebrow: { marginTop: spacing.lg, marginBottom: spacing.xs },
   description: { marginTop: spacing.sm },
   emergencyCard: { marginTop: spacing.xl, gap: spacing.sm },

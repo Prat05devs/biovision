@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
   },
   dot: { width: 8, height: 8, borderRadius: radius.pill },
-  label: { fontWeight: '800' },
+  label: { fontWeight: '600' },
 });
 

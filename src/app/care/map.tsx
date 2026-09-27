@@ -19,7 +19,7 @@ export default function CareMapScreen() {
     <Screen scroll={false} footer={<Button label={t('care.list')} onPress={() => router.back()} icon="list" />}>
       <AppHeader back title={t('care.map')} />
       <View style={styles.content}>
-        <View style={styles.icon}><AppIcon name="map" size={40} color={colors.primary} /></View>
+        <View style={styles.icon}><AppIcon name="map" size={28} color={colors.primary} /></View>
         <AppText variant="h2" style={styles.center}>{t('care.googleMaps')}</AppText>
         <AppText color={colors.inkMuted} style={styles.center}>{t('care.mapBody', { city: regionName(i18n.language) })}</AppText>
         <Button label={t('care.googleMaps')} onPress={() => void open()} icon="navigation" />
@@ -31,6 +31,6 @@ export default function CareMapScreen() {
 
 const styles = StyleSheet.create({
   content: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xl },
-  icon: { width: 78, height: 78, borderRadius: radius.xl, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginBottom: spacing.lg },
+  icon: { width: 60, height: 60, borderRadius: radius.lg, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', marginBottom: spacing.lg },
   center: { textAlign: 'center', marginBottom: spacing.sm },
 });

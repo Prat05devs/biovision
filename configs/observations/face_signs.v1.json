@@ -146,7 +146,8 @@
     {
       "id": "heavy_periods",
       "textKey": "observations.questions.heavy_periods",
-      "options": ["no", "yes", "not_applicable", "not_sure"]
+      "options": ["no", "yes", "not_applicable", "not_sure"],
+      "forSex": "female"
     },
     {
       "id": "urine_colour",
@@ -211,7 +212,8 @@
     {
       "id": "hormonal_change",
       "textKey": "observations.questions.hormonal_change",
-      "options": ["no", "yes", "not_applicable", "not_sure"]
+      "options": ["no", "yes", "not_applicable", "not_sure"],
+      "forSex": "female"
     },
     {
       "id": "acne_duration",
@@ -221,7 +223,8 @@
     {
       "id": "cycle_regularity",
       "textKey": "observations.questions.cycle_regularity",
-      "options": ["regular", "irregular", "not_applicable", "not_sure"]
+      "options": ["regular", "irregular", "not_applicable", "not_sure"],
+      "forSex": "female"
     },
     {
       "id": "diet_sugar",

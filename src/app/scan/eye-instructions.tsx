@@ -25,7 +25,7 @@ export default function EyeInstructionsScreen() {
       <AppHeader back title={t('navigation.scan')} />
       <View style={styles.visual}>
         <View style={styles.eyeLine} />
-        <AppIcon name="eye" size={74} color={colors.primary} strokeWidth={1.6} />
+        <AppIcon name="eye" size={56} color={colors.primary} strokeWidth={1.6} />
         <View style={styles.scanCornerTop} />
         <View style={styles.scanCornerBottom} />
       </View>

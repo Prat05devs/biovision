@@ -10,7 +10,7 @@ export function NoticeCard({ title, body, urgent = false }: { title: string; bod
   return (
     <Card tone={urgent ? 'urgent' : 'caution'} style={styles.card}>
       <View style={styles.titleRow}>
-        <AppIcon name={urgent ? 'alertTriangle' : 'info'} size={20} color={color} />
+        <AppIcon name={urgent ? 'alertTriangle' : 'info'} size={18} color={color} />
         <AppText variant="small" color={color} style={styles.title}>
           {title}
         </AppText>
@@ -24,7 +24,7 @@ export function NoticeCard({ title, body, urgent = false }: { title: string; bod
 
 const styles = StyleSheet.create({
   // Vertical margins keep the notice clear of inputs and cards above and below it on every screen.
-  card: { gap: spacing.sm, padding: spacing.xl, marginVertical: spacing.xl },
+  card: { gap: spacing.xs, padding: spacing.md, marginVertical: spacing.lg },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
-  title: { fontWeight: '800' },
+  title: { fontWeight: '600' },
 });

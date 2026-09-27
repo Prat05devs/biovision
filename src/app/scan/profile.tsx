@@ -11,7 +11,7 @@ import { NoticeCard } from '@/components/ui/NoticeCard';
 import { OptionButton } from '@/components/ui/OptionButton';
 import { Screen } from '@/components/ui/Screen';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing, typography } from '@/theme/tokens';
+import { colors, MAX_FONT_SCALE, radius, spacing, typography } from '@/theme/tokens';
 import { fontFamily } from '@/theme/fonts';
 import type { ScreeningProfile } from '@/types/assessment';
 
@@ -58,7 +58,13 @@ export default function ScreeningProfileScreen() {
       <AppHeader back title={t('profile.title')} />
       <AppText color={colors.inkMuted} style={styles.description}>{t('profile.description')}</AppText>
 
-      <AppText variant="h2" style={styles.question}>{t('profile.age')}</AppText>
+      <AppText variant="h3" style={styles.question}>{t('profile.sex')}</AppText>
+      <View style={styles.sexRow} accessibilityRole="radiogroup">
+        <OptionButton style={styles.sexOption} label={t('profile.female')} selected={sex === 'female'} onPress={() => setSex('female')} />
+        <OptionButton style={styles.sexOption} label={t('profile.male')} selected={sex === 'male'} onPress={() => { setSex('male'); setPregnant(undefined); }} />
+      </View>
+
+      <AppText variant="h3" style={styles.question}>{t('profile.age')}</AppText>
       <View style={styles.ageRow}>
         <TextInput
           style={styles.numberInput}
@@ -70,6 +76,7 @@ export default function ScreeningProfileScreen() {
           placeholderTextColor={colors.inkMuted}
           accessibilityLabel={t('profile.age')}
           maxLength={3}
+          maxFontSizeMultiplier={MAX_FONT_SCALE}
         />
         <AppText color={colors.inkMuted}>{t('profile.years')}</AppText>
       </View>
@@ -77,15 +84,9 @@ export default function ScreeningProfileScreen() {
         <AppText variant="small" color={colors.elevated} style={styles.hint}>{t('profile.ageInvalid')}</AppText>
       ) : null}
 
-      <AppText variant="h2" style={styles.question}>{t('profile.sex')}</AppText>
-      <View style={styles.options} accessibilityRole="radiogroup">
-        <OptionButton label={t('profile.female')} selected={sex === 'female'} onPress={() => setSex('female')} />
-        <OptionButton label={t('profile.male')} selected={sex === 'male'} onPress={() => { setSex('male'); setPregnant(undefined); }} />
-      </View>
-
       {asksPregnancy ? (
         <>
-          <AppText variant="h2" style={styles.question}>{t('profile.pregnant')}</AppText>
+          <AppText variant="h3" style={styles.question}>{t('profile.pregnant')}</AppText>
           <View style={styles.options} accessibilityRole="radiogroup">
             <OptionButton label={t('common.yes')} selected={pregnant === true} onPress={() => setPregnant(true)} />
             <OptionButton label={t('common.no')} selected={pregnant === false} onPress={() => setPregnant(false)} />
@@ -93,18 +94,18 @@ export default function ScreeningProfileScreen() {
         </>
       ) : null}
 
-      <AppText variant="h2" style={styles.question}>{t('profile.body')}</AppText>
+      <AppText variant="h3" style={styles.question}>{t('profile.body')}</AppText>
       <View style={styles.bodyRow}>
         <View style={styles.bodyField}>
           <TextInput style={styles.numberInput} value={heightText} onChangeText={(text) => setHeightText(text.replace(/[^0-9]/g, ''))}
             keyboardType="number-pad" inputMode="numeric" placeholder="165" placeholderTextColor={colors.inkMuted}
-            accessibilityLabel={t('lifestyle.q.height')} maxLength={3} />
+            accessibilityLabel={t('lifestyle.q.height')} maxLength={3} maxFontSizeMultiplier={MAX_FONT_SCALE} />
           <AppText color={colors.inkMuted}>cm</AppText>
         </View>
         <View style={styles.bodyField}>
           <TextInput style={styles.numberInput} value={weightText} onChangeText={(text) => setWeightText(text.replace(/[^0-9]/g, ''))}
             keyboardType="number-pad" inputMode="numeric" placeholder="65" placeholderTextColor={colors.inkMuted}
-            accessibilityLabel={t('lifestyle.q.weight')} maxLength={3} />
+            accessibilityLabel={t('lifestyle.q.weight')} maxLength={3} maxFontSizeMultiplier={MAX_FONT_SCALE} />
           <AppText color={colors.inkMuted}>kg</AppText>
         </View>
       </View>
@@ -119,13 +120,13 @@ export default function ScreeningProfileScreen() {
 
 const styles = StyleSheet.create({
   description: { marginTop: spacing.sm },
-  question: { marginTop: spacing.xl, marginBottom: spacing.sm },
+  question: { marginTop: spacing.lg, marginBottom: spacing.xs },
   ageRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   numberInput: {
     flex: 1,
     maxWidth: 140,
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
     borderRadius: radius.md,
     borderWidth: 1,
     borderColor: colors.border,
@@ -137,6 +138,8 @@ const styles = StyleSheet.create({
   },
   hint: { marginTop: spacing.xs },
   options: { gap: spacing.xs },
+  sexRow: { flexDirection: 'row', gap: spacing.xs },
+  sexOption: { flex: 1 },
   bodyRow: { flexDirection: 'row', gap: spacing.md },
   bodyField: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
 });

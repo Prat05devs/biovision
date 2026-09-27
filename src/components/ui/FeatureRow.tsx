@@ -18,7 +18,7 @@ export function FeatureRow({
   return (
     <View style={styles.row}>
       <View style={[styles.icon, compact && styles.iconCompact]}>
-        <AppIcon name={icon} size={compact ? 18 : 22} color={colors.primary} />
+        <AppIcon name={icon} size={compact ? 17 : 20} color={colors.primary} />
       </View>
       <View style={styles.copy}>
         <AppText variant={compact ? 'small' : 'h3'}>{title}</AppText>
@@ -35,14 +35,14 @@ export function FeatureRow({
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md },
   icon: {
-    width: 46,
-    height: 46,
+    width: 40,
+    height: 40,
     borderRadius: radius.md,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primarySoft,
   },
-  iconCompact: { width: 36, height: 36, borderRadius: radius.sm },
+  iconCompact: { width: 34, height: 34, borderRadius: radius.sm },
   copy: { flex: 1 },
   description: { marginTop: spacing.xxs },
 });

@@ -38,29 +38,37 @@ export const spacing = {
 
 export const radius = {
   sm: 10,
-  md: 16,
-  lg: 22,
-  xl: 30,
+  md: 14,
+  lg: 18,
+  xl: 24,
   pill: 999,
 } as const;
 
+/**
+ * A compact scale in line with iOS and Material defaults. Testers read the earlier, larger
+ * scale as built for low vision; people who need bigger text get it from the system setting,
+ * which AppText honours up to MAX_FONT_SCALE.
+ */
 export const typography = {
-  display: 34,
-  h1: 28,
-  h2: 22,
-  h3: 18,
-  body: 16,
-  small: 14,
+  display: 28,
+  h1: 22,
+  h2: 18,
+  h3: 16,
+  body: 15,
+  small: 13,
   caption: 12,
 } as const;
+
+/** Upper bound on the system text-size multiplier, so the largest settings cannot break layouts. */
+export const MAX_FONT_SCALE = 1.3;
 
 export const shadows = {
   card: {
     shadowColor: colors.black,
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.06,
-    shadowRadius: 18,
-    elevation: 3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.05,
+    shadowRadius: 12,
+    elevation: 2,
   },
 } as const;
 

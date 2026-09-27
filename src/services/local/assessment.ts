@@ -8,10 +8,13 @@ import type {
   HealthAssessmentReport,
   HealthQuestion,
   PregnancyTrimester,
+  ScreeningProfile,
 } from '@/types/assessment';
 
 type Answer = string | boolean | number | string[];
-type RawOption = { value: string; labelKey: string; urgent?: string };
+type Sex = ScreeningProfile['sex'];
+/** `forSex` limits a question or option to one sex, so men are never asked about periods or pregnancy. */
+type RawOption = { value: string; labelKey: string; urgent?: string; forSex?: Sex };
 type RawCondition = { questionId: string; equals?: string | boolean | number; notEquals?: string | boolean | number };
 type RawQuestion = {
   id: string;
@@ -25,6 +28,7 @@ type RawQuestion = {
   /** Multi-select only: choosing this clears the rest (for example "None of these"). */
   exclusiveValue?: string;
   urgentIfYes?: string;
+  forSex?: Sex;
 };
 
 const questions = bank.questions as RawQuestion[];
@@ -33,12 +37,18 @@ const questions = bank.questions as RawQuestion[];
 const answered = (answer: Answer | undefined) =>
   answer !== undefined && (!Array.isArray(answer) || answer.length > 0);
 
-const toQuestion = (raw: RawQuestion): HealthQuestion => ({
+/** Without a recorded sex nothing is hidden, so no one loses a question that applies to them. */
+const appliesTo = (item: { forSex?: Sex }, sex: Sex | undefined) =>
+  !item.forSex || !sex || item.forSex === sex;
+
+const toQuestion = (raw: RawQuestion, sex: Sex | undefined): HealthQuestion => ({
   id: raw.id,
   type: raw.type as HealthQuestion['type'],
   textKey: raw.textKey,
   required: true,
-  options: raw.options?.map(({ value, labelKey }) => ({ value, labelKey })),
+  options: raw.options
+    ?.filter((option) => appliesTo(option, sex))
+    .map(({ value, labelKey }) => ({ value, labelKey })),
   sectionKey: raw.sectionKey,
   followUpOf: raw.showIf?.questionId,
   exclusiveValue: raw.exclusiveValue,
@@ -56,17 +66,18 @@ const satisfied = (condition: RawCondition, answers: Record<string, Answer>) => 
   return true;
 };
 
-const eligible = (raw: RawQuestion, answers: Record<string, Answer>) => {
+const eligible = (raw: RawQuestion, answers: Record<string, Answer>, sex: Sex | undefined) => {
+  if (!appliesTo(raw, sex)) return false;
   if (raw.hideIfAny?.some((condition) => satisfied(condition, answers))) return false;
   if (!raw.showIf) return true;
   return satisfied(raw.showIf, answers);
 };
 
 /** The first danger sign in the answers, if any: an emergency "yes" or an option marked urgent. */
-function urgentKind(answers: Record<string, Answer>): UrgentKind | undefined {
+function urgentKind(answers: Record<string, Answer>, sex: Sex | undefined): UrgentKind | undefined {
   for (const raw of questions) {
     const answer = answers[raw.id];
-    if (answer === undefined || !eligible(raw, answers)) continue;
+    if (answer === undefined || !eligible(raw, answers, sex)) continue;
     if (raw.urgentIfYes && answer === true) return raw.urgentIfYes as UrgentKind;
     // Multi-select questions can carry several danger signs; any one of them escalates.
     const chosen = Array.isArray(answer) ? answer : [answer];
@@ -111,16 +122,16 @@ function withTrimesterAwareHemoglobin(session: AssessmentSession): AssessmentSes
 }
 
 export const localAssessmentService: AssessmentService = {
-  async nextQuestion({ answers }) {
-    const urgent = urgentKind(answers);
+  async nextQuestion({ answers, sex }) {
+    const urgent = urgentKind(answers, sex);
     if (urgent) return { done: true, urgentActionRequired: true, urgentKind: urgent, configVersion: bank.version };
-    const next = questions.find((raw) => !answered(answers[raw.id]) && eligible(raw, answers));
-    return { question: next ? toQuestion(next) : undefined, done: !next, urgentActionRequired: false, configVersion: bank.version };
+    const next = questions.find((raw) => !answered(answers[raw.id]) && eligible(raw, answers, sex));
+    return { question: next ? toQuestion(next, sex) : undefined, done: !next, urgentActionRequired: false, configVersion: bank.version };
   },
   async complete(rawSession): Promise<HealthAssessmentReport> {
     const session = withTrimesterAwareHemoglobin(rawSession);
     const answers = session.questionnaire.answers;
-    const urgent = urgentKind(answers);
+    const urgent = urgentKind(answers, session.profile?.sex);
     const routing = buildCareRouting(session);
     const signal = session.anemia.signal ?? 'unavailable';
     const level = routing.level === 'prompt' ? 'prompt_medical_review' : routing.level === 'follow_up' ? 'follow_up_recommended' : 'no_specific_concern';

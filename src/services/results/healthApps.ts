@@ -1,47 +1,40 @@
-import type { TFunction } from 'i18next';
-import { ActionSheetIOS, Alert, Linking, Platform } from 'react-native';
+import { Linking, Platform } from 'react-native';
 
-type HealthApp = { name: string; scheme?: string; store: string };
+import { HealthApps } from '../../../modules/biovision-health-apps/src';
 
-/** Popular health and fitness-band apps in India. Opens the app if installed, otherwise its App Store search. */
-const apps: HealthApp[] = [
-  { name: 'Apple Health', scheme: 'x-apple-health://', store: 'Apple Health' },
-  { name: 'Fitbit', scheme: 'fitbit://', store: 'Fitbit' },
-  { name: 'Garmin Connect', store: 'Garmin Connect' },
-  { name: 'Mi Fitness', store: 'Mi Fitness Xiaomi' },
-  { name: 'Zepp (Amazfit)', store: 'Zepp' },
-  { name: 'NoiseFit', store: 'NoiseFit' },
-  { name: 'boAt Crest', store: 'boAt Crest' },
+export type InstalledApp = {
+  id: string;
+  name: string;
+  /** Launcher icon as a data URI (Android). iOS offers no way to read another app's icon. */
+  icon?: string;
+};
+
+/**
+ * iOS never lists installed apps. The closest it allows is asking whether a URL scheme opens,
+ * and only for schemes declared under LSApplicationQueriesSchemes in Info.plist (and app.json),
+ * so every entry here must be declared there too.
+ */
+const IOS_SCHEMES: { id: string; name: string; url: string }[] = [
+  { id: 'x-apple-health', name: 'Apple Health', url: 'x-apple-health://' },
+  { id: 'fitbit', name: 'Fitbit', url: 'fitbit://' },
+  { id: 'strava', name: 'Strava', url: 'strava://' },
 ];
 
-async function openApp(app: HealthApp) {
-  if (app.scheme) {
-    try {
-      await Linking.openURL(app.scheme);
-      return;
-    } catch {
-      // Not installed: fall through to the store.
-    }
-  }
-  const term = encodeURIComponent(app.store);
-  const url = Platform.OS === 'ios'
-    ? `itms-apps://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=${term}`
-    : `https://play.google.com/store/search?q=${term}&c=apps`;
-  await Linking.openURL(url).catch(() => undefined);
+/** Health and fitness apps actually installed on this device, never a fixed suggestion list. */
+export async function listInstalledHealthApps(): Promise<InstalledApp[]> {
+  if (Platform.OS === 'android') return (await HealthApps?.listInstalled()) ?? [];
+  if (Platform.OS !== 'ios') return [];
+  const checks = await Promise.all(
+    IOS_SCHEMES.map(async (app) => ((await Linking.canOpenURL(app.url).catch(() => false)) ? app : undefined)),
+  );
+  return checks.filter((app) => app !== undefined).map(({ id, name }) => ({ id, name }));
 }
 
-export function showHealthAppPicker(t: TFunction) {
-  const title = t('result.healthApps.pickerTitle');
-  const message = t('result.healthApps.pickerBody');
-  if (Platform.OS === 'ios') {
-    ActionSheetIOS.showActionSheetWithOptions(
-      { title, message, options: [...apps.map((app) => app.name), t('common.cancel')], cancelButtonIndex: apps.length },
-      (index) => { const app = apps[index]; if (app) void openApp(app); },
-    );
+export async function openInstalledHealthApp(app: InstalledApp): Promise<void> {
+  if (Platform.OS === 'android') {
+    await HealthApps?.open(app.id);
     return;
   }
-  Alert.alert(title, message, [
-    ...apps.slice(0, 2).map((app) => ({ text: app.name, onPress: () => void openApp(app) })),
-    { text: t('common.cancel'), style: 'cancel' as const },
-  ]);
+  const scheme = IOS_SCHEMES.find((item) => item.id === app.id);
+  if (scheme) await Linking.openURL(scheme.url).catch(() => undefined);
 }

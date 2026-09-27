@@ -1,0 +1,8 @@
+{
+  "name": "biovision-health-apps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lists the health and fitness apps installed on an Android device.",
+  "main": "src/index.ts",
+  "license": "MIT"
+}

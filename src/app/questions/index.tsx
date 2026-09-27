@@ -77,6 +77,7 @@ export default function QuestionsScreen() {
         sessionId: currentSession.id,
         anemiaSignal: currentSession.anemia.signal ?? 'unavailable',
         answers: currentSession.questionnaire.answers,
+        sex: currentSession.profile?.sex,
       });
       if (!nextQuestion.done && nextQuestion.question) {
         addQuestion(nextQuestion.question);
@@ -148,11 +149,11 @@ export default function QuestionsScreen() {
 }
 
 const styles = StyleSheet.create({
-  eyebrow: { marginTop: spacing.xl, marginBottom: spacing.md },
+  eyebrow: { marginTop: spacing.lg, marginBottom: spacing.sm },
   progressRow: { marginBottom: spacing.xs },
   question: { marginTop: spacing.md },
-  sectionLabel: { marginTop: spacing.xl, textTransform: 'uppercase', letterSpacing: 1.1 },
+  sectionLabel: { marginTop: spacing.lg, textTransform: 'uppercase', letterSpacing: 1.1 },
   description: { marginTop: spacing.sm },
-  options: { marginTop: spacing.xxl, gap: spacing.sm },
+  options: { marginTop: spacing.xl, gap: spacing.xs },
   required: { marginTop: spacing.md },
 });

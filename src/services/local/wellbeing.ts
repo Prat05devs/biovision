@@ -26,7 +26,7 @@ export const localObservationService: ObservationService = {
   async getSigns() {
     return signEngine.catalogue();
   },
-  async getProfile({ confirmedSigns, answers }) {
-    return signEngine.profile(confirmedSigns, answers);
+  async getProfile({ confirmedSigns, answers, sex }) {
+    return signEngine.profile(confirmedSigns, answers, sex);
   },
 };

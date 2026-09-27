@@ -77,7 +77,7 @@ for (const [name, input, primary, level, also] of scenarios) {
 }
 
 (async () => {
-  const next = (answers) => localAssessmentService.nextQuestion({ sessionId: 's', anemiaSignal: 'unavailable', answers });
+  const next = (answers, sex = 'female') => localAssessmentService.nextQuestion({ sessionId: 's', anemiaSignal: 'unavailable', answers, sex });
   let step = await next({});
   assert.equal(step.question.id, 'urgent_symptoms');
   step = await next({ urgent_symptoms: true });
@@ -183,6 +183,35 @@ for (const [name, input, primary, level, also] of scenarios) {
   assert.equal(interpretHemoglobin(11.8, woman), 'moderate', 'within the band is borderline');
   assert.equal(interpretHemoglobin(12.6, woman), 'low', 'clearly above the cut-off is normal');
 
+  // Men are never asked about periods, pregnancy or menopause, on any branch. Walk every main
+  // concern with every option of every follow-up, and fail on any question or option tagged female.
+  const bank = load(path.join(root, 'configs/questions/health_assessment.v4.json'));
+  const femaleQuestions = new Set(bank.questions.filter((q) => q.forSex === 'female').map((q) => q.id));
+  const femaleOptions = new Set(bank.questions.flatMap((q) => (q.options ?? []).filter((o) => o.forSex === 'female').map((o) => `${q.id}:${o.value}`)));
+  assert.ok(femaleQuestions.has('womens_type') && femaleOptions.has('main_concern:womens') && femaleOptions.has('tired_signs:heavy_periods'));
+  let maleQuestionsSeen = 0;
+  const walkAsMale = async (answers) => {
+    const result = await next(answers, 'male');
+    if (result.done) return;
+    const { question } = result;
+    maleQuestionsSeen += 1;
+    assert.ok(!femaleQuestions.has(question.id), `a man was asked ${question.id}`);
+    for (const option of question.options ?? []) assert.ok(!femaleOptions.has(`${question.id}:${option.value}`), `a man was offered ${question.id}:${option.value}`);
+    // Branch fully on the questions that open follow-ups; take the first answer elsewhere.
+    const branching = ['main_concern', 'tired_signs', 'skin_type'].includes(question.id);
+    const values = question.type === 'yes_no' ? [false]
+      : question.type === 'multi_choice' ? [[question.options[0].value]]
+      : branching ? question.options.map((option) => option.value) : [question.options[0].value];
+    for (const value of values) await walkAsMale({ ...answers, [question.id]: value });
+  };
+  await walkAsMale({ urgent_symptoms: false });
+  assert.ok(maleQuestionsSeen > 30, 'the male walk must cover every branch');
+  // A stale female-only answer cannot escalate a man's questionnaire.
+  assert.equal((await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_bleeding'] }, 'male')).urgentActionRequired, false);
+  // Women still see every women's-health option.
+  const womenConcern = await next({ urgent_symptoms: false });
+  assert.ok(womenConcern.question.options.some((option) => option.value === 'womens'), 'women must still be offered women\'s health');
+
   // A branch only asks its own follow-ups, then the shared ones, then finishes.
   const asked = [];
   let answers = { urgent_symptoms: false, main_concern: 'joints' };
@@ -193,5 +222,5 @@ for (const [name, input, primary, level, also] of scenarios) {
     answers = { ...answers, [result.question.id]: result.question.type === 'yes_no' ? false : result.question.options[0].value };
   }
   assert.deepEqual(asked, ['joint_site', 'joint_swelling', 'concern_duration', 'concern_impact', 'existing_condition', 'recent_cbc']);
-  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits, 8 pregnancy danger signs, acne grading, multi-select conditions, trimester and borderline haemoglobin rules, and branch order passed.`);
+  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits, 8 pregnancy danger signs, acne grading, multi-select conditions, no women's questions for men, trimester and borderline haemoglobin rules, and branch order passed.`);
 })().catch((error) => { console.error(error); process.exit(1); });

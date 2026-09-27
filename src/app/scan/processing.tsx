@@ -107,6 +107,7 @@ export default function ProcessingScreen() {
           sessionId: session.id,
           anemiaSignal: signal,
           answers: {},
+          sex: profile.sex,
         });
         if (!next.question) throw new AppServiceError('INVALID_RESPONSE', 'No assessment question was returned.');
         setQuestions([next.question], next.configVersion);
@@ -137,7 +138,7 @@ export default function ProcessingScreen() {
       <View style={styles.content}>
         <View style={[styles.orb, errorCode && styles.orbError]}>
           {errorCode ? (
-            <AppIcon name="alertTriangle" size={42} color={colors.elevated} />
+            <AppIcon name="alertTriangle" size={32} color={colors.elevated} />
           ) : (
             <>
               <Animated.View style={[styles.orbPulse, { opacity: breathe.interpolate({ inputRange: [0, 1], outputRange: [.52, .08] }), transform: [{ scale: breathe.interpolate({ inputRange: [0, 1], outputRange: [.76, 1.18] }) }] }]} />

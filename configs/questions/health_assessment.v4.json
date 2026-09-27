@@ -65,7 +65,8 @@
         },
         {
           "value": "womens",
-          "labelKey": "questions.options.womens"
+          "labelKey": "questions.options.womens",
+          "forSex": "female"
         }
       ]
     },
@@ -93,7 +94,8 @@
         },
         {
           "value": "heavy_periods",
-          "labelKey": "questions.options.heavy_periods"
+          "labelKey": "questions.options.heavy_periods",
+          "forSex": "female"
         },
         {
           "value": "snoring_sleep",
@@ -348,7 +350,8 @@
           "value": "acne_hormonal_both",
           "labelKey": "questions.options.acne_hormonal_both"
         }
-      ]
+      ],
+      "forSex": "female"
     },
     {
       "id": "mole_features",
@@ -736,7 +739,8 @@
       "showIf": {
         "questionId": "main_concern",
         "equals": "womens"
-      }
+      },
+      "forSex": "female"
     },
     {
       "id": "pregnancy_stage",
@@ -768,7 +772,8 @@
           "value": "pregnancy_unsure",
           "labelKey": "questions.options.pregnancy_unsure"
         }
-      ]
+      ],
+      "forSex": "female"
     },
     {
       "id": "pregnancy_danger",
@@ -826,7 +831,8 @@
           "labelKey": "questions.options.pregnancy_swelling",
           "urgent": "medical"
         }
-      ]
+      ],
+      "forSex": "female"
     },
     {
       "id": "pregnancy_antenatal",
@@ -850,7 +856,8 @@
           "value": "antenatal_unsure",
           "labelKey": "questions.options.antenatal_unsure"
         }
-      ]
+      ],
+      "forSex": "female"
     },
     {
       "id": "concern_duration",

@@ -75,9 +75,9 @@ export function Button({
         <ActivityIndicator color={foreground} />
       ) : (
         <View style={styles.content}>
-          {icon && iconPosition === 'left' ? <AppIcon name={icon} size={19} color={foreground} /> : null}
-          <AppText variant="small" color={foreground} style={styles.label}>{label}</AppText>
-          {icon && iconPosition === 'right' ? <AppIcon name={icon} size={19} color={foreground} /> : null}
+          {icon && iconPosition === 'left' ? <AppIcon name={icon} size={18} color={foreground} /> : null}
+          <AppText variant="body" color={foreground} style={styles.label}>{label}</AppText>
+          {icon && iconPosition === 'right' ? <AppIcon name={icon} size={18} color={foreground} /> : null}
         </View>
       )}
     </AnimatedPressable>
@@ -86,14 +86,14 @@ export function Button({
 
 const styles = StyleSheet.create({
   base: {
-    minHeight: 54,
+    minHeight: 50,
     borderRadius: radius.md,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
   },
-  content: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-  label: { flexShrink: 1, fontWeight: '700', textAlign: 'center' },
+  content: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
+  label: { flexShrink: 1, fontWeight: '600', textAlign: 'center' },
   disabled: { opacity: 0.45 },
 });
