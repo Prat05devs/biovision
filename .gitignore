@@ -69,3 +69,6 @@ xcuserdata/
 # anyone holding them can publish an update as us. Credentials live in ~/.gradle/gradle.properties.
 *.jks
 *.keystore
+
+# Per-machine editor settings (they hold absolute paths)
+.vscode/
