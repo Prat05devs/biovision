@@ -21,7 +21,7 @@ async def health() -> dict[str, str]:
 
 
 @router.post("/screenings/anemia")
-async def analyze_anemia(
+def analyze_anemia(
     left_image: Annotated[UploadFile, File(alias="leftImage")],
     right_image: Annotated[UploadFile, File(alias="rightImage")],
     session_id: Annotated[str, Form(alias="sessionId")],
@@ -39,7 +39,9 @@ async def analyze_anemia(
     for upload in (left_image, right_image):
         if upload.content_type != "image/jpeg":
             raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, "JPEG captures required.")
-        content = await upload.read(settings.max_capture_bytes + 1)
+        # A synchronous route runs decoding and CPU inference in FastAPI's worker
+        # pool, keeping health checks and other event-loop work responsive.
+        content = upload.file.read(settings.max_capture_bytes + 1)
         if not content:
             raise HTTPException(status.HTTP_400_BAD_REQUEST, "A capture is empty.")
         if len(content) > settings.max_capture_bytes:
