@@ -16,7 +16,7 @@ import { deployment } from '@/config/deployment';
 import { buildHealthReport, reportToHtml, reportToText, type ReportTone } from '@/services/results/reportDocument';
 import { useAppearanceStore } from '@/store/appearance.store';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, layout, radius, spacing } from '@/theme/redesign';
 
 const tone: Record<ReportTone, { fg: string; bg: string }> = {
   good: { fg: colors.success, bg: colors.successSoft },
@@ -48,17 +48,28 @@ export default function ShareScreen() {
 
   const sharePdf = async () => {
     setBusy('pdf'); setFailed(false);
+    let temporaryUri: string | undefined;
+    let reportUri: string | undefined;
     try {
       const { uri } = await Print.printToFileAsync({ html: reportToHtml(report, deployment.brandName), width: 595, height: 842 });
+      temporaryUri = uri;
       // A readable file name shows up in WhatsApp, Mail and Files.
       const stamp = new Date(session.startedAt).toISOString().slice(0, 10);
       const named = `${FileSystem.cacheDirectory}${deployment.brandName}-Health-Report-${stamp}.pdf`;
+      reportUri = named;
       await FileSystem.deleteAsync(named, { idempotent: true });
       await FileSystem.moveAsync({ from: uri, to: named });
       await Sharing.shareAsync(named, { mimeType: 'application/pdf', UTI: 'com.adobe.pdf', dialogTitle: t('share.pdfButton') });
     } catch {
       setFailed(true);
     } finally {
+      // The share sheet has finished using the file. Health reports should not
+      // accumulate in the app cache after sharing, cancellation, or a failed move.
+      for (const uri of new Set([temporaryUri, reportUri])) {
+        if (!uri) continue;
+        try { await FileSystem.deleteAsync(uri, { idempotent: true }); }
+        catch { setFailed(true); }
+      }
       setBusy(undefined);
     }
   };
@@ -145,7 +156,7 @@ const styles = StyleSheet.create({
   eyebrow: { marginTop: spacing.xl, marginBottom: spacing.xs },
   description: { marginTop: spacing.sm },
   paper: { marginTop: spacing.xl, marginBottom: spacing.lg, gap: spacing.md },
-  paperHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', gap: spacing.sm, paddingBottom: spacing.sm, borderBottomWidth: 2, borderBottomColor: colors.primary },
+  paperHeader: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: spacing.sm, paddingBottom: spacing.sm, borderBottomWidth: 2, borderBottomColor: colors.primary },
   brand: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
   brandMark: { width: 26, height: 26, borderRadius: 8, backgroundColor: colors.primary, alignItems: 'center', justifyContent: 'center' },
   brandDot: { width: 10, height: 10, borderRadius: 5, backgroundColor: colors.white },
@@ -161,5 +172,5 @@ const styles = StyleSheet.create({
   chip: { paddingHorizontal: spacing.xs, paddingVertical: 2, borderRadius: radius.pill },
   nextSteps: { gap: spacing.sm, marginTop: spacing.sm },
   step: { flex: 1, padding: spacing.sm, borderRadius: radius.md, borderWidth: 1, borderColor: colors.border, gap: 2 },
-  actions: { gap: spacing.xs },
+  actions: { gap: layout.buttonGap },
 });

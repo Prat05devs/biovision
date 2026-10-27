@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { AppIcon, type AppIconName } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export function ResultSection({ icon, title, body }: { icon: AppIconName; title: string; body: string }) {
   return (

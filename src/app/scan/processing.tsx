@@ -13,7 +13,7 @@ import { assessmentService, screeningService } from '@/services';
 import { retainResearchCapture } from '@/api/services.api';
 import { AppServiceError } from '@/services/errors';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 const statusKeys = ['processing.prepare', 'processing.quality', 'processing.analyze', 'processing.summary'];
 
@@ -107,7 +107,7 @@ export default function ProcessingScreen() {
           sessionId: session.id,
           anemiaSignal: signal,
           answers: {},
-          sex: profile.sex,
+          profile,
         });
         if (!next.question) throw new AppServiceError('INVALID_RESPONSE', 'No assessment question was returned.');
         setQuestions([next.question], next.configVersion);

@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
 import { Button } from '@/components/ui/Button';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export function ErrorState({
   title,

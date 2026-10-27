@@ -14,7 +14,7 @@ import { NoticeCard } from '@/components/ui/NoticeCard';
 import { Screen } from '@/components/ui/Screen';
 import { wellbeingService } from '@/services';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export default function WellbeingIntroScreen() {
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export default function WellbeingIntroScreen() {
   };
 
   return (
-    <Screen
+    <Screen hero
       footer={
         <Button
           label={t('wellbeing.start')}
@@ -46,20 +46,15 @@ export default function WellbeingIntroScreen() {
         />
       }
     >
-      <AppHeader back language title={t('navigation.wellbeing')} />
+      <AppHeader language title={t('navigation.wellbeing')} />
+      <AppText variant="display" color={colors.white} style={styles.eyebrow}>{t('wellbeing.title')}</AppText>
       <View style={styles.visual}>
         <View style={styles.pulseRing} />
-        <AppIcon name="heart" size={44} color={colors.primary} strokeWidth={1.8} />
+        <AppIcon name="message" size={44} color={colors.primary} strokeWidth={1.6} />
       </View>
-      <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>
-        {t('wellbeing.eyebrow')}
-      </AppText>
-      <AppText variant="h1">{t('wellbeing.title')}</AppText>
-      <AppText color={colors.inkMuted} style={styles.description}>
-        {t('wellbeing.description')}
-      </AppText>
 
       <Card style={styles.card}>
+        <AppText color={colors.inkMuted}>{t('wellbeing.description')}</AppText>
         <FeatureRow
           compact
           icon="message"
@@ -82,6 +77,10 @@ export default function WellbeingIntroScreen() {
 
       <NoticeCard title={t('notice.title')} body={t('wellbeing.notDiagnosis')} />
       <CrisisLink style={styles.crisis} />
+      {screen.isError ? <Card style={styles.card}>
+        <AppText color={colors.inkMuted}>{t('errors.body')}</AppText>
+        <Button label={t('common.retry')} onPress={() => void screen.refetch()} />
+      </Card> : null}
       {screen.data ? (
         <AppText variant="caption" color={colors.inkMuted} style={styles.version}>
           {t('wellbeing.screenVersion', { version: screen.data.screenVersion })}
@@ -93,7 +92,7 @@ export default function WellbeingIntroScreen() {
 
 const styles = StyleSheet.create({
   visual: { height: 180, marginTop: spacing.lg, borderRadius: radius.xl, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
-  pulseRing: { position: 'absolute', width: 126, height: 126, borderRadius: 63, borderWidth: 18, borderColor: 'rgba(8,126,114,0.08)' },
+  pulseRing: { position: 'absolute', width: 126, height: 126, borderRadius: 63, borderWidth: 18, borderColor: 'rgba(47,120,145,0.10)' },
   eyebrow: { marginTop: spacing.xl, marginBottom: spacing.xs },
   description: { marginTop: spacing.sm },
   card: { marginTop: spacing.xl, marginBottom: spacing.md, gap: spacing.lg },

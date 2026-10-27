@@ -63,6 +63,7 @@ const scenarios = [
   ['acne with irregular periods also sees gynaecology', { answers: { main_concern: 'skin', skin_type: 'acne', acne_severity: 'acne_inflamed_many', acne_scarring: 'acne_no_marks', acne_treatment: 'acne_untreated', acne_hormonal: 'acne_hormonal_both', ...lasting }, profile: { ageYears: 24, sex: 'female', pregnant: false } }, 'dermatology', 'follow_up', 'gynaecology'],
   ['bleeding mole is prompt', { answers: { main_concern: 'skin', skin_type: 'mole_change', mole_features: ['mole_bleeding'] } }, 'dermatology', 'prompt'],
   ['pregnancy without antenatal care', { answers: { main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_second', pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_not_started' }, profile: { ageYears: 25, sex: 'female', pregnant: true } }, 'gynaecology', 'follow_up'],
+  ['pregnant check-up without antenatal care, any concern', { answers: { main_concern: 'none', pregnancy_stage: 'pregnancy_first', pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_not_started' }, profile: { ageYears: 23, sex: 'female', pregnant: true } }, 'gynaecology', 'follow_up'],
   ['diabetes and high blood pressure together', { answers: { main_concern: 'none', existing_condition: ['diabetes_c', 'high_bp'] } }, 'generalPhysician', 'follow_up', 'endocrinology'],
   ['pregnant with low haemoglobin', { anemia: { signal: 'elevated', estimatedHemoglobinGdl: 9.6 }, profile: { ageYears: 26, sex: 'female', pregnant: true } }, 'gynaecology', 'follow_up'],
   ['high BMI', { lifestyle: { height_cm: '165', weight_kg: '92' } }, 'generalPhysician', 'follow_up', 'endocrinology'],
@@ -77,7 +78,10 @@ for (const [name, input, primary, level, also] of scenarios) {
 }
 
 (async () => {
-  const next = (answers, sex = 'female') => localAssessmentService.nextQuestion({ sessionId: 's', anemiaSignal: 'unavailable', answers, sex });
+  const adultWoman = { ageYears: 40, sex: 'female', pregnant: false };
+  const pregnantWoman = { ageYears: 28, sex: 'female', pregnant: true };
+  const man = { ageYears: 32, sex: 'male', pregnant: false };
+  const next = (answers, profile = adultWoman) => localAssessmentService.nextQuestion({ sessionId: 's', anemiaSignal: 'unavailable', answers, profile });
   let step = await next({});
   assert.equal(step.question.id, 'urgent_symptoms');
   step = await next({ urgent_symptoms: true });
@@ -94,36 +98,39 @@ for (const [name, input, primary, level, also] of scenarios) {
   ]) assert.equal((await next({ urgent_symptoms: false, ...answers })).urgentKind, kind);
   // Every WHO danger sign in pregnancy stops the questionnaire and routes to emergency care.
   for (const sign of ['pregnancy_bleeding', 'pregnancy_fits', 'pregnancy_headache_vision', 'pregnancy_abdominal_pain', 'pregnancy_breathing', 'pregnancy_reduced_movement', 'pregnancy_fever', 'pregnancy_swelling']) {
-    const result = await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: [sign] });
+    const result = await next({ urgent_symptoms: false, pregnancy_stage: 'pregnancy_third', pregnancy_danger: [sign] }, pregnantWoman);
     assert.equal(result.urgentKind, 'medical', `${sign} must escalate`);
     assert.equal(result.done, true, `${sign} must stop the questionnaire`);
   }
   // "None of these" is not a danger sign.
-  assert.equal((await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_danger_none'] })).urgentActionRequired, false);
+  assert.equal((await next({ urgent_symptoms: false, pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_danger_none'] }, pregnantWoman)).urgentActionRequired, false);
 
   // An empty multi-select is unanswered: the screen must keep asking the same question.
   const emptyMulti = await next({ urgent_symptoms: false, main_concern: 'none', existing_condition: [] });
   assert.equal(emptyMulti.question.id, 'existing_condition');
 
-  // Pregnancy asks its own follow-ups and never the generic duration/impact pair.
+  // A pregnant woman is asked the pregnancy questions straight after the emergency check,
+  // whatever her main concern, and choosing pregnancy care skips the duration/impact pair.
   const pregnancyAsked = [];
-  let pregnancyAnswers = { urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care' };
+  let pregnancyAnswers = { urgent_symptoms: false };
   for (let guard = 0; guard < 20; guard += 1) {
-    const result = await next(pregnancyAnswers);
+    const result = await next(pregnancyAnswers, pregnantWoman);
     if (result.done) break;
     pregnancyAsked.push(result.question.id);
-    // Someone planning a pregnancy is not pregnant yet, so pick a trimester: the danger-sign
-    // question deliberately does not apply to the planning branch.
-    const value = result.question.id === 'pregnancy_stage' ? 'pregnancy_second'
+    const value = result.question.id === 'main_concern' ? 'womens'
+      : result.question.id === 'womens_type' ? 'pregnancy_care'
       : result.question.type === 'yes_no' ? false
       : result.question.type === 'multi_choice' ? [result.question.options[0].value]
       : result.question.options[0].value;
     pregnancyAnswers = { ...pregnancyAnswers, [result.question.id]: value };
   }
-  assert.ok(pregnancyAsked.includes('pregnancy_stage'), 'pregnancy must ask the trimester');
-  assert.ok(pregnancyAsked.includes('pregnancy_danger'), 'pregnancy must ask the danger signs');
-  assert.ok(!pregnancyAsked.includes('concern_duration'), 'pregnancy must not ask how long it has been going on');
-  assert.ok(!pregnancyAsked.includes('concern_impact'), 'pregnancy must not ask about daily impact');
+  assert.deepEqual(pregnancyAsked.slice(0, 3), ['pregnancy_stage', 'pregnancy_danger', 'pregnancy_antenatal'], 'pregnancy questions come first');
+  assert.ok(!pregnancyAsked.includes('concern_duration'), 'pregnancy care must not ask how long it has been going on');
+  assert.ok(!pregnancyAsked.includes('concern_impact'), 'pregnancy care must not ask about daily impact');
+  const tiredPregnant = await next({ urgent_symptoms: false, pregnancy_stage: 'pregnancy_first', pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_started' }, pregnantWoman);
+  assert.equal(tiredPregnant.question.id, 'main_concern', 'a pregnant woman still chooses her main concern');
+  const stage = await next({ urgent_symptoms: false }, pregnantWoman);
+  assert.ok(!stage.question.options.some((option) => option.value === 'pregnancy_planning'), 'a pregnant woman is not asked whether she is planning a pregnancy');
 
   // Acne asks acne follow-ups, not the rash question.
   const acneAsked = [];
@@ -183,34 +190,79 @@ for (const [name, input, primary, level, also] of scenarios) {
   assert.equal(interpretHemoglobin(11.8, woman), 'moderate', 'within the band is borderline');
   assert.equal(interpretHemoglobin(12.6, woman), 'low', 'clearly above the cut-off is normal');
 
-  // Men are never asked about periods, pregnancy or menopause, on any branch. Walk every main
-  // concern with every option of every follow-up, and fail on any question or option tagged female.
+  // Nobody is asked something that cannot apply to them, on any branch. Walk every main concern
+  // with every option of every branching follow-up, once per kind of person, and fail on any
+  // question or option whose audience excludes them: men never see periods, pregnancy or
+  // menopause; a woman who is not pregnant never sees pregnancy; a pregnant woman never sees
+  // periods or menopause; girls never see periods; young women never see menopause.
   const bank = load(path.join(root, 'configs/questions/health_assessment.v4.json'));
-  const femaleQuestions = new Set(bank.questions.filter((q) => q.forSex === 'female').map((q) => q.id));
-  const femaleOptions = new Set(bank.questions.flatMap((q) => (q.options ?? []).filter((o) => o.forSex === 'female').map((o) => `${q.id}:${o.value}`)));
-  assert.ok(femaleQuestions.has('womens_type') && femaleOptions.has('main_concern:womens') && femaleOptions.has('tired_signs:heavy_periods'));
-  let maleQuestionsSeen = 0;
-  const walkAsMale = async (answers) => {
-    const result = await next(answers, 'male');
+  const excludes = (item, profile) =>
+    (item.forSex && item.forSex !== profile.sex)
+    || (item.forPregnant !== undefined && item.forPregnant !== profile.pregnant)
+    || (item.minAge !== undefined && profile.ageYears < item.minAge);
+  const byId = new Map(bank.questions.map((q) => [q.id, q]));
+  const walk = async (profile, answers, seen) => {
+    const result = await next(answers, profile);
     if (result.done) return;
     const { question } = result;
-    maleQuestionsSeen += 1;
-    assert.ok(!femaleQuestions.has(question.id), `a man was asked ${question.id}`);
-    for (const option of question.options ?? []) assert.ok(!femaleOptions.has(`${question.id}:${option.value}`), `a man was offered ${question.id}:${option.value}`);
+    seen.add(question.id);
+    const raw = byId.get(question.id);
+    assert.ok(!excludes(raw, profile), `${JSON.stringify(profile)} was asked ${question.id}`);
+    for (const option of question.options ?? []) {
+      // The same value can appear once per audience (main_concern:womens); match on the label too.
+      const rawOption = raw.options.find((item) => item.value === option.value && item.labelKey === option.labelKey);
+      assert.ok(rawOption && !excludes(rawOption, profile), `${JSON.stringify(profile)} was offered ${question.id}:${option.value}`);
+      if (option.labelKey === 'questions.options.womens' || option.labelKey === 'questions.options.womens_pregnant') seen.add(option.labelKey);
+      seen.add(`${question.id}:${option.value}`);
+    }
     // Branch fully on the questions that open follow-ups; take the first answer elsewhere.
-    const branching = ['main_concern', 'tired_signs', 'skin_type'].includes(question.id);
+    const branching = ['main_concern', 'tired_signs', 'skin_type', 'womens_type'].includes(question.id);
     const values = question.type === 'yes_no' ? [false]
       : question.type === 'multi_choice' ? [[question.options[0].value]]
       : branching ? question.options.map((option) => option.value) : [question.options[0].value];
-    for (const value of values) await walkAsMale({ ...answers, [question.id]: value });
+    for (const value of values) await walk(profile, { ...answers, [question.id]: value }, seen);
   };
-  await walkAsMale({ urgent_symptoms: false });
-  assert.ok(maleQuestionsSeen > 30, 'the male walk must cover every branch');
-  // A stale female-only answer cannot escalate a man's questionnaire.
-  assert.equal((await next({ urgent_symptoms: false, main_concern: 'womens', womens_type: 'pregnancy_care', pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_bleeding'] }, 'male')).urgentActionRequired, false);
-  // Women still see every women's-health option.
-  const womenConcern = await next({ urgent_symptoms: false });
-  assert.ok(womenConcern.question.options.some((option) => option.value === 'womens'), 'women must still be offered women\'s health');
+  const people = {
+    man,
+    woman: adultWoman,
+    pregnantWoman,
+    youngWoman: { ageYears: 20, sex: 'female', pregnant: false },
+    girl: { ageYears: 8, sex: 'female', pregnant: false },
+  };
+  const seen = {};
+  for (const [name, profile] of Object.entries(people)) {
+    seen[name] = new Set();
+    await walk(profile, { urgent_symptoms: false }, seen[name]);
+    assert.ok(seen[name].size > 30, `the ${name} walk must cover every branch`);
+  }
+  // The walks reach what each person should see, not just avoid what they should not.
+  assert.ok(seen.woman.has('questions.options.womens') && seen.woman.has('womens_type:menopause') && seen.woman.has('tired_signs:heavy_periods'));
+  assert.ok(!seen.woman.has('pregnancy_stage') && !seen.woman.has('womens_type:pregnancy_care'), 'no pregnancy questions unless she is pregnant');
+  assert.ok(seen.pregnantWoman.has('pregnancy_danger') && seen.pregnantWoman.has('questions.options.womens_pregnant') && seen.pregnantWoman.has('womens_type:pregnancy_care'));
+  assert.ok(!seen.pregnantWoman.has('acne_hormonal') && !seen.pregnantWoman.has('womens_type:irregular_periods'), 'no period questions in pregnancy');
+  assert.ok(seen.youngWoman.has('womens_type:irregular_periods') && !seen.youngWoman.has('womens_type:menopause'), 'no menopause for a 20-year-old');
+  assert.ok(!seen.girl.has('main_concern:womens') && !seen.girl.has('tired_signs:heavy_periods'), 'no period questions for a child');
+  assert.ok(!seen.man.has('main_concern:womens') && !seen.man.has('acne_hormonal'), 'no women\'s questions for a man');
+  // An unknown profile hides every audience-specific question rather than showing them to everyone.
+  const unknown = await localAssessmentService.nextQuestion({ sessionId: 's', anemiaSignal: 'unavailable', answers: { urgent_symptoms: false }, profile: undefined });
+  assert.equal(unknown.question.id, 'main_concern');
+  assert.ok(!unknown.question.options.some((option) => option.value === 'womens'));
+  // The camera-free check is the same questionnaire with no scan data: it still completes, routes
+  // on the answers alone, and never claims a haemoglobin result it did not measure.
+  const cameraFree = (answers, profile) => {
+    const s = session({ answers, profile });
+    s.scan.cameraSkipped = true;
+    delete s.scan.vitals;
+    return s;
+  };
+  const freeReport = await localAssessmentService.complete(cameraFree({ urgent_symptoms: false, main_concern: 'breathing', breath_trigger: 'minimal_activity', breath_cough: 'no_cough', ...lasting }, man));
+  assert.equal(freeReport.screeningResult.signal, 'unavailable');
+  assert.equal(buildCareRouting(cameraFree({ urgent_symptoms: false, main_concern: 'breathing', breath_trigger: 'minimal_activity', breath_cough: 'no_cough', ...lasting }, man)).primary, 'pulmonology');
+  const freePregnant = cameraFree({ urgent_symptoms: false, main_concern: 'none', pregnancy_stage: 'pregnancy_first', pregnancy_danger: ['pregnancy_danger_none'], pregnancy_antenatal: 'antenatal_not_started' }, pregnantWoman);
+  assert.equal(buildCareRouting(freePregnant).primary, 'gynaecology', 'camera-free pregnancy still goes to the obstetric team');
+
+  // Stale answers from another profile cannot escalate: a man's leftover pregnancy answer is ignored.
+  assert.equal((await next({ urgent_symptoms: false, pregnancy_stage: 'pregnancy_third', pregnancy_danger: ['pregnancy_bleeding'] }, man)).urgentActionRequired, false);
 
   // A branch only asks its own follow-ups, then the shared ones, then finishes.
   const asked = [];
@@ -222,5 +274,5 @@ for (const [name, input, primary, level, also] of scenarios) {
     answers = { ...answers, [result.question.id]: result.question.type === 'yes_no' ? false : result.question.options[0].value };
   }
   assert.deepEqual(asked, ['joint_site', 'joint_swelling', 'concern_duration', 'concern_impact', 'existing_condition', 'recent_cbc']);
-  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits, 8 pregnancy danger signs, acne grading, multi-select conditions, no women's questions for men, trimester and borderline haemoglobin rules, and branch order passed.`);
+  console.log(`Care routing: ${scenarios.length} doctor scenarios, 6 danger-sign exits, 8 pregnancy danger signs, acne grading, multi-select conditions, every branch walked as a man, a woman, a pregnant woman, a young woman and a girl with nothing asked that cannot apply to them, trimester and borderline haemoglobin rules, and branch order passed.`);
 })().catch((error) => { console.error(error); process.exit(1); });

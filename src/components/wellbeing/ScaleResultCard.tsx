@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AppText } from '@/components/ui/AppText';
 import { Card } from '@/components/ui/Card';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 import type { WellbeingScaleResult } from '@/types/wellbeing';
 
 const levelColors: Record<WellbeingScaleResult['level'], string> = {

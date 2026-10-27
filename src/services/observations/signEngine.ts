@@ -73,7 +73,8 @@ export const followUpsFor = (confirmed: string[], sex?: Sex): HealthQuestion[] =
     for (const questionId of sign.followUps) {
       if (seen.has(questionId)) continue;
       const raw = RAW_QUESTIONS.find(({ id }) => id === questionId);
-      if (!raw || (raw.forSex && sex && raw.forSex !== sex)) continue;
+      // Without a recorded sex, sex-specific questions stay hidden rather than shown to everyone.
+      if (!raw || (raw.forSex && raw.forSex !== sex)) continue;
       seen.add(questionId);
       questions.push(toQuestion(raw));
     }

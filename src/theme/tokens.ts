@@ -36,6 +36,17 @@ export const spacing = {
   huge: 56,
 } as const;
 
+/**
+ * One spacing rhythm for every screen: buttons and answer options stacked together sit 12 apart,
+ * so nothing touches and a thumb never lands on the wrong one, and cards in a list keep the same
+ * distance.
+ */
+export const layout = {
+  buttonGap: spacing.sm,
+  optionGap: spacing.sm,
+  cardGap: spacing.sm,
+} as const;
+
 export const radius = {
   sm: 10,
   md: 14,

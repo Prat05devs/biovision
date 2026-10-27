@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { AppText } from '@/components/ui/AppText';
 import { AppIcon } from '@/components/ui/AppIcon';
 import { Card } from '@/components/ui/Card';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 import type { HealthcareFacility } from '@/types/healthcare';
 
 const translateOrValue = (translate: (key: string) => string, value: string) => {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.78 },
   card: { gap: spacing.md },
   topRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  icon: { width: 44, height: 44, borderRadius: radius.md, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' },
+  icon: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.primarySoft, alignItems: 'center', justifyContent: 'center' },
   copy: { flex: 1 },
   name: { marginTop: spacing.xxs },
   metaRow: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: spacing.sm },

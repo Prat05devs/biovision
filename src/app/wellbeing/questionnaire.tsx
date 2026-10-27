@@ -9,13 +9,13 @@ import { AppHeader } from '@/components/ui/AppHeader';
 import { AppText } from '@/components/ui/AppText';
 import { Button } from '@/components/ui/Button';
 import { ErrorState } from '@/components/ui/ErrorState';
-import { NoticeCard } from '@/components/ui/NoticeCard';
+import { Card } from '@/components/ui/Card';
 import { OptionButton } from '@/components/ui/OptionButton';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Screen } from '@/components/ui/Screen';
 import { wellbeingService } from '@/services';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, spacing } from '@/theme/tokens';
+import { colors, layout, spacing } from '@/theme/redesign';
 import type { HealthQuestion } from '@/types/assessment';
 
 export default function WellbeingQuestionnaireScreen() {
@@ -138,13 +138,18 @@ export default function WellbeingQuestionnaireScreen() {
       <AppText variant="small" color={colors.inkMuted} style={styles.recall}>
         {t('wellbeing.recallPeriod', { days: screen?.recallPeriodDays ?? 14 })}
       </AppText>
+      {question.contextKey ? (
+        // A calm reason before the question, with support close by, rather than an alarm.
+        <Card tone="soft" style={styles.context}>
+          <AppText variant="small" color={colors.primaryDark}>{t('profile.whyTitle')}</AppText>
+          <AppText variant="small">{t(question.contextKey)}</AppText>
+          {isRiskQuestion ? <AppText variant="small" color={colors.inkMuted}>{t('wellbeing.crisis.itemNotice')}</AppText> : null}
+        </Card>
+      ) : null}
       <AppText variant="h1" style={styles.question}>
         {t(question.textKey)}
       </AppText>
 
-      {isRiskQuestion ? (
-        <NoticeCard title={t('wellbeing.crisis.eyebrow')} body={t('wellbeing.crisis.itemNotice')} urgent />
-      ) : null}
 
       <View accessibilityRole="radiogroup" style={styles.options}>
         {(question.options ?? []).map((option) => (
@@ -167,7 +172,8 @@ const styles = StyleSheet.create({
   eyebrow: { marginTop: spacing.xl, marginBottom: spacing.md },
   recall: { marginTop: spacing.sm },
   question: { marginTop: spacing.xl },
-  options: { marginTop: spacing.xl, gap: spacing.sm },
+  context: { marginTop: spacing.lg, gap: spacing.xs },
+  options: { marginTop: spacing.xl, gap: layout.optionGap },
   crisis: { marginTop: spacing.xl },
-  footer: { gap: spacing.xs },
+  footer: { gap: layout.buttonGap },
 });

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 import type { FaceSign } from '@/types/observations';
 
 /**

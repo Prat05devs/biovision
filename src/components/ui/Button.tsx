@@ -13,6 +13,8 @@ import { useEffect, useRef, useState } from 'react';
 import { AppText } from '@/components/ui/AppText';
 import { AppIcon, type AppIconName } from '@/components/ui/AppIcon';
 import { colors, radius, spacing } from '@/theme/tokens';
+import { colors as redesignColors } from '@/theme/redesign';
+import { useRedesign } from '@/theme/RedesignContext';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'urgent';
 
@@ -48,7 +50,8 @@ export function Button({
   accessibilityLabel,
   style,
 }: ButtonProps) {
-  const foreground = variant === 'outline' || variant === 'ghost' ? colors.ink : colors.white;
+  const { enabled } = useRedesign();
+  const foreground = variant === 'outline' || variant === 'ghost' ? (enabled ? redesignColors.ink : colors.ink) : colors.white;
   const [scale] = useState(() => new Animated.Value(1));
   const reduceMotion = useRef(false);
   useEffect(() => {
@@ -69,12 +72,12 @@ export function Button({
       onPress={onPress}
       onPressIn={() => animateScale(0.965)}
       onPressOut={() => animateScale(1)}
-      style={[styles.base, variantStyle[variant], (disabled || loading) && styles.disabled, style, { transform: [{ scale }] }]}
+      style={[styles.base, variantStyle[variant], enabled && { borderRadius: 999, minHeight: 54 }, enabled && variant === 'primary' && { backgroundColor: redesignColors.primary }, enabled && variant === 'secondary' && { backgroundColor: redesignColors.ink }, enabled && variant === 'outline' && { backgroundColor: redesignColors.surface, borderColor: redesignColors.border }, (disabled || loading) && styles.disabled, style, { transform: [{ scale }] }]}
     >
       {loading ? (
         <ActivityIndicator color={foreground} />
       ) : (
-        <View style={styles.content}>
+        <View style={[styles.content, enabled && styles.redesignContent]}>
           {icon && iconPosition === 'left' ? <AppIcon name={icon} size={18} color={foreground} /> : null}
           <AppText variant="body" color={foreground} style={styles.label}>{label}</AppText>
           {icon && iconPosition === 'right' ? <AppIcon name={icon} size={18} color={foreground} /> : null}
@@ -94,6 +97,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   content: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
+  redesignContent: { maxWidth: '100%', justifyContent: 'center' },
   label: { flexShrink: 1, fontWeight: '600', textAlign: 'center' },
   disabled: { opacity: 0.45 },
 });

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { AppHeader } from '@/components/ui/AppHeader';
 import { AppText } from '@/components/ui/AppText';
 import { Screen } from '@/components/ui/Screen';
-import { colors, spacing } from '@/theme/tokens';
+import { colors, spacing } from '@/theme/redesign';
 
 const documents = ['privacy', 'terms', 'medical', 'howItWorks', 'acknowledgements'] as const;
 type LegalDoc = (typeof documents)[number];

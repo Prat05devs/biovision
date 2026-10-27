@@ -33,17 +33,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>LSMinimumSystemVersion</key>
-	<string>12.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>x-apple-health</string>
 		<string>fitbit</string>
 		<string>strava</string>
 	</array>
+	<key>LSMinimumSystemVersion</key>
+	<string>12.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -55,8 +55,6 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>BioVision uses the front camera during your health scan to measure your pulse and photograph your face and lower eyelids. Video is analysed on your iPhone and never recorded or uploaded.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>BioVision uses your location only when you ask it to find doctors and hospitals near you.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>BioVision's camera uses the motion sensor to keep the picture the right way up while you scan. Motion data stays on your iPhone and is never recorded or uploaded.</string>
 	<key>NSUserActivityTypes</key>
@@ -69,6 +67,23 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>EXExpoAppSceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>

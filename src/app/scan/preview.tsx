@@ -11,10 +11,12 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { Screen } from '@/components/ui/Screen';
 import { frameSideFor } from '@/services/vision/captureMirroring';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
+import { useResponsiveLayout } from '@/theme/responsive';
 
 export default function PreviewScreen() {
   const { t } = useTranslation();
+  const { compact } = useResponsiveLayout();
   const params = useLocalSearchParams<{ side?: string }>();
   const side: 'left' | 'right' = params.side === 'right' ? 'right' : 'left';
   // The stored image keeps the preview's mirrored orientation, so the review
@@ -54,7 +56,7 @@ export default function PreviewScreen() {
   return (
     <Screen
       footer={
-        <View style={styles.actions}>
+        <View style={[styles.actions, compact && { flexDirection: 'column' }]}>
           <Button label={t('common.retake')} onPress={retake} variant="outline" style={styles.action} />
           <Button
             label={t(side === 'left' ? 'preview.continueRight' : 'preview.finish')}

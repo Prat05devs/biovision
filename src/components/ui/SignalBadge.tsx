@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 import type { ScreeningSignal } from '@/types/assessment';
 
 const tone = {
@@ -24,6 +24,7 @@ export function SignalBadge({ signal, label }: { signal: ScreeningSignal; label:
 
 const styles = StyleSheet.create({
   badge: {
+    maxWidth: '100%',
     alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
@@ -33,6 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
   },
   dot: { width: 8, height: 8, borderRadius: radius.pill },
-  label: { fontWeight: '600' },
+  label: { fontWeight: '600', flexShrink: 1 },
 });
 

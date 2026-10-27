@@ -180,19 +180,21 @@ export function buildCareRouting(session: AssessmentSession, appearance?: Appear
     case 'womens':
       if (answers.womens_type === 'heavy_periods_w') { tests.add('cbc'); tests.add('ironStudies'); }
       if (answers.womens_type === 'irregular_periods') { tests.add('thyroid'); tests.add('bloodSugar'); }
-      // Pregnancy: anaemia screening matters more, and antenatal care is the next step when
-      // it has not started. The WHO danger signs are handled as red flags before this point.
-      if (answers.womens_type === 'pregnancy_care') {
-        tests.add('cbc');
-        if (answers.pregnancy_antenatal === 'antenatal_not_started') {
-          raise('follow_up');
-          reasons.push({ key: 'antenatalNotStarted' });
-        }
-        if (answers.pregnancy_stage === 'pregnancy_third') { tests.add('bloodPressure'); }
-      }
       if (answers.womens_type === 'pelvic_pain_discharge') raise('follow_up');
-      if (answers.womens_type === 'pregnancy_care') { raise('follow_up'); tests.add('cbc'); }
+      if (answers.womens_type === 'pregnancy_care') raise('follow_up');
       break;
+  }
+
+  // Pregnancy, whatever the main concern: every pregnant woman answers the pregnancy questions.
+  // Anaemia screening matters more, and antenatal care is the next step when it has not started.
+  // The WHO danger signs are handled as red flags before this point.
+  if (profile?.pregnant) {
+    tests.add('cbc');
+    if (answers.pregnancy_antenatal === 'antenatal_not_started') {
+      raise('follow_up');
+      reasons.push({ key: 'antenatalNotStarted' });
+    }
+    if (answers.pregnancy_stage === 'pregnancy_third') tests.add('bloodPressure');
   }
 
   // Scan measurements.

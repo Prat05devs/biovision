@@ -2,7 +2,9 @@ import { Children, isValidElement, type PropsWithChildren, type ReactNode } from
 import { StyleSheet, Text, type StyleProp, type TextProps, type TextStyle } from 'react-native';
 
 import { colors, MAX_FONT_SCALE, typography } from '@/theme/tokens';
-import { fontFamily, type FontWeightToken } from '@/theme/fonts';
+import { displayFontFamily, fontFamily, type FontWeightToken } from '@/theme/fonts';
+import { useRedesign } from '@/theme/RedesignContext';
+import { colors as redesignColors } from '@/theme/redesign';
 
 type TextVariant = 'display' | 'h1' | 'h2' | 'h3' | 'body' | 'small' | 'caption' | 'eyebrow';
 
@@ -59,17 +61,19 @@ type AppTextProps = PropsWithChildren<
 
 export function AppText({
   variant = 'body',
-  color = colors.ink,
+  color,
   style,
   children,
   ...props
 }: AppTextProps) {
+  const { enabled } = useRedesign();
   const devanagari = containsDevanagari(children);
   // The caller may override the weight via `style`; honour it when resolving the family.
   const flat = StyleSheet.flatten([variantStyles[variant], style]) ?? {};
-  const weight = (Number(flat.fontWeight) || variantWeights[variant]) as FontWeightToken;
+  const redesignWeight = variant === 'display' || variant === 'h1' ? 400 : variant === 'h2' || variant === 'h3' ? 500 : variantWeights[variant];
+  const weight = (Number(flat.fontWeight) || (enabled ? redesignWeight : variantWeights[variant])) as FontWeightToken;
   const familyStyle: TextStyle = {
-    fontFamily: fontFamily(weight, devanagari),
+    fontFamily: (enabled ? displayFontFamily : fontFamily)(weight, devanagari),
     // Custom families carry their own weight; leaving fontWeight set makes Android
     // synthesise a second, heavier stroke on top of an already-bold file.
     fontWeight: undefined,
@@ -85,7 +89,7 @@ export function AppText({
     };
   }
   return (
-    <Text maxFontSizeMultiplier={MAX_FONT_SCALE} {...props} style={[variantStyles[variant], { color }, style, familyStyle, scriptStyle]}>
+    <Text maxFontSizeMultiplier={MAX_FONT_SCALE} {...props} style={[variantStyles[variant], { color: color ?? (enabled ? redesignColors.ink : colors.ink) }, enabled && (variant === 'display' || variant === 'h1') && { letterSpacing: -0.2 }, style, familyStyle, scriptStyle]}>
       {children}
     </Text>
   );

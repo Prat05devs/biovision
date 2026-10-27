@@ -1,5 +1,5 @@
 {
-  "version": "health-assessment-v4",
+  "version": "health-assessment-v4.1",
   "questions": [
     {
       "id": "urgent_symptoms",
@@ -8,6 +8,110 @@
       "sectionKey": "questions.sections.safety",
       "redFlag": true,
       "urgentIfYes": "medical"
+    },
+    {
+      "id": "pregnancy_stage",
+      "type": "single_choice",
+      "textKey": "questions.pregnancy_stage",
+      "sectionKey": "questions.sections.pregnancy",
+      "options": [
+        {
+          "value": "pregnancy_first",
+          "labelKey": "questions.options.pregnancy_first"
+        },
+        {
+          "value": "pregnancy_second",
+          "labelKey": "questions.options.pregnancy_second"
+        },
+        {
+          "value": "pregnancy_third",
+          "labelKey": "questions.options.pregnancy_third"
+        },
+        {
+          "value": "pregnancy_unsure",
+          "labelKey": "questions.options.pregnancy_unsure"
+        }
+      ],
+      "forSex": "female",
+      "forPregnant": true
+    },
+    {
+      "id": "pregnancy_danger",
+      "type": "multi_choice",
+      "textKey": "questions.pregnancy_danger",
+      "sectionKey": "questions.sections.pregnancy",
+      "redFlag": true,
+      "exclusiveValue": "pregnancy_danger_none",
+      "options": [
+        {
+          "value": "pregnancy_danger_none",
+          "labelKey": "questions.options.pregnancy_danger_none"
+        },
+        {
+          "value": "pregnancy_bleeding",
+          "labelKey": "questions.options.pregnancy_bleeding",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_fits",
+          "labelKey": "questions.options.pregnancy_fits",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_headache_vision",
+          "labelKey": "questions.options.pregnancy_headache_vision",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_abdominal_pain",
+          "labelKey": "questions.options.pregnancy_abdominal_pain",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_breathing",
+          "labelKey": "questions.options.pregnancy_breathing",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_reduced_movement",
+          "labelKey": "questions.options.pregnancy_reduced_movement",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_fever",
+          "labelKey": "questions.options.pregnancy_fever",
+          "urgent": "medical"
+        },
+        {
+          "value": "pregnancy_swelling",
+          "labelKey": "questions.options.pregnancy_swelling",
+          "urgent": "medical"
+        }
+      ],
+      "forSex": "female",
+      "forPregnant": true
+    },
+    {
+      "id": "pregnancy_antenatal",
+      "type": "single_choice",
+      "textKey": "questions.pregnancy_antenatal",
+      "sectionKey": "questions.sections.pregnancy",
+      "options": [
+        {
+          "value": "antenatal_started",
+          "labelKey": "questions.options.antenatal_started"
+        },
+        {
+          "value": "antenatal_not_started",
+          "labelKey": "questions.options.antenatal_not_started"
+        },
+        {
+          "value": "antenatal_unsure",
+          "labelKey": "questions.options.antenatal_unsure"
+        }
+      ],
+      "forSex": "female",
+      "forPregnant": true
     },
     {
       "id": "main_concern",
@@ -66,7 +170,15 @@
         {
           "value": "womens",
           "labelKey": "questions.options.womens",
-          "forSex": "female"
+          "forSex": "female",
+          "forPregnant": false,
+          "minAge": 10
+        },
+        {
+          "value": "womens",
+          "labelKey": "questions.options.womens_pregnant",
+          "forSex": "female",
+          "forPregnant": true
         }
       ]
     },
@@ -95,7 +207,9 @@
         {
           "value": "heavy_periods",
           "labelKey": "questions.options.heavy_periods",
-          "forSex": "female"
+          "forSex": "female",
+          "forPregnant": false,
+          "minAge": 10
         },
         {
           "value": "snoring_sleep",
@@ -351,7 +465,9 @@
           "labelKey": "questions.options.acne_hormonal_both"
         }
       ],
-      "forSex": "female"
+      "forSex": "female",
+      "forPregnant": false,
+      "minAge": 10
     },
     {
       "id": "mole_features",
@@ -446,7 +562,8 @@
         "questionId": "main_concern",
         "equals": "mood"
       },
-      "urgentIfYes": "mental_health"
+      "urgentIfYes": "mental_health",
+      "contextKey": "questions.context.selfHarm"
     },
     {
       "id": "head_type",
@@ -717,19 +834,24 @@
       "options": [
         {
           "value": "irregular_periods",
-          "labelKey": "questions.options.irregular_periods"
+          "labelKey": "questions.options.irregular_periods",
+          "forPregnant": false
         },
         {
           "value": "heavy_periods_w",
-          "labelKey": "questions.options.heavy_periods_w"
+          "labelKey": "questions.options.heavy_periods_w",
+          "forPregnant": false
         },
         {
           "value": "pregnancy_care",
-          "labelKey": "questions.options.pregnancy_care"
+          "labelKey": "questions.options.pregnancy_care",
+          "forPregnant": true
         },
         {
           "value": "menopause",
-          "labelKey": "questions.options.menopause"
+          "labelKey": "questions.options.menopause",
+          "forPregnant": false,
+          "minAge": 35
         },
         {
           "value": "pelvic_pain_discharge",
@@ -740,123 +862,6 @@
         "questionId": "main_concern",
         "equals": "womens"
       },
-      "forSex": "female"
-    },
-    {
-      "id": "pregnancy_stage",
-      "type": "single_choice",
-      "textKey": "questions.pregnancy_stage",
-      "sectionKey": "questions.sections.pregnancy",
-      "showIf": {
-        "questionId": "womens_type",
-        "equals": "pregnancy_care"
-      },
-      "options": [
-        {
-          "value": "pregnancy_planning",
-          "labelKey": "questions.options.pregnancy_planning"
-        },
-        {
-          "value": "pregnancy_first",
-          "labelKey": "questions.options.pregnancy_first"
-        },
-        {
-          "value": "pregnancy_second",
-          "labelKey": "questions.options.pregnancy_second"
-        },
-        {
-          "value": "pregnancy_third",
-          "labelKey": "questions.options.pregnancy_third"
-        },
-        {
-          "value": "pregnancy_unsure",
-          "labelKey": "questions.options.pregnancy_unsure"
-        }
-      ],
-      "forSex": "female"
-    },
-    {
-      "id": "pregnancy_danger",
-      "type": "multi_choice",
-      "textKey": "questions.pregnancy_danger",
-      "sectionKey": "questions.sections.pregnancy",
-      "showIf": {
-        "questionId": "pregnancy_stage",
-        "notEquals": "pregnancy_planning"
-      },
-      "redFlag": true,
-      "exclusiveValue": "pregnancy_danger_none",
-      "options": [
-        {
-          "value": "pregnancy_danger_none",
-          "labelKey": "questions.options.pregnancy_danger_none"
-        },
-        {
-          "value": "pregnancy_bleeding",
-          "labelKey": "questions.options.pregnancy_bleeding",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_fits",
-          "labelKey": "questions.options.pregnancy_fits",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_headache_vision",
-          "labelKey": "questions.options.pregnancy_headache_vision",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_abdominal_pain",
-          "labelKey": "questions.options.pregnancy_abdominal_pain",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_breathing",
-          "labelKey": "questions.options.pregnancy_breathing",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_reduced_movement",
-          "labelKey": "questions.options.pregnancy_reduced_movement",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_fever",
-          "labelKey": "questions.options.pregnancy_fever",
-          "urgent": "medical"
-        },
-        {
-          "value": "pregnancy_swelling",
-          "labelKey": "questions.options.pregnancy_swelling",
-          "urgent": "medical"
-        }
-      ],
-      "forSex": "female"
-    },
-    {
-      "id": "pregnancy_antenatal",
-      "type": "single_choice",
-      "textKey": "questions.pregnancy_antenatal",
-      "sectionKey": "questions.sections.pregnancy",
-      "showIf": {
-        "questionId": "pregnancy_stage",
-        "notEquals": "pregnancy_planning"
-      },
-      "options": [
-        {
-          "value": "antenatal_started",
-          "labelKey": "questions.options.antenatal_started"
-        },
-        {
-          "value": "antenatal_not_started",
-          "labelKey": "questions.options.antenatal_not_started"
-        },
-        {
-          "value": "antenatal_unsure",
-          "labelKey": "questions.options.antenatal_unsure"
-        }
-      ],
       "forSex": "female"
     },
     {

@@ -4,7 +4,7 @@ import Svg, { Ellipse } from 'react-native-svg';
 import { useTranslation } from 'react-i18next';
 import { AppText } from '@/components/ui/AppText';
 import type { AppearanceCheck } from '@/services/vision/appearanceModules';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, layout, radius, spacing } from '@/theme/redesign';
 
 /** Image and overlay share the uncropped image aspect ratio and normalized coordinates.
  * We show sampled areas, not segmentation masks or lesion boundaries. */
@@ -38,7 +38,7 @@ export function AppearancePhoto({ uri, width, height, checks }: {
 const styles = StyleSheet.create({
   container: { marginTop: spacing.xl, gap: spacing.sm },
   photo: { width: '100%', overflow: 'hidden', borderRadius: radius.lg, backgroundColor: colors.surface },
-  options: { gap: spacing.xs },
+  options: { gap: layout.optionGap },
   option: { minHeight: 48, justifyContent: 'center', paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderColor: colors.border, borderRadius: radius.pill },
   selected: { backgroundColor: colors.primary, borderColor: colors.primary },
 });

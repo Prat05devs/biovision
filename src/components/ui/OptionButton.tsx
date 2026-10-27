@@ -2,22 +2,24 @@ import { Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'rea
 
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export function OptionButton({
   label,
   selected,
   onPress,
   style,
+  multiple = false,
 }: {
   label: string;
   selected: boolean;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
+  multiple?: boolean;
 }) {
   return (
     <Pressable
-      accessibilityRole="radio"
+      accessibilityRole={multiple ? 'checkbox' : 'radio'}
       accessibilityLabel={label}
       accessibilityState={{ checked: selected }}
       onPress={onPress}
@@ -31,7 +33,7 @@ export function OptionButton({
       <View style={[styles.radio, selected && styles.radioSelected]}>
         <AppIcon name={selected ? 'checkCircle' : 'circle'} size={20} color={selected ? colors.white : colors.inkMuted} strokeWidth={selected ? 2.5 : 1.8} />
       </View>
-      <AppText variant="body" style={styles.label}>
+      <AppText variant="body" color={selected ? colors.white : colors.ink} style={styles.label}>
         {label}
       </AppText>
     </Pressable>
@@ -40,6 +42,7 @@ export function OptionButton({
 
 const styles = StyleSheet.create({
   option: {
+    minWidth: 0,
     minHeight: 52,
     flexDirection: 'row',
     alignItems: 'center',
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     backgroundColor: colors.surface,
   },
-  selected: { borderColor: colors.primary, backgroundColor: colors.primarySoft },
+  selected: { borderColor: colors.primary, backgroundColor: colors.primary },
   pressed: { opacity: 0.78 },
   radio: {
     width: 22,
@@ -61,5 +64,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   radioSelected: { backgroundColor: colors.primary },
-  label: { flex: 1, fontWeight: '500' },
+  label: { flex: 1, minWidth: 0, fontWeight: '500' },
 });

@@ -188,6 +188,7 @@
       "id": "wellbeing_self_harm",
       "type": "single_choice",
       "textKey": "wellbeing.items.selfHarm",
+      "contextKey": "questions.context.selfHarm",
       "sectionKey": "wellbeing.sections.safety",
       "instrument": "phq",
       "optionSet": "frequency4",

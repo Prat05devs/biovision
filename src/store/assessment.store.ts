@@ -1,4 +1,3 @@
-import { useHealthStore } from './health.store';
 import { useAppearanceStore } from './appearance.store';
 import { create } from 'zustand';
 
@@ -64,6 +63,7 @@ type AssessmentState = {
   clearEyeCaptures: () => void;
   setResearchConsent: (granted: boolean) => void;
   setEyeImageUploaded: (uploaded: boolean) => void;
+  setCameraSkipped: () => void;
   setAnemiaResult: (
     signal: ScreeningSignal,
     internalConfidence?: number,
@@ -90,7 +90,7 @@ export const useAssessmentStore = create<AssessmentState>((set) => ({
   wellbeing: createWellbeing(),
   observations: createObservations(),
   wellbeingResult: undefined,
-  resetSession: () => { useHealthStore.getState().reset(); useAppearanceStore.getState().reset(); set({ session: createSession(), observations: createObservations() }); },
+  resetSession: () => { useAppearanceStore.getState().reset(); set({ session: createSession(), observations: createObservations(), wellbeing: createWellbeing(), wellbeingResult: undefined }); },
   setProfile: (profile) => set((state) => ({ session: { ...state.session, profile } })),
   setFaceQuality: (quality) =>
     set((state) => ({
@@ -154,6 +154,8 @@ export const useAssessmentStore = create<AssessmentState>((set) => ({
         },
       },
     })),
+  setCameraSkipped: () =>
+    set((state) => ({ session: { ...state.session, scan: { ...state.session.scan, cameraSkipped: true } } })),
   setEyeImageUploaded: (eyeImageUploaded) =>
     set((state) => ({
       session: {

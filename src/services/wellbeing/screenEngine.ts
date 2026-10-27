@@ -27,6 +27,8 @@ type RawQuestion = {
   type: 'single_choice';
   textKey: string;
   sectionKey?: string;
+  /** A calm "why we ask" line shown before the question. */
+  contextKey?: string;
   optionSet: string;
   excludedFromScales?: boolean;
   showIfScore?: RawCondition;
@@ -79,6 +81,7 @@ const toHealthQuestion = (question: RawQuestion): HealthQuestion => ({
   type: 'single_choice',
   textKey: question.textKey,
   sectionKey: question.sectionKey,
+  contextKey: question.contextKey,
   required: true,
   options: optionsFor(question).map(({ value, labelKey }) => ({ value, labelKey })),
 });

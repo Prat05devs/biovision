@@ -13,7 +13,7 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { NoticeCard } from '@/components/ui/NoticeCard';
 import { Screen } from '@/components/ui/Screen';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export default function WellbeingResultScreen() {
   const { t } = useTranslation();
