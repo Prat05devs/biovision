@@ -5,7 +5,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 export type AppLanguage = 'en' | 'hi';
 
 /** Bump when the terms or privacy policy change so people see and accept them again. */
-export const TERMS_VERSION = '2026-09-17';
+export const TERMS_VERSION = '2026-10-21';
 
 type PreferencesState = {
   language: AppLanguage;
@@ -26,6 +26,9 @@ export const usePreferencesStore = create<PreferencesState>()(
     }),
     {
       name: 'biovision-preferences',
+      // RootLayout hydrates after mount, when browser/native storage is ready.
+      // Server rendering must never read or write window.localStorage.
+      skipHydration: true,
       storage: createJSONStorage(() => AsyncStorage),
       partialize: ({ language, acceptedTermsVersion }) => ({ language, acceptedTermsVersion }),
       onRehydrateStorage: () => () => usePreferencesStore.setState({ hydrated: true }),

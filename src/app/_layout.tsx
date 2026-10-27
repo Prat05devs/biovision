@@ -73,7 +73,13 @@ export default function RootLayout() {
   );
   const { i18n } = useTranslation();
   const language = usePreferencesStore((state) => state.language);
+  useEffect(() => {
+    void usePreferencesStore.persist.rehydrate();
+  }, []);
   const [fontsLoaded, fontError] = useFonts({
+    RedHatDisplay_400Regular: require('../../assets/fonts/RedHatDisplay-Regular.ttf'),
+    RedHatDisplay_500Medium: require('../../assets/fonts/RedHatDisplay-Medium.ttf'),
+    RedHatDisplay_600SemiBold: require('../../assets/fonts/RedHatDisplay-SemiBold.ttf'),
     Inter_400Regular,
     Inter_500Medium,
     Inter_600SemiBold,

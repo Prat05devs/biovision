@@ -5,7 +5,7 @@ import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
 import { Card } from '@/components/ui/Card';
 import type { LifestyleFinding, LifestyleProfile } from '@/types/lifestyle';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 /**
  * Renders the Phase 0 lifestyle profile.
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
   iconOk: { backgroundColor: colors.successSoft },
   iconAttention: { backgroundColor: colors.cautionSoft },
   rowBody: { flex: 1, gap: spacing.xxs },
-  rowHeader: { flexDirection: 'row', justifyContent: 'space-between', gap: spacing.sm },
-  rowTitle: { fontWeight: '700' },
+  rowHeader: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', gap: spacing.sm },
+  rowTitle: { fontWeight: '700', flexShrink: 1 },
   rowValue: { fontWeight: '700', fontVariant: ['tabular-nums'] },
   guidance: { marginTop: spacing.xxs },
   disclaimer: { marginTop: spacing.xs },

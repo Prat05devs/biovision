@@ -4,6 +4,8 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { retainResearchQuestionnaire } from '@/api/services.api';
+import { Card } from '@/components/ui/Card';
+import { ScanSteps } from '@/components/ui/ScanSteps';
 import { AppHeader } from '@/components/ui/AppHeader';
 import { AppText } from '@/components/ui/AppText';
 import { Button } from '@/components/ui/Button';
@@ -14,8 +16,8 @@ import { lifestyleQuestions } from '@/data/lifestyleQuestions';
 import type { LifestyleQuestion } from '@/types/lifestyle';
 import { assessmentService } from '@/services';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, MAX_FONT_SCALE, radius, spacing, typography } from '@/theme/tokens';
-import { fontFamily } from '@/theme/fonts';
+import { colors, layout, MAX_FONT_SCALE, radius, spacing, typography } from '@/theme/redesign';
+import { displayFontFamily as fontFamily } from '@/theme/fonts';
 
 // Height and weight are collected on the About you screen before the scan.
 const habitQuestions: LifestyleQuestion[] = lifestyleQuestions.filter((question) => question.type !== 'number');
@@ -105,6 +107,9 @@ export default function LifestyleScreen() {
     >
       <Stack.Screen options={{ animation: 'fade' }} />
       <AppHeader back title={t('questions.navTitle')} />
+      <ScanSteps current={3} />
+      <AppText variant="display" style={{ marginTop: 8 }}>{t('redesign.habitsTitle')}</AppText>
+      <Card style={{ marginTop: 20 }}>
       <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>
         {t('questions.step')}
       </AppText>
@@ -164,6 +169,7 @@ export default function LifestyleScreen() {
         </AppText>
       ) : null}
 
+      </Card>
       {error ? (
         <AppText variant="small" color={colors.elevated} style={styles.hint}>
           {t('processing.serviceErrorBody')}
@@ -179,7 +185,7 @@ const styles = StyleSheet.create({
   question: { marginTop: spacing.md },
   section: { marginTop: spacing.xl, textTransform: 'uppercase', letterSpacing: 1.1 },
   description: { marginTop: spacing.sm },
-  options: { marginTop: spacing.xl, gap: spacing.sm },
+  options: { marginTop: spacing.xl, gap: layout.optionGap },
   numberRow: { marginTop: spacing.xl, flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   numberInput: {
     flex: 1,
@@ -196,5 +202,5 @@ const styles = StyleSheet.create({
     fontVariant: ['tabular-nums'],
   },
   hint: { marginTop: spacing.md },
-  footer: { gap: spacing.xs },
+  footer: { gap: layout.buttonGap },
 });

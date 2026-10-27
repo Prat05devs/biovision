@@ -28,6 +28,27 @@ import {
 /** Public TestFlight invitation for the iPhone beta. */
 const TESTFLIGHT_URL = 'https://testflight.apple.com/join/46brVNQj';
 
+// Why BioVision exists: a first step for people who keep meaning to look after their health.
+const why = [
+  {
+    icon: StethoscopeIcon,
+    title: 'Direction, not diagnosis',
+    body: 'It asks about what is bothering you, reads a few signals from your face and eyes, and tells you which doctor to see, which tests to ask about and what you can do yourself. The diagnosis stays with your doctor.',
+  },
+  {
+    icon: ChipIcon,
+    title: 'Built on proven open models',
+    body: 'Google\'s MediaPipe face models, the FacePhys pulse models, TensorFlow Lite and clinic-standard PHQ and GAD questions, tuned by us and checked against WHO, AHA and NHS reference ranges.',
+  },
+  {
+    icon: LockIcon,
+    title: 'Nothing is kept',
+    body: 'No account, no uploads, no tracking. The scan runs on your phone and your results live only in the app while you use them.',
+  },
+];
+
+const journey = ['You notice something', 'BioVision gives you a direction', 'Your doctor takes it from there'];
+
 const stats = [
   { value: 30, suffix: 's', label: 'Face scan', detail: 'One still, well-lit half-minute' },
   { value: 6, label: 'Signal groups', detail: 'From a single capture' },
@@ -137,7 +158,7 @@ const science = [
 const privacy = [
   { icon: LockIcon, title: 'No account, ever', body: 'There is nothing to sign up for and no profile to create. Open the app and scan.' },
   { icon: ShieldIcon, title: 'Frames are never recorded', body: 'Video is measured in memory as it arrives. Nothing is written to disk or sent anywhere.' },
-  { icon: MapPinIcon, title: 'Location stays local', body: 'It only sorts the nearby-care list on your phone. It is never stored or transmitted.' },
+  { icon: MapPinIcon, title: 'No location tracking', body: 'The app never asks for your location. You choose the area, and nearby care is listed from that.' },
   { icon: BoltIcon, title: 'No analytics or ads', body: 'The app contains no tracking code. There is no data to sell, because none is collected.' },
 ];
 
@@ -175,26 +196,27 @@ export default function Home() {
             <Reveal>
               <h1>Your health check, <span className="grad">in your pocket.</span></h1>
             </Reveal>
-            <Reveal delay={160}>
+            {/* Body text sits on glass: ink reads at any point of the gradient. */}
+            <Reveal delay={160} className="hero-panel card">
               <p className="lead">
                 A 30-second face scan, two eye photos and a few questions give you a clear health
                 report: every reading against its normal range, the right doctor to see, and the
                 tests worth asking about.
               </p>
-            </Reveal>
-            <Reveal delay={240} className="hero-cta">
-              <a className="button primary" href={TESTFLIGHT_URL} target="_blank" rel="noreferrer">Join the iPhone beta</a>
-              <a className="button secondary" href="#how">See how it works</a>
-            </Reveal>
-            <Reveal delay={320} className="hero-meta-row">
-              <span className="hero-meta"><ClockIcon width="17" height="17" />About 3 minutes</span>
-              <span className="hero-meta"><LockIcon width="17" height="17" />Nothing uploaded</span>
-              <span className="hero-meta"><TranslateIcon width="17" height="17" />English &amp; Hindi</span>
+              <div className="hero-cta">
+                <a className="button primary" href={TESTFLIGHT_URL} target="_blank" rel="noopener noreferrer">Join the iPhone beta</a>
+                <a className="button secondary" href="#how">See how it works</a>
+              </div>
+              <div className="hero-meta-row">
+                <span className="hero-meta"><ClockIcon width="17" height="17" />About 3 minutes</span>
+                <span className="hero-meta"><LockIcon width="17" height="17" />Nothing uploaded</span>
+                <span className="hero-meta"><TranslateIcon width="17" height="17" />English &amp; Hindi</span>
+              </div>
             </Reveal>
           </div>
           <Reveal delay={200} className="hero-art">
-            <div className="phone tilt-right">
-              <img src="/img/screens/home.png" alt="The BioVision home screen, offering to start a health scan." width="461" height="1000" />
+            <div className="hero-photo">
+              <img src="/img/face-scan-hero.jpg" alt="A face being scanned, with BioVision's 478-point mesh traced over it." width="820" height="1140" />
             </div>
             <div className="float-card float-hr">
               <div className="float-icon"><HeartPulseIcon width="18" height="18" /></div>
@@ -229,12 +251,47 @@ export default function Home() {
         <PulseWave className="hero-pulse" />
       </div>
 
+      {/* Why ------------------------------------------------------------- */}
+      <section className="section half" id="why">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <Reveal><p className="eyebrow">Why BioVision</p></Reveal>
+              <Reveal delay={60}><h2>The first step, for people who never find time for one</h2></Reveal>
+            </div>
+            <Reveal delay={120}>
+              <p className="section-lead">
+                Most of us mean to get that symptom checked, and then work gets in the way. Booking a
+                hospital visit and moving from one doctor to the next takes time few people have.
+                BioVision gives you a clear first direction in about three minutes, so the visit you
+                do make is to the right doctor.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={160}>
+            <ol className="journey">
+              {journey.map((step, index) => (
+                <li key={step}><span className="journey-step">{index + 1}</span>{step}</li>
+              ))}
+            </ol>
+          </Reveal>
+          <div className="measure-grid three why-grid">
+            {why.map(({ icon: Icon, title, body }, index) => (
+              <Reveal className="card hover-lift" key={title} delay={200 + index * 70}>
+                <div className="card-title"><div className="card-icon"><Icon /></div><h3>{title}</h3></div>
+                <p>{body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Measures -------------------------------------------------------- */}
       <section className="section tint" id="measures">
         <div className="wrap">
           <div className="section-head">
             <div>
-              <Reveal><p className="eyebrow">What BioVision measures</p></Reveal>
+              <Reveal><p className="eyebrow">What BioVision estimates</p></Reveal>
               <Reveal delay={60}><h2>Six groups of signals from one short scan</h2></Reveal>
             </div>
             <Reveal delay={120}>
@@ -248,7 +305,7 @@ export default function Home() {
           <div className="measure-body">
             <Reveal className="hero-art">
               <div className="phone tilt-left">
-                <img src="/img/screens/measures.png" alt="A list of the health signals BioVision measures." width="461" height="1000" loading="lazy" />
+                <img src="/img/screens/measures.png" alt="A list of the health signals BioVision estimates." width="461" height="1000" loading="lazy" />
               </div>
             </Reveal>
             <div className="measure-grid three">
@@ -271,8 +328,8 @@ export default function Home() {
           <Reveal delay={60}><h2>Five steps, about three minutes</h2></Reveal>
           <Reveal delay={120}>
             <p className="section-lead">
-              No clinic visit, no wearable, no blood test. Just your iPhone and somewhere with
-              reasonably even light.
+              No wearable or extra hardware. Just your phone and somewhere with reasonably even
+              light. Results are estimates; confirm anything important with a doctor.
             </p>
           </Reveal>
           <ol className="timeline">

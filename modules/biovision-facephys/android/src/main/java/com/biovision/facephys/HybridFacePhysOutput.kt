@@ -1,17 +1,24 @@
 package com.biovision.facephys
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CaptureRequest
+import android.hardware.camera2.CaptureResult
+import android.hardware.camera2.TotalCaptureResult
 import android.os.SystemClock
 import android.util.Log
 import android.util.Size as AndroidSize
 import androidx.annotation.OptIn
+import androidx.camera.camera2.interop.Camera2CameraControl
 import androidx.camera.camera2.interop.Camera2Interop
+import androidx.camera.camera2.interop.CaptureRequestOptions
 import androidx.camera.camera2.interop.ExperimentalCamera2Interop
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
+import androidx.camera.core.UseCase
 import androidx.camera.core.resolutionselector.ResolutionSelector
 import androidx.camera.core.resolutionselector.ResolutionStrategy
 import com.margelo.nitro.biovision.facephys.FacePhysFaceBox
@@ -69,6 +76,13 @@ class HybridFacePhysOutput(
   private var failed = false
 
   private val frameCadence = FrameCadence()
+  private val exposureLock = ExposureLock()
+  /** Runtime capture options for the attached camera; null until attached or if unsupported. */
+  @Suppress("DEPRECATION")
+  @Volatile private var cameraControl: Camera2CameraControl? = null
+  /** Latest 3A states from the capture results, written on the camera thread. */
+  @Volatile private var aeState: Int? = null
+  @Volatile private var awbState: Int? = null
   private var lastUpdateMs = 0.0
   private var frameIndex = 0
   private val frameTimes = ArrayList<Double>()
@@ -130,9 +144,10 @@ class HybridFacePhysOutput(
     // rather than left on auto. The frame rate is pinned to 30 because that is where the model
     // was trained, and a rate that sags in dim light changes what the model is fed.
     //
-    // White balance is deliberately NOT locked. Locking it freezes whatever tint the camera
-    // happened to hold when the session opened, which tinted the whole preview green — these
-    // options apply to every stream in the session, not only to this analysis output.
+    // White balance and exposure are NOT locked here. Locking at session start freezes whatever
+    // tint the camera happened to hold when it opened, which tinted the whole preview green —
+    // these options apply to every stream in the session, not only to this analysis output.
+    // ExposureLock holds both later, once the camera has settled on the face.
     val extender = Camera2Interop.Extender(builder)
       .setCaptureRequestOption(
         CaptureRequest.CONTROL_AE_ANTIBANDING_MODE,
@@ -145,6 +160,17 @@ class HybridFacePhysOutput(
         CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE,
         CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE_OFF,
       )
+      // Whether exposure and white balance have converged decides when ExposureLock may lock.
+      .setSessionCaptureCallback(object : CameraCaptureSession.CaptureCallback() {
+        override fun onCaptureCompleted(
+          session: CameraCaptureSession,
+          request: CaptureRequest,
+          result: TotalCaptureResult,
+        ) {
+          aeState = result.get(CaptureResult.CONTROL_AE_STATE)
+          awbState = result.get(CaptureResult.CONTROL_AWB_STATE)
+        }
+      })
 
     // The pulse shows up as roughly a quarter of one 8-bit level of brightness change. Android's
     // image pipeline is tuned to make video look good, and two of its stages are larger than that
@@ -162,7 +188,45 @@ class HybridFacePhysOutput(
     return NativeCameraOutput.PreparedUseCase(analysis) {
       this.imageAnalysis = analysis
       this.mirrorMode = mirrorMode
+      // Capture options stay with the camera across sessions, so a lock left by an earlier vitals
+      // scan would otherwise carry into the next screen. Start every session unlocked.
+      cameraControl = attachedCameraControl(analysis)
+      cameraControl?.clearCaptureRequestOptions()
     }
+  }
+
+  /** Camera2 runtime controls for the camera the use case is bound to, or null when unavailable. */
+  @SuppressLint("RestrictedApi")
+  @Suppress("DEPRECATION")
+  @OptIn(ExperimentalCamera2Interop::class)
+  private fun attachedCameraControl(useCase: UseCase): Camera2CameraControl? = runCatching {
+    // NativeCameraOutput does not expose the Camera; the bound use case knows it.
+    useCase.camera?.cameraControl?.let { Camera2CameraControl.from(it) }
+  }.onFailure { Log.w(TAG, "exposure lock unavailable: ${it.message}") }.getOrNull()
+
+  /** Locks or releases exposure and white balance as the face settles in view or leaves it. */
+  @OptIn(ExperimentalCamera2Interop::class)
+  private fun updateExposureLock(captureMs: Double, faceVisible: Boolean) {
+    val ae = aeState
+    val awb = awbState
+    // Devices that do not report a state are treated as converged; ExposureLock still waits for
+    // the face to settle first.
+    val converged =
+      (ae == null || ae == CaptureResult.CONTROL_AE_STATE_CONVERGED || ae == CaptureResult.CONTROL_AE_STATE_FLASH_REQUIRED) &&
+        (awb == null || awb == CaptureResult.CONTROL_AWB_STATE_CONVERGED)
+    val lock = exposureLock.update(captureMs, faceVisible, converged) ?: return
+    val control = cameraControl ?: return
+    if (lock) {
+      control.addCaptureRequestOptions(
+        CaptureRequestOptions.Builder()
+          .setCaptureRequestOption(CaptureRequest.CONTROL_AE_LOCK, true)
+          .setCaptureRequestOption(CaptureRequest.CONTROL_AWB_LOCK, true)
+          .build(),
+      )
+    } else {
+      control.clearCaptureRequestOptions()
+    }
+    Log.i(TAG, if (lock) "exposure locked (ae=$ae, awb=$awb)" else "exposure released: face left")
   }
 
   /** Characteristics of the front camera, which is the only one this output is used with. */
@@ -359,6 +423,7 @@ class HybridFacePhysOutput(
           it.height.toDouble() / height,
         )
       }
+      updateExposureLock(captureMs, face != null)
     }
 
     framesSinceDiagnostics += 1
@@ -409,6 +474,7 @@ class HybridFacePhysOutput(
           ", mesh=${if (latestLandmarks != null) "yes" else "no"}" +
           ", dt=${engine?.let { "%.1fms".format(it.modelFrameIntervalMs) } ?: "-"}" +
           ", green=${engine?.let { "%.4f".format(it.lastCropGreen) } ?: "-"}" +
+          ", exposure=${if (exposureLock.locked) "locked" else "auto"}, ae=${aeState ?: "-"}, awb=${awbState ?: "-"}" +
           ", sqi=${diagnosticQuality?.let { "%.2f".format(it) } ?: "-"}",
       )
       diagnosticsAtMs = captureMs
@@ -422,6 +488,8 @@ class HybridFacePhysOutput(
   }
 
   override fun dispose() {
+    cameraControl?.clearCaptureRequestOptions()
+    cameraControl = null
     super.dispose()
     imageAnalysis?.clearAnalyzer()
     detector?.close()

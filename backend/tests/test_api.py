@@ -48,6 +48,18 @@ def test_screening_rejects_bytes_that_only_claim_to_be_jpeg() -> None:
     assert response.status_code == 400
 
 
+def test_screening_rejects_truncated_pixels_without_server_error() -> None:
+    response = client.post(
+        "/v1/screenings/anemia",
+        files={
+            "leftImage": ("left.jpg", jpeg_bytes()[:-40], "image/jpeg"),
+            "rightImage": ("right.jpg", jpeg_bytes(), "image/jpeg"),
+        },
+        data={"sessionId": "session_test"},
+    )
+    assert response.status_code == 400
+
+
 def test_screening_rejects_pregnancy_without_female_sex() -> None:
     response = client.post(
         "/v1/screenings/anemia",

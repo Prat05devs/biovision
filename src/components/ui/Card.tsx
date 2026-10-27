@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
-import { colors, radius, shadows, spacing } from '@/theme/tokens';
+import { colors, radius, shadows, spacing } from '@/theme/redesign';
 
 type CardProps = PropsWithChildren<{
   style?: StyleProp<ViewStyle>;
@@ -10,7 +10,7 @@ type CardProps = PropsWithChildren<{
 
 const tones: Record<NonNullable<CardProps['tone']>, ViewStyle> = {
   default: { backgroundColor: colors.surface, borderColor: colors.border },
-  soft: { backgroundColor: colors.primarySoft, borderColor: '#BEE4DC' },
+  soft: { backgroundColor: colors.primarySoft, borderColor: colors.border },
   caution: { backgroundColor: colors.cautionSoft, borderColor: '#F2D49A' },
   urgent: { backgroundColor: colors.urgentSoft, borderColor: '#F8B4AE' },
   dark: { backgroundColor: colors.ink, borderColor: colors.ink },

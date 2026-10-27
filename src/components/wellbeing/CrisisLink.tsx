@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 /**
  * A persistent route to crisis support.

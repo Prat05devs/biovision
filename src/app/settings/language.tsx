@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { OptionButton } from '@/components/ui/OptionButton';
 import { Screen } from '@/components/ui/Screen';
 import { usePreferencesStore, type AppLanguage } from '@/store/preferences.store';
-import { colors, spacing } from '@/theme/tokens';
+import { colors, spacing } from '@/theme/redesign';
 
 export default function LanguageSettingsScreen() {
   const { t } = useTranslation();

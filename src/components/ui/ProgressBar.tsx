@@ -1,7 +1,7 @@
 import { AccessibilityInfo, Animated, Easing, StyleSheet, View } from 'react-native';
 import { useEffect, useState } from 'react';
 
-import { colors, radius } from '@/theme/tokens';
+import { colors, radius } from '@/theme/redesign';
 
 export function ProgressBar({ progress, dark = false }: { progress: number; dark?: boolean }) {
   const [animated] = useState(() => new Animated.Value(0));

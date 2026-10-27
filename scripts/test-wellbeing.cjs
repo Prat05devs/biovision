@@ -30,6 +30,19 @@ function load(file) {
 }
 
 const engine = load(path.join(root, 'src/services/wellbeing/screenEngine'));
+const { useAssessmentStore } = load(path.join(root, 'src/store/assessment.store'));
+// Starting another assessment on the same device must discard both the answers
+// and all copies of the previous wellbeing result.
+const previousResult = { level: 'urgent', urgentActionRequired: true, scales: [] };
+useAssessmentStore.setState({
+  wellbeing: { answers: { wellbeing_mood: 'nearly_every_day' }, order: ['wellbeing_mood'], result: previousResult },
+  wellbeingResult: previousResult,
+});
+useAssessmentStore.getState().resetSession();
+assert.deepEqual(useAssessmentStore.getState().wellbeing.answers, {});
+assert.deepEqual(useAssessmentStore.getState().wellbeing.order, []);
+assert.equal(useAssessmentStore.getState().wellbeing.result, undefined);
+assert.equal(useAssessmentStore.getState().wellbeingResult, undefined);
 const { nextQuestion, assess, riskEndorsed, supportResources, emergencyNumber, screenMetadata, RISK_QUESTION_ID } = engine;
 
 const NONE = 'not_at_all';

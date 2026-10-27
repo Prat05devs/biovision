@@ -33,7 +33,7 @@
   },
   "notice": {
     "title": "Important notice",
-    "medical": "BioVision gives health insights and guidance. It does not replace a doctor, laboratory tests or emergency care.",
+    "medical": "BioVision is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Always consult a healthcare professional for medical advice, diagnosis, or treatment. In an emergency, call 112.",
     "privacy": "Your scan is analysed on this phone. Video, photos and answers are not uploaded or saved to your photo library."
   },
   "home": {
@@ -404,7 +404,8 @@
       "joints": "Joint, back or neck pain",
       "ent": "Ear, nose or throat",
       "eyes": "Eyes or vision",
-      "womens": "Periods, pregnancy or menopause",
+      "womens": "Periods or women's health",
+      "womens_pregnant": "Pregnancy or women's health",
       "no_other_signs": "None of these",
       "weight_change": "Unplanned weight change",
       "thirst_urination": "Very thirsty or urinating often",
@@ -465,7 +466,7 @@
       "sudden_vision_loss": "Sudden loss of vision",
       "irregular_periods": "Irregular or missed periods",
       "heavy_periods_w": "Heavy or painful periods",
-      "pregnancy_care": "Pregnancy or planning pregnancy",
+      "pregnancy_care": "Pregnancy care and check-ups",
       "menopause": "Menopause symptoms",
       "pelvic_pain_discharge": "Pelvic pain or unusual discharge",
       "no_condition": "No",
@@ -495,7 +496,6 @@
       "mole_border": "The edges have become uneven",
       "mole_bleeding": "It bleeds or has a crust",
       "mole_itching": "It itches or feels sore",
-      "pregnancy_planning": "Planning a pregnancy, not pregnant yet",
       "pregnancy_first": "First three months",
       "pregnancy_second": "Months four to six",
       "pregnancy_third": "Month seven or later",
@@ -525,7 +525,10 @@
     "skin_spreading": "Is it spreading or getting worse?",
     "mood_type": "Which fits best?",
     "mood_frequency": "Over the last 2 weeks, how often has this bothered you?",
-    "mood_self_harm": "In the last 2 weeks, have you had thoughts that you would be better off dead, or of hurting yourself?",
+    "mood_self_harm": "In the last 2 weeks, have you felt that life isn't worth living, or had thoughts of harming yourself?",
+    "context": {
+      "selfHarm": "Feeling low for a while can bring thoughts like these, and many people have them. We ask everyone so we can point you to the right support. Your answer stays on this phone."
+    },
     "head_type": "What are you experiencing?",
     "head_pattern": "How does it happen?",
     "metabolic_type": "What have you noticed?",
@@ -598,6 +601,9 @@
     },
     "heartMissing": "No clear pulse was captured in the face scan.",
     "scanAgain": "Scan again",
+    "cameraSkippedTitle": "Camera checks not done",
+    "cameraSkippedBody": "Heart rate, HRV, stress, breathing and haemoglobin come from the 3-minute face scan and eye photos. This report is based on your answers only.",
+    "fullScan": "Do the full scan",
     "hemoglobin": "Estimated haemoglobin",
     "hemoglobinStatus": {
       "normal": "Normal",
@@ -746,7 +752,7 @@
         "joints": "You reported joint, back or neck pain.",
         "ent": "You reported an ear, nose or throat problem.",
         "eyes": "You reported an eye or vision problem.",
-        "womens": "You asked about periods, pregnancy or menopause."
+        "womens": "You asked about women's health."
       },
       "duration": "It has lasted 2 weeks or more.",
       "limitsActivities": "It stops you doing normal things.",
@@ -829,7 +835,7 @@
     "sections": {
       "mood": "MOOD",
       "moodDetail": "MOOD: A FEW MORE",
-      "safety": "YOUR SAFETY",
+      "safety": "LOOKING AFTER YOU",
       "anxiety": "ANXIETY",
       "anxietyDetail": "ANXIETY: A FEW MORE",
       "impact": "DAY-TO-DAY IMPACT"
@@ -1197,7 +1203,7 @@
       "diet_b12": "How often do you eat milk, curd, eggs, fish, or meat?",
       "sun_exposure": "On a usual day, how long are you out in direct sunlight?",
       "skin_products": "Are you using any skin-lightening creams, steroid creams, or new cosmetics on your face?",
-      "hormonal_change": "Have you had a recent hormonal change such as pregnancy, or started or stopped hormonal contraception?",
+      "hormonal_change": "Have you recently started or stopped hormonal contraception or another hormone medicine?",
       "acne_duration": "How long have you had these breakouts?",
       "cycle_regularity": "Are your menstrual cycles regular?",
       "diet_sugar": "How often do you have sugary food or drinks?",
@@ -1509,16 +1515,16 @@
     "description": "A 30-second face scan, two eye photos and a few questions give you a personal health report and the right doctor to see.",
     "points": {
       "measure": {
-        "title": "What it measures",
+        "title": "What it estimates",
         "body": "Heart rate, heart-rate variability, stress, breathing, haemoglobin, face and skin signs, and lifestyle."
       },
       "private": {
         "title": "Private by design",
-        "body": "Everything is analysed on this iPhone. Video, photos and answers are not uploaded or stored."
+        "body": "Everything is analysed on this phone. Video, photos and answers are not uploaded or stored."
       },
       "doctor": {
         "title": "Not a diagnosis",
-        "body": "BioVision gives health insights and points you to the right doctor. It does not replace a doctor or a laboratory test."
+        "body": "BioVision is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Always consult a healthcare professional for medical advice, diagnosis, or treatment."
       },
       "emergency": {
         "title": "In an emergency",
@@ -1529,13 +1535,13 @@
     "continue": "Get started"
   },
   "legal": {
-    "updated": "Last updated 17 September 2026",
+    "updated": "Last updated 21 October 2026",
     "privacy": {
       "title": "Privacy Policy",
       "sections": [
         {
           "heading": "Summary",
-          "body": "BioVision analyses your scan on your iPhone. We do not have accounts, servers that receive your health data, advertising or tracking."
+          "body": "BioVision analyses your scan on your phone. We do not have accounts, servers that receive your health data, advertising or tracking."
         },
         {
           "heading": "Camera",
@@ -1546,12 +1552,16 @@
           "body": "Age, sex, pregnancy, height, weight and your answers are used only to calculate your report. They stay in memory and are cleared when you start a new scan or close the app."
         },
         {
-          "heading": "Location",
-          "body": "If you choose to find nearby healthcare, your location is used on your iPhone to sort the list. It is not stored or sent anywhere."
+          "heading": "Health apps on your phone",
+          "body": "To show which health and fitness apps you can compare results with, BioVision checks whether a short list of these apps is installed. The check happens on your phone, and the result is never stored or sent anywhere."
         },
         {
-          "heading": "Stored on your iPhone",
+          "heading": "Stored on your phone",
           "body": "Only your language choice and that you accepted these terms are saved on your device."
+        },
+        {
+          "heading": "Deleting your data",
+          "body": "BioVision keeps no health data after you close the app or start a new scan, so there is nothing for us to delete. Uninstalling the app also removes your language choice and your acceptance of these terms."
         },
         {
           "heading": "Sharing",
@@ -1571,7 +1581,7 @@
         },
         {
           "heading": "Contact",
-          "body": "BioVision is provided by NavTaksh Wellness. For questions about this policy or your data, use the support link on BioVision's App Store page."
+          "body": "BioVision is provided by NavTaksh Wellness. For questions about this policy or your data, email admin@wtsolutions.cc or visit https://biovision.live/support."
         }
       ]
     },
@@ -1584,7 +1594,7 @@
         },
         {
           "heading": "Not medical advice",
-          "body": "BioVision is not a medical device and does not diagnose, treat or prevent any disease. Its estimates can be wrong. Always confirm results with a qualified doctor or laboratory test, and never delay or ignore medical advice because of the app."
+          "body": "BioVision is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Its estimates can be wrong. Always confirm results with a qualified doctor or laboratory test, and never delay or ignore medical advice because of the app."
         },
         {
           "heading": "Emergencies",
@@ -1613,7 +1623,7 @@
       "sections": [
         {
           "heading": "Heart rate and HRV",
-          "body": "Measured from tiny colour changes in your face as blood moves through it. Heart-rate variability (RMSSD, SDNN), the stress index and the recovery score are all calculated from the beat-to-beat intervals."
+          "body": "Estimated from tiny colour changes in your face as blood moves through it, using the open FacePhys model. Heart-rate variability (RMSSD, SDNN), the stress index and the recovery score are calculated from the beat-to-beat intervals. If the signal is too weak, the app shows no value rather than a guess."
         },
         {
           "heading": "Breathing rate",
@@ -1634,6 +1644,14 @@
         {
           "heading": "Doctor suggestions",
           "body": "Your main concern, its duration and impact, danger signs and your scan results are combined using common primary-care referral guidance (NHS, NICE, WHO) to suggest a doctor, how soon to see them and tests to ask about."
+        },
+        {
+          "heading": "How accurate is it?",
+          "body": "Haemoglobin: the eyelid model was tested on photos of 217 adults whose haemoglobin was measured in a laboratory (95 in India, 122 in Italy). Its estimate was off by about 1.3 g/dL on average, and it picked out 66% of people with low haemoglobin (71% in the Indian group). Those photos were taken with a macro lens in controlled light, so front-camera photos may be less accurate. Heart rate, HRV and breathing come from a published camera model that has not yet been compared with a medical device on BioVision scans. Treat every value as an estimate."
+        },
+        {
+          "heading": "Not a medical device",
+          "body": "BioVision is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Always consult a healthcare professional for medical advice, diagnosis, or treatment. Do not change any treatment or medicine based on this app. In an emergency, call 112."
         },
         {
           "heading": "When results may be unreliable",
@@ -1694,6 +1712,28 @@
           "body": "Built with React Native, Expo, VisionCamera, TensorFlow Lite and other open-source libraries under their respective licenses."
         }
       ]
+    }
+  },
+  "redesign": {
+    "scanEyebrow": "HEALTH SCAN · ABOUT 3 MINUTES",
+    "scanSummary": "A 30-second face scan, two eye photos and a few questions",
+    "homeNotice": "Health insights, not a diagnosis. Your scan is analysed on this phone.",
+    "aboutYou": "About you",
+    "questionsTitle": "A few questions about you",
+    "mainConcern": "What brings you here today?",
+    "safetyTitle": "First, one safety check",
+    "habitsTitle": "Your everyday habits",
+    "reportEmptyTitle": "Your report will appear here",
+    "reportEmptyBody": "Complete a health scan or answer the health questions to see your personal report.",
+    "home": "Home",
+    "languagePreference": "Choose the language used throughout the app.",
+    "height": "Height",
+    "weight": "Weight",
+    "steps": {
+      "profile": "About you",
+      "face": "Face scan",
+      "eyes": "Eye photos",
+      "questions": "Questions"
     }
   }
 }

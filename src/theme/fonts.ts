@@ -32,3 +32,8 @@ export type FontWeightToken = keyof typeof fontFamilies.latin;
 export function fontFamily(weight: FontWeightToken = 400, devanagari = false): string {
   return devanagari ? fontFamilies.devanagari[weight] : fontFamilies.latin[weight];
 }
+
+export function displayFontFamily(weight: FontWeightToken = 400, devanagari = false): string {
+  if (devanagari) return fontFamilies.devanagari[weight];
+  return weight >= 600 ? 'RedHatDisplay_600SemiBold' : weight >= 500 ? 'RedHatDisplay_500Medium' : 'RedHatDisplay_400Regular';
+}

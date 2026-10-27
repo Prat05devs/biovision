@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
 import { Card } from '@/components/ui/Card';
-import { colors, spacing } from '@/theme/tokens';
+import { colors, spacing } from '@/theme/redesign';
 
 export function NoticeCard({ title, body, urgent = false }: { title: string; body: string; urgent?: boolean }) {
   const color = urgent ? colors.urgent : colors.caution;
@@ -26,5 +26,5 @@ const styles = StyleSheet.create({
   // Vertical margins keep the notice clear of inputs and cards above and below it on every screen.
   card: { gap: spacing.xs, padding: spacing.md, marginVertical: spacing.lg },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
-  title: { fontWeight: '600' },
+  title: { fontWeight: '600', flexShrink: 1 },
 });

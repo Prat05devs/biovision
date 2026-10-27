@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { AppText } from '@/components/ui/AppText';
 import { Card } from '@/components/ui/Card';
 import type { FeatureProfileItem } from '@/services/vision/featureProfile';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export function FeatureProfileCard({ items }: { items: FeatureProfileItem[] }) {
   const { t } = useTranslation();

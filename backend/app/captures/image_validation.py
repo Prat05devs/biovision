@@ -6,7 +6,7 @@ from io import BytesIO
 from PIL import Image, UnidentifiedImageError
 
 MAX_CAPTURE_EDGE = 12_000
-MAX_CAPTURE_PIXELS = 60_000_000
+MAX_CAPTURE_PIXELS = 16_000_000
 
 
 class ImageValidationError(ValueError):
@@ -52,11 +52,12 @@ def validate_jpeg(
             if width * height > MAX_CAPTURE_PIXELS:
                 raise ImageValidationError("The JPEG pixel count exceeds the capture limit.")
 
-            # verify() asks Pillow's JPEG decoder to validate the complete stream.
-            image.verify()
+            # JPEG verify() does not decode pixel data. Force decoding here so a
+            # truncated scan cannot reach quality assessment and become a 500.
+            image.load()
     except ImageValidationError:
         raise
-    except (OSError, SyntaxError, UnidentifiedImageError, ValueError) as error:
+    except (OSError, SyntaxError, UnidentifiedImageError, ValueError, Image.DecompressionBombError) as error:
         raise ImageValidationError("The JPEG cannot be decoded safely.") from error
 
     if declared_width is not None and declared_width != width:

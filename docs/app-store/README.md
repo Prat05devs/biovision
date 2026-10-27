@@ -65,5 +65,5 @@ select the build, and **Submit for Review**.
 
 ```bash
 npm run typecheck && npm run lint && python3 scripts/check_i18n.py \
-  && npm run test:routing && npm run test:health && node scripts/check-ios-launch.cjs
+  && npm run test:routing && npm run test:wellbeing && node scripts/check-ios-launch.cjs
 ```

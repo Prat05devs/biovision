@@ -13,7 +13,7 @@ import { Screen } from '@/components/ui/Screen';
 import { SignalBadge } from '@/components/ui/SignalBadge';
 import { buildLifestyleProfile } from '@/services/lifestyle/lifestyleProfile';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, spacing } from '@/theme/tokens';
+import { colors, spacing } from '@/theme/redesign';
 
 export default function ReportScreen() {
   const { t } = useTranslation();

@@ -47,6 +47,8 @@ export type HealthQuestion = {
   followUpOf?: string;
   /** Multi-select only: choosing this clears every other option (for example "None of these"). */
   exclusiveValue?: string;
+  /** A calm "why we ask" line shown before a sensitive question, such as the one on self-harm. */
+  contextKey?: string;
 };
 
 export type AnswerEvent = {
@@ -118,6 +120,8 @@ export type AssessmentSession = {
     researchConsentGrantedAt?: string;
     /** Derived metrics only. Raw face video is never retained in the session. */
     vitals?: VitalScanResult;
+    /** The person chose to answer the questions without the face scan and eye photos. */
+    cameraSkipped?: boolean;
   };
   anemia: {
     signal?: ScreeningSignal;

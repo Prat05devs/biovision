@@ -6,7 +6,7 @@ import { AppIcon } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
 import { Card } from '@/components/ui/Card';
 import { listInstalledHealthApps, openInstalledHealthApp, type InstalledApp } from '@/services/results/healthApps';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 /** The health and fitness apps on this phone, so readings can be compared with the person's own. */
 export function HealthAppsCard() {

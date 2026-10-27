@@ -22,7 +22,7 @@ models = [
 dev = [
   "httpx>=0.28,<1",
   "mypy>=1.17,<2",
-  "pytest>=8.4,<9",
+  "pytest>=9.0.3,<10",
   "ruff>=0.12,<1",
 ]
 
@@ -37,3 +37,14 @@ target-version = "py312"
 [tool.mypy]
 python_version = "3.12"
 strict = true
+
+# Only these packages resolve from the CPU wheel index. Other dependencies keep
+# using PyPI; do not let an extra package index replace unrelated packages.
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

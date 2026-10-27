@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, layout, radius, spacing } from '@/theme/redesign';
 
 export default function EmergencyScreen() {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ export default function EmergencyScreen() {
         <Button label={t('emergency.call')} onPress={() => void Linking.openURL(`tel:${phone}`)} variant="urgent" icon="phone" style={styles.button} />
       )}
       <Button label={t('emergency.nearby')} onPress={() => router.push('/care')} variant="outline" icon="mapPin" style={styles.secondaryButton} />
-      <Button label={t('common.home')} onPress={() => { resetSession(); setWellbeingResult(undefined); router.replace('/'); }} variant="ghost" />
+      <Button label={t('common.home')} onPress={() => { resetSession(); setWellbeingResult(undefined); router.replace('/'); }} variant="ghost" style={styles.secondaryButton} />
     </Screen>
   );
 }
@@ -50,5 +50,5 @@ const styles = StyleSheet.create({
   urgentCard: { marginTop: spacing.xl, flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md },
   noPhone: { marginTop: spacing.lg },
   button: { marginTop: spacing.xl },
-  secondaryButton: { marginTop: spacing.sm },
+  secondaryButton: { marginTop: layout.buttonGap },
 });

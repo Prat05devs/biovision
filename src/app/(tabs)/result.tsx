@@ -13,15 +13,15 @@ import { AppIcon, type AppIconName } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { ErrorState } from '@/components/ui/ErrorState';
 import { NoticeCard } from '@/components/ui/NoticeCard';
 import { Screen } from '@/components/ui/Screen';
 import { buildLifestyleProfile } from '@/services/lifestyle/lifestyleProfile';
 import { METRIC_ORDER, metricStatus, rangeLabel, type RangeStatus } from '@/services/results/metricRanges';
 import { useAppearanceStore } from '@/store/appearance.store';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 import type { VitalMetric } from '@/types/vitals';
+import { useResponsiveLayout } from '@/theme/responsive';
 
 const levelTone = {
   no_specific_concern: { color: colors.success, background: colors.successSoft, icon: 'checkCircle' },
@@ -61,9 +61,16 @@ export default function ResultScreen() {
 
   if (!report) {
     return (
-      <Screen scroll={false}>
-        <AppHeader back />
-        <ErrorState title={t('errors.title')} body={t('errors.body')} action={t('common.home')} onAction={() => router.replace('/')} />
+      <Screen hero>
+        <AppHeader language settings />
+        <AppText variant="display" color={colors.white} style={{ marginTop: 28 }}>{t('result.title')}</AppText>
+        <Card style={{ marginTop: 28, gap: 16, alignItems: 'center', paddingVertical: 32 }}>
+          <AppIcon name="fileText" size={42} color={colors.primary} strokeWidth={1.6} />
+          <AppText variant="h2" style={{ textAlign: 'center' }}>{t('redesign.reportEmptyTitle')}</AppText>
+          <AppText color={colors.inkMuted} style={{ textAlign: 'center' }}>{t('redesign.reportEmptyBody')}</AppText>
+          <Button label={t('home.startScan')} icon="scan" onPress={() => { resetSession(); router.push('/scan'); }} />
+          <Button label={t('home.withoutCamera')} variant="ghost" onPress={() => { resetSession(); router.push({ pathname: '/scan/profile', params: { mode: 'questions' } }); }} />
+        </Card>
       </Screen>
     );
   }
@@ -84,13 +91,13 @@ export default function ResultScreen() {
   const home = () => { resetSession(); router.replace('/'); };
 
   return (
-    <Screen>
+    <Screen hero>
       <AppHeader settings />
       <Animated.View style={[styles.completeIcon, { opacity: reveal, transform: [{ scale: reveal }] }]}>
         <AppIcon name="check" size={22} color={colors.white} strokeWidth={2.5} />
       </Animated.View>
-      <AppText variant="eyebrow" color={colors.primary} style={styles.eyebrow}>{t('result.eyebrow')}</AppText>
-      <AppText variant="h1">{t('result.title')}</AppText>
+      <AppText variant="eyebrow" color={colors.primaryDark} style={styles.eyebrow}>{t('result.eyebrow')}</AppText>
+      <AppText variant="display" color={colors.white}>{t('result.title')}</AppText>
 
       <View style={[styles.levelBanner, { backgroundColor: level.background }]}>
         <AppIcon name={level.icon} size={22} color={level.color} />
@@ -99,7 +106,16 @@ export default function ResultScreen() {
 
       <CareRecommendation routing={routing} />
 
-      <Section icon="heartPulse" title={t('result.sections.heart')}>
+      {session.scan.cameraSkipped ? (
+        <Section icon="camera" title={t('result.cameraSkippedTitle')}>
+          <Card style={styles.emptyCard}>
+            <AppText variant="small" color={colors.inkMuted}>{t('result.cameraSkippedBody')}</AppText>
+            <Button label={t('result.fullScan')} variant="outline" icon="scan" onPress={() => { resetSession(); router.push('/scan'); }} />
+          </Card>
+        </Section>
+      ) : null}
+
+      {session.scan.cameraSkipped ? null : <Section icon="heartPulse" title={t('result.sections.heart')}>
         {vitals.length ? (
           <View style={styles.grid}>
             {vitals.map((metric) => <MetricTile key={metric.id} metric={metric} />)}
@@ -110,9 +126,9 @@ export default function ResultScreen() {
             <Button label={t('result.scanAgain')} variant="outline" icon="scan" onPress={() => router.push('/scan/vitals')} />
           </Card>
         )}
-      </Section>
+      </Section>}
 
-      <Section icon="droplet" title={t('result.sections.blood')}>
+      {session.scan.cameraSkipped ? null : <Section icon="droplet" title={t('result.sections.blood')}>
         {hemoglobin && anemia.estimatedHemoglobinGdl !== undefined ? (
           <Card style={styles.bloodCard}>
             <View style={styles.bloodRow}>
@@ -133,7 +149,7 @@ export default function ResultScreen() {
         ) : (
           <Card style={styles.emptyCard}><AppText variant="small" color={colors.inkMuted}>{t('result.bloodMissing')}</AppText></Card>
         )}
-      </Section>
+      </Section>}
 
       {faceChecks.length || facePending ? (
         <Section icon="sparkles" title={t('result.sections.face')}>
@@ -178,7 +194,7 @@ function Section({ icon, title, children }: { icon: AppIconName; title: string; 
     <View style={styles.section}>
       <View style={styles.sectionHeader}>
         <AppIcon name={icon} size={20} color={colors.primary} />
-        <AppText variant="h3">{title}</AppText>
+        <AppText variant="h3" style={styles.flex}>{title}</AppText>
       </View>
       {children}
     </View>
@@ -187,12 +203,13 @@ function Section({ icon, title, children }: { icon: AppIconName; title: string; 
 
 function MetricTile({ metric }: { metric: VitalMetric }) {
   const { t } = useTranslation();
+  const { compact } = useResponsiveLayout();
   const status = metricStatus(metric);
   const tone = status ? statusTone[status] : undefined;
   const range = rangeLabel(metric.id);
   return (
-    <View style={styles.tile}>
-      <AppText variant="caption" color={colors.inkMuted} numberOfLines={1}>{t(`vitals.metric.${metric.id}`)}</AppText>
+    <View style={[styles.tile, compact && { flexBasis: '100%' }]}>
+      <AppText variant="caption" color={colors.inkMuted}>{t(`vitals.metric.${metric.id}`)}</AppText>
       <View style={styles.valueRow}>
         <AppText style={styles.tileValue}>{metric.value}</AppText>
         {metric.unit ? <AppText variant="caption" color={colors.inkMuted}>{metric.unit}</AppText> : null}
@@ -216,7 +233,7 @@ function StatusChip({ label, color, background }: { label: string; color: string
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   completeIcon: { width: 44, height: 44, borderRadius: radius.pill, backgroundColor: colors.primary, alignItems: 'center', justifyContent: 'center', marginTop: spacing.xl },
-  eyebrow: { marginTop: spacing.lg, marginBottom: spacing.xs },
+  eyebrow: { alignSelf: 'flex-start', marginTop: spacing.lg, marginBottom: spacing.xs, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 999, backgroundColor: colors.white },
   levelBanner: { marginTop: spacing.lg, flexDirection: 'row', gap: spacing.sm, alignItems: 'flex-start', padding: spacing.md, borderRadius: radius.lg },
   section: { marginTop: spacing.xl, gap: spacing.sm },
   sectionHeader: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
@@ -225,15 +242,15 @@ const styles = StyleSheet.create({
     flexGrow: 1, flexBasis: '46%', gap: spacing.xs, padding: spacing.md, borderRadius: radius.lg,
     borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface,
   },
-  valueRow: { flexDirection: 'row', alignItems: 'baseline', gap: spacing.xxs },
+  valueRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: spacing.xxs },
   tileValue: { fontSize: 22, lineHeight: 28, fontWeight: '700', color: colors.ink, fontVariant: ['tabular-nums'] },
   bigValue: { fontSize: 28, lineHeight: 34, fontWeight: '700', color: colors.ink, fontVariant: ['tabular-nums'] },
-  chip: { alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.sm, paddingVertical: 4, borderRadius: radius.pill },
+  chip: { maxWidth: '100%', alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: spacing.sm, paddingVertical: 4, borderRadius: radius.pill },
   chipDot: { width: 6, height: 6, borderRadius: 3 },
-  chipLabel: { fontWeight: '700' },
+  chipLabel: { fontWeight: '700', flexShrink: 1 },
   emptyCard: { gap: spacing.md },
   bloodCard: { gap: spacing.sm },
-  bloodRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.md },
+  bloodRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: spacing.md },
   listCard: { gap: spacing.md },
   checkBlock: { gap: spacing.xs },
   checkRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },

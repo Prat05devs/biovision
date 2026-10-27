@@ -53,8 +53,8 @@ export interface AssessmentService {
     sessionId: string;
     anemiaSignal: ScreeningSignal;
     answers: Record<string, string | boolean | number | string[]>;
-    /** Hides questions and options that only apply to the other sex. */
-    sex: ScreeningProfile['sex'] | undefined;
+    /** Hides questions and options meant for another sex, pregnancy state or age. */
+    profile: ScreeningProfile | undefined;
   }): Promise<{
     question?: HealthQuestion;
     done: boolean;

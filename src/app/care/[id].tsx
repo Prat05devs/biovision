@@ -14,7 +14,7 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { NoticeCard } from '@/components/ui/NoticeCard';
 import { Screen } from '@/components/ui/Screen';
 import { healthcareService } from '@/services';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export default function FacilityDetailScreen() {
   const { t } = useTranslation();

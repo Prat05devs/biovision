@@ -10,13 +10,17 @@ import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
 import { deployment } from '@/config/deployment';
 import { usePreferencesStore } from '@/store/preferences.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
+import { OptionButton } from '@/components/ui/OptionButton';
+import { useResponsiveLayout } from '@/theme/responsive';
 
 type Row = { icon: AppIconName; label: string; value?: string; href: Href };
 
 export default function SettingsScreen() {
   const { t } = useTranslation();
+  const { compact } = useResponsiveLayout();
   const language = usePreferencesStore((state) => state.language);
+  const setLanguage = usePreferencesStore((state) => state.setLanguage);
   const version = Constants.expoConfig?.version ?? '1.0.0';
   const build = Constants.expoConfig?.ios?.buildNumber;
 
@@ -34,13 +38,22 @@ export default function SettingsScreen() {
   ];
 
   return (
-    <Screen>
-      <AppHeader back title={t('settings.screenTitle')} />
+    <Screen hero>
+      <AppHeader back />
+      <AppText variant="display" color={colors.white} style={{ marginTop: 24 }}>{t('settings.screenTitle')}</AppText>
       {groups.map((group) => (
         <View key={group.title} style={styles.group}>
-          <AppText variant="eyebrow" color={colors.inkMuted} style={styles.groupTitle}>{group.title}</AppText>
+          <AppText variant="eyebrow" color={colors.ink} style={styles.groupTitle}>{group.title}</AppText>
           <Card style={styles.card}>
-            {group.rows.map((row, index) => (
+            {group.title === t('settings.general') ? <View style={styles.languageGroup}>
+              <AppText variant="h3">{t('navigation.language')}</AppText>
+              <AppText variant="small" color={colors.inkMuted}>{t('redesign.languagePreference')}</AppText>
+              <View style={[styles.languages, compact && { flexDirection: 'column' }]} accessibilityRole="radiogroup">
+                <OptionButton label={t('settings.english')} selected={language === 'en'} onPress={() => setLanguage('en')} style={{ flex: 1 }} />
+                <OptionButton label={t('settings.hindi')} selected={language === 'hi'} onPress={() => setLanguage('hi')} style={{ flex: 1 }} />
+              </View>
+            </View> :
+            group.rows.map((row, index) => (
               <Pressable key={row.label} accessibilityRole="button" onPress={() => router.push(row.href)}
                 style={({ pressed }) => [styles.row, index > 0 && styles.rowBorder, pressed && styles.pressed]}>
                 <View style={styles.icon}><AppIcon name={row.icon} size={19} color={colors.primary} /></View>
@@ -62,6 +75,8 @@ export default function SettingsScreen() {
 
 const styles = StyleSheet.create({
   group: { marginTop: spacing.xl },
+  languageGroup: { padding: 20, gap: 10 },
+  languages: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 8 },
   groupTitle: { marginBottom: spacing.xs, marginLeft: spacing.xs },
   card: { paddingVertical: 0, paddingHorizontal: 0 },
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingVertical: spacing.md, paddingHorizontal: spacing.lg, minHeight: 56 },

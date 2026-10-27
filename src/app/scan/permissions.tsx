@@ -13,8 +13,9 @@ import { AppText } from '@/components/ui/AppText';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
+import { startQuestionsWithoutCamera } from '@/services/local/withoutCamera';
 import { useAssessmentStore } from '@/store/assessment.store';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export default function CameraPermissionScreen() {
   const { t } = useTranslation();
@@ -33,6 +34,17 @@ export default function CameraPermissionScreen() {
       if (result.granted) router.replace('/scan/vitals' as Href);
     } catch { setPermissionError(true); }
     finally { setRequesting(false); }
+  };
+
+  // The profile was filled in just before this screen, so the camera-free questions can start now.
+  const profile = useAssessmentStore((state) => state.session.profile);
+  const withoutCamera = async () => {
+    if (!profile) { router.replace({ pathname: '/scan/profile', params: { mode: 'questions' } }); return; }
+    setPermissionError(false);
+    try {
+      await startQuestionsWithoutCamera(profile);
+      router.replace('/questions');
+    } catch { setPermissionError(true); }
   };
 
   const permanentlyDenied = permission && !permission.granted && !permission.canAskAgain;
@@ -84,7 +96,7 @@ export default function CameraPermissionScreen() {
       </View>
       ) : null}
       {permissionError ? <AppText accessibilityRole="alert" color={colors.urgent}>{t('health.error')}</AppText> : null}
-      <Button label={t('home.withoutCamera')} variant="ghost" onPress={() => router.replace('/health-check')} style={{ marginTop: spacing.md }} />
+      <Button label={t('home.withoutCamera')} variant="ghost" onPress={() => void withoutCamera()} style={{ marginTop: spacing.md }} />
 
     </Screen>
   );

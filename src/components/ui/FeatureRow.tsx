@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { AppIcon, type AppIconName } from '@/components/ui/AppIcon';
 import { AppText } from '@/components/ui/AppText';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, spacing } from '@/theme/redesign';
 
 export function FeatureRow({
   icon,
@@ -35,9 +35,9 @@ export function FeatureRow({
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md },
   icon: {
-    width: 40,
-    height: 40,
-    borderRadius: radius.md,
+    width: 46,
+    height: 46,
+    borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primarySoft,
