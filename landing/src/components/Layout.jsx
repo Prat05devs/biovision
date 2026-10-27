@@ -31,6 +31,7 @@ function Header() {
           BioVision
         </Link>
         <nav className="nav-links">
+          <Link className="hide-sm" to="/#why">Why BioVision</Link>
           <Link className="hide-sm" to="/#measures">Features</Link>
           <Link className="hide-sm" to="/#how">How it works</Link>
           <Link className="hide-sm" to="/#technology">Technology</Link>

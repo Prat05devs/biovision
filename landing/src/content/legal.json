@@ -1,11 +1,11 @@
 {
-  "updated": "Last updated 17 September 2026",
+  "updated": "Last updated 21 October 2026",
   "privacy": {
     "title": "Privacy Policy",
     "sections": [
       {
         "heading": "Summary",
-        "body": "BioVision analyses your scan on your iPhone. We do not have accounts, servers that receive your health data, advertising or tracking."
+        "body": "BioVision analyses your scan on your phone. We do not have accounts, servers that receive your health data, advertising or tracking."
       },
       {
         "heading": "Camera",
@@ -16,12 +16,16 @@
         "body": "Age, sex, pregnancy, height, weight and your answers are used only to calculate your report. They stay in memory and are cleared when you start a new scan or close the app."
       },
       {
-        "heading": "Location",
-        "body": "If you choose to find nearby healthcare, your location is used on your iPhone to sort the list. It is not stored or sent anywhere."
+        "heading": "Health apps on your phone",
+        "body": "To show which health and fitness apps you can compare results with, BioVision checks whether a short list of these apps is installed. The check happens on your phone, and the result is never stored or sent anywhere."
       },
       {
-        "heading": "Stored on your iPhone",
+        "heading": "Stored on your phone",
         "body": "Only your language choice and that you accepted these terms are saved on your device."
+      },
+      {
+        "heading": "Deleting your data",
+        "body": "BioVision keeps no health data after you close the app or start a new scan, so there is nothing for us to delete. Uninstalling the app also removes your language choice and your acceptance of these terms."
       },
       {
         "heading": "Sharing",
@@ -41,7 +45,7 @@
       },
       {
         "heading": "Contact",
-        "body": "BioVision is provided by NavTaksh Wellness. For questions about this policy or your data, use the support link on BioVision's App Store page."
+        "body": "BioVision is provided by NavTaksh Wellness. For questions about this policy or your data, email admin@wtsolutions.cc or visit https://biovision.live/support."
       }
     ]
   },
@@ -54,7 +58,7 @@
       },
       {
         "heading": "Not medical advice",
-        "body": "BioVision is not a medical device and does not diagnose, treat or prevent any disease. Its estimates can be wrong. Always confirm results with a qualified doctor or laboratory test, and never delay or ignore medical advice because of the app."
+        "body": "BioVision is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. Its estimates can be wrong. Always confirm results with a qualified doctor or laboratory test, and never delay or ignore medical advice because of the app."
       },
       {
         "heading": "Emergencies",
