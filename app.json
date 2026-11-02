@@ -23,6 +23,12 @@
     },
     "android": {
       "package": "live.biovision.app",
+      "versionCode": 9,
+      "icon": "./branding/biovision-app-icon-1024.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./branding/biovision-app-icon-1024.png",
+        "backgroundColor": "#087E72"
+      },
       "permissions": [
         "CAMERA"
       ],
