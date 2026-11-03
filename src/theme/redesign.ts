@@ -1,3 +1,5 @@
+import { Platform } from 'react-native';
+
 import { colors as originalColors } from './tokens';
 
 // The original tokens remain frozen for the camera/mesh screen.
@@ -23,7 +25,12 @@ export const colors = {
 
 export const radius = { sm: 14, md: 20, lg: 24, xl: 28, pill: 999 } as const;
 export const shadows = {
-  card: {
+  // Android elevation composites poorly with translucent rounded surfaces: the
+  // shadow can show through as an inset rectangle. Draw outside the border box
+  // instead; retain the existing native shadow on iOS and web.
+  card: Platform.OS === 'android' ? {
+    boxShadow: '0px 2px 4px rgba(31,74,92,0.12)',
+  } : {
     shadowColor: '#1F4A5C',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.08,

@@ -23,6 +23,7 @@ let textStyle, buttonStyle;
 const Text = ({ style, children }) => { textStyle = flatten(style); return React.createElement('span', null, children); };
 const Pressable = ({ style, children }) => { buttonStyle = flatten(style); return React.createElement('button', null, children); };
 const native = {
+  Platform: { OS: 'ios' },
   StyleSheet: { create: value => value, flatten }, Text, Pressable,
   View: ({ children }) => React.createElement('div', null, children),
   Animated: { createAnimatedComponent: value => value, Value: class { constructor(value) { this.value = value; } } },
